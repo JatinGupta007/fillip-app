@@ -15,8 +15,10 @@ import { FiArrowRight } from "react-icons/fi";
 ════════════════════════════════════════ */
 export default function CareersHeroSection({
   badge,
+  badgeBackground,
   headlineBlack,
   headlineGrad,
+  headlineGradBackground,
   subtext,
   badges, // optional icon+caption row — pass any number
   primaryBtn,
@@ -29,14 +31,20 @@ export default function CareersHeroSection({
       style={{ background: bg }}
     >
       {/* Soft blobs */}
-      <div className="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-blue-200 opacity-30 blur-3xl pointer-events-none" />
-      <div className="absolute -top-12 -right-20 w-80 h-80 rounded-full bg-purple-200 opacity-25 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-32 rounded-full bg-sky-100 opacity-40 blur-2xl pointer-events-none" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+        {/* Top Left Blob */}
+        <div className="absolute -top-32 -left-32 w-105 h-105 rounded-full bg-[#bfe3ef] opacity-60 blur-3xl" />
+
+        {/* Bottom Right Blob */}
+        <div className="absolute -bottom-32 -right-32 w-105 h-105 rounded-full bg-[#d7ecf5] opacity-70 blur-3xl" />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center gap-7">
         {/* ── Top badge ── */}
         {badge && (
-          <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-blue-100 text-cyan-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white transition-all duration-200">
+          <div
+            className={`inline-flex items-center gap-2 ${badgeBackground} backdrop-blur border border-blue-100 text-cyan-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white transition-all duration-200`}
+          >
             {badge.icon && (
               <span className="text-base text-cyan-500">{badge.icon}</span>
             )}
@@ -52,7 +60,9 @@ export default function CareersHeroSection({
             </h1>
           )}
           {headlineGrad && (
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-gradient-to-r from-blue-500 via-violet-500 to-purple-500 bg-clip-text text-transparent">
+            <h1
+              className={`text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
+            >
               {headlineGrad}
             </h1>
           )}
@@ -65,30 +75,36 @@ export default function CareersHeroSection({
           </p>
         )}
 
-        {/* ── Optional CTA button ── */}
-        {primaryBtn && (
-          <a
-            href={primaryBtn.href || "#"}
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-400 hover:to-violet-400 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
-          >
-            {primaryBtn.label}
-            <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
-        )}
+        {/* ── Optional CTA buttons ── */}
+        <div className="flex gap-7">
+          {primaryBtn && (
+            <a
+              href={primaryBtn.href || "#"}
+              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+            >
+              {primaryBtn.label}
+              {primaryBtn.icon && (
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+              )}
+            </a>
+          )}
 
-        {secondaryBtn && (
-          <a
-            href={secondaryBtn.href || "#"}
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-violet-500 hover:from-blue-400 hover:to-violet-400 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
-          >
-            {secondaryBtn.label}
-            <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
-        )}
+          {secondaryBtn && (
+            <a
+              href={secondaryBtn.href || "#"}
+              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+            >
+              {secondaryBtn.label}
+              {secondaryBtn.icon && (
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+              )}
+            </a>
+          )}
+        </div>
 
         {/* ── Icon+Caption badges — optional, any count ── */}
         {badges && badges.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-5">
+          <div className="flex flex-wrap items-center justify-center gap-10 mt-5">
             {badges.map((b, i) => (
               <div
                 key={i}

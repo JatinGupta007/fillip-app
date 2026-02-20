@@ -30,11 +30,11 @@ export default function RealResultsSection() {
     <main>
       <section className="w-full">
         {/* ── Dark Hero Block ── */}
-        <div className="relative w-full overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#0d1f3c] to-[#0f2545] py-20 px-6">
+        <div className="relative w-full overflow-hidden bg-linear-to-br from-[#0a1628] via-[#0d1f3c] to-[#0f2545] py-20 px-6">
           {/* Background glow blobs */}
-          <div className="absolute top-[-80px] left-[-60px] w-80 h-80 rounded-full bg-purple-800 opacity-20 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-[-60px] right-[-60px] w-72 h-72 rounded-full bg-blue-700 opacity-15 blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-cyan-900 opacity-20 blur-3xl pointer-events-none" />
+          <div className="absolute -top-20 -left-15 w-80 h-80 rounded-full bg-purple-800 opacity-20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-15 -right-15 w-72 h-72 rounded-full bg-blue-700 opacity-15 blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-cyan-900 opacity-20 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
             {/* Badge */}
@@ -48,14 +48,14 @@ export default function RealResultsSection() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
                 Real Results from
               </h1>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Real Apps
               </h1>
             </div>
 
             {/* Subtext */}
             <p className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-3xl">
-              See how we've helped apps across every industry scale from zero to
+              See how we&apos;ve helped apps across every industry scale from zero to
               millions of users with measurable, sustainable growth.
             </p>
 
@@ -66,7 +66,7 @@ export default function RealResultsSection() {
                   key={i}
                   className="flex flex-col items-center gap-1 group cursor-default"
                 >
-                  <p className="text-3xl sm:text-4xl font-black text-white group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <p className="text-3xl sm:text-4xl font-black text-white group-hover:bg-linear-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {stat.value}
                   </p>
                   <p className="text-gray-400 text-sm font-semibold">
@@ -89,7 +89,7 @@ export default function RealResultsSection() {
                   className={`px-6 py-2.5 rounded-2xl text-sm font-bold transition-all duration-200 whitespace-nowrap
                   ${
                     activeFilter === filter
-                      ? "bg-gradient-to-r from-cyan-400 to-blue-500 text-white shadow-md shadow-blue-200"
+                      ? "bg-linear-to-r from-cyan-400 to-blue-500 text-white shadow-md shadow-blue-200"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 border border-gray-200"
                   }`}
                 >

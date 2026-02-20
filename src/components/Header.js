@@ -118,7 +118,7 @@ function DesktopDropdown({ label, icon, children }) {
       </button>
 
       {open && (
-        <div className="absolute top-9 left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 z-50 overflow-hidden">
+        <div className="absolute top-8 left-1/2 -translate-x-1/2 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 z-50 overflow-hidden">
           {children}
         </div>
       )}
@@ -195,7 +195,7 @@ function DesktopSimpleDropdown({ label, icon, items }) {
         {items.map((item) => (
           <li key={item}>
             <Link
-              href="#"
+              href={`/${item.replace(/\s+/g, "-").toLowerCase()}`}
               className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors"
             >
               {item}
@@ -262,15 +262,15 @@ export default function Header() {
             />
 
             <Link
-              href="#"
+              href="/careers"
               className="flex text-sm items-center gap-1.5 px-3 py-2 font-semibold text-gray-600 hover:text-gray-900 rounded-md transition-colors whitespace-nowrap"
             >
               <BsCollection size={18} className="text-gray-400" />
-              Case Studies
+              Careers
             </Link>
 
             <Link
-              href="#"
+              href="/process"
               className="flex items-center text-sm gap-1.5 px-3 py-2  font-semibold text-gray-600 hover:text-gray-900 rounded-md transition-colors"
             >
               <MdOutlineSettings size={20} className="text-gray-400" />
@@ -423,7 +423,7 @@ export default function Header() {
                   {resourcesItems.map((item) => (
                     <li key={item}>
                       <Link
-                        href="#"
+                        href={`/${item.replace(/\s+/g, "-").toLowerCase()}`}
                         className="block py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >

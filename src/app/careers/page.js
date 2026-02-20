@@ -25,13 +25,15 @@ import { MdGroups } from "react-icons/md";
 
 /* ── 1. Hero ── */
 export const heroData = {
-  bg: "linear-gradient(135deg, #e8f4ff 0%, #f0ebff 50%, #fce8ff 100%)",
+  bg: "linear-gradient(135deg, #F0F9FF 0%, #FAF5FF 50%, #FFFFFF 100%)",
   badge: {
     icon: <BiBriefcase />,
     text: "Join Our Team",
   },
+  badgeBackground: "bg-gradient-to-l from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3]",
   headlineBlack: "Build the Future of",
   headlineGrad: "App Growth",
+  headlineGradBackground: "from-[#0084D1] via-[#9810FA] to-[#E60076]",
   subtext:
     "Join a team of passionate marketers, creatives, and engineers helping apps reach millions of users worldwide.",
   /* badges — icon + caption, add / remove freely (1 to many) */
@@ -225,7 +227,6 @@ export const positionsData = {
 };
 
 const ctaData = {
-
   badge: "Don't See a Fit?",
   badgeBgColor: "bg-[#59168B]/20",
   headline: "We're Always Looking for Talented People",
@@ -245,7 +246,7 @@ const ctaData = {
 
   // ── Background customisation ──
   // Purple → Blue gradient like image
-  bgGradient: "from-[#1e3a8a] via-[#6b21a8] to-[#a21caf]",
+  bgGradient: "linear-gradient(135deg, #024A70 0%, #59168B 50%, #861043 100%)",
 
   // Glow blob colours (subtle soft glow like image)
   blobLeft: "bg-blue-600",
@@ -342,7 +343,7 @@ export function OpenPositionsSection({
                 </div>
                 <a
                   href={job.applyHref || "#"}
-                  className="flex-shrink-0 inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-blue-100 hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+                  className="shrink-0 inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-blue-100 hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
                 >
                   Apply Now <FiArrowRight />
                 </a>
@@ -383,7 +384,7 @@ export function OpenPositionsSection({
                         key={i}
                         className="flex items-start gap-2 text-sm text-gray-600"
                       >
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                         {req}
                       </li>
                     ))}
@@ -416,7 +417,7 @@ export function WhyJoinSection({
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
             {title}
             {titleColored && (
-              <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
                 {" "}
                 {titleColored}
               </span>

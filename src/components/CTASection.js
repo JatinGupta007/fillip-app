@@ -1,6 +1,7 @@
 "use client";
 
 import { FiArrowRight } from "react-icons/fi";
+import { MdCheckCircle } from "react-icons/md";
 import { TbSparkles } from "react-icons/tb";
 
 export default function CTASection({
@@ -30,26 +31,32 @@ export default function CTASection({
 
   // ── Background customisation ──
   // Pass a full Tailwind gradient string, e.g. 'from-purple-900 via-indigo-900 to-blue-900'
-  bgGradient = "from-[#0a1628] via-[#0d2040] to-[#0f2545]",
+
+  bgGradient = "linear-gradient(135deg, #0a1628 0%, #0d2040 50%, #0d2040 100%)",
 
   // Glow blob colours (Tailwind bg-* classes)
   blobLeft = "bg-purple-800",
   blobRight = "bg-blue-700",
   blobCenter = "bg-cyan-900",
+  tags = {
+    icon: false,
+    text: "",
+  },
 }) {
   return (
     <section
-      className={`relative w-full overflow-hidden bg-gradient-to-br ${bgGradient} py-24 px-6`}
+      className={`relative w-full overflow-hidden  py-24 px-6`}
+      style={{ background: bgGradient }}
     >
       {/* ── Background glow blobs ── */}
       <div
-        className={`absolute top-[-80px] left-[-60px] w-80 h-80 rounded-full ${blobLeft} opacity-25 blur-3xl pointer-events-none`}
+        className={`absolute -top-20 -left-15 w-80 h-80 rounded-full ${blobLeft} opacity-25 blur-3xl pointer-events-none`}
       />
       <div
-        className={`absolute bottom-[-60px] right-[-60px] w-72 h-72 rounded-full ${blobRight} opacity-20 blur-3xl pointer-events-none`}
+        className={`absolute -bottom-15 -right-15 w-72 h-72 rounded-full ${blobRight} opacity-20 blur-3xl pointer-events-none`}
       />
       <div
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[260px] rounded-full ${blobCenter} opacity-20 blur-3xl pointer-events-none`}
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-30 h-40 rounded-full ${blobCenter} opacity-20 blur-3xl pointer-events-none`}
       />
 
       {/* ── Content ── */}
@@ -87,6 +94,14 @@ export default function CTASection({
             </a>
           ))}
         </div>
+        {tags && (
+          <div className="flex items-center gap-2 text-white text-md font-medium mt-7">
+            {tags.icon && (
+              <MdCheckCircle className="text-emerald-500 text-2xl" />
+            )}
+            <span>{tags.text}</span>
+          </div>
+        )}
       </div>
     </section>
   );
