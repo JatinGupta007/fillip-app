@@ -63,7 +63,7 @@ export default function CTASection({
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-7">
         {/* Badge */}
         <div
-          className={`inline-flex items-center gap-2 ${badgeBgColor} backdrop-blur border border-gray-600 text-gray-200 text-sm font-bold px-5 py-2.5 mb-4 rounded-full shadow-md hover:text-white transition-all duration-200`}
+          className={`inline-flex items-center gap-2 ${badgeBgColor} backdrop-blur text-gray-200 text-sm font-bold px-5 py-2.5 mb-4 rounded-full shadow-md hover:text-white transition-all duration-200`}
         >
           <TbSparkles className="text-gray-200 text-[16px] font-bold" />
           {badge}
@@ -85,7 +85,7 @@ export default function CTASection({
             <a
               key={idx}
               href={btn.href}
-              className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-base px-8 py-4 rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
+              className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-base px-11 py-4 rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
             >
               {btn.label}
               {btn.arrow && (

@@ -42,7 +42,7 @@ export default function GrowthGuideSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0d1b35] via-[#0f2040] to-[#0a1628] py-20 px-4 md:px-8 lg:px-12">
+    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0d1b35] via-[#0f2040] to-[#0a1628] py-20 px-4 md:px-8 xl:px-12">
       {/* Background glow blobs */}
       <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -right-15 w-72 h-72 bg-purple-600 opacity-10 rounded-full blur-3xl pointer-events-none" />

@@ -19,7 +19,7 @@ export default function HeroSection() {
       <div className="absolute top-[-80px] left-[-80px] w-[340px] h-[340px] rounded-full bg-blue-100 opacity-60 blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-purple-100 opacity-50 blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-8xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="w-full max-w-8xl mx-auto lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* LEFT CONTENT */}
         <div className="flex flex-col gap-6">
           {/* Badge */}

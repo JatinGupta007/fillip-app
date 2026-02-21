@@ -34,24 +34,24 @@ export default function CommunityHeroSection({
   subtext = "Connect with app marketers, share strategies, get expert feedback, and stay ahead of industry trends—all on Telegram.",
   primaryBtn,
   secondaryBtn,
-  trustText,
-  trustIcon,
-  trustIconColor = "#10b981",
+  trustIcons,
+  
 }) {
   return (
     <section
       className="relative w-full overflow-hidden py-24 px-4 sm:px-6"
       style={{ background: bg }}
     >
-      {/* Soft ambient blobs */}
-      <div className="absolute -top-28 -left-20 w-96 h-96 rounded-full bg-blue-200 opacity-20 blur-3xl pointer-events-none" />
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-pink-200 opacity-20 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-28 rounded-full bg-purple-100 opacity-30 blur-2xl pointer-events-none" />
+      {/* Bottom Left Soft Pink-Lilac Blob */}
+      <div className="absolute bottom-10 left-16 w-96 h-96 rounded-3xl bg-pink-300 opacity-35 blur-3xl pointer-events-none"></div>
+
+      {/* Top Right Soft Sky Blue Blob */}
+      <div className="absolute top-8 right-10 w-96 h-96 rounded-3xl bg-cyan-300 opacity-35 blur-3xl pointer-events-none"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center gap-7">
         {/* ── Optional Badge ── */}
         {badge && (
-          <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200">
+          <div className="inline-flex items-center gap-2 bg-linear-to-br from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200">
             {badge.icon && (
               <span className="text-base text-blue-500">{badge.icon}</span>
             )}
@@ -62,7 +62,7 @@ export default function CommunityHeroSection({
         {/* ── Headline ── */}
         <div className="flex flex-col items-center gap-0 leading-none">
           {/* Line 1 — dark */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-[#0d1f3c] leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
             {headlineBlack} {/* Inline colored word on same line */}
             <span
               className="bg-clip-text text-transparent"
@@ -88,7 +88,7 @@ export default function CommunityHeroSection({
 
         {/* ── CTA Buttons ── */}
         {(primaryBtn || secondaryBtn) && (
-          <div className="flex flex-col sm:flex-row gap-4 mt-1 w-full sm:w-auto justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 mt-5 w-full sm:w-auto justify-center">
             {primaryBtn && (
               <a
                 href={primaryBtn.href ?? "#"}
@@ -133,14 +133,19 @@ export default function CommunityHeroSection({
         )}
 
         {/* ── Trust line ── */}
-        {trustText && (
-          <div className="flex items-center justify-center gap-2 text-gray-500 text-sm font-semibold mt-1">
-            {trustIcon && (
-              <span style={{ color: trustIconColor }} className="text-lg">
-                {trustIcon}
-              </span>
-            )}
-            {trustText}
+        {trustIcons && (
+          <div className="flex items-center justify-center gap-8 text-gray-500 text-sm font-semibold mt-7">
+            {trustIcons.map((icon, idx) => (
+              <li key={idx} className="flex items-center gap-1">
+                <span
+                  style={{ color: icon.trustIconColor }}
+                  className="text-lg"
+                >
+                  {icon.trustIcon}
+                </span>
+                <span>{icon.trustText}</span>
+              </li>
+            ))}
           </div>
         )}
       </div>

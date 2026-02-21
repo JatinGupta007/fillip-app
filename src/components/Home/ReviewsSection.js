@@ -155,7 +155,7 @@ export default function ReviewsCarousel() {
   }, [isHovered, maxIndex]);
 
   return (
-    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 px-6 overflow-x-hidden">
+    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-4 md:px-8 xl:px-12">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">

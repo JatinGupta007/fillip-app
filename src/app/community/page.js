@@ -1,6 +1,16 @@
 import CommunityHeroSection from "@/components/ComunityHeroSection";
 import FAQSection from "@/components/FaqSection";
-import { BiBoltCircle, BiGroup, BiLeaf, BiLineChart, BiMessageDetail, BiPalette, BiRocket, BiStar, BiUserCircle } from "react-icons/bi";
+import {
+  BiBoltCircle,
+  BiGroup,
+  BiLeaf,
+  BiLineChart,
+  BiMessageDetail,
+  BiPalette,
+  BiRocket,
+  BiStar,
+  BiUserCircle,
+} from "react-icons/bi";
 import { BsChatDots, BsCheckCircleFill } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { WhyJoinSection } from "../careers/page";
@@ -64,7 +74,7 @@ export const communityFAQData = {
   ],
 };
 
-export const communityData = {
+export const whyJoinData = {
   title: "Explore Our",
   titleColored: "Topic Channels",
   subtitle: "Focused discussions for every aspect of app growth",
@@ -135,7 +145,7 @@ export const communityData = {
   ],
 };
 
-export const whyJoinData = {
+export const communityData = {
   capabilities: {
     title: "Why Join the",
     titleColored: "Community?",
@@ -322,12 +332,11 @@ export const communityEventsTestimonialsData = {
   },
 };
 
-
 export default function CommunityPage() {
   return (
     <>
       <CommunityHeroSection
-        bg="linear-gradient(135deg, #dbeafe 0%, #ede9fe 35%, #fce7f3 70%, #f0f9ff 100%)"
+        bg="linear-gradient(135deg, #F0F9FF 0%, #FAF5FF 50%, #ffffff 100%)"
         badge={{
           icon: <HiOutlineUserGroup />,
           text: "Join 5,200+ App Growth Professionals",
@@ -353,9 +362,11 @@ export default function CommunityPage() {
           textColor: "#0d1f3c",
           border: "#e5e7eb",
         }}
-        trustText="100% Free • No spam • 5,200+ active members"
-        trustIcon={<BsCheckCircleFill />}
-        trustIconColor="#10b981"
+        trustIcons={[{
+          trustText: "100% Free • No spam • 5,200+ active members",
+          trustIcon: <BsCheckCircleFill />,
+          trustIconColor: "#10b981",
+        }]}
       />
       <section className="w-full bg-[#f3f4f6] py-12 px-6">
         <div className="max-w-7xl mx-auto">
@@ -388,19 +399,18 @@ export default function CommunityPage() {
         </div>
       </section>
       <CapabilitiesSection
-        capabilities={whyJoinData.capabilities}
-        theme={whyJoinData.theme}
+        capabilities={communityData.capabilities}
+        theme={communityData.theme}
       />
-      <WhyJoinSection {...communityData} />
+      <WhyJoinSection {...whyJoinData} />
       <CommunityEventsAndTestimonials {...communityEventsTestimonialsData} />
       <FAQSection {...communityFAQData} />
       <CTASection {...ctaData} />
     </>
-  );}
+  );
+}
 
-
-import { BsArrowUpRight } from 'react-icons/bs';
-
+import { BsArrowUpRight } from "react-icons/bs";
 
 /* ════════════════════════════════════════
    COMMUNITY EVENTS + TESTIMONIALS
@@ -447,22 +457,30 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
       {/* ══════════════════════════════════
           SECTION 1 — Community Events
       ══════════════════════════════════ */}
-      <section className="w-full py-20 px-4 sm:px-6" style={{ background: events?.bg ?? '#ffffff' }}>
+      <section
+        className="w-full py-20 px-4 sm:px-6"
+        style={{ background: events?.bg ?? "#ffffff" }}
+      >
         <div className="max-w-7xl mx-auto">
-
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
               {events?.title}
               <span
                 className="bg-clip-text text-transparent ml-2"
-                style={{ backgroundImage: events?.titleGradient ?? 'linear-gradient(to right,#3b82f6,#06b6d4)' }}
+                style={{
+                  backgroundImage:
+                    events?.titleGradient ??
+                    "linear-gradient(to right,#3b82f6,#06b6d4)",
+                }}
               >
                 {events?.titleColored}
               </span>
             </h2>
             {events?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">{events.subtitle}</p>
+              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+                {events.subtitle}
+              </p>
             )}
           </div>
 
@@ -476,7 +494,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                 {/* Icon + badge row */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
                     style={{ background: item.iconBg }}
                   >
                     <span className="text-white text-xl">{item.icon}</span>
@@ -484,40 +502,46 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                   <span
                     className="text-xs font-black px-3 py-1 rounded-full"
                     style={{
-                      background: item.badgeBg ?? '#f0f9ff',
-                      color: item.badgeColor ?? '#0ea5e9',
+                      background: item.badgeBg ?? "#f0f9ff",
+                      color: item.badgeColor ?? "#0ea5e9",
                     }}
                   >
                     {item.badge}
                   </span>
                 </div>
 
-                <h3 className="text-base font-black text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-base font-black text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
       {/* ══════════════════════════════════
           SECTION 2 — Testimonials
       ══════════════════════════════════ */}
-      <section className="w-full py-20 px-4 sm:px-6" style={{ background: testimonials?.bg ?? '#ffffff' }}>
+      <section
+        className="w-full py-20 px-4 sm:px-6"
+        style={{ background: testimonials?.bg ?? "#ffffff" }}
+      >
         <div className="max-w-7xl mx-auto">
-
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
-              {testimonials?.title}
-              {' '}
-              <span style={{ color: testimonials?.titleColor ?? '#3b82f6' }}>
+              {testimonials?.title}{" "}
+              <span style={{ color: testimonials?.titleColor ?? "#3b82f6" }}>
                 {testimonials?.titleColored}
               </span>
             </h2>
             {testimonials?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">{testimonials.subtitle}</p>
+              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+                {testimonials.subtitle}
+              </p>
             )}
           </div>
 
@@ -531,14 +555,18 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                 {/* Avatar + name row */}
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                    className="w-10 h-10 rounded-full flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
                     style={{ background: t.avatarBg }}
                   >
                     <span className="text-white text-base">{t.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-black text-gray-900 leading-tight">{t.name}</p>
-                    <p className="text-xs text-gray-400 font-medium leading-tight">{t.role}</p>
+                    <p className="text-sm font-black text-gray-900 leading-tight">
+                      {t.name}
+                    </p>
+                    <p className="text-xs text-gray-400 font-medium leading-tight">
+                      {t.role}
+                    </p>
                   </div>
                 </div>
 
@@ -552,7 +580,10 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                   <div className="mt-4">
                     <span
                       className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
-                      style={{ background: t.tagBg, color: t.tagColor ?? '#fff' }}
+                      style={{
+                        background: t.tagBg,
+                        color: t.tagColor ?? "#fff",
+                      }}
                     >
                       <BsArrowUpRight className="text-xs" />
                       {t.tag}
@@ -562,7 +593,6 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

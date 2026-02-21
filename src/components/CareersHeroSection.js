@@ -80,7 +80,7 @@ export default function CareersHeroSection({
           {primaryBtn && (
             <a
               href={primaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {primaryBtn.label}
               {primaryBtn.icon && (
@@ -92,7 +92,7 @@ export default function CareersHeroSection({
           {secondaryBtn && (
             <a
               href={secondaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl shadow-lg shadow-blue-200 hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {secondaryBtn.label}
               {secondaryBtn.icon && (

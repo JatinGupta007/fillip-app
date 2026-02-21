@@ -21,8 +21,8 @@ export const ServicesData = {
 ══════════════════════════ */
   ToFu_Marketing: {
     theme: {
-      accent: "#d946ef",
-      heroBg: "linear-gradient(135deg, #fce4ff 0%, #f5e6ff 40%, #e0d4ff 100%)",
+      accent: "linear-gradient(135deg, #9810FA, #E60076)",
+      heroBg: "linear-gradient(135deg, #FAF5FF 0%, #FDF2F8 40%, #ffffff 100%)",
       blob1: "#e879f9",
       blob2: "#a855f7",
       blob3: "#ec4899",
@@ -32,7 +32,7 @@ export const ServicesData = {
       primaryBtn: "linear-gradient(135deg, #d946ef, #a855f7)",
       btnShadow: "rgba(217,70,239,0.35)",
       checkBg: "linear-gradient(135deg, #d946ef, #a855f7)",
-      roiBg: "linear-gradient(135deg, #7e22ce, #a855f7, #ec4899)",
+      roiBg: "linear-gradient(135deg, #59168B, #861043, #59168B)",
       roiBlob: "#ec4899",
       roiCardBg: "rgba(255,255,255,0.12)",
     },
@@ -158,6 +158,44 @@ export const ServicesData = {
       ],
       cta: "Get Your Free Analysis",
     },
+
+    ctaData: {
+      // ── Badge ──
+      badge: "Start Building Awareness Today",
+      badgeBgColor: "bg-[#861043]/20 border border-[#FFFFFF33]",
+
+      // ── Headline ──
+      headline: "Ready to Reach Millions?",
+
+      subtext:
+        "Let's create a powerful brand awareness campaign that puts your app in front of millions of potential users.",
+
+      // ── Buttons ──
+      buttons: [
+        {
+          label: "Get Started Now",
+          href: "https://t.me/yourgroup",
+          arrow: true,
+          background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
+        },
+        {
+          label: "View All Solutions",
+          href: "#",
+          arrow: false,
+          background:
+            "bg-transparent border border-white/40 text-white hover:bg-white/10",
+        },
+      ],
+
+      // ── Background Gradient (exact match) ──
+      bgGradient:
+        "linear-gradient(135deg, #59168B 20%, #861043 50%, #59168B 100%)",
+
+      // ── Subtle glow blobs ──
+      blobLeft: "bg-blue-700",
+      blobRight: "bg-pink-700",
+      blobCenter: "bg-purple-700",
+    },
   },
 
   /* ══════════════════════════
@@ -165,18 +203,18 @@ export const ServicesData = {
 ══════════════════════════ */
   MoFu_Marketing: {
     theme: {
-      accent: "#0ea5e9",
-      heroBg: "linear-gradient(135deg, #e0f4ff 0%, #e8f6ff 40%, #d4edff 100%)",
+      accent: "linear-gradient(135deg, #0084D1, #0092B8)",
+      heroBg: "linear-gradient(0deg, #F0F9FF 20%, #ECFEFF 40%, #FFFFFF 100%)",
       blob1: "#38bdf8",
       blob2: "#3b82f6",
       blob3: "#0ea5e9",
-      badgeBg: "linear-gradient(135deg, #e0f4ff 0%, #e8f6ff 40%, #d4edff 100%)",
+      badgeBg: "linear-gradient(135deg, #DFF2FE 0%, #CEFAFE 40%, #DFF2FE 100%)",
       badgeBorder: "#bae6fd",
-      badgeText: "#0369a1",
+      badgeText: "#024A70",
       primaryBtn: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
       btnShadow: "rgba(14,165,233,0.35)",
       checkBg: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
-      roiBg: "linear-gradient(135deg, #0369a1, #0ea5e9, #38bdf8)",
+      roiBg: "linear-gradient(135deg, #024A70, #104E64, #1C398E)",
       roiBlob: "#38bdf8",
       roiCardBg: "rgba(255,255,255,0.12)",
     },
@@ -188,7 +226,7 @@ export const ServicesData = {
       subtext:
         "Convert interest into installs with data-driven campaigns across Apple Search Ads, Google App Campaigns, and social platforms.",
       primaryBtn: "Get Started Now",
-      secondaryBtn: "View Case Studies",
+      secondaryBtn: "View All Solutions",
       stats: [
         { value: "$2.80", label: "Avg. Cost Per Install" },
         { value: "10M+", label: "Installs Generated" },
@@ -307,6 +345,42 @@ export const ServicesData = {
       ],
       cta: "Get Your Free Analysis",
     },
+    ctaData: {
+      // ── Badge ──
+      badge: "Start Acquiring Users Today",
+      badgeBgColor: "bg-[#104E64]/20 border border-[#FFFFFF33]",
+
+      // ── Headline ──
+      headline: "Ready to Scale Installs?",
+
+      subtext:
+        "Let's create a performance-driven acquisition campaign that maximizes installs while minimizing cost.",
+
+      // ── Buttons ──
+      buttons: [
+        {
+          label: "Get Started Now",
+          href: "https://t.me/yourgroup",
+          arrow: true,
+          background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
+        },
+        {
+          label: "View All Solutions",
+          href: "#",
+          arrow: false,
+          background:
+            "bg-transparent border border-white/40 text-white hover:bg-white/10",
+        },
+      ],
+
+      // ── Background Gradient (exact match) ──
+      bgGradient:
+        "linear-gradient(135deg, #024A70 20%, #104E64 50%, #1C398E 100%)",
+      // ── Subtle glow blobs ──
+      blobLeft: "bg-blue-700",
+      blobRight: "bg-pink-700",
+      blobCenter: "bg-purple-700",
+    },
   },
 
   /* ══════════════════════════
@@ -314,7 +388,7 @@ export const ServicesData = {
 ══════════════════════════ */
   BoFu_Marketing: {
     theme: {
-      accent: "#10b981",
+      accent: "linear-gradient(135deg, #009966, #009689)",
       heroBg: "linear-gradient(135deg, #d1fae5 0%, #e6fff5 40%, #ccfbf1 100%)",
       blob1: "#34d399",
       blob2: "#059669",
@@ -465,6 +539,43 @@ export const ServicesData = {
         { value: "-45%", label: "Churn Reduction" },
       ],
       cta: "Get Your Free Analysis",
+    },
+    ctaData: {
+      // ── Badge ──
+      badge: "Start Maximizing Revenue Today",
+      badgeBgColor: "bg-[#0B4F4A]/20 border border-[#FFFFFF33]",
+
+      // ── Headline ──
+      headline: "Ready to Boost Retention?",
+
+      subtext:
+        "Let's create a retention strategy that turns your users into loyal, paying customers for the long term.",
+
+      // ── Buttons ──
+      buttons: [
+        {
+          label: "Get Started Now",
+          href: "https://t.me/yourgroup",
+          arrow: true,
+          background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
+        },
+        {
+          label: "View All Solutions",
+          href: "#",
+          arrow: false,
+          background:
+            "bg-transparent border border-white/40 text-white hover:bg-white/10",
+        },
+      ],
+
+      // ── Background Gradient (exact match) ──
+      bgGradient:
+        "linear-gradient(135deg, #004F3B 20%, #0B4F4A 50%, #004F3B 100%)",
+
+      // ── Subtle glow blobs ──
+      blobLeft: "bg-blue-700",
+      blobRight: "bg-pink-700",
+      blobCenter: "bg-purple-700",
     },
   },
 };

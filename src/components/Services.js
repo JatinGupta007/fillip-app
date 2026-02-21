@@ -5,6 +5,8 @@ import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { BsStarFill, BsCurrencyDollar } from "react-icons/bs";
 import { MdTrendingUp } from "react-icons/md";
 import { TbSparkles } from "react-icons/tb";
+import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import CTASection from "./CTASection";
 
 /* ═══════════════════════════════════
    1. HERO SECTION
@@ -29,30 +31,40 @@ export function HeroSection({ hero, theme }) {
         style={{ background: theme.blob3 }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-7">
+      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-5">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2 text-xs font-bold px-7 py-3 rounded-full border backdrop-blur shadow-sm hover:scale-105 transition-transform duration-200"
+          className="inline-flex items-center gap-2 text-xs font-bold px-7 py-3 rounded-full  backdrop-blur hover:scale-105 transition-transform duration-200"
           style={{
             background: theme.badgeBg,
-            borderColor: theme.badgeBorder,
             color: theme.badgeText,
           }}
         >
-          <MdTrendingUp style={{ color: theme.accent, fontSize: "14px", fontWeight: "bold" }} />
+          <MdTrendingUp
+            style={{
+              color: theme.accent,
+              fontSize: "14px",
+              fontWeight: "bold",
+            }}
+          />
           {hero.badge}
         </div>
 
         {/* Headline */}
         <div>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0d1f3c] leading-tight tracking-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
             {hero.headlineBlack}
-          </h1>
-          <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight"
-            style={{ color: theme.accent }}
-          >
-            {hero.headlineColored}
+            {" "}
+            <span
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
+              style={{
+                background: theme.accent,
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {hero.headlineColored}
+            </span>
           </h1>
         </div>
 
@@ -62,9 +74,9 @@ export function HeroSection({ hero, theme }) {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-8 mt-2 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-8 mt-5 w-full sm:w-auto mb-7">
           <button
-            className="group flex items-center justify-center gap-5 text-white font-bold text-base px-12 py-4.5 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+            className="group flex items-center justify-center gap-5 text-white font-bold text-base px-12 py-4 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{
               background: theme.primaryBtn,
               boxShadow: `0 10px 30px ${theme.btnShadow}`,
@@ -86,8 +98,12 @@ export function HeroSection({ hero, theme }) {
               className="flex flex-col items-center gap-1 group cursor-default"
             >
               <p
-                className="text-3xl sm:text-4xl font-black group-hover:scale-110 transition-transform duration-200"
-                style={{ color: theme.accent }}
+                className="text-3xl sm:text-4xl font-bold group-hover:scale-110 transition-transform duration-200"
+                style={{
+                  background: theme.accent,
+                  backgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
               >
                 {stat.value}
               </p>
@@ -107,12 +123,18 @@ export function HeroSection({ hero, theme }) {
 ═══════════════════════════════════ */
 export function CapabilitiesSection({ capabilities, theme }) {
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full bg-white py-20 px-4 md:px-8 xl:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {capabilities.title}{" "}
-            <span style={{ color: theme.accent }}>
+            <span
+              style={{
+                background: theme.accent,
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               {capabilities.titleColored}
             </span>
           </h2>
@@ -121,7 +143,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {capabilities.cards.map((card, i) => (
             <div
               key={i}
@@ -152,11 +174,19 @@ export function CapabilitiesSection({ capabilities, theme }) {
 ═══════════════════════════════════ */
 function IncludedSection({ included, theme }) {
   return (
-    <section className="w-full bg-gradient-to-b from-[#f6fafe] to-white py-20 px-6">
+    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-4 md:px-8 xl:px-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] text-center mb-14 leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
           {included.title}{" "}
-          <span style={{ color: theme.accent }}>{included.titleColored}</span>
+          <span
+            style={{
+              background: theme.accent,
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {included.titleColored}
+          </span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -166,10 +196,10 @@ function IncludedSection({ included, theme }) {
               className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-200 group"
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-200"
+                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-200"
                 style={{ background: theme.checkBg }}
               >
-                <FiCheck className="text-white text-base" />
+                <IoMdCheckmarkCircleOutline className="text-white text-3xl" />
               </div>
               <span className="text-gray-800 font-semibold text-sm">
                 {item}
@@ -187,12 +217,20 @@ function IncludedSection({ included, theme }) {
 ═══════════════════════════════════ */
 function TacticsSection({ tactics, theme }) {
   return (
-    <section className="w-full bg-white py-20 px-6">
+    <section className="w-full bg-white py-20 px-4 md:px-8 xl:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
             {tactics.title}{" "}
-            <span style={{ color: theme.accent }}>{tactics.titleColored}</span>
+            <span
+              style={{
+                background: theme.accent,
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {tactics.titleColored}
+            </span>
           </h2>
           {tactics.subtitle && (
             <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
@@ -201,11 +239,11 @@ function TacticsSection({ tactics, theme }) {
           )}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           {tactics.items.map((item, i) => (
             <div
               key={i}
-              className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center gap-3 group"
+              className="bg-[#F9FAFB] border border-gray-100 rounded-2xl px-7 py-5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center gap-4 group"
             >
               <span className="text-4xl group-hover:scale-110 transition-transform duration-200">
                 {item.emoji}
@@ -234,14 +272,22 @@ function TacticsSection({ tactics, theme }) {
 ═══════════════════════════════════ */
 function SuccessSection({ success, theme }) {
   return (
-    <section className="w-full bg-gradient-to-b from-[#f6fafe] to-white py-20 px-6">
+    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-4 md:px-8 xl:px-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] text-center mb-14 leading-tight">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
           {success.title}{" "}
-          <span style={{ color: theme.accent }}>{success.titleColored}</span>
+          <span
+            style={{
+              background: theme.accent,
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            {success.titleColored}
+          </span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {success.cards.map((card, i) => (
             <div
               key={i}
@@ -365,7 +411,7 @@ function SuccessSection({ success, theme }) {
 ═══════════════════════════════════ */
 function ROISection({ roi, theme }) {
   return (
-    <section className="w-full py-14 px-6 bg-white">
+    <section className="w-full py-14 px-4 md:px-8 xl:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
         <div
           className="relative overflow-hidden rounded-3xl px-8 py-14 text-center shadow-2xl"
@@ -427,7 +473,7 @@ function ROISection({ roi, theme }) {
    MAIN REUSABLE PAGE COMPONENT
 ═══════════════════════════════════ */
 export default function ServicePage({ data }) {
-  const { theme, hero, capabilities, included, tactics, success, roi } = data;
+  const { theme, hero, capabilities, included, tactics, success, roi, ctaData } = data;
 
   return (
     <div className="w-full font-sans">
@@ -437,6 +483,7 @@ export default function ServicePage({ data }) {
       <TacticsSection tactics={tactics} theme={theme} />
       <SuccessSection success={success} theme={theme} />
       <ROISection roi={roi} theme={theme} />
+      <CTASection {...ctaData} />
     </div>
   );
 }

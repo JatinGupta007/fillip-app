@@ -71,7 +71,7 @@ const avatarLabels = ["YC", "TS", "500", "PH"];
 
 export default function InvestorsSection() {
   return (
-    <section className="w-full bg-white py-20 overflow-x-hidden px-4 md:px-8 lg:px-12">
+    <section className="w-full bg-white py-20 overflow-x-hidden px-4 md:px-8 xl:px-12">
       {/* Header */}
       <div className="max-w-3xl mx-auto px-6 text-center mb-14">
         {/* Badge */}

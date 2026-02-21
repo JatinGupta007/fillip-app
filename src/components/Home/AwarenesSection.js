@@ -119,7 +119,7 @@ export default function AwarenessSection() {
   const [activeStage, setActiveStage] = useState(0);
 
   return (
-    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f5f0ff] py-20 px-4 md:px-8 overflow-hidden">
+    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f5f0ff] py-20 overflow-hidden px-4 md:px-8 xl:px-12">
       {/* ─── PART 1: From Awareness to Install ─── */}
       <div className="max-w-7xl mx-auto mb-24">
         {/* Badge */}
