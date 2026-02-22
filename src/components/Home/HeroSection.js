@@ -37,7 +37,7 @@ export default function HeroSection() {
 
           {/* Headline */}
           <div>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-gray-900">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900">
               Grow Your App to
             </h1>
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-linear-to-r from-[#00b4d8] via-[#6c63ff] to-[#a855f7] bg-clip-text text-transparent">
