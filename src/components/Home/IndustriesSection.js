@@ -169,14 +169,14 @@ const stats = [
 
 export default function IndustriesSection() {
   return (
-    <section className="w-full bg-linear-to-b from-white via-[#f5f8ff] to-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-b from-white via-[#f5f8ff] to-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
           <FiTarget className="text-purple-400 text-[14px]" />
           15 Specialized Industries
         </div>
-        <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           Industries We{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Serve
@@ -208,7 +208,7 @@ export default function IndustriesSection() {
                 key={i}
                 className="flex flex-col items-center justify-center py-8 px-4 text-center"
               >
-                <p className="text-3xl lg:text-4xl font-black text-white">
+                <p className="text-3xl lg:text-4xl font-bold text-white">
                   {stat.value}
                 </p>
                 <p className="text-white/80 text-xs font-semibold mt-1">
@@ -227,7 +227,7 @@ export default function IndustriesSection() {
           <div className="absolute top-[-40px] left-[-40px] w-52 h-52 bg-blue-500 opacity-10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-[-30px] right-[-30px] w-44 h-44 bg-pink-500 opacity-10 rounded-full blur-3xl pointer-events-none" />
 
-          <h3 className="relative z-10 text-2xl lg:text-3xl font-black text-white">
+          <h3 className="relative z-10 text-2xl lg:text-3xl font-bold text-white">
             Don't see your category?
           </h3>
           <p className="relative z-10 mt-3 text-gray-400 text-sm leading-relaxed max-w-md mx-auto">
@@ -281,7 +281,7 @@ function IndustryCard({ industry }) {
 
       {/* Name */}
       <p
-        className={`font-black text-sm leading-tight transition-colors duration-300 ${
+        className={`font-bold text-sm leading-tight transition-colors duration-300 ${
           hovered ? "text-gray-900" : "text-gray-800"
         }`}
       >

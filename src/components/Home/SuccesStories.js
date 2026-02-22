@@ -153,14 +153,14 @@ const stories = [
 
 export default function SuccessStories() {
   return (
-    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-7">
           <SlBadge className="text-purple-400 text-[14px]" />
           Proven Results
         </div>
-        <h2 className="text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+        <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
           Success{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Stories
@@ -182,7 +182,7 @@ export default function SuccessStories() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
           <div>
-            <p className="text-gray-900 font-black text-lg">
+            <p className="text-gray-900 font-bold text-lg">
               Want results like these?
             </p>
             <p className="text-gray-500 text-sm mt-0.5">
@@ -217,7 +217,7 @@ function StoryCard({ story }) {
 
         {/* Text over image */}
         <div className="absolute bottom-0 left-0 p-5 z-10">
-          <h3 className="text-white text-xl font-black">{story.name}</h3>
+          <h3 className="text-white text-xl font-bold">{story.name}</h3>
           <p className="text-blue-300 text-xs font-semibold mt-0.5">
             {story.category}
           </p>
@@ -241,7 +241,7 @@ function StoryCard({ story }) {
               <div className="flex items-center gap-1 text-gray-400">
                 {stat.icon}
               </div>
-              <p className={`text-xl font-black ${stat.valueColor}`}>
+              <p className={`text-xl font-bold ${stat.valueColor}`}>
                 {stat.value}
               </p>
               <p className="text-gray-500 text-[10px] font-semibold">

@@ -35,11 +35,10 @@ export default function CommunityHeroSection({
   primaryBtn,
   secondaryBtn,
   trustIcons,
-  
 }) {
   return (
     <section
-      className="relative w-full overflow-hidden py-24 px-4 sm:px-6"
+      className="relative w-full overflow-hidden py-20 px-5 sm:px-10 xl:px-16"
       style={{ background: bg }}
     >
       {/* Bottom Left Soft Pink-Lilac Blob */}
@@ -48,7 +47,7 @@ export default function CommunityHeroSection({
       {/* Top Right Soft Sky Blue Blob */}
       <div className="absolute top-8 right-10 w-96 h-96 rounded-3xl bg-cyan-300 opacity-35 blur-3xl pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center gap-7">
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center gap-5">
         {/* ── Optional Badge ── */}
         {badge && (
           <div className="inline-flex items-center gap-2 bg-linear-to-br from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200">
@@ -62,7 +61,7 @@ export default function CommunityHeroSection({
         {/* ── Headline ── */}
         <div className="flex flex-col items-center gap-0 leading-none">
           {/* Line 1 — dark */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
             {headlineBlack} {/* Inline colored word on same line */}
             <span
               className="bg-clip-text text-transparent"
@@ -74,7 +73,7 @@ export default function CommunityHeroSection({
 
           {/* Line 2 — full gradient */}
           <h1
-            className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black bg-clip-text text-transparent leading-tight tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-5xl xl:text-7xl font-bold bg-clip-text text-transparent leading-tight tracking-tight"
             style={{ backgroundImage: headlineLine3Gradient }}
           >
             {headlineLine3}
@@ -82,7 +81,7 @@ export default function CommunityHeroSection({
         </div>
 
         {/* ── Subtext ── */}
-        <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-2xl">
+        <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-4xl">
           {subtext}
         </p>
 

@@ -71,7 +71,7 @@ const avatarLabels = ["YC", "TS", "500", "PH"];
 
 export default function InvestorsSection() {
   return (
-    <section className="w-full bg-white py-20 overflow-x-hidden px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-white py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-3xl mx-auto px-6 text-center mb-14">
         {/* Badge */}
@@ -80,10 +80,10 @@ export default function InvestorsSection() {
           TRUSTED BY INDUSTRY LEADERS
         </div>
 
-        <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           Backed by the world's top
         </h2>
-        <h2 className="text-4xl lg:text-5xl font-black bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
+        <h2 className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
           investors &amp; accelerators
         </h2>
 
@@ -105,7 +105,7 @@ export default function InvestorsSection() {
             >
               {s.icon}
             </div>
-            <p className={`text-3xl font-black ${s.valueColor}`}>{s.value}</p>
+            <p className={`text-3xl font-bold ${s.valueColor}`}>{s.value}</p>
             <p className="text-gray-800 font-bold text-sm mt-1">{s.label}</p>
             <p className="text-gray-400 text-xs mt-0.5">{s.sub}</p>
           </div>
@@ -161,14 +161,14 @@ export default function InvestorsSection() {
               {avatarLabels.map((label, i) => (
                 <div
                   key={i}
-                  className={`w-8 h-8 rounded-full ${avatarColors[i]} flex items-center justify-center text-white text-[10px] font-black border-2 border-white shadow`}
+                  className={`w-8 h-8 rounded-full ${avatarColors[i]} flex items-center justify-center text-white text-[10px] font-bold border-2 border-white shadow`}
                 >
                   {label}
                 </div>
               ))}
             </div>
             <div>
-              <p className="text-sm font-black text-gray-900">
+              <p className="text-sm font-bold text-gray-900">
                 500+ Funded Startups
               </p>
               <p className="text-xs text-gray-400">
@@ -185,7 +185,7 @@ export default function InvestorsSection() {
               <FiAward className="text-white text-xl" />
             </div>
             <div>
-              <p className="text-sm font-black text-gray-900">
+              <p className="text-sm font-bold text-gray-900">
                 Official Partner
               </p>
               <p className="text-xs text-gray-400">
@@ -202,7 +202,7 @@ export default function InvestorsSection() {
               <MdTrendingUp className="text-white text-xl" />
             </div>
             <div>
-              <p className="text-sm font-black text-gray-900">
+              <p className="text-sm font-bold text-gray-900">
                 97% Success Rate
               </p>
               <p className="text-xs text-gray-400">
@@ -245,7 +245,7 @@ export default function InvestorsSection() {
 function PartnerCard({ name, sub, color }) {
   return (
     <div className="bg-white border border-gray-100 rounded-2xl px-9 py-7 shadow-sm flex flex-col items-center justify-center min-w-42 hover:shadow-md transition-shadow duration-200">
-      <p className={`text-base font-black tracking-wide ${color}`}>{name}</p>
+      <p className={`text-base font-bold tracking-wide ${color}`}>{name}</p>
       <p className="text-xs text-gray-400 mt-0.5 font-medium">{sub}</p>
     </div>
   );

@@ -1,17 +1,19 @@
+import Image from "next/image";
+
 import CareersHeroSection from "@/components/CareersHeroSection";
 import { TbSparkles } from "react-icons/tb";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-import { FaRegHeart } from "react-icons/fa";
-import { FiTarget } from "react-icons/fi";
+import { ImPower } from "react-icons/im";
+import { IoPeople } from "react-icons/io5";
 import {
   RiFocus3Line, // instead of RiTargetLine
   RiLineChartLine,
   RiGroupLine,
   RiMedalLine,
 } from "react-icons/ri";
+
 import CTASection from "@/components/CTASection";
+
 import { CapabilitiesSection } from "@/components/Services";
-import Image from "next/image";
 
 export const heroData = {
   bg: "linear-gradient(135deg, #F0F9FF 0%, #FAF5FF 50%, #FFFFFF 100%)",
@@ -95,25 +97,25 @@ export const communityData = {
 
     cards: [
       {
-        icon: "👥",
+        icon: <IoPeople className="text-white" />,
         iconBg: "linear-gradient(135deg, #06b6d4, #0891b2)", // teal
         title: "Network with Peers",
         desc: "Connect with 5,000+ app founders, marketers, and growth professionals building successful mobile apps.",
       },
       {
-        icon: "⚡",
+        icon: <ImPower className="text-white" />,
         iconBg: "linear-gradient(135deg, #a855f7, #ec4899)", // purple-pink
         title: "Real-Time Insights",
         desc: "Get instant feedback on campaigns, creative assets, and growth strategies from experienced performers.",
       },
       {
-        icon: "📈",
+        icon: <RiLineChartLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #10b981, #059669)", // green
         title: "Exclusive Content",
         desc: "Access weekly AMAs, case study deep-dives, and live campaign breakdowns not available anywhere else.",
       },
       {
-        icon: "🔓",
+        icon: <RiMedalLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #f97316, #ef4444)", // orange-red
         title: "Early Access",
         desc: "Be first to know about new features, beta programs, industry tools, and partnership opportunities.",
@@ -272,7 +274,10 @@ export default function AboutPage() {
     <main>
       <CareersHeroSection {...heroData} />
       <StatsAndStorySection {...statsStory} />
-      <CapabilitiesSection capabilities={communityData.capabilities} theme={communityData.theme} />
+      <CapabilitiesSection
+        capabilities={communityData.capabilities}
+        theme={communityData.theme}
+      />
       <JourneyTimelineSection {...journey} />
       <MeetTheTeamSection {...team} />
       <CTASection {...ctaData} />
@@ -280,17 +285,16 @@ export default function AboutPage() {
   );
 }
 
-
 /* ════════════════════════════════════════
    STATS + OUR STORY SECTION
 ════════════════════════════════════════ */
-export function StatsAndStorySection({ stats, story, bg = '#f8fafc' }) {
+export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
   return (
     <>
       {/* Stats strip */}
-      <section className="w-full py-16 px-4 md:px-8 xl:px-12 bg-white">
+      <section className="w-full py-16 px-5 md:px-10 xl:px-16 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {stats?.map((stat, i) => (
               <div
                 key={i}
@@ -306,7 +310,7 @@ export function StatsAndStorySection({ stats, story, bg = '#f8fafc' }) {
                 >
                   <span className="text-white text-xl">{stat.icon}</span>
                 </div>
-                <p className="text-2xl sm:text-3xl font-black text-gray-900 leading-none mb-1">
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900 leading-none mb-1">
                   {stat.value}
                 </p>
                 <p className="text-gray-500 text-sm font-medium">
@@ -319,10 +323,13 @@ export function StatsAndStorySection({ stats, story, bg = '#f8fafc' }) {
       </section>
 
       {/* Our Story */}
-      <section className="w-full py-20 px-4 sm:px-6" style={{ background: bg }}>
+      <section
+        className="w-full py-20 px-5 sm:px-10 xl:px-16"
+        style={{ background: bg }}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
               {story?.title ?? "Our Story"}
             </h2>
             {story?.subtitle && (
@@ -345,15 +352,20 @@ export function StatsAndStorySection({ stats, story, bg = '#f8fafc' }) {
 /* ════════════════════════════════════════
    JOURNEY TIMELINE SECTION
 ════════════════════════════════════════ */
-export function JourneyTimelineSection({ title, subtitle, milestones = [], bg = '#f8fafc' }) {
+export function JourneyTimelineSection({
+  title,
+  subtitle,
+  milestones = [],
+  bg = "#f8fafc",
+}) {
   return (
     <section
-      className="w-full py-20 px-4 md:px-8 xl:px-12"
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
             {title}
           </h2>
           {subtitle && (
@@ -371,7 +383,7 @@ export function JourneyTimelineSection({ title, subtitle, milestones = [], bg = 
               <div key={i} className="flex items-start gap-6 group">
                 {/* Year badge */}
                 <div
-                  className="shrink-0 w-[68px] h-[68px] rounded-2xl flex items-center justify-center font-black text-white text-sm shadow-lg group-hover:scale-110 transition-transform duration-200 z-10"
+                  className="shrink-0 w-[68px] h-[68px] rounded-2xl flex items-center justify-center font-bold text-white text-sm shadow-lg group-hover:scale-110 transition-transform duration-200 z-10"
                   style={{
                     background:
                       m.badgeBg ?? "linear-gradient(135deg, #38bdf8, #0ea5e9)",
@@ -382,7 +394,7 @@ export function JourneyTimelineSection({ title, subtitle, milestones = [], bg = 
 
                 {/* Card */}
                 <div className="flex-1 bg-white border border-gray-100 rounded-2xl px-6 py-5 shadow-sm hover:shadow-lg hover:border-sky-100 transition-all duration-300">
-                  <h3 className="text-base font-black text-gray-900 mb-1">
+                  <h3 className="text-base font-bold text-gray-900 mb-1">
                     {m.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed">
@@ -401,15 +413,20 @@ export function JourneyTimelineSection({ title, subtitle, milestones = [], bg = 
 /* ════════════════════════════════════════
    MEET THE TEAM SECTION
 ════════════════════════════════════════ */
-export function MeetTheTeamSection({ title, subtitle, members = [], bg = '#ffffff' }) {
+export function MeetTheTeamSection({
+  title,
+  subtitle,
+  members = [],
+  bg = "#ffffff",
+}) {
   return (
     <section
-      className="w-full py-20 px-4 md:px-8 xl:px-12"
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
             {title}
           </h2>
           {subtitle && (
@@ -445,7 +462,7 @@ export function MeetTheTeamSection({ title, subtitle, members = [], bg = '#fffff
                         "linear-gradient(135deg, #e0f2fe, #bae6fd)",
                     }}
                   >
-                    <span className="text-6xl font-black text-sky-300 select-none">
+                    <span className="text-6xl font-bold text-sky-300 select-none">
                       {m.name.charAt(0)}
                     </span>
                   </div>
@@ -454,7 +471,7 @@ export function MeetTheTeamSection({ title, subtitle, members = [], bg = '#fffff
 
               {/* Info */}
               <div className="p-5">
-                <h3 className="text-base font-black text-gray-900 mb-0.5">
+                <h3 className="text-base font-bold text-gray-900 mb-0.5">
                   {m.name}
                 </h3>
                 <p
@@ -472,4 +489,3 @@ export function MeetTheTeamSection({ title, subtitle, members = [], bg = '#fffff
     </section>
   );
 }
-

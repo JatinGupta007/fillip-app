@@ -45,18 +45,18 @@ export default function RealResultsSection() {
 
             {/* Headline */}
             <div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
                 Real Results from
               </h1>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight tracking-tight bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 Real Apps
               </h1>
             </div>
 
             {/* Subtext */}
             <p className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-3xl">
-              See how we&apos;ve helped apps across every industry scale from zero to
-              millions of users with measurable, sustainable growth.
+              See how we&apos;ve helped apps across every industry scale from
+              zero to millions of users with measurable, sustainable growth.
             </p>
 
             {/* Stats */}
@@ -66,7 +66,7 @@ export default function RealResultsSection() {
                   key={i}
                   className="flex flex-col items-center gap-1 group cursor-default"
                 >
-                  <p className="text-3xl sm:text-4xl font-black text-white group-hover:bg-linear-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <p className="text-3xl sm:text-4xl font-bold text-white group-hover:bg-linear-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {stat.value}
                   </p>
                   <p className="text-gray-400 text-sm font-semibold">
@@ -79,9 +79,9 @@ export default function RealResultsSection() {
         </div>
 
         {/* ── Filter Tabs Bar ── */}
-        <div className="w-full bg-white border-b border-gray-100 shadow-sm px-6 py-4">
+        <div className="w-full bg-white border-b border-gray-100 shadow-sm px-5 md:px-10 xl:px-16 py-10">
           <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
-            <div className="flex gap-12 min-w-max sm:min-w-0 sm:flex-wrap">
+            <div className="flex gap-10 min-w-max sm:min-w-0 sm:flex-wrap">
               {filters.map((filter) => (
                 <button
                   key={filter}

@@ -54,10 +54,10 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="w-full bg-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <h2 className="text-4xl lg:text-5xl font-black text-gray-900">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
           How We{" "}
           <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             Work
@@ -93,7 +93,7 @@ export default function HowWeWork() {
 
                 {/* Title */}
                 <div>
-                  <h3 className="text-lg font-black text-gray-900">
+                  <h3 className="text-lg font-bold text-gray-900">
                     {step.title}
                   </h3>
                   <p className="text-gray-500 text-sm mt-1 leading-relaxed">
@@ -135,7 +135,7 @@ export default function HowWeWork() {
           <div className="absolute -top-10 -left-10 w-48 h-48 bg-blue-500 opacity-10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500 opacity-10 rounded-full blur-3xl pointer-events-none" />
 
-          <h3 className="text-2xl lg:text-3xl font-black text-white relative z-10">
+          <h3 className="text-2xl lg:text-3xl font-bold text-white relative z-10">
             Ready to start your growth journey?
           </h3>
           <p className="mt-3 text-gray-400 text-sm relative z-10">

@@ -204,7 +204,7 @@ export const ServicesData = {
   MoFu_Marketing: {
     theme: {
       accent: "linear-gradient(135deg, #0084D1, #0092B8)",
-      heroBg: "linear-gradient(0deg, #F0F9FF 20%, #ECFEFF 40%, #FFFFFF 100%)",
+      heroBg: "linear-gradient(90deg, #F0F9FF 50%, #ECFEFF 50%, #FFFFFF 100%)",
       blob1: "#38bdf8",
       blob2: "#3b82f6",
       blob3: "#0ea5e9",

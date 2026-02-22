@@ -42,7 +42,7 @@ export default function GrowthGuideSection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0d1b35] via-[#0f2040] to-[#0a1628] py-20 px-4 md:px-8 xl:px-12">
+    <section className="relative w-full overflow-hidden bg-linear-to-br from-[#0d1b35] via-[#0f2040] to-[#0a1628] py-20 px-5 md:px-10 xl:px-16">
       {/* Background glow blobs */}
       <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 -right-15 w-72 h-72 bg-purple-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
@@ -70,7 +70,7 @@ export default function GrowthGuideSection() {
                 <TbSparkles className="text-yellow-300" />
                 FREE GUIDE
               </div>
-              <h3 className="text-white text-2xl font-black leading-tight mb-2">
+              <h3 className="text-white text-2xl font-bold leading-tight mb-2">
                 The Complete App
                 <br />
                 Growth Playbook
@@ -98,16 +98,16 @@ export default function GrowthGuideSection() {
             {/* Bottom stats strip */}
             <div className="bg-linear-to-r from-white/10 to-white/5 backdrop-blur px-6 py-4 flex items-center justify-between border-t border-white/20">
               <div className="text-center">
-                <p className="text-white font-black text-xl">50+</p>
+                <p className="text-white font-bold text-xl">50+</p>
                 <p className="text-white/70 text-xs">Pages</p>
               </div>
               <div className="text-center">
-                <p className="text-white font-black text-xl">20+</p>
+                <p className="text-white font-bold text-xl">20+</p>
                 <p className="text-white/70 text-xs">Case Studies</p>
               </div>
               <div className="flex items-center gap-1.5">
                 <BsStarFill className="text-yellow-400 text-sm" />
-                <span className="text-white font-black text-xl">4.9</span>
+                <span className="text-white font-bold text-xl">4.9</span>
               </div>
             </div>
           </div>
@@ -128,10 +128,10 @@ export default function GrowthGuideSection() {
 
           {/* Headline */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
               Download Your Free
             </h2>
-            <h2 className="text-4xl lg:text-5xl font-black bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight">
               Growth Guide
             </h2>
           </div>
@@ -149,7 +149,7 @@ export default function GrowthGuideSection() {
               {avatarLabels.map((label, i) => (
                 <div
                   key={i}
-                  className={`w-9 h-9 rounded-full bg-linear-to-br ${avatarColors[i]} flex items-center justify-center text-white text-xs font-black border-2 border-[#0f2040] shadow`}
+                  className={`w-9 h-9 rounded-full bg-linear-to-br ${avatarColors[i]} flex items-center justify-center text-white text-xs font-bold border-2 border-[#0f2040] shadow`}
                 >
                   {label}
                 </div>
@@ -163,7 +163,7 @@ export default function GrowthGuideSection() {
                 ))}
               </div>
               <p className="text-gray-300 text-xs">
-                <span className="text-white font-black">10,000+</span> founders
+                <span className="text-white font-bold">10,000+</span> founders
                 already downloaded
               </p>
             </div>
@@ -203,7 +203,7 @@ export default function GrowthGuideSection() {
 
           {/* What You'll Learn */}
           <div className="bg-[#1a2a4a]/40 border border-[#2a3a5a] rounded-2xl p-5">
-            <p className="flex items-center gap-2 text-white font-black text-sm mb-4">
+            <p className="flex items-center gap-2 text-white font-bold text-sm mb-4">
               <TbSparkles className="text-yellow-400" />
               What You'll Learn:
             </p>

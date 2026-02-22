@@ -119,7 +119,7 @@ export default function AwarenessSection() {
   const [activeStage, setActiveStage] = useState(0);
 
   return (
-    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f5f0ff] py-20 overflow-hidden px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f5f0ff] py-20 overflow-hidden px-5 md:px-10 xl:px-16">
       {/* ─── PART 1: From Awareness to Install ─── */}
       <div className="max-w-7xl mx-auto mb-24">
         {/* Badge */}
@@ -132,7 +132,7 @@ export default function AwarenessSection() {
 
         {/* Headline */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
             From{" "}
             <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               Awareness
@@ -193,7 +193,7 @@ export default function AwarenessSection() {
                 <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-md p-5">
                   <div className="flex items-center gap-2 mb-3">
                     <span
-                      className={`${group.tagColor} text-white text-xs font-black px-2 py-0.5 rounded-md`}
+                      className={`${group.tagColor} text-white text-xs font-bold px-2 py-0.5 rounded-md`}
                     >
                       {group.tag}
                     </span>
@@ -243,7 +243,7 @@ export default function AwarenessSection() {
         {/* Bottom CTA bar */}
         <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm max-w-4xl mx-auto">
           <div>
-            <p className="text-gray-900 font-black text-base">
+            <p className="text-gray-900 font-bold text-base">
               Need a custom marketing strategy?
             </p>
             <p className="text-gray-500 text-sm mt-0.5">
@@ -288,7 +288,7 @@ function FunnelCard({ stage, onClick }) {
 
       {/* Tag badge */}
       <div
-        className={`inline-block text-xs font-black px-2 py-0.5 rounded-md mb-3
+        className={`inline-block text-xs font-bold px-2 py-0.5 rounded-md mb-3
           ${hovered ? "bg-white/30 text-white" : "bg-gray-100 text-gray-500"}`}
       >
         {stage.tag}
@@ -296,7 +296,7 @@ function FunnelCard({ stage, onClick }) {
 
       {/* Title */}
       <h3
-        className={`text-lg font-black ${hovered ? "text-white" : "text-gray-900"}`}
+        className={`text-lg font-bold ${hovered ? "text-white" : "text-gray-900"}`}
       >
         {stage.title}
       </h3>
@@ -336,7 +336,7 @@ function ServiceCard({ card }) {
       </div>
 
       <h3
-        className={`text-base font-black mb-1 ${hovered ? "text-white" : "text-gray-900"}`}
+        className={`text-base font-bold mb-1 ${hovered ? "text-white" : "text-gray-900"}`}
       >
         {card.title}
       </h3>

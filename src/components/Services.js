@@ -53,8 +53,7 @@ export function HeroSection({ hero, theme }) {
         {/* Headline */}
         <div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
-            {hero.headlineBlack}
-            {" "}
+            {hero.headlineBlack}{" "}
             <span
               className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
               style={{
@@ -123,7 +122,7 @@ export function HeroSection({ hero, theme }) {
 ═══════════════════════════════════ */
 export function CapabilitiesSection({ capabilities, theme }) {
   return (
-    <section className="w-full bg-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
@@ -155,7 +154,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
               >
                 <span className="text-white text-2xl">{card.icon}</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {card.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">
@@ -174,7 +173,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
 ═══════════════════════════════════ */
 function IncludedSection({ included, theme }) {
   return (
-    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
           {included.title}{" "}
@@ -189,7 +188,7 @@ function IncludedSection({ included, theme }) {
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {included.items.map((item, i) => (
             <div
               key={i}
@@ -217,10 +216,10 @@ function IncludedSection({ included, theme }) {
 ═══════════════════════════════════ */
 function TacticsSection({ tactics, theme }) {
   return (
-    <section className="w-full bg-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {tactics.title}{" "}
             <span
               style={{
@@ -248,7 +247,7 @@ function TacticsSection({ tactics, theme }) {
               <span className="text-4xl group-hover:scale-110 transition-transform duration-200">
                 {item.emoji}
               </span>
-              <p className="text-gray-900 font-black text-xs leading-tight">
+              <p className="text-gray-900 font-bold text-xs leading-tight">
                 {item.name}
               </p>
               {item.sub && (
@@ -272,7 +271,7 @@ function TacticsSection({ tactics, theme }) {
 ═══════════════════════════════════ */
 function SuccessSection({ success, theme }) {
   return (
-    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
           {success.title}{" "}
@@ -287,7 +286,7 @@ function SuccessSection({ success, theme }) {
           </span>
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {success.cards.map((card, i) => (
             <div
               key={i}
@@ -295,11 +294,9 @@ function SuccessSection({ success, theme }) {
             >
               {/* Header */}
               <div>
-                <h3 className="text-xl font-black text-gray-900">
-                  {card.name}
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900">{card.name}</h3>
                 <span
-                  className="inline-block text-white text-xs font-black px-3 py-1 rounded-full mt-1"
+                  className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mt-1"
                   style={{ background: card.tagColor }}
                 >
                   {card.tag}
@@ -311,20 +308,20 @@ function SuccessSection({ success, theme }) {
                 <div className="flex flex-col gap-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-400">Reach</span>
-                    <span className="font-black text-gray-900">
+                    <span className="font-bold text-gray-900">
                       {card.reach}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Engagement</span>
-                    <span className="font-black text-gray-900">
+                    <span className="font-bold text-gray-900">
                       {card.engagement}
                     </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">Result</span>
                     <span
-                      className="font-black"
+                      className="font-bold"
                       style={{ color: card.resultColor }}
                     >
                       {card.result}
@@ -337,10 +334,10 @@ function SuccessSection({ success, theme }) {
               {card.beforeCPI && (
                 <div className="flex flex-col gap-3">
                   <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-                    <p className="text-red-500 text-[10px] font-black tracking-widest mb-1">
+                    <p className="text-red-500 text-[10px] font-bold tracking-widest mb-1">
                       BEFORE
                     </p>
-                    <p className="text-red-500 text-2xl font-black">
+                    <p className="text-red-500 text-2xl font-bold">
                       {card.beforeCPI}
                     </p>
                   </div>
@@ -348,15 +345,15 @@ function SuccessSection({ success, theme }) {
                     →
                   </div>
                   <div className="bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3">
-                    <p className="text-emerald-500 text-[10px] font-black tracking-widest mb-1">
+                    <p className="text-emerald-500 text-[10px] font-bold tracking-widest mb-1">
                       AFTER
                     </p>
-                    <p className="text-emerald-500 text-2xl font-black">
+                    <p className="text-emerald-500 text-2xl font-bold">
                       {card.afterCPI}
                     </p>
                   </div>
                   <div
-                    className="rounded-xl py-3 text-center text-white font-black"
+                    className="rounded-xl py-3 text-center text-white font-bold"
                     style={{ background: card.resultBg }}
                   >
                     <p className="text-lg">{card.reduction}</p>
@@ -375,7 +372,7 @@ function SuccessSection({ success, theme }) {
                         {card.metricFrom}
                       </span>
                       <span className="text-gray-300">→</span>
-                      <span className="text-gray-900 font-black text-base">
+                      <span className="text-gray-900 font-bold text-base">
                         {card.metricTo}
                       </span>
                     </div>
@@ -384,12 +381,12 @@ function SuccessSection({ success, theme }) {
                     className="rounded-xl py-4 text-center text-white"
                     style={{ background: card.improvementBg }}
                   >
-                    <p className="text-2xl font-black">{card.improvement}</p>
+                    <p className="text-2xl font-bold">{card.improvement}</p>
                     <p className="text-xs opacity-80">Improvement</p>
                   </div>
                   <div className="bg-orange-50 border border-orange-100 rounded-xl px-4 py-3 text-center">
                     <p
-                      className="font-black text-base"
+                      className="font-bold text-base"
                       style={{ color: card.mrrColor }}
                     >
                       {card.mrr}
@@ -411,8 +408,8 @@ function SuccessSection({ success, theme }) {
 ═══════════════════════════════════ */
 function ROISection({ roi, theme }) {
   return (
-    <section className="w-full py-14 px-4 md:px-8 xl:px-12 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-14 px-5 md:px-10 xl:px-16 bg-white">
+      <div className="max-w-7xl mx-auto">
         <div
           className="relative overflow-hidden rounded-3xl px-8 py-14 text-center shadow-2xl"
           style={{ background: theme.roiBg }}
@@ -433,7 +430,7 @@ function ROISection({ roi, theme }) {
             {roi.badge}
           </div>
 
-          <h3 className="relative z-10 text-2xl sm:text-3xl font-black text-white mb-3">
+          <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white mb-3">
             {roi.title}
           </h3>
           <p className="relative z-10 text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-8">
@@ -448,7 +445,7 @@ function ROISection({ roi, theme }) {
                 className="rounded-2xl px-4 py-5 hover:scale-105 transition-transform duration-200 cursor-default"
                 style={{ background: theme.roiCardBg }}
               >
-                <p className="text-white text-2xl sm:text-3xl font-black">
+                <p className="text-white text-2xl sm:text-3xl font-bold">
                   {stat.value}
                 </p>
                 <p className="text-white/60 text-xs mt-1">{stat.label}</p>
@@ -458,7 +455,7 @@ function ROISection({ roi, theme }) {
 
           {/* CTA */}
           <button
-            className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-black text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+            className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{ color: theme.roiBg }}
           >
             {roi.cta} <FiArrowRight />
@@ -473,7 +470,16 @@ function ROISection({ roi, theme }) {
    MAIN REUSABLE PAGE COMPONENT
 ═══════════════════════════════════ */
 export default function ServicePage({ data }) {
-  const { theme, hero, capabilities, included, tactics, success, roi, ctaData } = data;
+  const {
+    theme,
+    hero,
+    capabilities,
+    included,
+    tactics,
+    success,
+    roi,
+    ctaData,
+  } = data;
 
   return (
     <div className="w-full font-sans">

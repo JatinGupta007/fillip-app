@@ -292,11 +292,11 @@ export function OpenPositionsSection({
       : positions.filter((p) => p.department === active);
 
   return (
-    <section className="w-full py-20 px-6" style={{ background: bg }}>
+    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
             {title}
           </h2>
           {subtitle && (
@@ -305,7 +305,7 @@ export function OpenPositionsSection({
         </div>
 
         {/* Filter tabs */}
-        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+        <div className="flex flex-wrap gap-5 mb-8 justify-center">
           {tabs.map((tab, i) => (
             <button
               key={i}
@@ -332,7 +332,7 @@ export function OpenPositionsSection({
               {/* Top row */}
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h3 className="text-xl font-black text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {job.title}
                   </h3>
                   <span
@@ -375,7 +375,7 @@ export function OpenPositionsSection({
               {/* Requirements */}
               {job.requirements?.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs font-black text-gray-700 mb-2">
+                  <p className="text-xs font-bold text-gray-700 mb-2">
                     Requirements:
                   </p>
                   <ul className="flex flex-col gap-1.5">
@@ -410,11 +410,11 @@ export function WhyJoinSection({
   bg = "#ffffff",
 }) {
   return (
-    <section className="w-full py-20 px-6" style={{ background: bg }}>
+    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {title}
             {titleColored && (
               <span className="bg-linear-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
@@ -445,7 +445,7 @@ export function WhyJoinSection({
                 <span className="text-white text-2xl">{b.icon}</span>
               </div>
 
-              <h3 className="text-lg font-black text-gray-900 mb-2">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {b.title}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>

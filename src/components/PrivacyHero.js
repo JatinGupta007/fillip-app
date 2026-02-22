@@ -34,7 +34,7 @@ export default function PrivacyHeroSection({
 }) {
   return (
     <section
-      className="relative w-full overflow-hidden py-20 px-6"
+      className="relative w-full overflow-hidden py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg.gradient }}
     >
       {/* Background blobs */}
@@ -58,12 +58,14 @@ export default function PrivacyHeroSection({
             color: badge.textColor,
           }}
         >
-          <span className={`text-base font-semibold ${badge.iconColor}`}>{badge.icon}</span>
+          <span className={`text-base font-semibold ${badge.iconColor}`}>
+            {badge.icon}
+          </span>
           {badge.text}
         </div>
 
         {/* ── Headline ── */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[#0d1f3c] leading-tight tracking-tight">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
           {headline}
         </h1>
 
@@ -119,7 +121,3 @@ export default function PrivacyHeroSection({
     </section>
   );
 }
-
-
-    
-

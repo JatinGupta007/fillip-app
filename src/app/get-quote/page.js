@@ -289,7 +289,7 @@ function Field({ field, value, onChange }) {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="text-sm font-black text-gray-700 flex items-center gap-1.5">
+      <label className="text-sm font-bold text-gray-700 flex items-center gap-1.5">
         <span className="text-sky-400 text-sm">{field.icon}</span>
         {field.label}
         {field.required && <span className="text-sky-400">*</span>}
@@ -353,7 +353,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-20 px-4 sm:px-6"
+      className="relative w-full overflow-hidden py-20 px-5 sm:px-10 xl:px-16"
       style={{ background: config.bg }}
     >
       {/* Blobs */}
@@ -382,7 +382,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d1f3c] text-center leading-tight mb-4">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center leading-tight mb-4">
           {config.headlineBlack}{" "}
           <span
             className="bg-clip-text text-transparent"
@@ -392,12 +392,12 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
           </span>
         </h1>
 
-        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-10">
+        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-20">
           {config.subtext}
         </p>
 
         {/* Stepper */}
-        <div className="flex items-center justify-center gap-0 mb-8 w-full max-w-2xl">
+        <div className="flex items-center justify-center gap-0 mb-10 w-full max-w-4xl">
           {config.steps.map((s, i) => {
             const isActive = i === step;
             const isDone = i < step;
@@ -422,7 +422,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
                     {isDone ? <FiCheck className="text-xl" /> : s.icon}
                   </button>
                   <span
-                    className={`text-xs font-black text-center whitespace-nowrap ${isActive ? "text-sky-500" : "text-gray-400"}`}
+                    className={`text-xs font-bold text-center whitespace-nowrap ${isActive ? "text-sky-500" : "text-gray-400"}`}
                   >
                     {s.label}
                   </span>
@@ -440,7 +440,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         </div>
 
         {/* Form card */}
-        <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
           {submitted ? (
             <div className="flex flex-col items-center text-center py-12 gap-4">
               <div
@@ -451,7 +451,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
               >
                 <FiCheck className="text-white text-4xl" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Quote Request Submitted!
               </h3>
               <p className="text-gray-500 text-base max-w-sm leading-relaxed">
@@ -473,7 +473,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
             <>
               {/* Step title */}
               <div className="text-center mb-7">
-                <h2 className="text-lg sm:text-xl font-black text-gray-900">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
                   {stepData.title}
                 </h2>
                 {stepData.subtitle && (
@@ -506,7 +506,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
               <div className="flex justify-end">
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2.5 text-white font-black text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
+                  className="inline-flex items-center gap-2.5 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
                   style={{
                     background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
                   }}
@@ -520,7 +520,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         </div>
 
         {/* Trust badges */}
-        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+        <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
           {config.trustBadges.map((b, i) => (
             <div
               key={i}
@@ -533,7 +533,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
                 <span className="text-white text-xl">{b.icon}</span>
               </div>
               <div>
-                <p className="text-gray-900 font-black text-sm">{b.title}</p>
+                <p className="text-gray-900 font-bold text-sm">{b.title}</p>
                 <p className="text-gray-400 text-xs leading-snug">{b.desc}</p>
               </div>
             </div>

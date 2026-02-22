@@ -469,7 +469,7 @@ function MetricCard({ metric }) {
         <span className="text-gray-400">→</span>
         <span className="text-gray-800 font-bold">{metric.to}</span>
       </div>
-      <p className={`text-xl font-black ${metric.changeColor}`}>
+      <p className={`text-xl font-bold ${metric.changeColor}`}>
         {metric.change}
       </p>
     </div>
@@ -504,12 +504,10 @@ function CaseStudyCard({ data }) {
             <div className="flex items-center gap-3">
               <span className="text-4xl">{data.emoji}</span>
               <div>
-                <h3 className="text-xl font-black text-gray-900">
-                  {data.name}
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900">{data.name}</h3>
                 <div className="flex items-center gap-2 mt-1">
                   <span
-                    className={`${data.tagColor} text-white text-[10px] font-black px-2 py-0.5 rounded-md`}
+                    className={`${data.tagColor} text-white text-[10px] font-bold px-2 py-0.5 rounded-md`}
                   >
                     {data.tag}
                   </span>
@@ -523,7 +521,7 @@ function CaseStudyCard({ data }) {
           </div>
 
           {/* Headline */}
-          <p className="text-base font-black text-gray-900 leading-snug">
+          <p className="text-base font-bold text-gray-900 leading-snug">
             {data.headline}
           </p>
 
@@ -531,9 +529,9 @@ function CaseStudyCard({ data }) {
           <div className="bg-red-50 border border-red-100 rounded-2xl p-4">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
-                <span className="text-white text-xs font-black">!</span>
+                <span className="text-white text-xs font-bold">!</span>
               </div>
-              <span className="text-red-600 text-xs font-black tracking-widest">
+              <span className="text-red-600 text-xs font-bold tracking-widest">
                 CHALLENGE
               </span>
             </div>
@@ -550,7 +548,7 @@ function CaseStudyCard({ data }) {
               >
                 <FiCheck className="text-white text-xs" />
               </div>
-              <span className="text-emerald-600 text-xs font-black tracking-widest">
+              <span className="text-emerald-600 text-xs font-bold tracking-widest">
                 SOLUTION
               </span>
             </div>
@@ -563,14 +561,14 @@ function CaseStudyCard({ data }) {
           <div className="flex gap-6 border-t border-gray-100 pt-4">
             <div>
               <p className="text-gray-400 text-xs">Duration</p>
-              <p className="text-gray-900 font-black text-base">
+              <p className="text-gray-900 font-bold text-base">
                 {data.duration}
               </p>
             </div>
             <div className="w-px bg-gray-200" />
             <div>
               <p className="text-gray-400 text-xs">Investment</p>
-              <p className="text-gray-900 font-black text-base">
+              <p className="text-gray-900 font-bold text-base">
                 {data.investment}
               </p>
             </div>
@@ -581,7 +579,7 @@ function CaseStudyCard({ data }) {
         <div className="p-7 flex flex-col gap-5">
           {/* Key Metrics */}
           <div>
-            <p className="text-xs font-black text-gray-400 tracking-widest mb-3">
+            <p className="text-xs font-bold text-gray-400 tracking-widest mb-3">
               KEY METRICS
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -593,7 +591,7 @@ function CaseStudyCard({ data }) {
 
           {/* Key Results */}
           <div>
-            <p className="text-xs font-black text-gray-400 tracking-widest mb-3">
+            <p className="text-xs font-bold text-gray-400 tracking-widest mb-3">
               KEY RESULTS
             </p>
             <div className="flex flex-col gap-2">
@@ -621,7 +619,7 @@ function CaseStudyCard({ data }) {
               "{data.reviewText}"
             </p>
             <div className="border-t border-white/20 pt-3">
-              <p className="text-white font-black text-sm">{data.reviewer}</p>
+              <p className="text-white font-bold text-sm">{data.reviewer}</p>
               <p className="text-white/70 text-xs">{data.reviewerRole}</p>
             </div>
           </div>
@@ -634,7 +632,7 @@ function CaseStudyCard({ data }) {
 /* ─── MAIN EXPORT ─── */
 export default function CaseStudySection({ studies = caseStudies }) {
   return (
-    <section className="w-full bg-gradient-to-b from-[#f4f8fc] to-white py-14 px-6">
+    <section className="w-full bg-gradient-to-b from-[#f4f8fc] to-white py-14 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         {studies.map((study) => (
           <CaseStudyCard key={study.id} data={study} />

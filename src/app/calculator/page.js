@@ -2,7 +2,8 @@
 
 import CommunityHeroSection from "@/components/ComunityHeroSection";
 import CTASection from "@/components/CTASection";
-import { BsCheckCircleFill } from "react-icons/bs";
+
+import { FiCheckCircle } from "react-icons/fi";
 import { LuCalculator } from "react-icons/lu";
 
 const ctaData = {
@@ -66,17 +67,17 @@ export default function CalculatorPage() {
         trustIcons={[
           {
             trustText: "7 Free Calculators",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
           {
             trustText: "Real-Time Results",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
           {
             trustText: "Export & Share",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
         ]}
@@ -548,7 +549,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
   );
 
   return (
-    <div className="min-h-screen bg-[#f0f6fa] px-4 md:px-8 xl:px-12 py-16 mb-24">
+    <div className="min-h-screen bg-[#f0f6fa] px-5 md:px-10 xl:px-16 py-16 mb-24">
       <div className="max-w-7xl mx-auto">
         {/* ── Tab bar ── */}
         <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-hide justify-around">
@@ -570,7 +571,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
               </span>
               {tab.label}
               {tab.popular && (
-                <span className="bg-orange-500 text-white text-[9px] font-black px-2 py-0.5 rounded-full ml-1">
+                <span className="bg-orange-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full ml-1">
                   Popular
                 </span>
               )}
@@ -591,7 +592,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                 <span className="text-white text-2xl">{calc.icon}</span>
               </div>
               <div>
-                <h2 className="text-xl font-black text-gray-900">
+                <h2 className="text-xl font-bold text-gray-900">
                   {calc.title}
                 </h2>
                 <p className="text-gray-400 text-sm font-medium">
@@ -604,7 +605,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             <div className="flex flex-col gap-5">
               {calc.inputs.map((input) => (
                 <div key={input.id}>
-                  <label className="block text-sm font-black text-gray-700 mb-2">
+                  <label className="block text-sm font-bold text-gray-700 mb-2">
                     {input.label}
                   </label>
                   <div className="relative">
@@ -650,7 +651,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
               <p className="text-white/80 text-sm font-semibold mb-2">
                 {calc.resultLabel}
               </p>
-              <p className="text-white text-5xl font-black tracking-tight mb-3">
+              <p className="text-white text-5xl font-bold tracking-tight mb-3">
                 {formatResult(result, activeTab)}
               </p>
               {result > 0 && (
@@ -662,7 +663,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
 
             {/* CTA card */}
             <div className="bg-cyan-500  rounded-3xl p-6 shadow-md">
-              <h3 className="text-white font-black text-lg mb-1">
+              <h3 className="text-white font-bold text-lg mb-1">
                 {calc.ctaTitle}
               </h3>
               <p className="text-white/60 text-sm mb-4 leading-relaxed">
@@ -670,7 +671,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
               </p>
               <a
                 href={calc.ctaHref ?? "#"}
-                className="w-full flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-black text-sm py-3.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
+                className="w-full flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-bold text-sm py-3.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group"
               >
                 {calc.ctaLabel}
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
@@ -680,7 +681,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             {/* Performance Analysis */}
             {result > 0 && (
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
-                <h3 className="text-gray-900 font-black text-lg mb-5">
+                <h3 className="text-gray-900 font-bold text-lg mb-5">
                   Performance Analysis
                 </h3>
 
@@ -690,7 +691,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                     <span className="text-gray-600 font-semibold text-sm">
                       Your {activeTab.toUpperCase()}
                     </span>
-                    <span className="text-gray-900 font-black text-sm">
+                    <span className="text-gray-900 font-bold text-sm">
                       {formatResult(result, activeTab)}
                     </span>
                   </div>
@@ -701,7 +702,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                       <span className="text-gray-600 font-semibold text-sm">
                         {calc.benchmarkLabel}
                       </span>
-                      <span className="text-gray-900 font-black text-sm">
+                      <span className="text-gray-900 font-bold text-sm">
                         {formatResult(calc.benchmark, activeTab)}
                       </span>
                     </div>
@@ -718,7 +719,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                     }}
                   >
                     <p
-                      className="font-black text-sm"
+                      className="font-bold text-sm"
                       style={{ color: perf.color }}
                     >
                       {perf.label}
@@ -732,7 +733,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             {/* Optimization Tips */}
             {calc.tips?.length > 0 && (
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
-                <h3 className="text-gray-900 font-black text-lg mb-4">
+                <h3 className="text-gray-900 font-bold text-lg mb-4">
                   Optimization Tips
                 </h3>
                 <ul className="flex flex-col gap-3">

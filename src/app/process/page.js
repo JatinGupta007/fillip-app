@@ -2,7 +2,7 @@
 
 import CareersHeroSection from "@/components/CareersHeroSection";
 import { HiLightningBolt } from "react-icons/hi";
-import { MdOutlineCheckCircle } from "react-icons/md";
+import FAQSection from "@/components/FaqSection";
 import CTASection from "@/components/CTASection";
 
 export const heroData = {
@@ -23,8 +23,8 @@ export const heroData = {
 
   // Small trust line below buttons
   badges: [
-    { icon: <MdOutlineCheckCircle />, text: "No long-term contracts" },
-    { icon: <MdOutlineCheckCircle />, text: "Cancel anytime" },
+    { icon: <FiCheckCircle className="text-green-500" />, text: "No long-term contracts" },
+    { icon: <FiCheckCircle className="text-green-500" />, text: "Cancel anytime" },
   ],
 
   primaryBtn: {
@@ -293,7 +293,7 @@ export function MethodologySection({ methodology, impact }) {
     <div className="w-full">
       {/* ── Core Methodology ── */}
       <section
-        className="w-full py-20 px-6"
+        className="w-full py-20 px-5 md:px-10 xl:px-16"
         style={{
           background:
             methodology?.bg ?? "linear-gradient(to bottom, #f0f8ff, #ffffff)",
@@ -301,7 +301,7 @@ export function MethodologySection({ methodology, impact }) {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
               {methodology?.title}
               <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ml-2">
                 {methodology?.titleColored}
@@ -327,7 +327,7 @@ export function MethodologySection({ methodology, impact }) {
                 >
                   <span className="text-white text-2xl">{p.icon}</span>
                 </div>
-                <h3 className="text-base font-black text-gray-900 mb-2 leading-snug">
+                <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">
                   {p.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -357,7 +357,7 @@ export function MethodologySection({ methodology, impact }) {
             </div>
           )}
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
             {impact?.title}
           </h2>
           {impact?.subtitle && (
@@ -373,7 +373,7 @@ export function MethodologySection({ methodology, impact }) {
                 key={i}
                 className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-5 py-6 hover:bg-white/15 hover:scale-[1.04] hover:border-white/20 transition-all duration-300 group cursor-default"
               >
-                <p className="text-3xl sm:text-4xl font-black text-white group-hover:scale-110 transition-transform duration-200 inline-block">
+                <p className="text-3xl sm:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-200 inline-block">
                   {stat.value}
                 </p>
                 <p className="text-white font-bold text-sm mt-1">
@@ -393,7 +393,7 @@ export function MethodologySection({ methodology, impact }) {
   );
 }
 
-import { FiClock } from "react-icons/fi";
+import { FiCheckCircle, FiClock } from "react-icons/fi";
 
 /* ════════════════════════════════════════
     PHASE PROCESS SECTION
@@ -406,7 +406,10 @@ export function PhaseProcessSection({
   bg = "linear-gradient(to bottom, #f0f8ff, #ffffff)",
 }) {
   return (
-    <section className="w-full py-20 px-6" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* ── Phase stepper tabs ── */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-16">
@@ -420,14 +423,14 @@ export function PhaseProcessSection({
                 <div className="hidden sm:block absolute top-7 -right-1.5 w-3 h-px bg-blue-200 z-10" />
               )}
               <div className="flex items-center gap-2 mb-5">
-                <span className="w-5 h-5 rounded-full bg-blue-500 text-white text-[10px] font-black flex items-center justify-center shrink-0">
+                <span className="w-5 h-5 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0">
                   {phase.step}
                 </span>
-                <span className="text-blue-600 text-[10px] font-black tracking-widest uppercase">
+                <span className="text-blue-600 text-[10px] font-bold tracking-widest uppercase">
                   {phase.label}
                 </span>
               </div>
-              <p className="text-gray-900 font-black text-sm">{phase.week}</p>
+              <p className="text-gray-900 font-bold text-sm">{phase.week}</p>
               <p className="text-gray-500 text-xs mt-0.5">{phase.weekDesc}</p>
             </div>
           ))}
@@ -435,7 +438,7 @@ export function PhaseProcessSection({
 
         {/* ── Headline ── */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {title}
             <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ml-2">
               {titleColored}
@@ -466,7 +469,7 @@ export function PhaseProcessSection({
                       <span className="text-white text-2xl">{phase.icon}</span>
                     </div>
                     {/* Step badge */}
-                    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-500 text-white text-[10px] font-black flex items-center justify-center shadow-md">
+                    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shadow-md">
                       {phase.step}
                     </span>
                   </div>
@@ -479,7 +482,7 @@ export function PhaseProcessSection({
 
                 {/* Right — content */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-black text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {phase.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-5">
@@ -488,7 +491,7 @@ export function PhaseProcessSection({
 
                   {phase.deliverables?.length > 0 && (
                     <>
-                      <p className="text-xs font-black text-gray-700 tracking-widest mb-3">
+                      <p className="text-xs font-bold text-gray-700 tracking-widest mb-3">
                         KEY DELIVERABLES:
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -507,75 +510,6 @@ export function PhaseProcessSection({
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-import { useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
-
-/* ════════════════════════════════════════
-   FAQ SECTION — Accordion style
-
-════════════════════════════════════════ */
-export function FAQSection({
-  title = "Frequently Asked",
-  titleColored = "Questions",
-  faqs = [],
-  bg = "#ffffff",
-}) {
-  const [open, setOpen] = useState(null);
-
-  return (
-    <section className="w-full py-20 px-6" style={{ background: bg }}>
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
-            {title}
-            <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ml-2">
-              {titleColored}
-            </span>
-          </h2>
-        </div>
-
-        {/* FAQ items */}
-        <div className="flex flex-col gap-4">
-          {faqs.map((faq, i) => {
-            const isOpen = open === i;
-            return (
-              <div
-                key={i}
-                className={`bg-white border rounded-2xl shadow-sm overflow-hidden transition-all duration-300
-                  ${isOpen ? "border-blue-200 shadow-md" : "border-gray-100 hover:border-gray-200 hover:shadow-md"}`}
-              >
-                <button
-                  onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
-                >
-                  <span className="text-gray-900 font-black text-base sm:text-lg leading-snug group-hover:text-blue-600 transition-colors duration-200">
-                    {faq.question}
-                  </span>
-                  <FiChevronDown
-                    className={`shrink-0 text-blue-400 text-xl transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                  />
-                </button>
-
-                {/* Answer — smooth expand */}
-                <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 pb-6 text-gray-600 text-sm sm:text-base leading-relaxed border-t border-gray-50 pt-4">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
     </section>

@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { MdCheckCircle, MdArrowForward, MdTrendingUp } from "react-icons/md";
 import { HiSparkles } from "react-icons/hi";
+import Image from "next/image";
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 
@@ -67,25 +68,15 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
                 style={{ backgroundColor: "#1e2d40" }}
               >
-                <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-                  <path
-                    d="M16 3L3 10v12l13 7 13-7V10L16 3z"
-                    fill="#0ea5e9"
-                    opacity="0.25"
-                  />
-                  <path
-                    d="M16 3L3 10v12l13 7 13-7V10L16 3z"
-                    stroke="#0ea5e9"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M16 8l-8 4.5v9L16 26l8-4.5v-9L16 8z"
-                    fill="#0ea5e9"
-                  />
-                  <path d="M13 15l3-2 3 2v4l-3 2-3-2v-4z" fill="white" />
-                </svg>
+                <Image
+                  src="/web-icon.png"
+                  alt="AppFillip"
+                  width={130}
+                  height={32}
+                  priority
+                />
               </div>
-              <span className="text-white text-lg font-bold">AppFillip</span>
+              <span className="text-white font-bold text-lg">AppFillip</span>
             </Link>
 
             {/* Tagline */}
@@ -128,7 +119,7 @@ export default function Footer() {
                 {col.links.map((link) => (
                   <li key={link}>
                     <Link
-                      href="#"
+                      href={`/${link.toLowerCase().replace(/\s+/g, "-")}`}
                       style={{ color: "#8a9ab5" }}
                       className="text-sm transition-colors hover:text-white"
                     >
@@ -143,7 +134,7 @@ export default function Footer() {
       </div>
 
       {/* ── Telegram community banner ── */}
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+      <div className="max-w-8xl mx-auto px-5 sm:px-10 xl:px-16 lg:px-8 pb-10">
         <div
           className="relative rounded-2xl overflow-hidden p-7 sm:p-10"
           style={{
@@ -235,7 +226,7 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div
-        className="border-t max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3"
+        className="border-t max-w-8xl mx-auto px-5 sm:px-10 xl:px-16 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3"
         style={{ borderColor: "#1e2d40" }}
       >
         <p

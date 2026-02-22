@@ -1,6 +1,7 @@
 import CommunityHeroSection from "@/components/ComunityHeroSection";
 import CTASection from "@/components/CTASection";
 import { BsChatDots, BsCheckCircleFill } from "react-icons/bs";
+import { FiCheckCircle } from "react-icons/fi";
 import { MdOutlineFileDownload } from "react-icons/md";
 
 const ctaData = {
@@ -79,17 +80,17 @@ export default function GuidePage() {
         trustIcons={[
           {
             trustText: "50,000+ Downloads",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
           {
             trustText: "100% Free",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
           {
             trustText: "Updated Quarterly",
-            trustIcon: <BsCheckCircleFill />,
+            trustIcon: <FiCheckCircle className="text-green-500" />,
             trustIconColor: "#10b981",
           },
         ]}
@@ -352,7 +353,6 @@ export const templatesVideosData = {
   },
 };
 
-
 /* ════════════════════════════════════════
    RESOURCE FEATURES STRIP
    4-col icon + title + desc row
@@ -366,9 +366,12 @@ export const templatesVideosData = {
        }>
      bg        — optional CSS background
 ════════════════════════════════════════ */
-export function ResourceFeaturesStrip({ features = [], bg = '#ffffff' }) {
+export function ResourceFeaturesStrip({ features = [], bg = "#ffffff" }) {
   return (
-    <section className="w-full py-16 px-4 sm:px-6" style={{ background: bg }}>
+    <section
+      className="w-full py-16 px-5 sm:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((f, i) => (
@@ -384,8 +387,12 @@ export function ResourceFeaturesStrip({ features = [], bg = '#ffffff' }) {
                 <span className="text-white text-2xl">{f.icon}</span>
               </div>
 
-              <h3 className="text-base font-black text-gray-900 mb-2">{f.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">{f.desc}</p>
+              <h3 className="text-base font-bold text-gray-900 mb-2">
+                {f.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -394,8 +401,7 @@ export function ResourceFeaturesStrip({ features = [], bg = '#ffffff' }) {
   );
 }
 
-
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload } from "react-icons/fi";
 
 /* ════════════════════════════════════════
    GROWTH GUIDES GRID
@@ -422,26 +428,35 @@ import { FiDownload } from 'react-icons/fi';
      bg           — optional
 ════════════════════════════════════════ */
 export function GrowthGuidesGrid({
-  title = 'Comprehensive',
-  titleColored = 'Growth Guides',
-  titleGradient = 'linear-gradient(to right, #3b82f6, #8b5cf6)',
-  subtitle = 'In-depth playbooks covering every aspect of mobile app marketing',
+  title = "Comprehensive",
+  titleColored = "Growth Guides",
+  titleGradient = "linear-gradient(to right, #3b82f6, #8b5cf6)",
+  subtitle = "In-depth playbooks covering every aspect of mobile app marketing",
   guides = [],
-  bg = '#ffffff',
+  bg = "#ffffff",
 }) {
   return (
-    <section className="w-full py-20 px-4 sm:px-6" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 sm:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
-
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {title}
-            <span className="bg-clip-text text-transparent ml-2" style={{ backgroundImage: titleGradient }}>
+            <span
+              className="bg-clip-text text-transparent ml-2"
+              style={{ backgroundImage: titleGradient }}
+            >
               {titleColored}
             </span>
           </h2>
-          {subtitle && <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">{subtitle}</p>}
+          {subtitle && (
+            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* Grid */}
@@ -453,7 +468,7 @@ export function GrowthGuidesGrid({
             >
               {/* Featured badge */}
               {guide.featured && (
-                <span className="absolute top-5 right-5 bg-linear-to-r from-orange-400 to-orange-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-md">
+                <span className="absolute top-5 right-5 bg-linear-to-r from-orange-400 to-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md">
                   Featured
                 </span>
               )}
@@ -467,7 +482,9 @@ export function GrowthGuidesGrid({
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-black text-gray-900 leading-snug mb-1">{guide.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 leading-snug mb-1">
+                {guide.title}
+              </h3>
 
               {/* Meta */}
               <p className="text-gray-400 text-xs font-semibold mb-3">
@@ -475,12 +492,16 @@ export function GrowthGuidesGrid({
               </p>
 
               {/* Desc */}
-              <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{guide.desc}</p>
+              <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
+                {guide.desc}
+              </p>
 
               {/* What's inside */}
               {guide.whatsInside?.length > 0 && (
                 <div className="mb-4">
-                  <p className="text-[10px] font-black text-gray-700 tracking-widest mb-2">WHAT'S INSIDE:</p>
+                  <p className="text-[10px] font-bold text-gray-700 tracking-widest mb-2">
+                    WHAT'S INSIDE:
+                  </p>
                   <div className="flex flex-wrap gap-1.5">
                     {guide.whatsInside.map((tag, i) => (
                       <span
@@ -502,7 +523,7 @@ export function GrowthGuidesGrid({
 
               {/* CTA */}
               <a
-                href={guide.ctaHref ?? '#'}
+                href={guide.ctaHref ?? "#"}
                 className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-gray-700 font-bold text-sm py-3 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group/btn"
               >
                 <FiDownload className="text-base" />
@@ -511,30 +532,43 @@ export function GrowthGuidesGrid({
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
 }
 
-
-import {  FiArrowRight, FiPlay } from 'react-icons/fi';
+import { FiArrowRight, FiPlay } from "react-icons/fi";
 import Image from "next/image";
 
 /* ════════════════════════════════════════
    TEMPLATES GRID
 ════════════════════════════════════════ */
-function TemplatesSection({ title, titleColored, titleColor, subtitle, templates, bg }) {
+function TemplatesSection({
+  title,
+  titleColored,
+  titleColor,
+  subtitle,
+  templates,
+  bg,
+}) {
   return (
-    <section className="w-full py-20 px-4 sm:px-6 border-b border-dashed border-blue-100" style={{ background: bg ?? '#ffffff' }}>
+    <section
+      className="w-full py-20 px-5 sm:px-10 xl:px-16 border-b border-dashed border-blue-100"
+      style={{ background: bg ?? "#ffffff" }}
+    >
       <div className="max-w-7xl mx-auto">
-
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {title}
-            <span className="ml-2" style={{ color: titleColor ?? '#10b981' }}>{titleColored}</span>
+            <span className="ml-2" style={{ color: titleColor ?? "#10b981" }}>
+              {titleColored}
+            </span>
           </h2>
-          {subtitle && <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">{subtitle}</p>}
+          {subtitle && (
+            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -551,17 +585,26 @@ function TemplatesSection({ title, titleColored, titleColor, subtitle, templates
                 <span className="text-white text-xl">{t.icon}</span>
               </div>
 
-              <h3 className="text-sm font-black text-gray-900 leading-snug mb-2 flex-1">{t.title}</h3>
-              <p className="text-gray-500 text-xs leading-relaxed mb-3">{t.desc}</p>
+              <h3 className="text-sm font-bold text-gray-900 leading-snug mb-2 flex-1">
+                {t.title}
+              </h3>
+              <p className="text-gray-500 text-xs leading-relaxed mb-3">
+                {t.desc}
+              </p>
 
               {/* Type label */}
               {t.type && (
-                <p className="text-xs font-bold mb-3" style={{ color: t.typeColor ?? '#10b981' }}>{t.type}</p>
+                <p
+                  className="text-xs font-bold mb-3"
+                  style={{ color: t.typeColor ?? "#10b981" }}
+                >
+                  {t.type}
+                </p>
               )}
 
               {/* CTA */}
               <a
-                href={t.ctaHref ?? '#'}
+                href={t.ctaHref ?? "#"}
                 className="w-full flex items-center justify-center gap-2 bg-[#0d1f3c] hover:bg-[#1a3360] text-white font-bold text-xs py-2.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 <FiDownload className="text-sm" />
@@ -570,7 +613,6 @@ function TemplatesSection({ title, titleColored, titleColor, subtitle, templates
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -579,30 +621,47 @@ function TemplatesSection({ title, titleColored, titleColor, subtitle, templates
 /* ════════════════════════════════════════
    VIDEO TUTORIALS GRID
 ════════════════════════════════════════ */
-function VideoTutorialsSection({ title, titleColored, titleColor, subtitle, videos, ctaLabel, ctaHref, bg }) {
+function VideoTutorialsSection({
+  title,
+  titleColored,
+  titleColor,
+  subtitle,
+  videos,
+  ctaLabel,
+  ctaHref,
+  bg,
+}) {
   return (
-    <section className="w-full py-20 px-4 sm:px-6" style={{ background: bg ?? '#f8faff' }}>
+    <section
+      className="w-full py-20 px-5 sm:px-10 xl:px-16"
+      style={{ background: bg ?? "#f8faff" }}
+    >
       <div className="max-w-7xl mx-auto">
-
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {title}
-            <span className="ml-2" style={{ color: titleColor ?? '#a855f7' }}>{titleColored}</span>
+            <span className="ml-2" style={{ color: titleColor ?? "#a855f7" }}>
+              {titleColored}
+            </span>
           </h2>
-          {subtitle && <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">{subtitle}</p>}
+          {subtitle && (
+            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {videos?.map((v, i) => (
-            <a
-              key={i}
-              href={v.href ?? '#'}
-              className="group block"
-            >
+            <a key={i} href={v.href ?? "#"} className="group block">
               {/* Thumbnail */}
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 mb-3 aspect-video bg-gray-200 group-hover:scale-[1.02]">
                 {v.thumbnail ? (
-                  <Image src={v.thumbnail} alt={v.title} className="w-full h-full object-cover" />
+                  <Image
+                    src={v.thumbnail}
+                    alt={v.title}
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
                   <div className="w-full h-full bg-linear-to-br from-gray-700 to-gray-900 flex items-center justify-center">
                     <FiPlay className="text-white text-3xl opacity-60" />
@@ -620,10 +679,12 @@ function VideoTutorialsSection({ title, titleColored, titleColor, subtitle, vide
                 </div>
               </div>
 
-              <h3 className="text-sm font-black text-gray-900 leading-snug mb-1 group-hover:text-blue-600 transition-colors duration-200">
+              <h3 className="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-blue-600 transition-colors duration-200">
                 {v.title}
               </h3>
-              <p className="text-gray-400 text-xs font-semibold">{v.views} views</p>
+              <p className="text-gray-400 text-xs font-semibold">
+                {v.views} views
+              </p>
             </a>
           ))}
         </div>
@@ -632,7 +693,7 @@ function VideoTutorialsSection({ title, titleColored, titleColor, subtitle, vide
         {ctaLabel && (
           <div className="flex justify-center">
             <a
-              href={ctaHref ?? '#'}
+              href={ctaHref ?? "#"}
               className="inline-flex items-center gap-2 bg-purple-500 hover:bg-purple-700 text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
             >
               {ctaLabel}
@@ -640,7 +701,6 @@ function VideoTutorialsSection({ title, titleColored, titleColor, subtitle, vide
             </a>
           </div>
         )}
-
       </div>
     </section>
   );
@@ -653,7 +713,7 @@ function VideoTutorialsSection({ title, titleColored, titleColor, subtitle, vide
 export function TemplatesAndVideos({ templates, videos }) {
   return (
     <>
-      <TemplatesSection    {...templates} />
+      <TemplatesSection {...templates} />
       <VideoTutorialsSection {...videos} />
     </>
   );

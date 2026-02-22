@@ -405,7 +405,7 @@ function PolicyCard({ section, iconBg }) {
         >
           <span className="text-white text-2xl">{section.icon}</span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-[#0d1f3c]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#0d1f3c]">
           {section.title}
         </h2>
       </div>
@@ -427,7 +427,7 @@ export default function PrivacyPolicySections({ data = defaultPrivacyData }) {
   const { sections, cta, iconBg } = data;
 
   return (
-    <section className="w-full bg-linear-to-b from-[#eaf6fb] via-[#f4f8fc] to-white py-14 px-6">
+    <section className="w-full bg-linear-to-b from-[#eaf6fb] via-[#f4f8fc] to-white py-14 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
         {/* Policy Cards — rendered from data */}
         {sections.map((section) => (
@@ -445,7 +445,7 @@ export default function PrivacyPolicySections({ data = defaultPrivacyData }) {
           <div className="absolute top-[-40px] left-[-40px] w-48 h-48 bg-white opacity-5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-[-30px] right-[-30px] w-48 h-48 bg-white opacity-5 rounded-full blur-3xl pointer-events-none" />
 
-          <h3 className="relative z-10 text-2xl sm:text-3xl font-black text-white mb-3">
+          <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white mb-3">
             {cta.title}
           </h3>
           <p className="relative z-10 text-white/70 text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-6">

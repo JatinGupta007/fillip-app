@@ -1,6 +1,8 @@
 "use client";
 
 import { FiArrowRight } from "react-icons/fi";
+import { FiCheckCircle } from "react-icons/fi";
+
 
 /* ════════════════════════════════════════
    CAREERS HERO SECTION
@@ -27,7 +29,7 @@ export default function CareersHeroSection({
 }) {
   return (
     <section
-      className="relative w-full overflow-hidden py-24 px-6"
+      className="relative w-full overflow-hidden py-24 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
       {/* Soft blobs */}
@@ -53,34 +55,31 @@ export default function CareersHeroSection({
         )}
 
         {/* ── Headline ── */}
-        <div>
-          {headlineBlack && (
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold  text-[#0d1f3c] leading-tight tracking-tight">
-              {headlineBlack}
-            </h1>
-          )}
-          {headlineGrad && (
-            <h1
-              className={`text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
+        <div className="max-w-4xl">
+          <h1 className="text-5xl sm:text-6xl lg:text-6xl font-bold  text-[#0d1f3c] leading-tight tracking-tight">
+            {headlineBlack} {" "}
+
+            <span
+              className={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
             >
               {headlineGrad}
-            </h1>
-          )}
+            </span>
+          </h1>
         </div>
 
         {/* ── Subtext ── */}
         {subtext && (
-          <p className="text-gray-500 text-lg sm:text-2xl leading-relaxed max-w-3xl">
+          <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl">
             {subtext}
           </p>
         )}
 
         {/* ── Optional CTA buttons ── */}
-        <div className="flex gap-7">
+        <div className="flex gap-7 mb-4">
           {primaryBtn && (
             <a
               href={primaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-3.5 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {primaryBtn.label}
               {primaryBtn.icon && (
@@ -92,7 +91,7 @@ export default function CareersHeroSection({
           {secondaryBtn && (
             <a
               href={secondaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-4 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-3.5 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {secondaryBtn.label}
               {secondaryBtn.icon && (
@@ -104,13 +103,13 @@ export default function CareersHeroSection({
 
         {/* ── Icon+Caption badges — optional, any count ── */}
         {badges && badges.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-10 mt-5">
+          <div className="flex flex-wrap items-center justify-center gap-10 mt-3">
             {badges.map((b, i) => (
               <div
                 key={i}
                 className="flex items-center gap-2 text-gray-600 text-sm font-semibold hover:text-cyan-600 transition-colors duration-200 cursor-default group"
               >
-                <span className="text-cyan-500 text-3xl group-hover:scale-110 transition-transform duration-200">
+                <span className="text-cyan-500 text-2xl group-hover:scale-110 transition-transform duration-200">
                   {b.icon}
                 </span>
                 {b.text}

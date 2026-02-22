@@ -11,7 +11,10 @@ import {
   BiStar,
   BiUserCircle,
 } from "react-icons/bi";
-import { BsChatDots, BsCheckCircleFill } from "react-icons/bs";
+import { FiCheckCircle } from "react-icons/fi";
+import { BsChatDots } from "react-icons/bs";
+import { ImPower } from "react-icons/im";
+import { IoPeople } from "react-icons/io5";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { WhyJoinSection } from "../careers/page";
 import { CapabilitiesSection } from "@/components/Services";
@@ -153,25 +156,25 @@ export const communityData = {
 
     cards: [
       {
-        icon: "👥",
+        icon: <BiGroup className="text-white" />,
         iconBg: "linear-gradient(135deg, #06b6d4, #0891b2)", // teal
         title: "Network with Peers",
         desc: "Connect with 5,000+ app founders, marketers, and growth professionals building successful mobile apps.",
       },
       {
-        icon: "⚡",
+        icon: <ImPower className="text-white" />,
         iconBg: "linear-gradient(135deg, #a855f7, #ec4899)", // purple-pink
         title: "Real-Time Insights",
         desc: "Get instant feedback on campaigns, creative assets, and growth strategies from experienced performers.",
       },
       {
-        icon: "📈",
+        icon: <RiFileChartLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #10b981, #059669)", // green
         title: "Exclusive Content",
         desc: "Access weekly AMAs, case study deep-dives, and live campaign breakdowns not available anywhere else.",
       },
       {
-        icon: "🔓",
+        icon: <RiMedalLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #f97316, #ef4444)", // orange-red
         title: "Early Access",
         desc: "Be first to know about new features, beta programs, industry tools, and partnership opportunities.",
@@ -250,6 +253,7 @@ import {
   RiFileChartLine,
   RiGroupLine,
   RiUserSmileLine,
+  RiMedalLine,
 } from "react-icons/ri";
 
 export const communityEventsTestimonialsData = {
@@ -346,7 +350,7 @@ export default function CommunityPage() {
         headlineLine2Gradient="linear-gradient(to right, #a855f7, #ec4899)"
         headlineLine3="Growth Community"
         headlineLine3Gradient="linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899)"
-        subtext="Connect with app marketers, share strategies, get expert feedback..."
+        subtext="Connect with app marketers, share strategies, get expert feedback, and stay ahead of industry trends-all on Telegram."
         primaryBtn={{
           label: "Join on Telegram",
           href: "https://t.me/yourgroup",
@@ -362,11 +366,13 @@ export default function CommunityPage() {
           textColor: "#0d1f3c",
           border: "#e5e7eb",
         }}
-        trustIcons={[{
-          trustText: "100% Free • No spam • 5,200+ active members",
-          trustIcon: <BsCheckCircleFill />,
-          trustIconColor: "#10b981",
-        }]}
+        trustIcons={[
+          {
+            trustText: "100% Free • No spam • 5,200+ active members",
+            trustIcon: <FiCheckCircle />,
+            trustIconColor: "#10b981",
+          },
+        ]}
       />
       <section className="w-full bg-[#f3f4f6] py-12 px-6">
         <div className="max-w-7xl mx-auto">
@@ -458,13 +464,13 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           SECTION 1 — Community Events
       ══════════════════════════════════ */}
       <section
-        className="w-full py-20 px-4 sm:px-6"
+        className="w-full py-20 px-5 sm:px-10 xl:px-16"
         style={{ background: events?.bg ?? "#ffffff" }}
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
               {events?.title}
               <span
                 className="bg-clip-text text-transparent ml-2"
@@ -500,7 +506,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                     <span className="text-white text-xl">{item.icon}</span>
                   </div>
                   <span
-                    className="text-xs font-black px-3 py-1 rounded-full"
+                    className="text-xs font-bold px-3 py-1 rounded-full"
                     style={{
                       background: item.badgeBg ?? "#f0f9ff",
                       color: item.badgeColor ?? "#0ea5e9",
@@ -510,7 +516,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                   </span>
                 </div>
 
-                <h3 className="text-base font-black text-gray-900 mb-2">
+                <h3 className="text-base font-bold text-gray-900 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -526,13 +532,13 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           SECTION 2 — Testimonials
       ══════════════════════════════════ */}
       <section
-        className="w-full py-20 px-4 sm:px-6"
+        className="w-full py-20 px-5 sm:px-10 xl:px-16"
         style={{ background: testimonials?.bg ?? "#ffffff" }}
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0d1f3c] leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
               {testimonials?.title}{" "}
               <span style={{ color: testimonials?.titleColor ?? "#3b82f6" }}>
                 {testimonials?.titleColored}
@@ -561,7 +567,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                     <span className="text-white text-base">{t.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-black text-gray-900 leading-tight">
+                    <p className="text-sm font-bold text-gray-900 leading-tight">
                       {t.name}
                     </p>
                     <p className="text-xs text-gray-400 font-medium leading-tight">

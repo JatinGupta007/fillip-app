@@ -85,12 +85,13 @@ const servicesMenu = [
 ];
 
 const solutionsItems = [
-  "App Marketing",
-  "Growth Hacking",
-  "Performance Ads",
-  "Analytics",
+  "App Store Optimization",
+  "Paid User Acquisition",
+  "Creative Production",
+  "Analytics & Attribution",
+  "Get Quote",
 ];
-const resourcesItems = ["Blog", "Guides", "Templates", "Case Studies"];
+const resourcesItems = ["About Us", "Blog", "Growth Guide", "Audit", "Case Studies", "Community", "Calculators", "Addons"];
 
 // ── Desktop hover dropdown ────────────────────────────────────────────────────
 
@@ -191,7 +192,7 @@ function DesktopServicesDropdown() {
 function DesktopSimpleDropdown({ label, icon, items }) {
   return (
     <DesktopDropdown label={label} icon={icon}>
-      <ul className="p-2 w-44">
+      <ul className="p-2 w-50">
         {items.map((item) => (
           <li key={item}>
             <Link

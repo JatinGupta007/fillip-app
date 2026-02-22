@@ -155,14 +155,14 @@ export default function ReviewsCarousel() {
   }, [isHovered, maxIndex]);
 
   return (
-    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-4 md:px-8 xl:px-12">
+    <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
         <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
           <LuQuote className="text-purple-400 text-[14px]" />
           Client Reviews
         </div>
-        <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           What Our{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Clients Say
@@ -180,7 +180,7 @@ export default function ReviewsCarousel() {
               <BsStarFill key={i} className="text-yellow-400 text-base" />
             ))}
           </div>
-          <span className="text-gray-900 font-black text-lg">4.9</span>
+          <span className="text-gray-900 font-bold text-lg">4.9</span>
           <span className="text-gray-400 text-sm">/ 5.0 from 200+ reviews</span>
         </div>
       </div>
@@ -245,7 +245,7 @@ export default function ReviewsCarousel() {
       <div className="max-w-4xl mx-auto mt-16">
         <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
           <div>
-            <p className="text-gray-900 font-black text-lg">
+            <p className="text-gray-900 font-bold text-lg">
               Ready to write your success story?
             </p>
             <p className="text-gray-500 text-sm mt-0.5">
@@ -285,12 +285,12 @@ function ReviewCard({ review }) {
         <div className="flex items-center gap-3">
           {/* Avatar */}
           <div
-            className={`w-12 h-12 rounded-xl bg-linear-to-br ${review.avatarlinear} flex items-center justify-center text-white font-black text-sm shadow-lg shrink-0`}
+            className={`w-12 h-12 rounded-xl bg-linear-to-br ${review.avatarlinear} flex items-center justify-center text-white font-bold text-sm shadow-lg shrink-0`}
           >
             {review.avatar}
           </div>
           <div>
-            <p className="text-gray-900 font-black text-sm leading-tight">
+            <p className="text-gray-900 font-bold text-sm leading-tight">
               {review.name}
             </p>
             <p className="text-gray-500 text-xs">{review.role}</p>
@@ -301,9 +301,9 @@ function ReviewCard({ review }) {
         </div>
         {/* Metric badge */}
         <div
-          className={`${review.metricColor} text-white text-[10px] font-black px-2.5 py-1.5 rounded-xl text-center shadow-md shrink-0`}
+          className={`${review.metricColor} text-white text-[10px] font-bold px-2.5 py-1.5 rounded-xl text-center shadow-md shrink-0`}
         >
-          <p className="text-xs font-black leading-none">{review.metric}</p>
+          <p className="text-xs font-bold leading-none">{review.metric}</p>
           <p className="opacity-80 text-[9px] mt-0.5">{review.metricLabel}</p>
         </div>
       </div>

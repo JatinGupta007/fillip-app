@@ -213,7 +213,7 @@ function Field({ field, value, onChange }) {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="text-sm font-black text-gray-700 flex items-center gap-1.5">
+      <label className="text-sm font-bold text-gray-700 flex items-center gap-1.5">
         <span className="text-sky-400 text-base">{field.icon}</span>
         {field.label}
         {field.required && <span className="text-sky-500">*</span>}
@@ -276,7 +276,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
 
   return (
     <section
-      className="relative w-full overflow-hidden py-20 px-4 sm:px-6"
+      className="relative w-full overflow-hidden py-20 px-5 sm:px-10 xl:px-16"
       style={{ background: config.bg }}
     >
       {/* Blobs */}
@@ -305,7 +305,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         </div>
 
         {/* ── Headline ── */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0d1f3c] text-center mb-4 leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center mb-4 leading-tight">
           {config.headlineBlack}
           <span
             className="bg-clip-text text-transparent ml-3"
@@ -315,12 +315,12 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
           </span>
         </h1>
 
-        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-10">
+        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-18">
           {config.subtext}
         </p>
 
         {/* ── Stepper ── */}
-        <div className="flex items-center justify-center gap-0 mb-8 w-full max-w-2xl">
+        <div className="flex items-center justify-center gap-0 mb-8 w-full max-w-4xl">
           {config.steps.map((s, i) => {
             const isActive = i === step;
             const isDone = i < step;
@@ -332,7 +332,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                 <div className="flex flex-col items-center gap-2">
                   <button
                     onClick={() => isDone && setStep(i)}
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-black shadow-md transition-all duration-200
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-bold shadow-md transition-all duration-200
                       ${isActive ? "scale-105 shadow-sky-200" : isDone ? "cursor-pointer hover:scale-105" : "cursor-default opacity-60"}
                     `}
                     style={{
@@ -347,7 +347,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                     {isDone ? <FiCheck className="text-xl" /> : s.icon}
                   </button>
                   <span
-                    className={`text-xs font-black text-center whitespace-nowrap transition-colors duration-200 ${isActive ? "text-sky-500" : "text-gray-400"}`}
+                    className={`text-xs font-bold text-center whitespace-nowrap transition-colors duration-200 ${isActive ? "text-sky-500" : "text-gray-400"}`}
                   >
                     {s.label}
                   </span>
@@ -366,7 +366,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         </div>
 
         {/* ── Form card ── */}
-        <div className="w-full max-w-5xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
+        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
           {submitted ? (
             /* ── Success state ── */
             <div className="flex flex-col items-center text-center py-10 gap-4">
@@ -378,7 +378,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
               >
                 <FiCheck className="text-white text-4xl" />
               </div>
-              <h3 className="text-2xl font-black text-gray-900">
+              <h3 className="text-2xl font-bold text-gray-900">
                 Audit Request Submitted!
               </h3>
               <p className="text-gray-500 text-base max-w-sm">
@@ -430,7 +430,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
               <div className="flex justify-end">
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2.5 font-black text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 text-white group"
+                  className="inline-flex items-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 text-white group"
                   style={{
                     background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
                   }}
@@ -444,7 +444,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         </div>
 
         {/* ── Trust badges ── */}
-        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+        <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-7 mt-12">
           {config.trustBadges.map((b, i) => (
             <div
               key={i}
@@ -457,7 +457,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                 <span className="text-white text-xl">{b.icon}</span>
               </div>
               <div>
-                <p className="text-gray-900 font-black text-sm">{b.title}</p>
+                <p className="text-gray-900 font-bold text-sm">{b.title}</p>
                 <p className="text-gray-400 text-xs leading-snug">{b.desc}</p>
               </div>
             </div>

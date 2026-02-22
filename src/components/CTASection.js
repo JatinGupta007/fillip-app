@@ -70,7 +70,7 @@ export default function CTASection({
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
           {headline}
         </h2>
 
