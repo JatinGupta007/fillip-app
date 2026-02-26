@@ -301,14 +301,20 @@ export function MethodologySection({ methodology, impact }) {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+            <h2
+              data-aos="fade-down-right"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            >
               {methodology?.title}
               <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ml-2">
                 {methodology?.titleColored}
               </span>
             </h2>
             {methodology?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              <p
+                data-aos="fade-down-left"
+                className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              >
                 {methodology.subtitle}
               </p>
             )}
@@ -318,6 +324,7 @@ export function MethodologySection({ methodology, impact }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {methodology?.principles?.map((p, i) => (
               <div
+                data-aos="flip-up"
                 key={i}
                 className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 text-center group"
               >
@@ -351,25 +358,35 @@ export function MethodologySection({ methodology, impact }) {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           {impact?.badge && (
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full mb-6">
+            <div
+              data-aos="zoom-in"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full mb-6"
+            >
               <RiMedalLine />
               {impact.badge}
             </div>
           )}
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3">
+          <h2
+            data-aos="zoom-out-down"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3"
+          >
             {impact?.title}
           </h2>
           {impact?.subtitle && (
-            <p className="text-white/60 text-base max-w-xl mx-auto mb-12">
+            <p
+              data-aos="zoom-out-up"
+              className="text-white/60 text-base max-w-xl mx-auto mb-12"
+            >
               {impact.subtitle}
             </p>
           )}
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-7">
             {impact?.stats?.map((stat, i) => (
               <div
+                data-aos="zoom-out"
                 key={i}
                 className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-5 py-6 hover:bg-white/15 hover:scale-[1.04] hover:border-white/20 transition-all duration-300 group cursor-default"
               >
@@ -415,6 +432,7 @@ export function PhaseProcessSection({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-16">
           {phases.map((phase, i) => (
             <div
+              data-aos="zoom-in-up"
               key={phase.step}
               className="relative bg-linear-to-b from-[#e8f6ff] to-[#d4eef9] border border-blue-100 rounded-2xl px-7 py-8 space-y-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
             >
@@ -438,14 +456,20 @@ export function PhaseProcessSection({
 
         {/* ── Headline ── */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ml-2">
               {titleColored}
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-down"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -455,6 +479,7 @@ export function PhaseProcessSection({
         <div className="flex flex-col gap-5">
           {phases.map((phase) => (
             <div
+              data-aos="zoom-out-down"
               key={phase.step}
               className="hover:bg-linear-to-b hover:from-[#e8f6ff] hover:to-[#d6eefa] border border-blue-100 rounded-3xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
             >

@@ -555,6 +555,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
         <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-hide justify-around">
           {config.tabs.map((tab) => (
             <button
+              data-aos="zoom-in-up"
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
               className={`flex items-center gap-2 shrink-0 font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 relative
@@ -582,7 +583,10 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
         {/* ── Calculator layout ── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* LEFT — Input panel */}
-          <div className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm">
+          <div
+            data-aos="zoom-in-left"
+            className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm"
+          >
             {/* Title row */}
             <div className="flex items-center gap-4 mb-7">
               <div
@@ -645,6 +649,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
           <div className="flex flex-col gap-5">
             {/* Result card */}
             <div
+              data-aos="flip-up"
               className="rounded-3xl p-7 shadow-lg"
               style={{ background: calc.resultBg }}
             >
@@ -662,7 +667,10 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             </div>
 
             {/* CTA card */}
-            <div className="bg-cyan-500  rounded-3xl p-6 shadow-md">
+            <div
+              data-aos="flip-up"
+              className="bg-cyan-500  rounded-3xl p-6 shadow-md"
+            >
               <h3 className="text-white font-bold text-lg mb-1">
                 {calc.ctaTitle}
               </h3>
@@ -680,7 +688,10 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
 
             {/* Performance Analysis */}
             {result > 0 && (
-              <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+              <div
+                data-aos="flip-up"
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+              >
                 <h3 className="text-gray-900 font-bold text-lg mb-5">
                   Performance Analysis
                 </h3>
@@ -712,6 +723,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                 {/* Performance badge */}
                 {perf && (
                   <div
+                    data-aos="flip-up"
                     className="mt-4 rounded-xl px-4 py-3 border"
                     style={{
                       background: perf.bg,
@@ -732,7 +744,10 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
 
             {/* Optimization Tips */}
             {calc.tips?.length > 0 && (
-              <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
+              <div
+                data-aos="flip-up"
+                className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
+              >
                 <h3 className="text-gray-900 font-bold text-lg mb-4">
                   Optimization Tips
                 </h3>

@@ -172,31 +172,31 @@ export default function IndustriesSection() {
     <section className="w-full bg-linear-to-b from-white via-[#f5f8ff] to-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-14">
-        <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
+        <div data-aos="fade-down-left" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
           <FiTarget className="text-purple-400 text-[14px]" />
           15 Specialized Industries
         </div>
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 data-aos="fade-up-right" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           Industries We{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Serve
           </span>
         </h2>
-        <p className="mt-4 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
+        <p data-aos="fade-up-left" className="mt-4 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
           Expert marketing strategies tailored to your app's industry. We
           understand your audience, your competition, and what drives success.
         </p>
       </div>
 
       {/* Industry Cards Grid */}
-      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-7 mb-12">
+      <div data-aos="zoom-in" className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-7 mb-12">
         {industries.map((ind, i) => (
           <IndustryCard key={i} industry={ind} />
         ))}
       </div>
 
       {/* Stats Banner */}
-      <div className="max-w-5xl mx-auto mb-10">
+      <div data-aos="fade-up" className="max-w-5xl mx-auto mb-10">
         <div className="relative overflow-hidden rounded-2xl bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 shadow-2xl shadow-purple-200">
           {/* Glow blobs */}
           <div className="absolute -top-8 -left-8 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
@@ -221,7 +221,7 @@ export default function IndustriesSection() {
       </div>
 
       {/* Bottom CTA Dark Card */}
-      <div className="max-w-3xl mx-auto">
+      <div data-aos="fade-down" className="max-w-3xl mx-auto">
         <div className="relative overflow-hidden bg-linear-to-br from-[#1a2a4a] via-[#1e2f52] to-[#0f1f3d] rounded-3xl px-8 py-12 text-center shadow-2xl">
           {/* Glow blobs */}
           <div className="absolute top-[-40px] left-[-40px] w-52 h-52 bg-blue-500 opacity-10 rounded-full blur-3xl pointer-events-none" />

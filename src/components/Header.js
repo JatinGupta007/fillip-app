@@ -242,7 +242,7 @@ export default function Header() {
       <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="mx-auto px-4 md:px-8 lg:px-12 h-14 sm:h-20 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Link data-aos="fade-right" href="/" className="flex items-center gap-2 shrink-0">
             <Image
               src="/web-logo.png"
               alt="AppFillip"
@@ -253,7 +253,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav — only visible on lg+ */}
-          <nav className="hidden lg:flex items-center gap-2 flex-1 justify-center relative">
+          <nav data-aos="fade-up" className="hidden lg:flex items-center gap-2 flex-1 justify-center relative">
             <DesktopServicesDropdown />
 
             <DesktopSimpleDropdown
@@ -287,6 +287,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <Link
+            data-aos="fade-left"
             href="#"
             className="hidden lg:inline-flex items-center gap-2 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white text-sm font-semibold px-7 py-3 rounded-2xl transition-colors shrink-0 shadow-[0_6px_16px_rgba(0,166,244,0.3)] hover:shadow-[0_8px_24px_rgba(0,166,244,0.4)]"
           >

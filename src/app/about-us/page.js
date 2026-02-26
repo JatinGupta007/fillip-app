@@ -297,6 +297,7 @@ export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {stats?.map((stat, i) => (
               <div
+                data-aos="zoom-in-left"
                 key={i}
                 className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-start group"
               >
@@ -329,16 +330,28 @@ export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+            <h2
+              data-aos="fade-down-right"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            >
               {story?.title ?? "Our Story"}
             </h2>
             {story?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base">{story.subtitle}</p>
+              <p
+                data-aos="fade-down-left"
+                className="mt-3 text-gray-500 text-base"
+              >
+                {story.subtitle}
+              </p>
             )}
           </div>
           <div className="max-w-6xl mx-auto flex flex-col gap-5">
             {story?.paragraphs?.map((p, i) => (
-              <p key={i} className="text-gray-600 text-base leading-relaxed">
+              <p
+                data-aos="fade-up-right"
+                key={i}
+                className="text-gray-600 text-base leading-relaxed"
+              >
                 {p}
               </p>
             ))}
@@ -365,22 +378,34 @@ export function JourneyTimelineSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base">{subtitle}</p>
+            <p data-aos="fade-left" className="mt-3 text-gray-500 text-base">
+              {subtitle}
+            </p>
           )}
         </div>
 
         {/* Timeline */}
         <div className="relative max-w-6xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-[52px] top-0 bottom-0 w-px bg-linear-to-b from-sky-300 via-violet-300 to-sky-300 opacity-60" />
+          <div
+            data-aos="fade-left"
+            className="absolute left-[52px] top-0 bottom-0 w-px bg-linear-to-b from-sky-300 via-violet-300 to-sky-300 opacity-60"
+          />
 
           <div className="flex flex-col gap-6">
             {milestones.map((m, i) => (
-              <div key={i} className="flex items-start gap-6 group">
+              <div
+                data-aos="zoom-out-down"
+                key={i}
+                className="flex items-start gap-6 group"
+              >
                 {/* Year badge */}
                 <div
                   className="shrink-0 w-[68px] h-[68px] rounded-2xl flex items-center justify-center font-bold text-white text-sm shadow-lg group-hover:scale-110 transition-transform duration-200 z-10"
@@ -393,7 +418,10 @@ export function JourneyTimelineSection({
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 bg-white border border-gray-100 rounded-2xl px-6 py-5 shadow-sm hover:shadow-lg hover:border-sky-100 transition-all duration-300">
+                <div
+                  data-aos="zoom-out-down"
+                  className="flex-1 bg-white border border-gray-100 rounded-2xl px-6 py-5 shadow-sm hover:shadow-lg hover:border-sky-100 transition-all duration-300"
+                >
                   <h3 className="text-base font-bold text-gray-900 mb-1">
                     {m.title}
                   </h3>
@@ -426,11 +454,17 @@ export function MeetTheTeamSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="zoom-in"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="zoom-out"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -439,6 +473,7 @@ export function MeetTheTeamSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {members.map((m, i) => (
             <div
+              data-aos="flip-left"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
             >

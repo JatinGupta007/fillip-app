@@ -29,7 +29,10 @@ export default function FAQSection({
       <div className="max-w-5xl mx-auto">
         {/* ── Header ── */}
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-right"
+            className="text-2xl sm:text-3xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span
               className="bg-clip-text text-transparent ml-1"
@@ -38,7 +41,9 @@ export default function FAQSection({
               {titleColored}
             </span>
           </h2>
-          <p className="text-lg mt-4 text-gray-500">{subtitle}</p>
+          <p data-aos="fade-left" className="text-lg mt-4 text-gray-500">
+            {subtitle}
+          </p>
         </div>
 
         {/* ── FAQ List ── */}
@@ -46,6 +51,7 @@ export default function FAQSection({
           {faqs.map((faq, i) => {
             return (
               <div
+                data-aos="fade-right"
                 key={i}
                 className="border border-gray-200 rounded-xl mb-4 overflow-hidden bg-white hover:shadow-sm transition-shadow duration-200"
               >

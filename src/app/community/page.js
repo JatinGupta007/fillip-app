@@ -378,7 +378,11 @@ export default function CommunityPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap items-center justify-around gap-16 text-center">
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col items-center">
+              <div
+                data-aos="flip-up"
+                key={index}
+                className="flex flex-col items-center"
+              >
                 {/* Big Blue Number */}
                 <h2
                   className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent"
@@ -470,7 +474,10 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+            <h2
+              data-aos="fade-down-right"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            >
               {events?.title}
               <span
                 className="bg-clip-text text-transparent ml-2"
@@ -484,7 +491,10 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
               </span>
             </h2>
             {events?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              <p
+                data-aos="fade-down-left"
+                className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              >
                 {events.subtitle}
               </p>
             )}
@@ -494,6 +504,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {events?.items?.map((item, i) => (
               <div
+                data-aos="zoom-in"
                 key={i}
                 className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
               >
@@ -538,7 +549,10 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+            <h2
+              data-aos="fade-up-right"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            >
               {testimonials?.title}{" "}
               <span style={{ color: testimonials?.titleColor ?? "#3b82f6" }}>
                 {testimonials?.titleColored}
@@ -555,6 +569,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {testimonials?.items?.map((t, i) => (
               <div
+                data-aos="zoom-out-left"
                 key={i}
                 className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
               >

@@ -75,19 +75,22 @@ export default function InvestorsSection() {
       {/* Header */}
       <div className="max-w-3xl mx-auto px-6 text-center mb-14">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-gray-900 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 shadow">
+        <div
+          data-aos="fade-up"
+          className="inline-flex items-center gap-2 bg-gray-900 text-white text-xs font-semibold px-4 py-2 rounded-full mb-6 shadow"
+        >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           TRUSTED BY INDUSTRY LEADERS
         </div>
 
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 data-aos="fade-left" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           Backed by the world's top
         </h2>
-        <h2 className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
+        <h2 data-aos="fade-right" className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
           investors &amp; accelerators
         </h2>
 
-        <p className="mt-5 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
+        <p data-aos="fade-down" className="mt-5 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
           Powering growth for startups backed by Y Combinator, Techstars, 500
           Global, and leading venture firms
         </p>
@@ -97,6 +100,7 @@ export default function InvestorsSection() {
       <div className="max-w-8xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
         {stats.map((s) => (
           <div
+            data-aos="zoom-in"
             key={s.label}
             className="bg-white border border-gray-100 rounded-2xl p-5 shadow-md hover:shadow-lg transition-shadow duration-200"
           >
@@ -153,7 +157,7 @@ export default function InvestorsSection() {
       </div>
 
       {/* Bottom trust bar */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" data-aos="zoom-out">
         <div className="bg-gray-50 border border-gray-100 rounded-2xl px-16 py-5 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-sm">
           {/* Funded startups */}
           <div className="flex items-center gap-3">

@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import AOSProvider from "@/components/AOS";
 
 export const metadata = {
   title: "Fillip",
@@ -11,20 +12,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="overflow-x-hidden">
-        <Header />
-        {children}
-        <Footer />
-        {/* Talk to Us button */}
-        <div className="fixed bottom-10 right-10 z-20">
-          <button className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 text-white font-semibold text-sm px-5 py-3 rounded-full shadow-lg hover:shadow-cyan-300 transition-all duration-200">
-            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-              <svg width="12" height="12" fill="white" viewBox="0 0 24 24">
-                <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
-              </svg>
-            </span>
-            Talk to Us
-          </button>
-        </div>
+        <AOSProvider>
+          <Header />
+          {children}
+          <Footer />
+          {/* Talk to Us button */}
+          <div className="fixed bottom-3 md:bottom-7 xl:bottom-10 right-3 md:right-7 xl:right-10 z-20">
+            <button className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 text-white font-semibold text-sm px-5 py-3 rounded-full shadow-lg hover:shadow-cyan-300 transition-all duration-200">
+              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                <svg width="12" height="12" fill="white" viewBox="0 0 24 24">
+                  <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
+                </svg>
+              </span>
+              Talk to Us
+            </button>
+          </div>
+        </AOSProvider>
       </body>
     </html>
   );

@@ -156,30 +156,30 @@ export default function SuccessStories() {
     <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-7">
+        <div data-aos="zoom-in" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-7">
           <SlBadge className="text-purple-400 text-[14px]" />
           Proven Results
         </div>
-        <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+        <h2 data-aos="fade-left" className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
           Success{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Stories
           </span>
         </h2>
-        <p className="mt-4 text-gray-500 text-base">
+        <p data-aos="fade-right" className="mt-4 text-gray-500 text-base">
           Real results from apps that trusted us with their growth
         </p>
       </div>
 
       {/* Cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-12">
+      <div data-aos="flip-up" className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-12">
         {stories.map((story, i) => (
           <StoryCard key={i} story={story} />
         ))}
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-4xl mx-auto">
+      <div data-aos="zoom-in" className="max-w-4xl mx-auto">
         <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
           <div>
             <p className="text-gray-900 font-bold text-lg">

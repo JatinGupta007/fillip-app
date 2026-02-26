@@ -51,6 +51,7 @@ export default function PrivacyHeroSection({
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center gap-6">
         {/* ── Badge ── */}
         <div
+          data-aos="fade-up-right"
           className="inline-flex items-center gap-2 border backdrop-blur text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:brightness-95 transition-all duration-200"
           style={{
             background: badge.bg,
@@ -65,12 +66,18 @@ export default function PrivacyHeroSection({
         </div>
 
         {/* ── Headline ── */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
+        <h1
+          data-aos="fade-down-right"
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight"
+        >
           {headline}
         </h1>
 
         {/* ── Subtext ── */}
-        <p className="text-gray-500 text-lg leading-relaxed max-5w-xl">
+        <p
+          data-aos="fade-down-left"
+          className="text-gray-500 text-lg leading-relaxed max-5w-xl"
+        >
           {subtext}
         </p>
 
@@ -78,7 +85,7 @@ export default function PrivacyHeroSection({
         {dates?.length > 0 && (
           <div className="flex flex-col items-center gap-1 text-sm mt-2">
             {dates.map((d, i) => (
-              <p key={i}>
+              <p data-aos="zoom-in" key={i}>
                 <span className="font-bold text-gray-700">{d.label}</span>{" "}
                 <span className="text-gray-500">{d.value}</span>
               </p>
@@ -88,6 +95,7 @@ export default function PrivacyHeroSection({
 
         {/* ── Info card ── */}
         <div
+          data-aos="flip-up"
           className="w-full mt-6 rounded-2xl px-6 sm:px-8 py-6 shadow-md hover:shadow-lg transition-all duration-300 text-left flex gap-4 items-start border"
           style={{ background: infoCard.bg, borderColor: infoCard.border }}
           onMouseEnter={(e) =>

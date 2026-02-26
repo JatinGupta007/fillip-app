@@ -453,7 +453,10 @@ const caseStudies = [
 /* ─── METRIC CARD ─── */
 function MetricCard({ metric }) {
   return (
-    <div className="bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:scale-[1.02] transition-all duration-200">
+    <div
+      data-aos="flip-up"
+      className="bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:shadow-md hover:scale-[1.02] transition-all duration-200"
+    >
       <div className="flex items-center gap-2 mb-2">
         <div
           className={`w-9 h-9 rounded-xl ${metric.iconBg} flex items-center justify-center shadow-sm`}
@@ -479,7 +482,10 @@ function MetricCard({ metric }) {
 /* ─── RESULT ROW ─── */
 function ResultRow({ text, accentColor }) {
   return (
-    <div className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 hover:bg-white hover:shadow-sm hover:scale-[1.01] transition-all duration-200">
+    <div
+      data-aos="fade-up-right"
+      className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 hover:bg-white hover:shadow-sm hover:scale-[1.01] transition-all duration-200"
+    >
       <div
         className={`w-6 h-6 rounded-full bg-gradient-to-br ${accentColor} flex items-center justify-center flex-shrink-0 shadow-sm`}
       >
@@ -494,13 +500,17 @@ function ResultRow({ text, accentColor }) {
 function CaseStudyCard({ data }) {
   return (
     <div
+      data-aos="zoom-out-down"
       className={`bg-white rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden ${data.borderTop}`}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
         {/* LEFT PANEL */}
         <div className="p-7 border-r border-gray-100 flex flex-col gap-5">
           {/* Header */}
-          <div className="flex items-start justify-between">
+          <div
+            data-aos="fade-down-right"
+            className="flex items-start justify-between"
+          >
             <div className="flex items-center gap-3">
               <span className="text-4xl">{data.emoji}</span>
               <div>
@@ -521,12 +531,18 @@ function CaseStudyCard({ data }) {
           </div>
 
           {/* Headline */}
-          <p className="text-base font-bold text-gray-900 leading-snug">
+          <p
+            data-aos="fade-down-left"
+            className="text-base font-bold text-gray-900 leading-snug"
+          >
             {data.headline}
           </p>
 
           {/* Challenge */}
-          <div className="bg-red-50 border border-red-100 rounded-2xl p-4">
+          <div
+            data-aos="zoom-in-left"
+            className="bg-red-50 border border-red-100 rounded-2xl p-4"
+          >
             <div className="flex items-center gap-2 mb-2">
               <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-bold">!</span>
@@ -541,7 +557,10 @@ function CaseStudyCard({ data }) {
           </div>
 
           {/* Solution */}
-          <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4">
+          <div
+            data-aos="zoom-in-right"
+            className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4"
+          >
             <div className="flex items-center gap-2 mb-2">
               <div
                 className={`w-5 h-5 rounded-full bg-gradient-to-br ${data.accentColor} flex items-center justify-center flex-shrink-0`}
@@ -558,7 +577,10 @@ function CaseStudyCard({ data }) {
           </div>
 
           {/* Duration + Investment */}
-          <div className="flex gap-6 border-t border-gray-100 pt-4">
+          <div
+            data-aos="fade-down"
+            className="flex gap-6 border-t border-gray-100 pt-4"
+          >
             <div>
               <p className="text-gray-400 text-xs">Duration</p>
               <p className="text-gray-900 font-bold text-base">
@@ -579,7 +601,10 @@ function CaseStudyCard({ data }) {
         <div className="p-7 flex flex-col gap-5">
           {/* Key Metrics */}
           <div>
-            <p className="text-xs font-bold text-gray-400 tracking-widest mb-3">
+            <p
+              data-aos="fade-left"
+              className="text-xs font-bold text-gray-400 tracking-widest mb-3"
+            >
               KEY METRICS
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -591,7 +616,10 @@ function CaseStudyCard({ data }) {
 
           {/* Key Results */}
           <div>
-            <p className="text-xs font-bold text-gray-400 tracking-widest mb-3">
+            <p
+              data-aos="fade-right"
+              className="text-xs font-bold text-gray-400 tracking-widest mb-3"
+            >
               KEY RESULTS
             </p>
             <div className="flex flex-col gap-2">
@@ -607,6 +635,7 @@ function CaseStudyCard({ data }) {
 
           {/* Review */}
           <div
+            data-aos="zoom-in"
             className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${data.reviewBg} p-5`}
           >
             <div className="flex gap-0.5 mb-3">
@@ -633,7 +662,9 @@ function CaseStudyCard({ data }) {
 export default function CaseStudySection({ studies = caseStudies }) {
   return (
     <section className="w-full bg-gradient-to-b from-[#f4f8fc] to-white py-14 px-5 md:px-10 xl:px-16">
-      <div className="max-w-7xl mx-auto flex flex-col gap-10">
+      <div
+        className="max-w-7xl mx-auto flex flex-col gap-10"
+      >
         {studies.map((study) => (
           <CaseStudyCard key={study.id} data={study} />
         ))}

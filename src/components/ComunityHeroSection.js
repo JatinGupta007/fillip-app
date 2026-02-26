@@ -50,7 +50,10 @@ export default function CommunityHeroSection({
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center gap-5">
         {/* ── Optional Badge ── */}
         {badge && (
-          <div className="inline-flex items-center gap-2 bg-linear-to-br from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200">
+          <div
+            data-aos="fade-down-right"
+            className="inline-flex items-center gap-2 bg-linear-to-br from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200"
+          >
             {badge.icon && (
               <span className="text-base text-blue-500">{badge.icon}</span>
             )}
@@ -61,7 +64,10 @@ export default function CommunityHeroSection({
         {/* ── Headline ── */}
         <div className="flex flex-col items-center gap-0 leading-none">
           {/* Line 1 — dark */}
-          <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
+          <h1
+            data-aos="fade-up-right"
+            className="text-3xl sm:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight"
+          >
             {headlineBlack} {/* Inline colored word on same line */}
             <span
               className="bg-clip-text text-transparent"
@@ -73,6 +79,7 @@ export default function CommunityHeroSection({
 
           {/* Line 2 — full gradient */}
           <h1
+            data-aos="fade-down-left"
             className="text-5xl sm:text-6xl lg:text-5xl xl:text-7xl font-bold bg-clip-text text-transparent leading-tight tracking-tight"
             style={{ backgroundImage: headlineLine3Gradient }}
           >
@@ -81,13 +88,19 @@ export default function CommunityHeroSection({
         </div>
 
         {/* ── Subtext ── */}
-        <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-4xl">
+        <p
+          data-aos="fade-up-right"
+          className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-4xl"
+        >
           {subtext}
         </p>
 
         {/* ── CTA Buttons ── */}
         {(primaryBtn || secondaryBtn) && (
-          <div className="flex flex-col sm:flex-row gap-4 mt-5 w-full sm:w-auto justify-center">
+          <div
+            data-aos="fade-up"
+            className="flex flex-col sm:flex-row gap-4 mt-5 w-full sm:w-auto justify-center"
+          >
             {primaryBtn && (
               <a
                 href={primaryBtn.href ?? "#"}
@@ -133,7 +146,10 @@ export default function CommunityHeroSection({
 
         {/* ── Trust line ── */}
         {trustIcons && (
-          <div className="flex items-center justify-center gap-8 text-gray-500 text-sm font-semibold mt-7">
+          <div
+            data-aos="zoom-in"
+            className="flex items-center justify-center gap-8 text-gray-500 text-sm font-semibold mt-7"
+          >
             {trustIcons.map((icon, idx) => (
               <li key={idx} className="flex items-center gap-1">
                 <span

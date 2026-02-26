@@ -743,7 +743,10 @@ import { FiArrowRight } from "react-icons/fi";
 ════════════════════════════════════════ */
 function AddonCard1({ addon }) {
   return (
-    <div className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+    <div
+      data-aos="zoom-in-left"
+      className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col group"
+    >
       {/* Badge */}
       {addon.badge && (
         <span
@@ -867,7 +870,10 @@ export function AddonsGrid1({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -877,14 +883,19 @@ export function AddonsGrid1({
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base sm:text-lg max-w-2xl mx-auto">
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base sm:text-lg max-w-2xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
         </div>
 
         {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {addons.map((addon) => (
             <AddonCard1 key={addon.id} addon={addon} />
           ))}
@@ -931,7 +942,10 @@ export function AddonsGrid({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="flip-up"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -941,7 +955,10 @@ export function AddonsGrid({
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="flip-up"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -960,7 +977,10 @@ export function AddonsGrid({
 
 function AddonCard({ addon }) {
   return (
-    <div className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group">
+    <div
+      data-aos="zoom-out-right"
+      className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
+    >
       {/* Badge (Most Popular / Hot) */}
       {addon.badge && (
         <div
@@ -1074,10 +1094,13 @@ export function ServiceBundlesSection({
   bg = "linear-gradient(to bottom, #f0fdf4, #ffffff)",
 }) {
   return (
-    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Badge */}
-        <div className="flex justify-center mb-5">
+        <div data-aos="fade-right" className="flex justify-center mb-5">
           <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-2 rounded-full shadow-sm">
             <TbSparkles />
             {badge}
@@ -1086,11 +1109,17 @@ export function ServiceBundlesSection({
 
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title} <span className="text-emerald-500">{titleColored}</span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-right"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -1100,6 +1129,7 @@ export function ServiceBundlesSection({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
           {bundles.map((bundle) => (
             <div
+              data-aos="zoom-in"
               key={bundle.id}
               className={`relative bg-white rounded-3xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl
                 ${
@@ -1219,11 +1249,17 @@ export function AddonSuccessSection({
   bg = "#ffffff",
 }) {
   return (
-    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span
               className="bg-clip-text text-transparent ml-2"
@@ -1233,7 +1269,12 @@ export function AddonSuccessSection({
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base">{subtitle}</p>
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base"
+            >
+              {subtitle}
+            </p>
           )}
         </div>
 
@@ -1241,6 +1282,7 @@ export function AddonSuccessSection({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
           {stories.map((s) => (
             <div
+              data-aos="flip-right"
               key={s.id}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
@@ -1277,6 +1319,7 @@ export function AddonSuccessSection({
         {/* CTA button */}
         <div className="flex justify-center">
           <a
+            data-aos="flip-up"
             href={ctaHref}
             className="inline-flex items-center gap-2 bg-black text-white font-bold text-sm px-7 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
           >
@@ -1309,13 +1352,17 @@ export function TrustAndFAQSection({
   const [open, setOpen] = useState(null);
 
   return (
-    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Trust icons row */}
         {trustFeatures.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-24">
             {trustFeatures.map((f, i) => (
               <div
+                data-aos="flip-up"
                 key={i}
                 className="flex flex-col items-center text-center gap-3 group cursor-default"
               >

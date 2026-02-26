@@ -123,7 +123,7 @@ export default function AwarenessSection() {
       {/* ─── PART 1: From Awareness to Install ─── */}
       <div className="max-w-7xl mx-auto mb-24">
         {/* Badge */}
-        <div className="flex justify-center mb-6">
+        <div data-aos="fade-up-left" className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
             <TbSparkles className="text-purple-500 text-[16px]" />
             Full-Funnel Strategy
@@ -132,14 +132,20 @@ export default function AwarenessSection() {
 
         {/* Headline */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+          <h2
+            data-aos="fade-up-right"
+            className="text-4xl lg:text-5xl font-bold text-gray-900"
+          >
             From{" "}
             <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               Awareness
             </span>{" "}
             to Install
           </h2>
-          <p className="mt-3 text-gray-500 text-base">
+          <p
+            data-aos="fade-down-right"
+            className="mt-3 text-gray-500 text-base"
+          >
             Complete marketing coverage at every stage
           </p>
         </div>
@@ -150,7 +156,10 @@ export default function AwarenessSection() {
           <div className="w-full lg:w-[45%] flex flex-col gap-3 relative">
             {/* User icon */}
             <div className="flex justify-center mb-2">
-              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shadow">
+              <div
+                data-aos="fade-right"
+                className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shadow"
+              >
                 <RiGroupLine className="text-purple-500 text-2xl" />
               </div>
             </div>
@@ -158,6 +167,8 @@ export default function AwarenessSection() {
             {funnelSteps.map((step, i) => (
               <div key={i} className="flex justify-start">
                 <div
+                  data-aos="fade-right"
+                  data-aos-delay={i * 200}
                   className={`${step.color} ${step.width} py-3 px-6 rounded-xl shadow-md text-white font-bold text-sm text-center transition-all duration-300 hover:scale-105 cursor-default`}
                 >
                   {step.label}
@@ -167,7 +178,10 @@ export default function AwarenessSection() {
 
             {/* Bottom target icon */}
             <div className="mt-4 flex justify-start pl-2">
-              <div className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center shadow">
+              <div
+                data-aos="fade-right"
+                className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center shadow"
+              >
                 <FiTarget className="text-blue-500 text-xl" />
               </div>
             </div>
@@ -176,7 +190,12 @@ export default function AwarenessSection() {
           {/* Right — TOFU/MOFU/BOFU cards */}
           <div className="w-full lg:w-[50%] flex flex-col gap-5">
             {funnelGroups.map((group, gi) => (
-              <div key={gi} className="flex items-start gap-3">
+              <div
+                data-aos="fade-down"
+                data-aos-delay={gi * 100}
+                key={gi}
+                className="flex items-start gap-3"
+              >
                 {/* Bracket line */}
                 <div className="flex flex-col items-center pt-2 shrink-0">
                   <div className="flex flex-col gap-1">
@@ -222,7 +241,10 @@ export default function AwarenessSection() {
       {/* ─── PART 2: Funnel Tabs + Service Cards ─── */}
       <div className="max-w-7xl mx-auto">
         {/* Funnel Stage Tabs */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+        <div
+          data-aos="flip-up"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10"
+        >
           {funnelStages.map((stage, i) => (
             <FunnelCard
               key={i}
@@ -234,14 +256,14 @@ export default function AwarenessSection() {
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {serviceCards.map((card, i) => (
             <ServiceCard key={i} card={card} />
           ))}
         </div>
 
         {/* Bottom CTA bar */}
-        <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm max-w-4xl mx-auto">
+        <div data-aos="zoom-out" className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm max-w-4xl mx-auto">
           <div>
             <p className="text-gray-900 font-bold text-base">
               Need a custom marketing strategy?

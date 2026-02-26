@@ -38,23 +38,35 @@ export default function RealResultsSection() {
 
           <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#1a2a4a]/80 backdrop-blur border border-[#2a3a5a] text-gray-300 text-xs font-bold px-5 py-2.5 rounded-full shadow-md hover:border-gray-500 transition-colors duration-200">
+            <div
+              data-aos="fade-down-right"
+              className="inline-flex items-center gap-2 bg-[#1a2a4a]/80 backdrop-blur border border-[#2a3a5a] text-gray-300 text-xs font-bold px-5 py-2.5 rounded-full shadow-md hover:border-gray-500 transition-colors duration-200"
+            >
               <RiMedalLine className="text-gray-400" />
               SUCCESS STORIES
             </div>
 
             {/* Headline */}
             <div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+              <h1
+                data-aos="fade-up-right"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight"
+              >
                 Real Results from
               </h1>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              <h1
+                data-aos="fade-up-left"
+                className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-linear-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent"
+              >
                 Real Apps
               </h1>
             </div>
 
             {/* Subtext */}
-            <p className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-3xl">
+            <p
+              data-aos="fade-down-left"
+              className="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-3xl"
+            >
               See how we&apos;ve helped apps across every industry scale from
               zero to millions of users with measurable, sustainable growth.
             </p>
@@ -63,6 +75,7 @@ export default function RealResultsSection() {
             <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 mt-4">
               {stats.map((stat, i) => (
                 <div
+                  data-aos="flip-up"
                   key={i}
                   className="flex flex-col items-center gap-1 group cursor-default"
                 >
@@ -84,6 +97,7 @@ export default function RealResultsSection() {
             <div className="flex gap-10 min-w-max sm:min-w-0 sm:flex-wrap">
               {filters.map((filter) => (
                 <button
+                  data-aos="zoom-out-up"
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-6 py-2.5 rounded-2xl text-sm font-bold transition-all duration-200 whitespace-nowrap

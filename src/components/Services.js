@@ -34,6 +34,7 @@ export function HeroSection({ hero, theme }) {
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-5">
         {/* Badge */}
         <div
+          data-aos="fade-down-left"
           className="inline-flex items-center gap-2 text-xs font-bold px-7 py-3 rounded-full  backdrop-blur hover:scale-105 transition-transform duration-200"
           style={{
             background: theme.badgeBg,
@@ -52,7 +53,7 @@ export function HeroSection({ hero, theme }) {
 
         {/* Headline */}
         <div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
+          <h1 data-aos="fade-down-right" className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
             {hero.headlineBlack}{" "}
             <span
               className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
@@ -68,12 +69,12 @@ export function HeroSection({ hero, theme }) {
         </div>
 
         {/* Subtext */}
-        <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl">
+        <p data-aos="fade-up-left" className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl">
           {hero.subtext}
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-8 mt-5 w-full sm:w-auto mb-7">
+        <div data-aos="fade-up-right" className="flex flex-col sm:flex-row gap-8 mt-5 w-full sm:w-auto mb-7">
           <button
             className="group flex items-center justify-center gap-5 text-white font-bold text-base px-12 py-4 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{
@@ -90,7 +91,7 @@ export function HeroSection({ hero, theme }) {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-10 mt-4">
+        <div data-aos="zoom-in" className="flex flex-wrap justify-center gap-10 mt-4">
           {hero.stats.map((stat, i) => (
             <div
               key={i}
@@ -125,7 +126,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2 data-aos="fade-up" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
             {capabilities.title}{" "}
             <span
               style={{
@@ -137,7 +138,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
               {capabilities.titleColored}
             </span>
           </h2>
-          <p className="mt-4 text-gray-500 text-base max-w-2xl mx-auto">
+          <p data-aos="fade-down" className="mt-4 text-gray-500 text-base max-w-2xl mx-auto">
             {capabilities.subtitle}
           </p>
         </div>
@@ -145,6 +146,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {capabilities.cards.map((card, i) => (
             <div
+              data-aos="flip-up"
               key={i}
               className="bg-white border border-gray-100 rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 group"
             >
@@ -175,7 +177,10 @@ function IncludedSection({ included, theme }) {
   return (
     <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
+        <h2
+          data-aos="zoom-in"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight"
+        >
           {included.title}{" "}
           <span
             style={{
@@ -191,6 +196,8 @@ function IncludedSection({ included, theme }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {included.items.map((item, i) => (
             <div
+              data-aos="fade-right"
+              data-aos-delay={i * 100}
               key={i}
               className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-200 group"
             >
@@ -219,7 +226,10 @@ function TacticsSection({ tactics, theme }) {
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-up-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {tactics.title}{" "}
             <span
               style={{
@@ -232,7 +242,7 @@ function TacticsSection({ tactics, theme }) {
             </span>
           </h2>
           {tactics.subtitle && (
-            <p className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
+            <p data-aos="fade-up-right" className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
               {tactics.subtitle}
             </p>
           )}
@@ -241,6 +251,7 @@ function TacticsSection({ tactics, theme }) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           {tactics.items.map((item, i) => (
             <div
+              data-aos="zoom-in"
               key={i}
               className="bg-[#F9FAFB] border border-gray-100 rounded-2xl px-7 py-5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center gap-4 group"
             >
@@ -273,7 +284,10 @@ function SuccessSection({ success, theme }) {
   return (
     <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight">
+        <h2
+          data-aos="zoom-out"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight"
+        >
           {success.title}{" "}
           <span
             style={{
@@ -289,6 +303,7 @@ function SuccessSection({ success, theme }) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {success.cards.map((card, i) => (
             <div
+              data-aos="fade-up-left"
               key={i}
               className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-4"
             >
@@ -425,15 +440,24 @@ function ROISection({ roi, theme }) {
           />
 
           {/* Badge */}
-          <div className="relative z-10 inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white mb-5">
+          <div
+            data-aos="fade-down-right"
+            className="relative z-10 inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white mb-5"
+          >
             <BsCurrencyDollar />
             {roi.badge}
           </div>
 
-          <h3 className="relative z-10 text-2xl sm:text-3xl font-bold text-white mb-3">
+          <h3
+            data-aos="fade-up-left"
+            className="relative z-10 text-2xl sm:text-3xl font-bold text-white mb-3"
+          >
             {roi.title}
           </h3>
-          <p className="relative z-10 text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-8">
+          <p
+            data-aos="fade-up-right"
+            className="relative z-10 text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-8"
+          >
             {roi.subtitle}
           </p>
 
@@ -441,6 +465,7 @@ function ROISection({ roi, theme }) {
           <div className="relative z-10 grid grid-cols-3 gap-4 mb-8">
             {roi.stats.map((stat, i) => (
               <div
+                data-aos="zoom-in-down"
                 key={i}
                 className="rounded-2xl px-4 py-5 hover:scale-105 transition-transform duration-200 cursor-default"
                 style={{ background: theme.roiCardBg }}
@@ -455,6 +480,7 @@ function ROISection({ roi, theme }) {
 
           {/* CTA */}
           <button
+            data-aos="zoom-out-down"
             className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{ color: theme.roiBg }}
           >

@@ -299,13 +299,19 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
         {/* ── Badge ── */}
-        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-sky-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm mb-6 hover:bg-white hover:scale-[1.02] transition-all duration-200">
+        <div
+          data-aos="fade-down-right"
+          className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-sky-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm mb-6 hover:bg-white hover:scale-[1.02] transition-all duration-200"
+        >
           <span className="text-sky-400 text-base">{config.badge.icon}</span>
           {config.badge.text}
         </div>
 
         {/* ── Headline ── */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center mb-4 leading-tight">
+        <h1
+          data-aos="fade-up-left"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center mb-4 leading-tight"
+        >
           {config.headlineBlack}
           <span
             className="bg-clip-text text-transparent ml-3"
@@ -315,12 +321,18 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
           </span>
         </h1>
 
-        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-18">
+        <p
+          data-aos="fade-up-right"
+          className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-18"
+        >
           {config.subtext}
         </p>
 
         {/* ── Stepper ── */}
-        <div className="flex items-center justify-center gap-0 mb-8 w-full max-w-4xl">
+        <div
+          data-aos="zoom-in-left"
+          className="flex items-center justify-center gap-0 mb-8 w-full max-w-4xl"
+        >
           {config.steps.map((s, i) => {
             const isActive = i === step;
             const isDone = i < step;
@@ -366,7 +378,10 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         </div>
 
         {/* ── Form card ── */}
-        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
+        <div
+          data-aos="zoom-out-left"
+          className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9"
+        >
           {submitted ? (
             /* ── Success state ── */
             <div className="flex flex-col items-center text-center py-10 gap-4">
@@ -444,7 +459,10 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         </div>
 
         {/* ── Trust badges ── */}
-        <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-7 mt-12">
+        <div
+          data-aos="flip-up"
+          className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-7 mt-12"
+        >
           {config.trustBadges.map((b, i) => (
             <div
               key={i}

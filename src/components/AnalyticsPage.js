@@ -62,39 +62,49 @@ export function CreativeHeroSection({
       <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
         {badge && (
           <div
+            data-aos="fade-up"
             className="inline-flex items-center gap-2 shadow-sm text-sm font-semibold px-5 py-2 rounded-full mb-7 hover:scale-[1.02] transition-all duration-200"
             style={{
               background: badgeBgColor,
               color: badgeColor,
             }}
           >
-            <span className="text-base" style={{ color: badgeColor }}>{badge.icon}</span>
+            <span className="text-base" style={{ color: badgeColor }}>
+              {badge.icon}
+            </span>
             {badge.text}
           </div>
         )}
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight mb-6">
+        <h1
+          data-aos="zoom-in-right"
+          className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight mb-6"
+        >
           {headlineBlack}{" "}
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: headlineGradient ?? ORANGE_GRAD }}
           >
             {headlineColored}
-          </span>
-          {" "}{headlineLast}
+          </span>{" "}
+          {headlineLast}
         </h1>
 
-        <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mb-10">
+        <p
+          data-aos="zoom-out-left"
+          className="text-gray-500 text-lg leading-relaxed max-w-2xl mb-10"
+        >
           {subtext}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 mb-16">
           {primaryBtn && (
             <a
+              data-aos="fade-up-left"
               href={primaryBtn.href ?? "#"}
               className="group inline-flex items-center justify-center gap-2.5 text-white font-bold text-base px-10 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
               style={{
-                background: btnGradient,
+                background: btnGradient ?? ORANGE_GRAD,
               }}
             >
               {primaryBtn.label}
@@ -103,6 +113,7 @@ export function CreativeHeroSection({
           )}
           {secondaryBtn && (
             <a
+              data-aos="fade-up-right"
               href={secondaryBtn.href ?? "#"}
               className="inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-gray-900 font-bold text-base px-8 py-4 rounded-2xl shadow-sm hover:shadow-md hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             >
@@ -112,9 +123,10 @@ export function CreativeHeroSection({
         </div>
 
         {stats?.length > 0 && (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 w-full">
             {stats.map((s, i) => (
               <div
+                data-aos="zoom-out-right"
                 key={i}
                 className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-start group"
               >
@@ -153,11 +165,17 @@ export function CreativeFormatsSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -166,6 +184,7 @@ export function CreativeFormatsSection({
         <div className="flex flex-col gap-6">
           {formats?.map((f, i) => (
             <div
+              data-aos="zoom-in-left"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
@@ -259,11 +278,17 @@ export function CreativeServicesGrid({ title, subtitle, services, bg, iconGradie
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-up-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-up-left"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -272,6 +297,7 @@ export function CreativeServicesGrid({ title, subtitle, services, bg, iconGradie
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services?.map((s, i) => (
             <div
+              data-aos="zoom-in"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"
             >
@@ -324,11 +350,17 @@ export function CreativeProcessSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-left"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -336,7 +368,11 @@ export function CreativeProcessSection({
 
         <div className="relative max-w-5xl mx-auto flex flex-col">
           {/* vertical connector */}
-          <div className="absolute left-[28px] top-16 bottom-16 w-0.5 z-0" style={{background: iconGradient}} />
+          <div
+            data-aos="fade-left"
+            className="absolute left-[28px] top-16 bottom-16 w-0.5 z-0"
+            style={{ background: iconGradient }}
+          />
 
           {steps?.map((s, i) => (
             <div
@@ -345,21 +381,28 @@ export function CreativeProcessSection({
             >
               {/* Number badge */}
               <div
+                data-aos="fade-up-right"
                 className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-white text-lg shadow-lg group-hover:scale-110 transition-transform duration-200"
-                style={{ background: iconGradient ?? ORANGE_GRAD}}
+                style={{ background: iconGradient ?? ORANGE_GRAD }}
               >
                 {String(i + 1).padStart(2, "0")}
               </div>
 
               {/* Card */}
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-orange-100 transition-all duration-300">
+              <div
+                data-aos="fade-down-left"
+                className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-orange-100 transition-all duration-300"
+              >
                 <div className="flex items-start justify-between gap-4 mb-2">
                   <h3 className="text-base font-bold text-gray-900">
                     {s.title}
                   </h3>
                   <span
                     className="flex-shrink-0 text-xs font-bold px-3 py-1 rounded-full"
-                    style={{ background: color ? `${color}1A` : "#f973161A", color: color ?? "#f97316" }}
+                    style={{
+                      background: color ? `${color}1A` : "#f973161A",
+                      color: color ?? "#f97316",
+                    }}
                   >
                     {s.week}
                   </span>
@@ -405,11 +448,17 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="zoom-in"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="zoom-out"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -418,6 +467,7 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
         <div className="flex flex-col gap-6">
           {cases?.map((c, i) => (
             <div
+              data-aos="zoom-out"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row group"
             >
@@ -472,15 +522,15 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
                     <div
                       key={j}
                       className="rounded-xl px-4 py-3"
-                      style={{background: color ? `${color}1A` : "#f9731a1A", border: `1px solid ${color ? `${color}33` : "#f9731a33"}`}}
+                      style={{
+                        background: color ? `${color}1A` : "#f9731a1A",
+                        border: `1px solid ${color ? `${color}33` : "#f9731a33"}`,
+                      }}
                     >
                       <p className="text-xs text-black font-semibold mb-0.5">
                         {r.label}
                       </p>
-                      <p
-                        className="text-sm font-bold"
-                        style={{ color }}
-                      >
+                      <p className="text-sm font-bold" style={{ color }}>
                         {r.value}
                       </p>
                     </div>
@@ -488,7 +538,10 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
                 </div>
 
                 <div className="flex items-center gap-2 text-xs font-semibold text-gray-400">
-                  <div className="w-2 h-2 rounded-full" style={{backgroundColor: color}} />
+                  <div
+                    className="w-2 h-2 rounded-full"
+                    style={{ backgroundColor: color }}
+                  />
                   {c.timeframe}
                 </div>
               </div>
@@ -520,11 +573,17 @@ export function PortfolioCategories({
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-right"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -533,6 +592,7 @@ export function PortfolioCategories({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {categories?.map((cat, i) => (
             <div
+              data-aos="flip-right"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
@@ -573,7 +633,7 @@ export function PortfolioCategories({
         </div>
 
         {ctaLabel && (
-          <div className="flex justify-center">
+          <div data-aos="flip-up" className="flex justify-center">
             <a
               href={ctaHref ?? "#"}
               className="group inline-flex items-center gap-2.5 text-white font-bold text-base px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
@@ -609,11 +669,17 @@ export function CreativePricingSection({
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="zoom-in"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="zoom-out"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -622,10 +688,13 @@ export function CreativePricingSection({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
           {packages?.map((pkg, i) => (
             <div
+              data-aos="fade-up-right"
               key={i}
               className={`relative bg-white rounded-3xl p-7 flex flex-col transition-all duration-300 hover:-translate-y-1.5
                 ${pkg.popular ? "border-2 shadow-2xl scale-[1.02] hover:shadow-3xl" : "border border-gray-100 shadow-sm hover:shadow-xl"}`}
-              style={{ borderColor: pkg.popular ? color ?? "#f97316" : undefined }}
+              style={{
+                borderColor: pkg.popular ? (color ?? "#f97316") : undefined,
+              }}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -668,7 +737,9 @@ export function CreativePricingSection({
                 className={`w-full flex items-center justify-center font-bold text-sm py-3.5 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]
                   ${pkg.popular ? "text-white shadow-lg" : "bg-gray-50 border border-gray-200 hover:bg-gray-100 text-gray-700"}`}
                 style={{
-                  background: pkg.popular ? iconGradient ?? ORANGE_GRAD : undefined,
+                  background: pkg.popular
+                    ? (iconGradient ?? ORANGE_GRAD)
+                    : undefined,
                 }}
               >
                 {pkg.ctaLabel}
@@ -706,7 +777,10 @@ export function FAQSection({
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-up-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span
               className="ml-2"
@@ -719,7 +793,9 @@ export function FAQSection({
               {titleColored}
             </span>
           </h2>
-          <p className="text-xl mt-5 text-gray-500">{subtitle}</p>
+          <p data-aos="fade-up-right" className="text-xl mt-5 text-gray-500">
+            {subtitle}
+          </p>
         </div>
 
         {/* FAQ items */}
@@ -728,6 +804,8 @@ export function FAQSection({
             const isOpen = open === i;
             return (
               <div
+                data-aos="fade-left"
+                data-aos-delay={i * 100}
                 key={i}
                 className={`bg-white border rounded-xl shadow-sm overflow-hidden transition-all duration-300
                   ${isOpen ? "border-blue-200 shadow-md" : "border-gray-100 hover:border-gray-200 hover:shadow-md"}`}

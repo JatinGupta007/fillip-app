@@ -376,13 +376,19 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
 
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-sky-100 text-gray-600 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm mb-6 hover:bg-white hover:scale-[1.02] transition-all duration-200">
+        <div
+          data-aos="fade-down"
+          className="inline-flex items-center gap-2 bg-white/70 backdrop-blur border border-sky-100 text-gray-600 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm mb-6 hover:bg-white hover:scale-[1.02] transition-all duration-200"
+        >
           <span className="text-sky-400 text-base">{config.badge.icon}</span>
           {config.badge.text}
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center leading-tight mb-4">
+        <h1
+          data-aos="fade-down-right"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center leading-tight mb-4"
+        >
           {config.headlineBlack}{" "}
           <span
             className="bg-clip-text text-transparent"
@@ -392,7 +398,10 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
           </span>
         </h1>
 
-        <p className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-20">
+        <p
+          data-aos="fade-down-left"
+          className="text-gray-500 text-base sm:text-lg leading-relaxed text-center max-w-2xl mb-20"
+        >
           {config.subtext}
         </p>
 
@@ -403,6 +412,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
             const isDone = i < step;
             return (
               <div
+                data-aos="zoom-in-left"
                 key={s.id}
                 className="flex items-center flex-1 last:flex-none"
               >
@@ -440,7 +450,10 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         </div>
 
         {/* Form card */}
-        <div className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9">
+        <div
+          data-aos="zoom-out-down"
+          className="w-full max-w-7xl bg-white rounded-3xl shadow-xl border border-gray-100 p-7 sm:p-9"
+        >
           {submitted ? (
             <div className="flex flex-col items-center text-center py-12 gap-4">
               <div
@@ -523,6 +536,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-3 gap-5 mt-12">
           {config.trustBadges.map((b, i) => (
             <div
+              data-aos="flip-up"
               key={i}
               className="bg-white/80 backdrop-blur border border-white/60 rounded-2xl px-5 py-4 flex items-center gap-4 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200 group"
             >

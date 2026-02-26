@@ -59,7 +59,7 @@ export default function Footer() {
     <footer style={{ backgroundColor: "#0f1623" }} className="w-full">
       {/* ── Top section: logo + nav columns ── */}
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-12 pt-14 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div data-aos="fade-up-left" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Logo + tagline + socials */}
           <div className="lg:col-span-1 flex flex-col gap-5">
             {/* Logo */}
@@ -134,7 +134,7 @@ export default function Footer() {
       </div>
 
       {/* ── Telegram community banner ── */}
-      <div className="max-w-8xl mx-auto px-5 sm:px-10 xl:px-16 lg:px-8 pb-10">
+      <div data-aos="zoom-in" className="max-w-8xl mx-auto px-5 sm:px-10 xl:px-16 lg:px-8 pb-10">
         <div
           className="relative rounded-2xl overflow-hidden p-7 sm:p-10"
           style={{

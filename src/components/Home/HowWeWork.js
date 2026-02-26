@@ -57,13 +57,13 @@ export default function HowWeWork() {
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
+        <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-gray-900">
           How We{" "}
           <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             Work
           </span>
         </h2>
-        <p className="mt-4 text-gray-500 text-base">
+        <p data-aos="fade-down" className="mt-4 text-gray-500 text-base">
           A systematic approach that has helped 500+ apps scale from zero to
           millions of users
         </p>
@@ -75,7 +75,7 @@ export default function HowWeWork() {
           {steps.map((step, idx) => (
             <div key={idx} className="relative flex items-start gap-0">
               {/* Card */}
-              <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col gap-4">
+              <div data-aos="flip-right" className="flex-1 bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col gap-4">
                 {/* Step number */}
                 <span className="text-xs font-bold text-gray-400 tracking-widest">
                   {step.number}
@@ -129,7 +129,7 @@ export default function HowWeWork() {
       </div>
 
       {/* CTA Banner */}
-      <div className="max-w-4xl mx-auto mt-20">
+      <div className="max-w-4xl mx-auto mt-20" data-aos="zoom-in">
         <div className="relative overflow-hidden bg-linear-to-br from-[#1a2a4a] via-[#1e2f52] to-[#0f1f3d] rounded-3xl px-8 py-12 text-center shadow-2xl">
           {/* Subtle glow blobs */}
           <div className="absolute -top-10 -left-10 w-48 h-48 bg-blue-500 opacity-10 rounded-full blur-3xl pointer-events-none" />

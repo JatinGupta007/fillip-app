@@ -158,23 +158,23 @@ export default function ReviewsCarousel() {
     <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
+        <div data-aos="fade-down" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
           <LuQuote className="text-purple-400 text-[14px]" />
           Client Reviews
         </div>
-        <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 data-aos="fade-left" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
           What Our{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Clients Say
           </span>
         </h2>
-        <p className="mt-4 text-gray-500 text-base">
+        <p data-aos="fade-right" className="mt-4 text-gray-500 text-base">
           Trusted by 500+ apps worldwide — here's what founders and growth teams
           say about us
         </p>
 
         {/* Overall rating */}
-        <div className="mt-6 inline-flex items-center gap-3 bg-white border border-gray-100 rounded-2xl px-5 py-3 shadow-md">
+        <div data-aos="zoom-in" className="mt-6 inline-flex items-center gap-3 bg-white border border-gray-100 rounded-2xl px-5 py-3 shadow-md">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <BsStarFill key={i} className="text-yellow-400 text-base" />
@@ -187,6 +187,7 @@ export default function ReviewsCarousel() {
 
       {/* Carousel */}
       <div
+        data-aos="fade-up"
         className="max-w-7xl mx-auto"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -242,7 +243,7 @@ export default function ReviewsCarousel() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-4xl mx-auto mt-16">
+      <div data-aos="zoom-in" className="max-w-4xl mx-auto mt-16">
         <div className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
           <div>
             <p className="text-gray-900 font-bold text-lg">

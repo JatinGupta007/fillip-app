@@ -682,6 +682,7 @@ export function WhyASOMatters({
             {/* Badge */}
             {badge && (
               <div
+                data-aos="fade-left"
                 className="inline-flex items-center gap-2 w-fit text-sm font-semibold px-4 py-2 rounded-full mb-6 hover:scale-[1.02] transition-all duration-200"
                 style={{
                   background: "#f0fdf4",
@@ -695,12 +696,18 @@ export function WhyASOMatters({
             )}
 
             {/* Headline */}
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0d1f3c] leading-tight mb-5">
+            <h2
+              data-aos="fade-left"
+              className="text-4xl sm:text-5xl font-bold text-[#0d1f3c] leading-tight mb-5"
+            >
               {headline}
             </h2>
 
             {/* Subtext */}
-            <p className="text-gray-500 text-base leading-relaxed mb-8">
+            <p
+              data-aos="fade-left"
+              className="text-gray-500 text-base leading-relaxed mb-8"
+            >
               {subtext}
             </p>
 
@@ -708,6 +715,8 @@ export function WhyASOMatters({
             <div className="flex flex-col gap-4 mb-10">
               {points.map((p, i) => (
                 <div
+                  data-aos="fade-left"
+                  data-aos-delay={i * 100}
                   key={i}
                   className="flex items-center gap-4 group cursor-default"
                 >
@@ -725,6 +734,7 @@ export function WhyASOMatters({
             {/* CTA */}
             {cta && (
               <a
+                data-aos="fade-left"
                 href={cta.href ?? "#"}
                 className="group inline-flex items-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 w-fit"
                 style={{
@@ -741,7 +751,7 @@ export function WhyASOMatters({
           </div>
 
           {/* ── RIGHT — Image with floating card ── */}
-          <div className="relative w-full">
+          <div data-aos="fade-right" className="relative w-full">
             {/* Image container */}
             {image ? (
               <Image
@@ -753,7 +763,10 @@ export function WhyASOMatters({
               />
             ) : (
               /* Placeholder */
-              <div className="w-full h-full bg-linear-to-br from-gray-200 to-gray-400 flex items-center justify-center">
+              <div
+                data-aos="fade-right"
+                className="w-full h-full bg-linear-to-br from-gray-200 to-gray-400 flex items-center justify-center"
+              >
                 <span className="text-gray-500 text-lg font-semibold">
                   App Image
                 </span>

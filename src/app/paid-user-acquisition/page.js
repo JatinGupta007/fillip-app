@@ -704,11 +704,17 @@ export function PlatformMasterySection({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-2xl mx-auto">
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base max-w-2xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -718,6 +724,7 @@ export function PlatformMasterySection({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {platforms.map((p, i) => (
             <div
+              data-aos="flip-down"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
             >

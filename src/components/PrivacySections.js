@@ -396,7 +396,10 @@ function ContentBlock({ block }) {
 ════════════════════════════════════════ */
 function PolicyCard({ section, iconBg }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 p-8">
+    <div
+      data-aos="zoom-in-left"
+      className="bg-white border border-gray-200 rounded-3xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 p-8"
+    >
       {/* Header */}
       <div className="flex items-center gap-4 mb-6">
         <div
@@ -439,6 +442,7 @@ export default function PrivacyPolicySections({ data = defaultPrivacyData }) {
 
         {/* CTA card */}
         <div
+          data-aos="zoom-in"
           className="relative overflow-hidden rounded-3xl shadow-2xl text-center px-8 py-14"
           style={{ background: cta.bgGradient }}
         >

@@ -376,6 +376,7 @@ export function ResourceFeaturesStrip({ features = [], bg = "#ffffff" }) {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((f, i) => (
             <div
+              data-aos="zoom-out-up"
               key={i}
               className="flex flex-col items-center text-center group cursor-default"
             >
@@ -443,7 +444,10 @@ export function GrowthGuidesGrid({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span
               className="bg-clip-text text-transparent ml-2"
@@ -453,7 +457,10 @@ export function GrowthGuidesGrid({
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -463,6 +470,7 @@ export function GrowthGuidesGrid({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {guides.map((guide) => (
             <div
+              data-aos="zoom-out-down"
               key={guide.id}
               className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
             >
@@ -558,14 +566,20 @@ function TemplatesSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span className="ml-2" style={{ color: titleColor ?? "#10b981" }}>
               {titleColored}
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-right"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -574,6 +588,7 @@ function TemplatesSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {templates?.map((t, i) => (
             <div
+              data-aos="flip-right"
               key={i}
               className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
             >
@@ -638,14 +653,20 @@ function VideoTutorialsSection({
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-up-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             <span className="ml-2" style={{ color: titleColor ?? "#a855f7" }}>
               {titleColored}
             </span>
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-down-right"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -653,7 +674,12 @@ function VideoTutorialsSection({
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
           {videos?.map((v, i) => (
-            <a key={i} href={v.href ?? "#"} className="group block">
+            <a
+              data-aos="flip-left"
+              key={i}
+              href={v.href ?? "#"}
+              className="group block"
+            >
               {/* Thumbnail */}
               <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 mb-3 aspect-video bg-gray-200 group-hover:scale-[1.02]">
                 {v.thumbnail ? (
@@ -691,7 +717,7 @@ function VideoTutorialsSection({
 
         {/* View all CTA */}
         {ctaLabel && (
-          <div className="flex justify-center">
+          <div data-aos="zoom-out" className="flex justify-center">
             <a
               href={ctaHref ?? "#"}
               className="inline-flex items-center gap-2 bg-purple-500 hover:bg-purple-700 text-white font-bold text-sm px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"

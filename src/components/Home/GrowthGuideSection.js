@@ -58,6 +58,7 @@ export default function GrowthGuideSection() {
 
           {/* Main playbook card */}
           <div
+            data-aos="fade-up-left"
             className="relative w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 hover:shadow-blue-400/30 hover:-translate-y-1 transition-all duration-500 -rotate-5"
             style={{
               background:
@@ -121,29 +122,32 @@ export default function GrowthGuideSection() {
         {/* ── RIGHT: Content ── */}
         <div className="flex flex-col gap-6">
           {/* Limited time offer badge */}
-          <div className="inline-flex items-center gap-2 bg-[#1a2a4a] border border-[#2a3a5a] text-gray-300 text-xs font-bold px-4 py-2 rounded-full w-fit">
+          <div
+            data-aos="fade-right"
+            className="inline-flex items-center gap-2 bg-[#1a2a4a] border border-[#2a3a5a] text-gray-300 text-xs font-bold px-4 py-2 rounded-full w-fit"
+          >
             <HiOutlineBookOpen className="text-blue-400" />
             LIMITED TIME OFFER
           </div>
 
           {/* Headline */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h2 data-aos="fade-up-right" className="text-4xl lg:text-5xl font-bold text-white leading-tight">
               Download Your Free
             </h2>
-            <h2 className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight">
+            <h2 data-aos="fade-up-left" className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight">
               Growth Guide
             </h2>
           </div>
 
           {/* Subtext */}
-          <p className="text-gray-400 text-base leading-relaxed max-w-md">
+          <p data-aos="fade-up" className="text-gray-400 text-base leading-relaxed max-w-md">
             Learn the exact strategies we use to scale apps from 0 to 1M+ users.
             No fluff, just proven tactics.
           </p>
 
           {/* Social proof row */}
-          <div className="flex items-center gap-4 bg-[#1a2a4a]/60 border border-[#2a3a5a] rounded-2xl px-5 py-4">
+          <div data-aos="fade-down" className="flex items-center gap-4 bg-[#1a2a4a]/60 border border-[#2a3a5a] rounded-2xl px-5 py-4">
             {/* Avatars */}
             <div className="flex -space-x-2 shrink-0">
               {avatarLabels.map((label, i) => (
@@ -170,7 +174,7 @@ export default function GrowthGuideSection() {
           </div>
 
           {/* Email input + CTA */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div data-aos="fade-up" className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
               placeholder="Enter your email address"
@@ -196,13 +200,13 @@ export default function GrowthGuideSection() {
           </div>
 
           {/* Trust line */}
-          <div className="flex items-center gap-2 text-gray-500 text-xs">
+          <div data-aos="fade-up" className="flex items-center gap-2 text-gray-500 text-xs">
             <BsShieldCheck className="text-green-400 text-sm shrink-0" />
             Instant access. No credit card required. Unsubscribe anytime.
           </div>
 
           {/* What You'll Learn */}
-          <div className="bg-[#1a2a4a]/40 border border-[#2a3a5a] rounded-2xl p-5">
+          <div data-aos="fade-down" className="bg-[#1a2a4a]/40 border border-[#2a3a5a] rounded-2xl p-5">
             <p className="flex items-center gap-2 text-white font-bold text-sm mb-4">
               <TbSparkles className="text-yellow-400" />
               What You'll Learn:

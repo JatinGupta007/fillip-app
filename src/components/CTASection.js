@@ -63,6 +63,7 @@ export default function CTASection({
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-7">
         {/* Badge */}
         <div
+          data-aos="zoom-out-up"
           className={`inline-flex items-center gap-2 ${badgeBgColor} backdrop-blur text-gray-200 text-sm font-bold px-5 py-2.5 mb-4 rounded-full shadow-md hover:text-white transition-all duration-200`}
         >
           <TbSparkles className="text-gray-200 text-[16px] font-bold" />
@@ -70,12 +71,18 @@ export default function CTASection({
         </div>
 
         {/* Headline */}
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+        <h2
+          data-aos="zoom-in-left"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
+        >
           {headline}
         </h2>
 
         {/* Subtext */}
-        <p className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-3xl">
+        <p
+          data-aos="zoom-out-right"
+          className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-3xl"
+        >
           {subtext}
         </p>
 
@@ -83,6 +90,7 @@ export default function CTASection({
         <div className="flex flex-col sm:flex-row gap-7 mt-8 w-full sm:w-auto">
           {buttons.map((btn, idx) => (
             <a
+              data-aos="zoom-out-down"
               key={idx}
               href={btn.href}
               className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-base px-11 py-4 rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
@@ -95,7 +103,10 @@ export default function CTASection({
           ))}
         </div>
         {tags && (
-          <div className="flex items-center gap-2 text-white text-md font-medium mt-7">
+          <div
+            data-aos="zoom-in-down"
+            className="flex items-center gap-2 text-white text-md font-medium mt-7"
+          >
             {tags.icon && (
               <MdCheckCircle className="text-emerald-500 text-2xl" />
             )}

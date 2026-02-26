@@ -14,16 +14,16 @@ export default function HeroSection() {
   const [link, setLink] = useState("");
 
   return (
-    <section className="w-full overflow-hidden bg-linear-to-br from-[#eaf4ff] via-[#f0f7ff] to-[#e8f0ff] flex items-center">
+    <section className="w-full bg-linear-to-br from-[#eaf4ff] via-[#f0f7ff] to-[#e8f0ff] flex items-center px-5 md:px-10 xl:px-16">
       {/* Background blobs */}
       <div className="absolute top-[-80px] left-[-80px] w-[340px] h-[340px] rounded-full bg-blue-100 opacity-60 blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-purple-100 opacity-50 blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-8xl mx-auto lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 xl:gap-20 items-center">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 xl:pt-5 pt-10 items-center xl:items-start">
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-[#DFF2FE] backdrop-blur border border-blue-100 rounded-full px-4 py-2 w-fit shadow-lg mb-6">
+          <div data-aos="fade-up" className="inline-flex items-center gap-3 bg-[#DFF2FE] backdrop-blur border border-blue-100 rounded-full px-4 py-2 w-fit shadow-lg mb-6">
             <span className="flex items-center gap-2 text-sm font-semibold text-[#0069A8]">
               <BsStars className="text-[#0069A8]" />
               Trusted by 500+ Apps Worldwide
@@ -37,17 +37,17 @@ export default function HeroSection() {
 
           {/* Headline */}
           <div>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+            <h1 data-aos="fade-right" className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900">
               Grow Your App to
             </h1>
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-linear-to-r from-[#00b4d8] via-[#6c63ff] to-[#a855f7] bg-clip-text text-transparent">
+            <h1 data-aos="fade-left" className="text-5xl lg:text-6xl font-bold leading-tight bg-linear-to-r from-[#00b4d8] via-[#6c63ff] to-[#a855f7] bg-clip-text text-transparent">
               1M+ Users
             </h1>
-            <div className="mt-2 h-1 w-48 rounded-2xl bg-linear-to-r from-[#00b4d8] to-[#6c63ff]" />
+            <div data-aos="zoom-in" className="mt-2 h-1 w-48 rounded-2xl bg-linear-to-r from-[#00b4d8] to-[#6c63ff]" />
           </div>
 
           {/* Subtext */}
-          <p className="text-gray-600 text-xl leading-relaxed max-w-xl">
+          <p data-aos="fade-down" className="text-gray-600 text-xl leading-relaxed max-w-xl">
             Get a{" "}
             <a href="#" className="font-bold text-[#0084D1]">
               free app marketing audit
@@ -66,6 +66,7 @@ export default function HeroSection() {
             ].map((f) => (
               <div
                 key={f}
+                data-aos="fade-left"
                 className="flex items-center gap-2 text-gray-700 text-sm font-medium"
               >
                 <span className="flex items-center justify-center w-5 h-5 rounded-full bg-linear-to-br from-cyan-400 to-blue-500 shrink-0">
@@ -77,8 +78,8 @@ export default function HeroSection() {
           </div>
 
           {/* CTA Input */}
-          <div className="flex flex-col sm:flex-row gap-3 mt-6">
-            <div className="w-120 flex items-center bg-white border-2 border-gray-200 rounded-xl shadow-sm px-4 py-4 gap-2">
+          <div data-aos="fade-right" className="flex flex-col sm:flex-row gap-3 mt-6">
+            <div className="w-88 md:w-110 flex items-center bg-white border-2 border-gray-200 rounded-xl shadow-sm px-4 py-4 gap-2">
               <input
                 type="text"
                 placeholder="Enter your App Store or Play Store link"
@@ -94,7 +95,7 @@ export default function HeroSection() {
           </div>
 
           {/* Sub-CTA */}
-          <div className="flex items-center gap-8 flex-wrap mb-8">
+          <div data-aos="fade-up" className="flex items-center gap-8 flex-wrap mb-8">
             <a
               href="#"
               className="text-[#0084D1] text-sm underline underline-offset-2 font-semibold"
@@ -114,7 +115,7 @@ export default function HeroSection() {
           </div>
 
           {/* Trust badges */}
-          <div className="flex flex-wrap gap-6 mt-2">
+          <div data-aos="fade-left" className="flex flex-wrap gap-6 mt-2">
             <div className="flex items-center gap-3 bg-white rounded-2xl shadow-md px-4 py-3">
               <span className="w-9 h-9 rounded-xl bg-linear-to-br from-orange-400 to-orange-500 flex items-center justify-center">
                 <RiMedalLine className="text-white text-lg" />
@@ -152,7 +153,7 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT CONTENT — Phone mockup */}
-        <div className="mt-8 lg:mt-0">
+        <div data-aos="zoom-in" className="">
           <Image
             src="/home-1.png"
             height={500}

@@ -292,15 +292,26 @@ export function OpenPositionsSection({
       : positions.filter((p) => p.department === active);
 
   return (
-    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]">
+          <h2
+            data-aos="fade-down-right"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+          >
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base">{subtitle}</p>
+            <p
+              data-aos="fade-down-left"
+              className="mt-3 text-gray-500 text-base"
+            >
+              {subtitle}
+            </p>
           )}
         </div>
 
@@ -308,6 +319,7 @@ export function OpenPositionsSection({
         <div className="flex flex-wrap gap-5 mb-8 justify-center">
           {tabs.map((tab, i) => (
             <button
+              data-aos="zoom-out-left"
               key={i}
               onClick={() => setActive(tab)}
               className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 border
@@ -326,6 +338,7 @@ export function OpenPositionsSection({
         <div className="flex flex-col gap-5">
           {filtered.map((job) => (
             <div
+              data-aos="zoom-in-right"
               key={job.id}
               className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
@@ -410,11 +423,17 @@ export function WhyJoinSection({
   bg = "#ffffff",
 }) {
   return (
-    <section className="w-full py-20 px-5 md:px-10 xl:px-16" style={{ background: bg }}>
+    <section
+      className="w-full py-20 px-5 md:px-10 xl:px-16"
+      style={{ background: bg }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-left"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {title}
             {titleColored && (
               <span className="bg-linear-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
@@ -424,7 +443,10 @@ export function WhyJoinSection({
             )}
           </h2>
           {subtitle && (
-            <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-right"
+              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {subtitle}
             </p>
           )}
@@ -434,6 +456,7 @@ export function WhyJoinSection({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {benefits.map((b, i) => (
             <div
+              data-aos="flip-right"
               key={i}
               className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 group"
             >

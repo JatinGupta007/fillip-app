@@ -45,6 +45,7 @@ export default function CareersHeroSection({
         {/* ── Top badge ── */}
         {badge && (
           <div
+            data-aos="fade-down-right"
             className={`inline-flex items-center gap-2 ${badgeBackground} backdrop-blur border border-blue-100 text-cyan-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white transition-all duration-200`}
           >
             {badge.icon && (
@@ -56,9 +57,11 @@ export default function CareersHeroSection({
 
         {/* ── Headline ── */}
         <div className="max-w-4xl">
-          <h1 className="text-5xl sm:text-6xl lg:text-6xl font-bold  text-[#0d1f3c] leading-tight tracking-tight">
-            {headlineBlack} {" "}
-
+          <h1
+            data-aos="fade-up-left"
+            className="text-5xl sm:text-6xl lg:text-6xl font-bold  text-[#0d1f3c] leading-tight tracking-tight"
+          >
+            {headlineBlack}{" "}
             <span
               className={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
             >
@@ -69,13 +72,16 @@ export default function CareersHeroSection({
 
         {/* ── Subtext ── */}
         {subtext && (
-          <p className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl">
+          <p
+            data-aos="fade-up-right"
+            className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl"
+          >
             {subtext}
           </p>
         )}
 
         {/* ── Optional CTA buttons ── */}
-        <div className="flex gap-7 mb-4">
+        <div data-aos="zoom-in" className="flex gap-7 mb-4">
           {primaryBtn && (
             <a
               href={primaryBtn.href || "#"}
@@ -103,7 +109,10 @@ export default function CareersHeroSection({
 
         {/* ── Icon+Caption badges — optional, any count ── */}
         {badges && badges.length > 0 && (
-          <div className="flex flex-wrap items-center justify-center gap-10 mt-3">
+          <div
+            data-aos="zoom-out-up"
+            className="flex flex-wrap items-center justify-center gap-10 mt-3"
+          >
             {badges.map((b, i) => (
               <div
                 key={i}
