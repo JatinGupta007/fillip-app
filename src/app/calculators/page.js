@@ -552,10 +552,12 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
     <div className="min-h-screen bg-[#f0f6fa] px-5 md:px-10 xl:px-16 py-16 mb-24">
       <div className="max-w-7xl mx-auto">
         {/* ── Tab bar ── */}
-        <div className="flex gap-2 overflow-x-auto pb-2 mb-8 scrollbar-hide justify-around">
+        <div
+          data-aos="zoom-in-up"
+          className="flex gap-4 overflow-x-auto pb-7 xl:pb-2 mb-8 scrollbar-hide justify-around"
+        >
           {config.tabs.map((tab) => (
             <button
-              data-aos="zoom-in-up"
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
               className={`flex items-center gap-2 shrink-0 font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 relative

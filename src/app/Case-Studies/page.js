@@ -93,11 +93,13 @@ export default function RealResultsSection() {
 
         {/* ── Filter Tabs Bar ── */}
         <div className="w-full bg-white border-b border-gray-100 shadow-sm px-5 md:px-10 xl:px-16 py-10">
-          <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
-            <div className="flex gap-10 min-w-max sm:min-w-0 sm:flex-wrap">
+          <div className="max-w-6xl mx-auto overflow-x-auto p-6 scrollbar-hide">
+            <div
+              data-aos="zoom-out-up"
+              className="flex gap-10 min-w-max sm:min-w-0 xl:flex-wrap"
+            >
               {filters.map((filter) => (
                 <button
-                  data-aos="zoom-out-up"
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-6 py-2.5 rounded-2xl text-sm font-bold transition-all duration-200 whitespace-nowrap

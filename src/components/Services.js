@@ -14,7 +14,7 @@ import CTASection from "./CTASection";
 export function HeroSection({ hero, theme }) {
   return (
     <section
-      className="relative w-full min-h-[88vh] overflow-hidden flex flex-col items-center justify-center px-6 py-24 text-center"
+      className="relative w-full xl:min-h-[88vh] overflow-hidden flex flex-col items-center justify-center px-6 py-24 text-center"
       style={{ background: theme.heroBg }}
     >
       {/* Glow blobs */}

@@ -48,7 +48,7 @@ export default function GrowthGuideSection() {
       <div className="absolute -bottom-20 -right-15 w-72 h-72 bg-purple-600 opacity-10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-cyan-500 opacity-5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
         {/* ── LEFT: Playbook Card mockup ── */}
         <div className="relative flex items-center justify-center">
           {/* Floating medal icon top-right */}

@@ -298,8 +298,8 @@ export default function Header() {
           {/* Mobile right side: CTA (small) + hamburger */}
           <div className="flex items-center gap-2 lg:hidden">
             <Link
-              href="#"
-              className="inline-flex items-center gap-1.5 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white text-xs font-semibold px-7 py-3 rounded-2xl transition-colors"
+              href="/get-quote"
+              className="inline-flex items-center gap-1.5 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white text-xs font-semibold px-4 py-1.5 md:px-5 md:py-2 rounded-xl transition-colors"
             >
               <HiShoppingCart size={14} />
               <span className="hidden sm:inline">Get A Plan</span>
@@ -311,7 +311,7 @@ export default function Header() {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <MdClose size={30} /> : <MdMenu size={30} />}
+              {mobileOpen ? <MdClose size={32} /> : <MdMenu size={32} />}
             </button>
           </div>
         </div>
@@ -348,7 +348,7 @@ export default function Header() {
                 icon={<HiBriefcase size={15} />}
               >
                 {servicesMenu.map((group) => (
-                  <div key={group.tag} className="px-4 pt-3 pb-1">
+                  <Link href={group.href} key={group.tag} className="px-4 pt-3 pb-1">
                     {/* Sub-group header */}
                     <div className="flex items-center gap-2 mb-2">
                       <span
@@ -366,17 +366,16 @@ export default function Header() {
                     </div>
                     {/* Sub-links */}
                     {group.links.map((link) => (
-                      <Link
+                      <li
                         key={link.label}
-                        href="#"
                         className="flex items-center gap-2.5 pl-2 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
                         <span style={{ color: group.color }}>{link.icon}</span>
                         {link.label}
-                      </Link>
+                      </li>
                     ))}
-                  </div>
+                  </Link>
                 ))}
               </MobileAccordion>
 
@@ -389,7 +388,7 @@ export default function Header() {
                   {solutionsItems.map((item) => (
                     <li key={item}>
                       <Link
-                        href="#"
+                        href={`/${item.replaceAll(" ", "-").toLowerCase()}`}
                         className="block py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
@@ -407,7 +406,7 @@ export default function Header() {
               ].map(({ label, icon }) => (
                 <Link
                   key={label}
-                  href="#"
+                  href={`/${label.replaceAll(" ", "-").toLowerCase()}`}
                   className="flex items-center gap-2 px-4 py-3.5 text-sm font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -425,7 +424,7 @@ export default function Header() {
                   {resourcesItems.map((item) => (
                     <li key={item}>
                       <Link
-                        href={`/${item.replace(/\s+/g, "-").toLowerCase()}`}
+                        href={`/${item.replaceAll(/\s+/g, "-").toLowerCase()}`}
                         className="block py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
@@ -440,7 +439,7 @@ export default function Header() {
             {/* Drawer footer CTA */}
             <div className="p-4 border-t border-gray-100">
               <Link
-                href="#"
+                href="/get-quote"
                 className="flex items-center justify-center gap-2 w-full bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white text-sm font-semibold py-3 rounded-2xl transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
