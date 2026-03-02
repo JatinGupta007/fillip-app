@@ -15,7 +15,7 @@ export default function Home() {
       <HowWeWork />
       <AwarenessSection />
       <SuccessStories />
-      <ReviewsCarousel />
+      <ReviewsCarousel /> 
       <IndustriesSection />
       <GrowthGuideSection />
     </main>

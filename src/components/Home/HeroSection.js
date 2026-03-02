@@ -16,12 +16,12 @@ export default function HeroSection() {
   return (
     <section className="w-full bg-linear-to-br from-[#eaf4ff] via-[#f0f7ff] to-[#e8f0ff] flex items-center px-5 md:px-10 xl:px-16">
       {/* Background blobs */}
-      <div className="absolute top-[-80px] left-[-80px] w-[340px] h-[340px] rounded-full bg-blue-100 opacity-60 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-purple-100 opacity-50 blur-3xl pointer-events-none" />
+      {/* <div className="absolute top-[-80px] left-[-80px] w-[340px] h-[340px] rounded-full bg-blue-100 opacity-60 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-purple-100 opacity-50 blur-3xl pointer-events-none" /> */}
 
       <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 xl:gap-20 items-center">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col gap-6 xl:pt-5 pt-10 items-center xl:items-start">
+        <div className="flex flex-col gap-6 xl:pt-0 pt-10 items-center xl:items-start">
           {/* Badge */}
           <div data-aos="fade-up" className="inline-flex items-center gap-3 bg-[#DFF2FE] backdrop-blur border border-blue-100 rounded-full px-4 py-2 w-fit shadow-lg mb-6">
             <span className="flex items-center gap-2 text-sm font-semibold text-[#0069A8]">

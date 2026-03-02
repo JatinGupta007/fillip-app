@@ -1,7 +1,6 @@
 "use client";
 
 import { FiArrowRight } from "react-icons/fi";
-import { FiCheckCircle } from "react-icons/fi";
 
 
 /* ════════════════════════════════════════
