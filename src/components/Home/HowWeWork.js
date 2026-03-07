@@ -56,35 +56,41 @@ export default function HowWeWork() {
   return (
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
-      <div className="max-w-2xl mx-auto text-center mb-14">
-        <h2 data-aos="fade-up" className="text-4xl lg:text-5xl font-bold text-gray-900">
+      <div className="max-w-3xl mx-auto text-center mb-14">
+        <h2
+          data-aos="fade-up"
+          className="text-4xl lg:text-5xl font-bold text-gray-900"
+        >
           How We{" "}
           <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
             Work
           </span>
         </h2>
-        <p data-aos="fade-down" className="mt-4 text-gray-500 text-base">
+        <p data-aos="fade-down" className="mt-4 text-gray-600 text-lg">
           A systematic approach that has helped 500+ apps scale from zero to
           millions of users
         </p>
       </div>
 
       {/* Steps Grid */}
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+      <div className="mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative">
           {steps.map((step, idx) => (
-            <div key={idx} className="relative flex items-start gap-0">
+            <div key={idx} className="relative flex items-start">
               {/* Card */}
-              <div data-aos="flip-right" className="flex-1 bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col gap-4">
+              <div
+                data-aos="flip-right"
+                className="bg-white border w-80 h-90 border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-2xl hover:scale-105 hover:bg-rose-50 hover:shadow-rose-100 transition-all duration-300 flex flex-col items-start gap-4"
+              >
                 {/* Step number */}
-                <span className="text-xs font-bold text-gray-400 tracking-widest">
+                <span className="text-sm font-bold text-gray-400 bg-gray-100 p-2 rounded-xl tracking-widest">
                   {step.number}
                 </span>
 
                 {/* Icon + Arrow row */}
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-12 h-12 rounded-xl bg-linear-to-br ${step.iconBg} flex items-center justify-center shadow-lg`}
+                    className={`w-14 h-14 rounded-xl bg-linear-to-br ${step.iconBg} flex items-center justify-center shadow-lg`}
                   >
                     {step.icon}
                   </div>
@@ -93,7 +99,7 @@ export default function HowWeWork() {
 
                 {/* Title */}
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {step.title}
                   </h3>
                   <p className="text-gray-500 text-sm mt-1 leading-relaxed">
@@ -119,9 +125,7 @@ export default function HowWeWork() {
 
               {/* Arrow connector — shown on lg between cards */}
               {step.arrowColor && (
-                <div className="hidden lg:flex items-center justify-center w-8 shrink-0 mt-14 -mx-1 z-10">
-                  <FiArrowRight className="text-cyan-400 text-xl" />
-                </div>
+                <div className="hidden -right-1 lg:flex items-center justify-center w-10  bg-cyan-400 h-0.5 shrink-0 mt-18  z-10"></div>
               )}
             </div>
           ))}

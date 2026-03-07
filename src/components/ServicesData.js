@@ -14,6 +14,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import { MdOutlineBarChart } from "react-icons/md";
 import { FiDownload } from "react-icons/fi";
 import { HiOutlineCursorClick } from "react-icons/hi";
+import { Eye, Globe, Users, TrendingUp } from "lucide-react";
 
 export const ServicesData = {
   /* ══════════════════════════
@@ -28,7 +29,7 @@ export const ServicesData = {
       blob3: "#ec4899",
       badgeBg: "linear-gradient(135deg, #fce4ff 0%, #f5e6ff 40%, #e0d4ff 100%)",
       badgeBorder: "#e9b8f8",
-      badgeText: "#a21caf",
+      badgeText: "#59168B",
       primaryBtn: "linear-gradient(135deg, #d946ef, #a855f7)",
       btnShadow: "rgba(217,70,239,0.35)",
       checkBg: "linear-gradient(135deg, #d946ef, #a855f7)",
@@ -59,25 +60,33 @@ export const ServicesData = {
         "Build awareness, generate interest, and create a massive audience base for your app",
       cards: [
         {
-          icon: "👁️",
+          hoverBg:
+            "bg-gradient-to-br from-pink-200 to-transparent shadow-pink-200",
+          icon: <Eye size={28} />,
           iconBg: "linear-gradient(135deg, #d946ef, #a855f7)",
           title: "Brand Awareness Campaigns",
           desc: "Reach millions with targeted display, video, and social media campaigns designed to build brand recognition.",
         },
         {
-          icon: "🌐",
+          hoverBg:
+            "bg-gradient-to-br from-sky-200 to-transparent shadow-sky-200",
+          icon: <Globe size={28} />,
           iconBg: "linear-gradient(135deg, #22d3ee, #3b82f6)",
           title: "Multi-Channel Reach",
           desc: "Expand your presence across Facebook, Instagram, TikTok, YouTube, and programmatic display networks.",
         },
         {
-          icon: "👥",
+          hoverBg:
+            "bg-gradient-to-br from-orange-200 to-transparent shadow-orange-200",
+          icon: <Users size={28} />,
           iconBg: "linear-gradient(135deg, #f97316, #fb923c)",
           title: "Audience Building",
           desc: "Create custom audiences and lookalikes to build a qualified user base for future conversion campaigns.",
         },
         {
-          icon: "📈",
+          hoverBg:
+            "bg-gradient-to-br from-teal-200 to-transparent shadow-cyan-200",
+          icon: <TrendingUp size={28} />,
           iconBg: "linear-gradient(135deg, #10b981, #34d399)",
           title: "Viral Content Strategy",
           desc: "Leverage trending formats, influencer partnerships, and UGC to create shareable content that amplifies reach.",
@@ -86,6 +95,7 @@ export const ServicesData = {
     },
 
     included: {
+      border: "#AD46FF",
       title: "What's Included in",
       titleColored: "TOFU Campaigns",
       items: [
@@ -99,6 +109,7 @@ export const ServicesData = {
     },
 
     tactics: {
+      border: "#AD46FF",
       title: "Advertising",
       titleColored: "Channels",
       subtitle: "Reach billions of users across the world's largest platforms",
@@ -124,6 +135,8 @@ export const ServicesData = {
           engagement: "2.3M engagements",
           result: "500K app page visits",
           resultColor: "#d946ef",
+          hoverBg:
+            "bg-gradient-to-br from-pink-200  to-transparent shadow-pink-200",
         },
         {
           name: "PayStream",
@@ -133,6 +146,8 @@ export const ServicesData = {
           engagement: "1.8M engagements",
           result: "350K brand searches",
           resultColor: "#22d3ee",
+          hoverBg:
+            "bg-gradient-to-br from-cyan-200  to-transparent shadow-cyan-200",
         },
         {
           name: "ShopEasy",
@@ -142,6 +157,8 @@ export const ServicesData = {
           engagement: "3.5M engagements",
           result: "800K app page visits",
           resultColor: "#f97316",
+          hoverBg:
+            "bg-gradient-to-br from-orange-200  to-transparent shadow-orange-200",
         },
       ],
     },
@@ -241,24 +258,32 @@ export const ServicesData = {
         "Convert awareness into action with optimized acquisition campaigns",
       cards: [
         {
+          hoverBg:
+            "bg-gradient-to-br from-sky-200 to-transparent shadow-sky-200",
           icon: "🎯",
           iconBg: "linear-gradient(135deg, #0ea5e9, #38bdf8)",
           title: "App Store Optimization",
           desc: "Optimize your app store presence with keyword research, A/B tested creatives, and conversion-focused descriptions.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-purple-200 to-transparent shadow-purple-200",
           icon: "🖱️",
           iconBg: "linear-gradient(135deg, #6366f1, #818cf8)",
           title: "Paid User Acquisition",
           desc: "Drive qualified traffic with Apple Search Ads, Google App Campaigns, and social media performance campaigns.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-pink-200 to-transparent shadow-pink-200",
           icon: "📊",
           iconBg: "linear-gradient(135deg, #d946ef, #a855f7)",
           title: "Conversion Rate Optimization",
           desc: "Test and optimize every touchpoint from ad click to app install with data-driven experimentation.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-green-200 to-transparent shadow-green-200",
           icon: "⬇️",
           iconBg: "linear-gradient(135deg, #10b981, #34d399)",
           title: "Install Campaigns",
@@ -268,6 +293,7 @@ export const ServicesData = {
     },
 
     included: {
+      border: "#38bdf8",
       title: "What's Included in",
       titleColored: "MOFU Campaigns",
       items: [
@@ -283,6 +309,7 @@ export const ServicesData = {
     },
 
     tactics: {
+      border: "#38bdf8",
       title: "Acquisition",
       titleColored: "Channels",
       subtitle: "Proven channels with industry-leading cost per install",
@@ -309,6 +336,8 @@ export const ServicesData = {
           reduction: "66% reduction",
           installs: "125K installs",
           resultBg: "linear-gradient(135deg, #0ea5e9, #38bdf8)",
+          hoverBg:
+            "bg-gradient-to-br from-sky-200 to-transparent shadow-sky-200",
         },
         {
           name: "BudgetWise",
@@ -319,6 +348,8 @@ export const ServicesData = {
           reduction: "65% reduction",
           installs: "95K installs",
           resultBg: "linear-gradient(135deg, #6366f1, #818cf8)",
+          hoverBg:
+            "bg-gradient-to-br from-purple-200 to-transparent shadow-purple-200",
         },
         {
           name: "WorkoutPlus",
@@ -329,6 +360,8 @@ export const ServicesData = {
           reduction: "62% reduction",
           installs: "180K installs",
           resultBg: "linear-gradient(135deg, #10b981, #34d399)",
+          hoverBg:
+            "bg-gradient-to-br from-green-200 to-transparent shadow-green-200",
         },
       ],
     },
@@ -426,24 +459,32 @@ export const ServicesData = {
         "Optimize retention, maximize revenue, and create loyal customers",
       cards: [
         {
+          hoverBg:
+            "bg-gradient-to-br from-green-200  to-transparent shadow-green-200",
           icon: "🔄",
           iconBg: "linear-gradient(135deg, #10b981, #34d399)",
           title: "Retention Optimization",
           desc: "Reduce churn with personalized push notifications, in-app messaging, and lifecycle campaigns that keep users engaged.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-orange-200  to-transparent shadow-orange-200",
           icon: "💰",
           iconBg: "linear-gradient(135deg, #f97316, #fb923c)",
           title: "Revenue Maximization",
           desc: "Increase LTV with optimized subscription flows, upsell campaigns, and conversion rate optimization.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-purple-200  to-transparent shadow-purple-200",
           icon: "📊",
           iconBg: "linear-gradient(135deg, #6366f1, #818cf8)",
           title: "Event Optimization",
           desc: "Drive key in-app actions with behavior-based targeting, A/B testing, and funnel optimization.",
         },
         {
+          hoverBg:
+            "bg-gradient-to-br from-pink-200  to-transparent shadow-pink-200",
           icon: "🎯",
           iconBg: "linear-gradient(135deg, #d946ef, #a855f7)",
           title: "Re-engagement Campaigns",
@@ -453,6 +494,7 @@ export const ServicesData = {
     },
 
     included: {
+      border: "#00BC7D",
       title: "What's Included in",
       titleColored: "BOFU Campaigns",
       items: [
@@ -468,6 +510,7 @@ export const ServicesData = {
     },
 
     tactics: {
+      border: "#00BC7D",
       title: "Retention",
       titleColored: "Tactics",
       subtitle: "Proven strategies to keep users engaged and paying",
@@ -500,6 +543,8 @@ export const ServicesData = {
           improvementBg: "linear-gradient(135deg, #10b981, #34d399)",
           mrr: "+$850K MRR",
           mrrColor: "#f97316",
+          hoverBg:
+            "bg-gradient-to-br from-green-200 to-transparent shadow-green-200",
         },
         {
           name: "InvestSmart",
@@ -512,6 +557,8 @@ export const ServicesData = {
           improvementBg: "linear-gradient(135deg, #f97316, #fb923c)",
           mrr: "+$1.2M MRR",
           mrrColor: "#f97316",
+          hoverBg:
+            "bg-gradient-to-br from-orange-200 to-transparent shadow-orange-200",
         },
         {
           name: "LanguageLearn",
@@ -524,6 +571,8 @@ export const ServicesData = {
           improvementBg: "linear-gradient(135deg, #6366f1, #818cf8)",
           mrr: "+$420K MRR",
           mrrColor: "#f97316",
+          hoverBg:
+            "bg-gradient-to-br from-purple-200 to-transparent shadow-purple-200",
         },
       ],
     },
@@ -540,6 +589,7 @@ export const ServicesData = {
       ],
       cta: "Get Your Free Analysis",
     },
+
     ctaData: {
       // ── Badge ──
       badge: "Start Maximizing Revenue Today",

@@ -20,13 +20,14 @@ export default function FAQSection({
   subtitle = "Everything you need to know about paid user acquisition",
   faqs = [],
   bg = "#ffffff",
+  cardBg = "#F9FAFB",
 }) {
   return (
     <section
       className="w-full py-16 px-5 sm:px-10 xl:px-16"
       style={{ background: bg }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* ── Header ── */}
         <div className="text-center mb-10">
           <h2
@@ -47,24 +48,24 @@ export default function FAQSection({
         </div>
 
         {/* ── FAQ List ── */}
-        <div className="flex flex-col max-w-6xl mx-auto">
+        <div className="flex flex-col max-w-4xl mx-auto gap-3">
           {faqs.map((faq, i) => {
             return (
               <div
                 data-aos="fade-right"
                 key={i}
-                className="border border-gray-200 rounded-xl mb-4 overflow-hidden bg-white hover:shadow-sm transition-shadow duration-200"
+                className={`border border-gray-200 rounded-2xl mb-4 overflow-hidden bg-[${cardBg}] hover:shadow-xl hover:border-sky-400 transition-shadow duration-200`}
               >
                 {/* Question row */}
-                <button className="w-full text-left px-6 py-5 group">
-                  <span className="font-bold text-sm sm:text-base text-gray-900 leading-snug">
+                <button className="w-full text-left px-7 pt-6 pb-4 group">
+                  <span className="font-bold text-sm sm:text-xl text-gray-900 leading-snug">
                     {faq.question}
                   </span>
                 </button>
 
                 {/* Answer — smooth expand */}
                 <div className="transition-all duration-300 ease-in-out overflow-hidden max-h-96 opacity-100">
-                  <p className="px-6 pb-5 text-gray-500 text-sm leading-relaxed">
+                  <p className="px-7 pb-6 text-gray-500 text-base leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

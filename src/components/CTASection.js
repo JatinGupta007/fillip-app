@@ -6,6 +6,7 @@ import { TbSparkles } from "react-icons/tb";
 
 export default function CTASection({
   // ── Text props ──
+  rounded = "",
   badge = "Your Success Story Starts Here",
   badgeBgColor = "bg-[#1a2a4a]/80",
   headline = "Ready to Scale Your App?",
@@ -45,7 +46,7 @@ export default function CTASection({
 }) {
   return (
     <section
-      className={`relative w-full overflow-hidden  py-24 px-6`}
+      className={`relative w-full overflow-hidden ${rounded}  py-24 px-6`}
       style={{ background: bgGradient }}
     >
       {/* ── Background glow blobs ── */}
@@ -60,7 +61,7 @@ export default function CTASection({
       />
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-7">
+      <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center text-center gap-7">
         {/* Badge */}
         <div
           data-aos="zoom-out-up"
@@ -73,7 +74,7 @@ export default function CTASection({
         {/* Headline */}
         <h2
           data-aos="zoom-in-left"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
+          className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
         >
           {headline}
         </h2>
@@ -81,7 +82,7 @@ export default function CTASection({
         {/* Subtext */}
         <p
           data-aos="zoom-out-right"
-          className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-3xl"
+          className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-xl"
         >
           {subtext}
         </p>
@@ -93,7 +94,7 @@ export default function CTASection({
               data-aos="zoom-out-down"
               key={idx}
               href={btn.href}
-              className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-base px-11 py-4 rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-blue-400/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
+              className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-lg px-11 py-5 rounded-2xl shadow-xl shadow-white/20 hover:shadow-white/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
             >
               {btn.label}
               {btn.arrow && (

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import CareersHeroSection from "@/components/CareersHeroSection";
 import { TbSparkles } from "react-icons/tb";
 import { BsCheckCircleFill } from "react-icons/bs";
@@ -105,11 +107,13 @@ export default function AddonsPage() {
   return (
     <div>
       <CareersHeroSection {...heroData} />
-      <AddonsGrid1 {...gridData} />
+      <AddonsGrid {...addonsData} />
       <ServiceBundlesSection {...bundlesData} />
       <AddonSuccessSection {...successData} />
       <TrustAndFAQSection {...trustFaqData} />
-      <CTASection {...ctaData} />
+      <div className="max-w-5xl mx-auto py-16">
+        <CTASection {...ctaData} rounded="rounded-4xl" />
+      </div>
     </div>
   );
 }
@@ -145,6 +149,7 @@ export const addonsData = {
   bg: "#ffffff",
   addons: [
     {
+      hoverBg: "bg-gradient-to-br from-green-100 to-green-50 shadow-green-200",
       id: "aso",
       icon: <RiSearchLine />,
       iconBg: "linear-gradient(135deg, #10b981, #34d399)",
@@ -154,7 +159,7 @@ export const addonsData = {
       },
       title: "App Store Optimization (ASO)",
       tagline: "Get discovered organically",
-      taglineColor: "#3b82f6",
+      taglineColor: "#10b981",
       desc: "Comprehensive ASO strategy including keyword research, metadata optimization, visual asset testing, and conversion rate optimization to maximize organic installs.",
       features: [
         "Keyword research & competitor analysis",
@@ -174,6 +179,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-pink-100 to-pink-50 shadow-pink-200",
       id: "ugc",
       icon: <RiVideoLine />,
       iconBg: "linear-gradient(135deg, #a855f7, #ec4899)",
@@ -200,6 +206,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-blue-100 to-blue-50 shadow-blue-200",
       id: "consultancy",
       icon: <RiChat1Line />,
       iconBg: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
@@ -225,6 +232,8 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg:
+        "bg-gradient-to-br from-orange-200 to-orange-100 shadow-orange-200",
       id: "reputation",
       icon: <RiShieldLine />,
       iconBg: "linear-gradient(135deg, #f97316, #ef4444)",
@@ -250,6 +259,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-sky-200 to-sky-100 shadow-sky-200",
       id: "creative",
       icon: <RiPaletteLine />,
       iconBg: "linear-gradient(135deg, #0ea5e9, #06b6d4)",
@@ -275,6 +285,8 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg:
+        "bg-gradient-to-br from-purple-200 to-purple-100 shadow-purple-200",
       id: "analytics",
       icon: <RiBarChartLine />,
       iconBg: "linear-gradient(135deg, #8b5cf6, #6366f1)",
@@ -300,6 +312,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-rose-200 to-rose-100 shadow-rose-200",
       id: "retention",
       icon: <RiRefreshLine />,
       iconBg: "linear-gradient(135deg, #ec4899, #f43f5e)",
@@ -325,6 +338,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-amber-100 to-amber-50 shadow-amber-200",
       id: "influencer",
       icon: <RiStarLine />,
       iconBg: "linear-gradient(135deg, #f59e0b, #f97316)",
@@ -350,6 +364,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-green-100 to-green-50 shadow-green-200",
       id: "reviews",
       icon: <RiStarLine />,
       iconBg: "linear-gradient(135deg, #10b981, #059669)",
@@ -375,6 +390,8 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg:
+        "bg-gradient-to-br from-purple-100 to-purple-50 shadow-purple-200",
       id: "competitor",
       icon: <RiFocus3Line />,
       iconBg: "linear-gradient(135deg, #8b5cf6, #a855f7)",
@@ -400,6 +417,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-blue-200 to-blue-100 shadow-blue-200",
       id: "cro",
       icon: <RiFocus3Line />,
       iconBg: "linear-gradient(135deg, #0ea5e9, #6366f1)",
@@ -425,6 +443,7 @@ export const addonsData = {
       ctaHref: "#",
     },
     {
+      hoverBg: "bg-gradient-to-br from-rose-200 to-rose-100 shadow-rose-200",
       id: "market-research",
       icon: <RiLineChartLine />,
       iconBg: "linear-gradient(135deg, #ec4899, #f43f5e)",
@@ -635,299 +654,12 @@ export const trustFaqData = {
 
 // ─────────────────────────────────────────────────────────
 // DATA for AddonsGrid — matches the image exactly
-// Usage: import AddonsGrid from '@/components/AddonsGrid';
-//        import { gridData } from '@/data/addonsGridData';
-//        <AddonsGrid {...gridData} />
 // ─────────────────────────────────────────────────────────
-
-export const gridData = {
-  title: "Choose Your",
-  titleColored: "Growth Add-ons",
-  titleGradient: "linear-gradient(to right, #3b82f6, #8b5cf6)",
-  subtitle:
-    "À la carte services designed to fill specific gaps in your growth stack",
-  bg: "#ffffff",
-
-  addons: [
-    {
-      id: "aso",
-      icon: <RiSearchLine />,
-      iconBg: "linear-gradient(135deg, #10b981, #34d399)",
-      badge: {
-        text: "Most Popular",
-        bg: "linear-gradient(135deg, #f97316, #ef4444)",
-      },
-      title: "App Store Optimization (ASO)",
-      tagline: "Get discovered organically",
-      taglineColor: "#3b82f6",
-      desc: "Comprehensive ASO strategy including keyword research, metadata optimization, visual asset testing, and conversion rate optimization to maximize organic installs.",
-      features: [
-        "Keyword research & competitor analysis",
-        "App title & description optimization",
-        "Icon, screenshots & video testing",
-        "Review management & ratings boost",
-        "Localization for global markets",
-        "Monthly performance reports",
-      ],
-      stat: {
-        value: "+250%",
-        label: "Organic installs avg.",
-        bg: "linear-gradient(135deg, #10b981, #34d399)",
-      },
-      price: "From $1,500",
-      priceNote: "/month",
-      ctaHref: "#",
-    },
-    {
-      id: "ugc",
-      icon: <RiVideoLine />,
-      iconBg: "linear-gradient(135deg, #a855f7, #ec4899)",
-      badge: {
-        text: "Hot",
-        bg: "linear-gradient(135deg, #ef4444, #f97316)",
-      },
-      title: "UGC Ad Creatives",
-      tagline: "Authentic content that converts",
-      taglineColor: "#a855f7",
-      desc: "High-converting user-generated content ads featuring real users demonstrating your app. Proven to outperform traditional ads by 3-5x in engagement and CVR.",
-      features: [
-        "10-20 UGC videos per month",
-        "Professional creator network",
-        "Script writing & storyboarding",
-        "Native ad format optimization",
-        "Multi-platform compatibility",
-        "Unlimited revisions",
-      ],
-      stat: {
-        value: "4.2x",
-        label: "Higher CVR vs static",
-        bg: "linear-gradient(135deg, #a855f7, #ec4899)",
-      },
-      price: "From $2,500",
-      priceNote: "/month",
-      ctaHref: "#",
-    },
-    {
-      id: "consultancy",
-      icon: <RiUserStarLine />,
-      iconBg: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
-      // no badge
-      title: "Growth Consultancy",
-      tagline: "Strategic guidance from experts",
-      taglineColor: "#0ea5e9",
-      desc: "Dedicated growth consultant providing strategic guidance, market insights, competitive analysis, and hands-on support for your entire growth stack.",
-      features: [
-        "Weekly strategy sessions (1-2 hours)",
-        "Custom growth roadmap & OKRs",
-        "Channel mix optimization",
-        "Budget allocation strategy",
-        "Team training & workshops",
-        "Slack/email support",
-      ],
-      stat: {
-        value: "2.8x",
-        label: "Faster time to scale",
-        bg: "linear-gradient(135deg, #0ea5e9, #3b82f6)",
-      },
-      price: "From $3,000",
-      priceNote: "/month",
-      ctaHref: "#",
-    },
-  ],
-};
 
 import { FiArrowRight } from "react-icons/fi";
 
 /* ════════════════════════════════════════
-   ADDON CARD
-════════════════════════════════════════ */
-function AddonCard1({ addon }) {
-  return (
-    <div
-      data-aos="zoom-in-left"
-      className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col group"
-    >
-      {/* Badge */}
-      {addon.badge && (
-        <span
-          className="absolute top-5 right-5 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md z-10"
-          style={{ background: addon.badge.bg }}
-        >
-          {addon.badge.text}
-        </span>
-      )}
-
-      {/* Icon */}
-      <div
-        className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-5 shrink-0 group-hover:scale-110 transition-transform duration-300"
-        style={{ background: addon.iconBg }}
-      >
-        <span className="text-white text-2xl">{addon.icon}</span>
-      </div>
-
-      {/* Title */}
-      <h3 className="text-xl font-bold text-gray-900 leading-snug mb-1.5">
-        {addon.title}
-      </h3>
-
-      {/* Tagline */}
-      <p
-        className="text-sm font-bold mb-4"
-        style={{ color: addon.taglineColor ?? "#3b82f6" }}
-      >
-        {addon.tagline}
-      </p>
-
-      {/* Description */}
-      <p className="text-gray-500 text-sm leading-relaxed mb-5">{addon.desc}</p>
-
-      {/* Features */}
-      {addon.features?.length > 0 && (
-        <ul className="flex flex-col gap-2 mb-5 flex-1">
-          {addon.features.map((f, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-2.5 text-sm text-gray-600"
-            >
-              <BsCheckCircleFill
-                className="shrink-0 mt-0.5 text-base"
-                style={{ color: addon.taglineColor ?? "#3b82f6" }}
-              />
-              {f}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Stat banner */}
-      {addon.stat && (
-        <div
-          className="rounded-2xl px-5 py-3.5 mb-5 hover:scale-[1.02] transition-transform duration-200"
-          style={{ background: addon.stat.bg }}
-        >
-          <p className="text-white text-2xl font-bold">{addon.stat.value}</p>
-          <p className="text-white/80 text-xs font-semibold mt-0.5">
-            {addon.stat.label}
-          </p>
-        </div>
-      )}
-
-      {/* Price */}
-      <div className="mb-4">
-        <span className="text-2xl font-bold text-gray-900">{addon.price}</span>
-        <span className="text-gray-400 text-sm ml-1">{addon.priceNote}</span>
-      </div>
-
-      {/* CTA */}
-      <a
-        href={addon.ctaHref ?? "#"}
-        className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 hover:border-gray-300 text-gray-700 font-bold text-sm py-3.5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group/btn"
-      >
-        Get Started
-        <FiArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-200" />
-      </a>
-    </div>
-  );
-}
-
-/* ════════════════════════════════════════
-   MAIN EXPORT
-   Props:
-     title         — string (dark part of heading)
-     titleColored  — string (gradient part)
-     titleGradient — any valid CSS gradient string
-     subtitle      — string
-     bg            — CSS background for section
-     addons        — Array<{
-         id           : string
-         icon         : ReactElement   (any react-icon)
-         iconBg       : string         (CSS gradient / solid)
-         badge?       : { text, bg }   (optional pill badge)
-         title        : string
-         tagline      : string
-         taglineColor?: string         (hex, default #3b82f6)
-         desc         : string
-         features     : string[]
-         stat?        : { value, label, bg }
-         price        : string
-         priceNote    : string
-         ctaHref?     : string
-       }>
-════════════════════════════════════════ */
-export function AddonsGrid1({
-  title = "Choose Your",
-  titleColored = "Growth Add-ons",
-  titleGradient = "linear-gradient(to right, #3b82f6, #8b5cf6)",
-  subtitle = "À la carte services designed to fill specific gaps in your growth stack",
-  addons = [],
-  bg = "#ffffff",
-}) {
-  return (
-    <section
-      className="w-full py-20 px-5 sm:px-10 xl:px-16"
-      style={{ background: bg }}
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-14">
-          <h2
-            data-aos="fade-down-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
-          >
-            {title}{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: titleGradient }}
-            >
-              {titleColored}
-            </span>
-          </h2>
-          {subtitle && (
-            <p
-              data-aos="fade-down-left"
-              className="mt-3 text-gray-500 text-base sm:text-lg max-w-2xl mx-auto"
-            >
-              {subtitle}
-            </p>
-          )}
-        </div>
-
-        {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          {addons.map((addon) => (
-            <AddonCard1 key={addon.id} addon={addon} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ════════════════════════════════════════
    ADDON SERVICES GRID
-   Props:
-     title        — string (dark part)
-     titleColored — string (gradient part)
-     subtitle     — string
-     gradientText — CSS gradient for titleColored (optional)
-     addons       — Array<{
-         id          : string
-         icon        : ReactElement
-         iconBg      : string CSS gradient
-         badge       : optional { text, color } — "Most Popular", "Hot" etc.
-         title       : string
-         tagline     : string (blue subtitle)
-         taglineColor: optional string (hex)
-         desc        : string
-         features    : string[]
-         stat        : { value, label, bg } — colored stat banner
-         price       : string
-         priceNote   : string (/month etc.)
-         ctaHref     : string
-       }>
-     bg            — optional CSS background
 ════════════════════════════════════════ */
 export function AddonsGrid({
   title = "Choose Your",
@@ -957,7 +689,7 @@ export function AddonsGrid({
           {subtitle && (
             <p
               data-aos="flip-up"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-500 text-lg max-w-xl mx-auto"
             >
               {subtitle}
             </p>
@@ -965,7 +697,7 @@ export function AddonsGrid({
         </div>
 
         {/* Cards grid — 3 cols on lg */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
           {addons.map((addon) => (
             <AddonCard key={addon.id} addon={addon} />
           ))}
@@ -976,15 +708,18 @@ export function AddonsGrid({
 }
 
 function AddonCard({ addon }) {
+  const [hovered, setHovered] = useState(false);
   return (
     <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       data-aos="zoom-out-right"
-      className="relative bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
+      className={`relative border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-[0_0_40px] hover:-translate-y-1.5 transition-all duration-300 flex flex-col ${hovered ? addon.hoverBg : "bg-white"}`}
     >
       {/* Badge (Most Popular / Hot) */}
       {addon.badge && (
         <div
-          className="absolute top-5 right-5 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md"
+          className="absolute top-5 right-5 text-white text-[12px] font-bold px-3 py-1 rounded-full shadow-md"
           style={{
             background:
               addon.badge.bg ?? "linear-gradient(135deg,#f97316,#ef4444)",
@@ -996,31 +731,33 @@ function AddonCard({ addon }) {
 
       {/* Icon */}
       <div
-        className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-105 transition-transform duration-200 shrink-0"
+        className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-105 transition-transform duration-200 shrink-0"
         style={{ background: addon.iconBg }}
       >
-        <span className="text-white text-2xl">{addon.icon}</span>
+        <span className="text-white text-3xl">{addon.icon}</span>
       </div>
 
       {/* Title + tagline */}
-      <h3 className="text-xl font-bold text-gray-900 leading-snug mb-1">
+      <h3 className="text-2xl font-bold text-gray-900 leading-snug mb-2">
         {addon.title}
       </h3>
       <p
-        className="text-sm font-bold mb-3"
+        className="text-sm font-bold mb-5"
         style={{ color: addon.taglineColor ?? "#3b82f6" }}
       >
         {addon.tagline}
       </p>
 
       {/* Desc */}
-      <p className="text-gray-500 text-sm leading-relaxed mb-4">{addon.desc}</p>
+      <p className="text-gray-500 text-base leading-relaxed mb-7">
+        {addon.desc}
+      </p>
 
       {/* Feature list */}
       <ul className="flex flex-col gap-1.5 mb-5 flex-1">
         {addon.features?.map((f, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-            <BsCheckCircleFill
+            <FiCheckCircle
               className="shrink-0 mt-0.5 text-base"
               style={{ color: addon.taglineColor ?? "#3b82f6" }}
             />
@@ -1032,7 +769,7 @@ function AddonCard({ addon }) {
       {/* Stat banner */}
       {addon.stat && (
         <div
-          className="rounded-2xl px-5 py-3 mb-5 group-hover:scale-[1.02] transition-transform duration-200"
+          className="rounded-2xl px-7 py-4 mb-5 group-hover:scale-[1.02] transition-transform duration-200"
           style={{ background: addon.stat.bg }}
         >
           <p className="text-white text-2xl font-bold">{addon.stat.value}</p>
@@ -1044,8 +781,8 @@ function AddonCard({ addon }) {
 
       {/* Price */}
       <div className="mb-4">
-        <span className="text-2xl font-bold text-gray-900">{addon.price}</span>
-        <span className="text-gray-400 text-sm ml-1">{addon.priceNote}</span>
+        <span className="text-3xl font-bold text-gray-900">{addon.price}</span>
+        <span className="text-gray-400 text-base ml-1">{addon.priceNote}</span>
       </div>
 
       {/* CTA */}
@@ -1062,28 +799,6 @@ function AddonCard({ addon }) {
 
 /* ════════════════════════════════════════
    SERVICE BUNDLES SECTION
-   Props:
-     badge        — string
-     title        — string (dark)
-     titleColored — string (green)
-     subtitle     — string
-     bundles      — Array<{
-         id        : string
-         icon      : ReactElement
-         iconBg    : string
-         title     : string
-         subtitle  : string
-         price     : string
-         priceNote : string
-         saving    : string
-         features  : string[]
-         ctaLabel  : string
-         ctaBg     : string (CSS gradient or solid)
-         ctaText   : string (Tailwind text-* class)
-         popular   : boolean
-         borderColor: optional string
-       }>
-     bg            — optional
 ════════════════════════════════════════ */
 export function ServiceBundlesSection({
   badge = "Bundle & Save",
@@ -1098,7 +813,7 @@ export function ServiceBundlesSection({
       className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Badge */}
         <div data-aos="fade-right" className="flex justify-center mb-5">
           <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-2 rounded-full shadow-sm">
@@ -1126,7 +841,7 @@ export function ServiceBundlesSection({
         </div>
 
         {/* Bundle cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
           {bundles.map((bundle) => (
             <div
               data-aos="zoom-in"
@@ -1135,7 +850,7 @@ export function ServiceBundlesSection({
                 ${
                   bundle.popular
                     ? "border-2 shadow-xl scale-[1.02]"
-                    : "border border-gray-100 shadow-sm"
+                    : "border-2 border-gray-100 shadow-sm hover:border-sky-300"
                 }`}
               style={{
                 borderColor: bundle.popular
@@ -1146,7 +861,7 @@ export function ServiceBundlesSection({
               {/* Popular badge */}
               {bundle.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-linear-to-r from-violet-500 to-fuchsia-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
+                  <span className="bg-linear-to-r from-violet-500 to-fuchsia-500 text-white text-sm font-bold px-4 py-1.5 rounded-full shadow-lg">
                     Most Popular
                   </span>
                 </div>
@@ -1154,42 +869,40 @@ export function ServiceBundlesSection({
 
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md mb-5"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md mb-7"
                 style={{ background: bundle.iconBg }}
               >
-                <span className="text-white text-2xl">{bundle.icon}</span>
+                <span className="text-white text-3xl">{bundle.icon}</span>
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
                 {bundle.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-4">{bundle.subtitle}</p>
+              <p className="text-gray-500 text-base mb-4">{bundle.subtitle}</p>
 
               {/* Price */}
-              <div className="flex items-baseline gap-1 mb-3">
-                <span className="text-4xl font-bold text-gray-900">
+              <div className="flex items-baseline gap-1 mb-5">
+                <span className="text-5xl font-bold text-gray-900">
                   {bundle.price}
                 </span>
-                <span className="text-gray-400 text-sm">
-                  {bundle.priceNote}
-                </span>
+                <span className="text-gray-400">{bundle.priceNote}</span>
               </div>
 
               {/* Saving pill */}
-              <div className="inline-flex items-center gap-1.5 bg-green-50 border border-green-200 text-green-600 text-xs font-bold px-3 py-1.5 rounded-full mb-5 w-fit">
+              <div className="inline-flex items-center gap-1.5 bg-green-50 border border-green-200 text-green-600 text-sm font-bold px-3 py-1.5 rounded-full mb-9  w-fit">
                 <TbSparkles />
                 {bundle.saving}
               </div>
 
               {/* Features */}
-              <ul className="flex flex-col gap-2 mb-7 flex-1">
+              <ul className="flex flex-col gap-4 mb-12 flex-1">
                 {bundle.features.map((f, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm text-gray-600"
+                    className="flex items-start gap-2 font-semibold text-gray-600"
                   >
-                    <BsCheckCircleFill className="shrink-0 mt-0.5 text-emerald-400 text-base" />
+                    <FiCheckCircle className="shrink-0 mt-0.5 text-emerald-400 text-base" />
                     {f}
                   </li>
                 ))}
@@ -1198,7 +911,7 @@ export function ServiceBundlesSection({
               {/* CTA */}
               <a
                 href={bundle.ctaHref ?? "#"}
-                className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3.5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group ${bundle.ctaText ?? "text-white"}`}
+                className={`w-full flex items-center justify-center gap-2 font-bold py-4 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group ${bundle.ctaText ?? "text-white"}`}
                 style={{ background: bundle.ctaBg }}
               >
                 {bundle.ctaLabel}
@@ -1212,31 +925,11 @@ export function ServiceBundlesSection({
   );
 }
 
-import { useState } from "react";
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
-
 
 /* ════════════════════════════════════════
    ADDON SUCCESS STORIES
-   Props:
-     title        — string (dark)
-     titleColored — string (gradient)
-     titleGradient — CSS gradient
-     subtitle     — string
-     stories      — Array<{
-         id        : string
-         icon      : ReactElement
-         iconBg    : string
-         appName   : string
-         category  : string
-         serviceLabel: string
-         service   : string
-         result    : string   — big headline result
-         subResult : string   — smaller sub-text
-       }>
-     ctaLabel      — string
-     ctaHref       — string
-     bg            — optional
+  
 ════════════════════════════════════════ */
 export function AddonSuccessSection({
   title = "Addon Services",
@@ -1253,7 +946,7 @@ export function AddonSuccessSection({
       className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
           <h2
@@ -1279,37 +972,35 @@ export function AddonSuccessSection({
         </div>
 
         {/* Story cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
           {stories.map((s) => (
             <div
               data-aos="flip-right"
               key={s.id}
-              className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+              className="bg-white border-2 border-gray-100 rounded-3xl p-6 shadow-sm hover:border-sky-300 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
               {/* Icon */}
               <div
-                className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform duration-200"
+                className="w-13 h-13 rounded-2xl flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform duration-200"
                 style={{ background: s.iconBg }}
               >
                 <span className="text-white text-xl">{s.icon}</span>
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900">{s.appName}</h3>
-              <p className="text-gray-400 text-xs font-semibold mb-4">
-                {s.category}
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900">{s.appName}</h3>
+              <p className="text-gray-400 font-semibold mb-4">{s.category}</p>
 
-              <p className="text-[10px] font-bold tracking-widest text-blue-500 mb-1">
-                Service Used
-              </p>
-              <p className="text-gray-700 font-bold text-sm mb-4">
-                {s.service}
-              </p>
+              <div className="border-y border-y-gray-100 py-3 mb-5">
+                <p className="text-[14px] font-bold text-blue-500 mb-1">
+                  Service Used
+                </p>
+                <p className="text-gray-700 font-bold">{s.service}</p>
+              </div>
 
-              <p className="text-2xl font-bold text-gray-900 leading-snug mb-1">
+              <p className="text-3xl font-bold text-gray-900 leading-snug mb-1">
                 {s.result}
               </p>
-              <p className="text-gray-400 text-xs font-semibold">
+              <p className="text-gray-400 text-sm font-semibold">
                 {s.subResult}
               </p>
             </div>
@@ -1321,7 +1012,7 @@ export function AddonSuccessSection({
           <a
             data-aos="flip-up"
             href={ctaHref}
-            className="inline-flex items-center gap-2 bg-black text-white font-bold text-sm px-7 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
+            className="inline-flex items-center gap-2 bg-black text-white font-bold px-9 py-4.5 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
           >
             {ctaLabel}
             <FiArrowUpRight className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -1334,17 +1025,11 @@ export function AddonSuccessSection({
 
 /* ════════════════════════════════════════
    TRUST FEATURES + FAQ SECTION
-   Props:
-     trustFeatures — Array<{ icon, iconBg, title, desc }>
-     faq: {
-       title        — string (dark)
-       titleColored — string (blue/purple)
-       titleGradient — CSS gradient
-       faqs         — Array<{ question, answer }>
-     }
-     bg            — optional
 ════════════════════════════════════════ */
 export function TrustAndFAQSection({
+  title = "Why Choose",
+  titleColored = "AppFillip Addons",
+  titleGradient = "linear-gradient(to right, #3b82f6, #8b5cf6)",
   trustFeatures = [],
   faq = {},
   bg = "linear-gradient(to bottom, #f8faff, #ffffff)",
@@ -1356,7 +1041,19 @@ export function TrustAndFAQSection({
       className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
+        <h2
+          data-aos="fade-down-right"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-15 leading-tight"
+        >
+          {title}
+          <span
+            className="bg-clip-text text-transparent ml-2"
+            style={{ backgroundImage: titleGradient }}
+          >
+            {titleColored}
+          </span>
+        </h2>
         {/* Trust icons row */}
         {trustFeatures.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-24">
@@ -1367,17 +1064,15 @@ export function TrustAndFAQSection({
                 className="flex flex-col items-center text-center gap-3 group cursor-default"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-200"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-200"
                   style={{ background: f.iconBg }}
                 >
                   <span className="text-white text-2xl">{f.icon}</span>
                 </div>
-                <p className="text-gray-900 font-bold text-sm leading-snug">
+                <p className="text-gray-900 font-bold text-xl leading-snug">
                   {f.title}
                 </p>
-                <p className="text-gray-400 text-xs leading-relaxed">
-                  {f.desc}
-                </p>
+                <p className="text-gray-700 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

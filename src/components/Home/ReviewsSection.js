@@ -6,6 +6,7 @@ import { BsStarFill, BsQuote } from "react-icons/bs";
 import { TbSparkles } from "react-icons/tb";
 import { RiMedalLine } from "react-icons/ri";
 import { LuQuote } from "react-icons/lu";
+import { FaQuoteRight } from "react-icons/fa";
 
 const reviews = [
   {
@@ -16,9 +17,10 @@ const reviews = [
     category: "Health & Fitness",
     avatar: "SM",
     avatarlinear: "from-pink-400 to-purple-500",
-    cardlinear: "from-pink-50 to-purple-50",
+    cardlinear: "from-pink-200 to-purple-200",
     accentColor: "text-pink-500",
-    borderColor: "border-pink-100",
+    borderColor: "border-white",
+    shadowColor: "shadow-pink-200",
     rating: 5,
     review:
       "AppFillip completely transformed our app's trajectory. We went from 10K users to 2.5M in just 6 months. Their full-funnel strategy and data-driven approach delivered results beyond our wildest expectations. Absolutely game-changing!",
@@ -34,9 +36,10 @@ const reviews = [
     category: "E-Commerce",
     avatar: "JC",
     avatarlinear: "from-blue-400 to-cyan-500",
-    cardlinear: "from-blue-50 to-cyan-50",
+    cardlinear: "from-blue-200 to-cyan-100",
     accentColor: "text-blue-500",
-    borderColor: "border-blue-100",
+    borderColor: "border-white",
+    shadowColor: "shadow-cyan-200",
     rating: 5,
     review:
       "The ROI we achieved with AppFillip is unmatched. Our ROAS jumped to 450% within 8 months. Their team understood our e-commerce niche perfectly and built campaigns that drove not just downloads but loyal, high-value users.",
@@ -52,9 +55,10 @@ const reviews = [
     category: "Education",
     avatar: "PS",
     avatarlinear: "from-emerald-400 to-teal-500",
-    cardlinear: "from-emerald-50 to-teal-50",
+    cardlinear: "from-emerald-200 to-teal-100",
     accentColor: "text-emerald-600",
-    borderColor: "border-emerald-100",
+    borderColor: "border-white",
+    shadowColor: "shadow-teal-200",
     rating: 5,
     review:
       "We struggled with user retention until AppFillip stepped in. Their content strategy and user onboarding campaigns pushed our retention to 85%. The team is proactive, creative, and genuinely invested in your success.",
@@ -70,9 +74,10 @@ const reviews = [
     category: "Travel & Lifestyle",
     avatar: "DR",
     avatarlinear: "from-orange-400 to-yellow-500",
-    cardlinear: "from-orange-50 to-yellow-50",
+    cardlinear: "from-orange-200 to-yellow-100",
     accentColor: "text-orange-500",
-    borderColor: "border-orange-100",
+    borderColor: "border-white",
+    shadowColor: "shadow-orange-200",
     rating: 5,
     review:
       "From day one, the AppFillip team felt like an extension of our own team. Their influencer marketing campaigns drove our app to the #1 spot in the Travel category within 4 months. Simply outstanding work and communication.",
@@ -88,9 +93,10 @@ const reviews = [
     category: "Fintech",
     avatar: "AT",
     avatarlinear: "from-violet-400 to-indigo-500",
-    cardlinear: "from-violet-50 to-indigo-50",
+    cardlinear: "from-violet-200 to-indigo-100",
     accentColor: "text-violet-600",
     borderColor: "border-violet-100",
+    shadowColor: "shadow-indigo-200",
     rating: 5,
     review:
       "AppFillip's expertise in the fintech space is remarkable. Compliance-safe creatives, razor-sharp targeting, and a team that truly listens. We scaled from 50K to 800K users in under a year — results that speak for themselves.",
@@ -106,9 +112,10 @@ const reviews = [
     category: "Gaming",
     avatar: "LN",
     avatarlinear: "from-red-400 to-pink-500",
-    cardlinear: "from-red-50 to-pink-50",
+    cardlinear: "from-red-200 to-pink-100",
     accentColor: "text-red-500",
     borderColor: "border-red-100",
+    shadowColor: "shadow-pink-200",
     rating: 5,
     review:
       "For gaming apps, user quality is everything. AppFillip's targeted acquisition campaigns brought in players who actually stayed and spent. Our Day-30 retention is at 42% — almost double the industry average. Incredible results!",
@@ -158,7 +165,7 @@ export default function ReviewsCarousel() {
     <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <div data-aos="fade-down" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
+        <div data-aos="fade-down" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-sm font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
           <LuQuote className="text-purple-400 text-[14px]" />
           Client Reviews
         </div>
@@ -168,21 +175,10 @@ export default function ReviewsCarousel() {
             Clients Say
           </span>
         </h2>
-        <p data-aos="fade-right" className="mt-4 text-gray-500 text-base">
+        <p data-aos="fade-right" className="mt-4 text-gray-600 text-lg">
           Trusted by 500+ apps worldwide — here's what founders and growth teams
           say about us
         </p>
-
-        {/* Overall rating */}
-        <div data-aos="zoom-in" className="mt-6 inline-flex items-center gap-3 bg-white border border-gray-100 rounded-2xl px-5 py-3 shadow-md">
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <BsStarFill key={i} className="text-yellow-400 text-base" />
-            ))}
-          </div>
-          <span className="text-gray-900 font-bold text-lg">4.9</span>
-          <span className="text-gray-400 text-sm">/ 5.0 from 200+ reviews</span>
-        </div>
       </div>
 
       {/* Carousel */}
@@ -271,74 +267,65 @@ function ReviewCard({ review }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`shrink-0 w-[calc((100%-32px)/3)] min-w-[280px] rounded-2xl border p-6 flex flex-col gap-4 shadow-md transition-all duration-300 cursor-default
+      className={`shrink-0 w-[calc((100%-32px)/3)] min-w-[280px] rounded-3xl border-2 p-8 flex flex-col gap-4 shadow-md transition-all duration-300 cursor-default
         ${
           hovered
-            ? "shadow-2xl -translate-y-2 bg-linear-to-br " +
+            ? "-translate-y-2 shadow-[0_0_40px] bg-linear-to-br " +
               review.cardlinear +
+              " " +
+              review.shadowColor +
               " " +
               review.borderColor
             : "bg-white border-gray-100"
         }`}
     >
       {/* Top: avatar + name + metric badge */}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-col items-start justify-start gap-5">
+        {/* Stars */}
+        <div className="flex gap-0.5">
+          {[...Array(review.rating)].map((_, i) => (
+            <BsStarFill key={i} className="text-yellow-400 text-xl" />
+          ))}
+        </div>
+
+        {/* Quote icon + Review text */}
+        <div className="relative flex-1">
+          <FaQuoteRight
+            className={`absolute -top-10 -left-1 text-8xl opacity-12 ${review.accentColor}`}
+          />
+          <p className="text-gray-700 leading-relaxed italic">
+            "{review.review}"
+          </p>
+        </div>
+      </div>
+      {/* Metric badge */}
+      <div
+        className={`${review.metricColor} text-white text-[10px] font-bold px-4 py-2.5 my-4 rounded-2xl text-center shadow-md shrink-0 w-fit`}
+      >
+        <p className="text-xl font-bold leading-none">{review.metric}</p>
+        <p className="opacity-80 text-sm mt-0.5">{review.metricLabel}</p>
+      </div>
+
+      {/* Footer: category tag */}
+      <div className="flex items-center justify-between pt-5 border-t-2 border-gray-100">
         <div className="flex items-center gap-3">
           {/* Avatar */}
           <div
-            className={`w-12 h-12 rounded-xl bg-linear-to-br ${review.avatarlinear} flex items-center justify-center text-white font-bold text-sm shadow-lg shrink-0`}
+            className={`w-15 h-15 rounded-full bg-linear-to-br ${review.avatarlinear} flex items-center justify-center text-white font-bold text-sm shadow-lg shrink-0`}
           >
             {review.avatar}
           </div>
           <div>
-            <p className="text-gray-900 font-bold text-sm leading-tight">
+            <p className="text-gray-900 font-bold text-lg mb-2 leading-tight">
               {review.name}
             </p>
-            <p className="text-gray-500 text-xs">{review.role}</p>
-            <p className={`text-xs font-bold ${review.accentColor}`}>
-              {review.company}
+            <p className="text-gray-500 text-sm">
+              {review.role} at{" "}
+              <span className={`text-sm font-bold ${review.accentColor}`}>
+                {review.company}
+              </span>
             </p>
           </div>
-        </div>
-        {/* Metric badge */}
-        <div
-          className={`${review.metricColor} text-white text-[10px] font-bold px-2.5 py-1.5 rounded-xl text-center shadow-md shrink-0`}
-        >
-          <p className="text-xs font-bold leading-none">{review.metric}</p>
-          <p className="opacity-80 text-[9px] mt-0.5">{review.metricLabel}</p>
-        </div>
-      </div>
-
-      {/* Stars */}
-      <div className="flex gap-0.5">
-        {[...Array(review.rating)].map((_, i) => (
-          <BsStarFill key={i} className="text-yellow-400 text-xs" />
-        ))}
-      </div>
-
-      {/* Quote icon + Review text */}
-      <div className="relative flex-1">
-        <BsQuote
-          className={`absolute -top-1 -left-1 text-3xl opacity-20 ${review.accentColor}`}
-        />
-        <p className="text-gray-600 text-sm leading-relaxed pl-4 italic">
-          "{review.review}"
-        </p>
-      </div>
-
-      {/* Footer: category tag */}
-      <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-        <span
-          className={`text-xs font-semibold px-3 py-1 rounded-full ${
-            hovered ? "bg-white/60" : "bg-gray-100"
-          } text-gray-500`}
-        >
-          {review.category}
-        </span>
-        <div className="flex gap-0.5">
-          {[...Array(5)].map((_, i) => (
-            <BsStarFill key={i} className="text-yellow-400 text-[8px]" />
-          ))}
         </div>
       </div>
     </div>

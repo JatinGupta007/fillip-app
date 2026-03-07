@@ -5,14 +5,6 @@ import { FiArrowRight } from "react-icons/fi";
 
 /* ════════════════════════════════════════
    CAREERS HERO SECTION
-   Props:
-     badge        — { icon, text }
-     headlineBlack — string (first line, dark)
-     headlineGrad  — string (second line, gradient)
-     subtext       — string
-     badges        — optional Array<{ icon, text }> — 1 to many caption icons
-     primaryBtn    — optional { label, href }
-     bg            — optional CSS gradient string
 ════════════════════════════════════════ */
 export default function CareersHeroSection({
   badge,
@@ -45,7 +37,7 @@ export default function CareersHeroSection({
         {badge && (
           <div
             data-aos="fade-down-right"
-            className={`inline-flex items-center gap-2 ${badgeBackground} backdrop-blur border border-blue-100 text-cyan-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white transition-all duration-200`}
+            className={`inline-flex items-center gap-2 ${badgeBackground} backdrop-blur font-bold border border-blue-100 text-cyan-700 text-sm tracking-wide px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white transition-all duration-200`}
           >
             {badge.icon && (
               <span className="text-base text-cyan-500">{badge.icon}</span>
@@ -58,11 +50,11 @@ export default function CareersHeroSection({
         <div className="max-w-4xl">
           <h1
             data-aos="fade-up-left"
-            className="text-5xl sm:text-6xl lg:text-6xl font-bold  text-[#0d1f3c] leading-tight tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#0d1f3c] leading-18 tracking-tight"
           >
             {headlineBlack}{" "}
             <span
-              className={`text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
+              className={`text-5xl sm:text-6xl lg:text-7xl font-bold leading-0 tracking-tight bg-linear-to-r ${headlineGradBackground} bg-clip-text text-transparent`}
             >
               {headlineGrad}
             </span>
@@ -73,7 +65,7 @@ export default function CareersHeroSection({
         {subtext && (
           <p
             data-aos="fade-up-right"
-            className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl"
+            className="text-gray-500 text-lg sm:text-2xl leading-relaxed max-w-4xl"
           >
             {subtext}
           </p>
@@ -84,7 +76,7 @@ export default function CareersHeroSection({
           {primaryBtn && (
             <a
               href={primaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-8 py-3.5 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex text-lg items-center gap-2 ${primaryBtn.bgClass} hover:${primaryBtn.hoverBgClass} font-bold px-9 py-4 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {primaryBtn.label}
               {primaryBtn.icon && (
@@ -96,7 +88,7 @@ export default function CareersHeroSection({
           {secondaryBtn && (
             <a
               href={secondaryBtn.href || "#"}
-              className={`group inline-flex items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-3.5 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
+              className={`group inline-flex text-lg items-center gap-2 ${secondaryBtn.bgClass} hover:${secondaryBtn.hoverBgClass} font-bold px-8 py-3.5 rounded-2xl hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 mt-5`}
             >
               {secondaryBtn.label}
               {secondaryBtn.icon && (

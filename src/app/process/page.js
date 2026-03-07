@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import CareersHeroSection from "@/components/CareersHeroSection";
 import { HiLightningBolt } from "react-icons/hi";
 import FAQSection from "@/components/FaqSection";
@@ -23,8 +25,14 @@ export const heroData = {
 
   // Small trust line below buttons
   badges: [
-    { icon: <FiCheckCircle className="text-green-500" />, text: "No long-term contracts" },
-    { icon: <FiCheckCircle className="text-green-500" />, text: "Cancel anytime" },
+    {
+      icon: <FiCheckCircle className="text-green-500" />,
+      text: "No long-term contracts",
+    },
+    {
+      icon: <FiCheckCircle className="text-green-500" />,
+      text: "Cancel anytime",
+    },
   ],
 
   primaryBtn: {
@@ -78,7 +86,7 @@ export const phaseData = {
       weekDesc: "Onboarding & Discovery",
       title: "Discovery & Strategy",
       desc: "We analyze your app, target audience, competitive landscape, and business goals to create a tailored growth strategy.",
-      icon: <RiFocus3Line />,
+      icon: <RiFocus3Line size={55} />,
       iconBg: "linear-gradient(135deg, #0ea5e9, #0284c7)",
       duration: "1-2 weeks",
       deliverables: [
@@ -87,6 +95,8 @@ export const phaseData = {
         "Channel strategy roadmap",
         "KPI framework & benchmarks",
       ],
+      hoverBg:
+        "bg-gradient-to-br from-[#e8f6ff] to-[#d6eefa] shadow-sky-200 shadow-[0_0_40px]",
     },
     {
       step: 2,
@@ -95,7 +105,7 @@ export const phaseData = {
       weekDesc: "Strategy & Planning",
       title: "Research & Planning",
       desc: "Deep dive into market research, keyword analysis, and creative testing frameworks to optimize every campaign element.",
-      icon: <RiSearchLine />,
+      icon: <RiSearchLine size={55} />,
       iconBg: "linear-gradient(135deg, #6366f1, #8b5cf6)",
       duration: "1 week",
       deliverables: [
@@ -104,6 +114,8 @@ export const phaseData = {
         "Budget allocation plan",
         "Campaign structure blueprint",
       ],
+      hoverBg:
+        "bg-gradient-to-br from-purple-200 to-purple-100 shadow-purple-200 shadow-[0_0_40px]",
     },
     {
       step: 3,
@@ -112,7 +124,7 @@ export const phaseData = {
       weekDesc: "Campaign Launch",
       title: "Launch & Activation",
       desc: "Execute campaigns across chosen channels with optimized targeting, creatives, and bidding strategies for maximum impact.",
-      icon: <RiRocketLine />,
+      icon: <RiRocketLine size={55} />,
       iconBg: "linear-gradient(135deg, #ec4899, #a855f7)",
       duration: "1-2 weeks",
       deliverables: [
@@ -121,6 +133,8 @@ export const phaseData = {
         "Creative asset production",
         "Initial optimization adjustments",
       ],
+      hoverBg:
+        "bg-gradient-to-br from-pink-200 to-pink-100 shadow-pink-200 shadow-[0_0_40px]",
     },
     {
       step: 4,
@@ -129,7 +143,7 @@ export const phaseData = {
       weekDesc: "Optimization & Scaling",
       title: "Optimize & Scale",
       desc: "Continuously test, analyze, and optimize campaigns to improve performance and scale successful strategies.",
-      icon: <RiLineChartLine />,
+      icon: <RiLineChartLine size={55} />,
       iconBg: "linear-gradient(135deg, #10b981, #059669)",
       duration: "Ongoing",
       deliverables: [
@@ -138,6 +152,8 @@ export const phaseData = {
         "Budget scaling recommendations",
         "Quarterly strategy reviews",
       ],
+      hoverBg:
+        "bg-gradient-to-br from-green-200 to-green-100 shadow-green-200 shadow-[0_0_40px]",
     },
   ],
 };
@@ -277,7 +293,9 @@ export default function ProcessPage() {
       <PhaseProcessSection {...phaseData} />
       <MethodologySection {...methodologyData} />
       <FAQSection {...faqData} />
-      <CTASection {...ctaData} />
+      <div className="max-w-5xl mx-auto py-16">
+        <CTASection {...ctaData} rounded="rounded-4xl" />
+      </div>
     </>
   );
 }
@@ -299,7 +317,7 @@ export function MethodologySection({ methodology, impact }) {
             methodology?.bg ?? "linear-gradient(to bottom, #f0f8ff, #ffffff)",
         }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2
               data-aos="fade-down-right"
@@ -321,23 +339,23 @@ export function MethodologySection({ methodology, impact }) {
           </div>
 
           {/* Principles grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {methodology?.principles?.map((p, i) => (
               <div
                 data-aos="flip-up"
                 key={i}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 text-center group"
+                className="bg-white border-2 border-gray-100 hover:border-sky-300 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.02] transition-all duration-300 text-center group"
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-200"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:scale-110 transition-transform duration-200"
                   style={{ background: p.iconBg }}
                 >
-                  <span className="text-white text-2xl">{p.icon}</span>
+                  <span className="text-white text-3xl">{p.icon}</span>
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 leading-snug">
                   {p.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-500 text-base leading-relaxed">
                   {p.desc}
                 </p>
               </div>
@@ -355,12 +373,12 @@ export function MethodologySection({ methodology, impact }) {
             "linear-gradient(135deg, #0a2540 0%, #0d3460 50%, #0a4a6e 100%)",
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           {/* Badge */}
           {impact?.badge && (
             <div
               data-aos="zoom-in"
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white text-xs font-bold px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur border border-white/20 text-white font-bold px-4 py-2 rounded-full mb-6"
             >
               <RiMedalLine />
               {impact.badge}
@@ -376,28 +394,28 @@ export function MethodologySection({ methodology, impact }) {
           {impact?.subtitle && (
             <p
               data-aos="zoom-out-up"
-              className="text-white/60 text-base max-w-xl mx-auto mb-12"
+              className="text-white/90 text-lg max-w-xl mx-auto mb-12"
             >
               {impact.subtitle}
             </p>
           )}
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-7">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {impact?.stats?.map((stat, i) => (
               <div
                 data-aos="zoom-out"
                 key={i}
-                className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-5 py-6 hover:bg-white/15 hover:scale-[1.04] hover:border-white/20 transition-all duration-300 group cursor-default"
+                className="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-7 py-8 hover:bg-white/20 hover:scale-[1.05] hover:border-white/20 transition-all duration-300 group cursor-default"
               >
-                <p className="text-3xl sm:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-200 inline-block">
+                <p className="text-3xl sm:text-5xl font-bold text-white group-hover:scale-110 transition-transform duration-200 inline-block">
                   {stat.value}
                 </p>
-                <p className="text-white font-bold text-sm mt-1">
+                <p className="text-white font-semibold text-lg mt-2">
                   {stat.label}
                 </p>
                 {stat.sublabel && (
-                  <p className="text-white/50 text-xs mt-0.5">
+                  <p className="text-white/50 text-base mt-1">
                     {stat.sublabel}
                   </p>
                 )}
@@ -422,34 +440,35 @@ export function PhaseProcessSection({
   phases = [],
   bg = "linear-gradient(to bottom, #f0f8ff, #ffffff)",
 }) {
+  const [hovered, setHovered] = useState(0);
   return (
     <section
       className="w-full py-20 px-5 md:px-10 xl:px-16"
       style={{ background: bg }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* ── Phase stepper tabs ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-7 mb-16">
           {phases.map((phase, i) => (
             <div
               data-aos="zoom-in-up"
               key={phase.step}
-              className="relative bg-linear-to-b from-[#e8f6ff] to-[#d4eef9] border border-blue-100 rounded-2xl px-7 py-8 space-y-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              className="relative bg-linear-to-b from-[#e8f6ff] to-[#d4eef9] border-2 border-blue-100 hover:border-sky-400 rounded-2xl px-7 py-8 space-y-2 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 z-10"
             >
               {/* Connector line */}
               {i < phases.length - 1 && (
-                <div className="hidden sm:block absolute top-7 -right-1.5 w-3 h-px bg-blue-200 z-10" />
+                <div className="hidden sm:block absolute top-7 -right-9 w-9 h-0.5 bg-blue-200 z-1" />
               )}
               <div className="flex items-center gap-2 mb-5">
-                <span className="w-5 h-5 rounded-full bg-blue-500 text-white text-[10px] font-bold flex items-center justify-center shrink-0">
+                <span className="w-5 h-5 rounded-full bg-[#0084D1] text-white text-[10px] font-bold flex items-center justify-center shrink-0">
                   {phase.step}
                 </span>
-                <span className="text-blue-600 text-[10px] font-bold tracking-widest uppercase">
+                <span className="text-[#0084D1] text-[10px] font-bold tracking-widest uppercase">
                   {phase.label}
                 </span>
               </div>
               <p className="text-gray-900 font-bold text-sm">{phase.week}</p>
-              <p className="text-gray-500 text-xs mt-0.5">{phase.weekDesc}</p>
+              <p className="text-gray-500 text-xs">{phase.weekDesc}</p>
             </div>
           ))}
         </div>
@@ -468,7 +487,7 @@ export function PhaseProcessSection({
           {subtitle && (
             <p
               data-aos="fade-down"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-500 text-lg max-w-xl mx-auto"
             >
               {subtitle}
             </p>
@@ -476,19 +495,20 @@ export function PhaseProcessSection({
         </div>
 
         {/* ── Phase cards ── */}
-        <div className="flex flex-col gap-5">
-          {phases.map((phase) => (
+        <div className="flex flex-col gap-7 max-w-5xl mx-auto">
+          {phases.map((phase, i) => (
             <div
+              onMouseEnter={() => setHovered(i)}
               data-aos="zoom-out-down"
               key={phase.step}
-              className="hover:bg-linear-to-b hover:from-[#e8f6ff] hover:to-[#d6eefa] border border-blue-100 rounded-3xl p-7 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group"
+              className={`border border-blue-100 rounded-3xl p-10 hover:shadow-[0_0_40px] hover:-translate-y-0.5 transition-all duration-300 ${hovered === i ? phase.hoverBg : "bg-white"}`}
             >
               <div className="flex flex-col sm:flex-row gap-6">
                 {/* Left — icon + duration */}
-                <div className="flex flex-col items-start gap-3 shrink-0">
+                <div className="flex flex-col items-start gap-7 shrink-0">
                   <div className="relative">
                     <div
-                      className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200"
+                      className="w-22 h-22 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200"
                       style={{ background: phase.iconBg }}
                     >
                       <span className="text-white text-2xl">{phase.icon}</span>
@@ -507,23 +527,23 @@ export function PhaseProcessSection({
 
                 {/* Right — content */}
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">
                     {phase.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  <p className="text-gray-600 text-lg leading-relaxed mb-5">
                     {phase.desc}
                   </p>
 
                   {phase.deliverables?.length > 0 && (
                     <>
-                      <p className="text-xs font-bold text-gray-700 tracking-widest mb-3">
+                      <p className="text-md font-bold text-gray-700 tracking-wide mb-3">
                         KEY DELIVERABLES:
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {phase.deliverables.map((d, i) => (
                           <div
                             key={i}
-                            className="bg-white/70 border border-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm font-medium hover:bg-white hover:shadow-sm hover:scale-[1.01] transition-all duration-200"
+                            className="bg-[#F3F4F6] border border-blue-50 rounded-xl px-4 py-3 text-gray-700 text-sm font-medium hover:bg-white hover:shadow-sm hover:scale-[1.01] transition-all duration-200"
                           >
                             {d}
                           </div>

@@ -124,7 +124,7 @@ export default function AwarenessSection() {
       <div className="max-w-7xl mx-auto mb-24">
         {/* Badge */}
         <div data-aos="fade-up-left" className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-600 text-sm font-semibold px-4 py-2 rounded-full shadow-sm">
             <TbSparkles className="text-purple-500 text-[16px]" />
             Full-Funnel Strategy
           </div>
@@ -134,7 +134,7 @@ export default function AwarenessSection() {
         <div className="text-center mb-12">
           <h2
             data-aos="fade-up-right"
-            className="text-4xl lg:text-5xl font-bold text-gray-900"
+            className="text-4xl lg:text-6xl font-bold text-gray-900"
           >
             From{" "}
             <span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -142,10 +142,7 @@ export default function AwarenessSection() {
             </span>{" "}
             to Install
           </h2>
-          <p
-            data-aos="fade-down-right"
-            className="mt-3 text-gray-500 text-base"
-          >
+          <p data-aos="fade-down-right" className="mt-3 text-gray-600 text-lg">
             Complete marketing coverage at every stage
           </p>
         </div>
@@ -153,23 +150,23 @@ export default function AwarenessSection() {
         {/* Funnel + Groups */}
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           {/* Left — Funnel bars */}
-          <div className="w-full lg:w-[45%] flex flex-col gap-3 relative">
+          <div className="w-full lg:w-[45%] flex flex-col gap-5 relative">
             {/* User icon */}
-            <div className="flex justify-center mb-2">
+            <div className="flex justify-center absolute -right-7 -top-7 mb-2">
               <div
                 data-aos="fade-right"
-                className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center shadow"
+                className="w-17 h-17 rounded-full bg-purple-100 flex items-center justify-center shadow animate-bounce"
               >
-                <RiGroupLine className="text-purple-500 text-2xl" />
+                <RiGroupLine className="text-purple-500 text-3xl" />
               </div>
             </div>
 
             {funnelSteps.map((step, i) => (
-              <div key={i} className="flex justify-start">
+              <div key={i} className="flex justify-center">
                 <div
                   data-aos="fade-right"
                   data-aos-delay={i * 200}
-                  className={`${step.color} ${step.width} py-3 px-6 rounded-xl shadow-md text-white font-bold text-sm text-center transition-all duration-300 hover:scale-105 cursor-default`}
+                  className={`${step.color} ${step.width} py-6 px-4 rounded-2xl shadow-md text-white font-bold text-lg text-center transition-all duration-300 hover:scale-105 cursor-default`}
                 >
                   {step.label}
                 </div>
@@ -177,24 +174,24 @@ export default function AwarenessSection() {
             ))}
 
             {/* Bottom target icon */}
-            <div className="mt-4 flex justify-start pl-2">
+            <div className="mt-4 flex justify-start pl-2 absolute left-0 bottom-0">
               <div
                 data-aos="fade-right"
-                className="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center shadow"
+                className="w-17 h-17 rounded-full bg-blue-100 flex items-center justify-center shadow animate-bounce"
               >
-                <FiTarget className="text-blue-500 text-xl" />
+                <FiTarget className="text-blue-500 text-4xl" />
               </div>
             </div>
           </div>
 
           {/* Right — TOFU/MOFU/BOFU cards */}
-          <div className="w-full lg:w-[50%] flex flex-col gap-5">
+          <div className="w-full lg:w-[50%] flex flex-col gap-7">
             {funnelGroups.map((group, gi) => (
               <div
                 data-aos="fade-down"
                 data-aos-delay={gi * 100}
                 key={gi}
-                className="flex items-start gap-3"
+                className="flex items-start gap-10"
               >
                 {/* Bracket line */}
                 <div className="flex flex-col items-center pt-2 shrink-0">
@@ -202,30 +199,30 @@ export default function AwarenessSection() {
                     {group.steps.map((_, si) => (
                       <div
                         key={si}
-                        className="w-3 h-6 border-r-2 border-t-2 border-b-2 border-gray-300 rounded-r-md"
+                        className="w-2 h-20 border-r-2 border-t-2 border-b-2 border-gray-900 rounded-r-md"
                       />
                     ))}
                   </div>
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 bg-white rounded-2xl border border-gray-100 shadow-md p-5">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="flex-1 bg-[#F0F9FF] rounded-2xl border border-gray-100 shadow-md p-5">
+                  <div className="flex items-end gap-2 mb-3">
                     <span
-                      className={`${group.tagColor} text-white text-xs font-bold px-2 py-0.5 rounded-md`}
+                      className={`${group.tagColor} text-white text-xs font-bold px-3 py-1.5 rounded-xl`}
                     >
                       {group.tag}
                     </span>
                     <span className="text-gray-500 text-sm">{group.label}</span>
                   </div>
-                  <p className="text-xs text-gray-400 font-semibold mb-2">
+                  <p className="text-sm text-gray-400 font-semibold mb-2">
                     Services:
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {group.services.map((s) => (
                       <span
                         key={s}
-                        className="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full border border-gray-200"
+                        className="bg-white text-gray-700 text-sm font-medium px-4 py-1.5 rounded-full border-2 border-gray-200 hover:bg-sky-200"
                       >
                         {s}
                       </span>
@@ -256,14 +253,20 @@ export default function AwarenessSection() {
         </div>
 
         {/* Service Cards */}
-        <div data-aos="fade-up" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10"
+        >
           {serviceCards.map((card, i) => (
             <ServiceCard key={i} card={card} />
           ))}
         </div>
 
         {/* Bottom CTA bar */}
-        <div data-aos="zoom-out" className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm max-w-4xl mx-auto">
+        <div
+          data-aos="zoom-out"
+          className="bg-linear-to-r from-pink-50 to-blue-50 border border-gray-100 rounded-2xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm max-w-4xl mx-auto"
+        >
           <div>
             <p className="text-gray-900 font-bold text-base">
               Need a custom marketing strategy?
@@ -289,10 +292,10 @@ function FunnelCard({ stage, onClick }) {
       onClick={onClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative rounded-2xl p-6 cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl
+      className={`relative rounded-2xl p-7 cursor-pointer transition-all duration-300 shadow-md hover:shadow-2xl
         ${
           hovered
-            ? "bg-linear-to-br from-pink-400 via-purple-300 to-pink-300 text-white"
+            ? "bg-linear-to-br from-rose-400 to-rose-300 text-white shadow-rose-300"
             : "bg-white border border-gray-100 text-gray-900"
         }`}
     >
@@ -318,12 +321,12 @@ function FunnelCard({ stage, onClick }) {
 
       {/* Title */}
       <h3
-        className={`text-lg font-bold ${hovered ? "text-white" : "text-gray-900"}`}
+        className={`text-lg font-bold mt-3 ${hovered ? "text-white" : "text-gray-900"}`}
       >
         {stage.title}
       </h3>
       <p
-        className={`text-sm mt-1 ${hovered ? "text-white/80" : "text-gray-500"}`}
+        className={`text-sm mt-2 ${hovered ? "text-white/80" : "text-gray-500"}`}
       >
         {stage.subtitle}
       </p>
@@ -341,13 +344,13 @@ function ServiceCard({ card }) {
       className={`relative rounded-2xl p-6 border transition-all duration-300 cursor-pointer shadow-md
         ${
           hovered
-            ? "bg-linear-to-br from-pink-300 via-purple-400 to-pink-400 border-transparent shadow-xl"
+            ? "bg-linear-to-br from-rose-300  to-pink-400 border-transparent shadow-2xl shadow-rose-300"
             : "bg-white border-gray-100 hover:shadow-lg"
         }`}
     >
       {/* Icon */}
       <div
-        className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4
+        className={`w-13 h-13 rounded-xl flex items-center justify-center mb-4
           ${hovered ? "bg-white/20" : "bg-gray-100"}`}
       >
         {hovered ? (
@@ -358,12 +361,12 @@ function ServiceCard({ card }) {
       </div>
 
       <h3
-        className={`text-base font-bold mb-1 ${hovered ? "text-white" : "text-gray-900"}`}
+        className={`text-lg font-bold mb-1 ${hovered ? "text-white" : "text-gray-900"}`}
       >
         {card.title}
       </h3>
       <p
-        className={`text-sm mb-4 leading-relaxed ${hovered ? "text-white/80" : "text-gray-500"}`}
+        className={`text-base mb-4 leading-relaxed border-b border-gray-100 pb-4 ${hovered ? "text-white/80" : "text-gray-500"}`}
       >
         {card.desc}
       </p>
@@ -372,7 +375,7 @@ function ServiceCard({ card }) {
         {card.features.map((f) => (
           <li
             key={f}
-            className={`flex items-center gap-2 text-xs font-medium ${hovered ? "text-white/90" : "text-gray-500"}`}
+            className={`flex items-center gap-2 text-sm font-medium ${hovered ? "text-white/90" : "text-gray-500"}`}
           >
             <span
               className={`w-1.5 h-1.5 rounded-full shrink-0 ${hovered ? "bg-white" : "bg-pink-400"}`}

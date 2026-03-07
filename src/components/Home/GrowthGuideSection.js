@@ -52,17 +52,17 @@ export default function GrowthGuideSection() {
         {/* ── LEFT: Playbook Card mockup ── */}
         <div className="relative flex items-center justify-center">
           {/* Floating medal icon top-right */}
-          <div className="absolute -top-10 right-14 z-20 w-18 h-19 bg-linear-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/40 hover:scale-110 transition-transform duration-300">
-            <RiMedalLine className="text-white text-3xl" />
+          <div className="absolute -top-10 right-14 animate-bounce z-20 w-18 h-19 bg-linear-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/40 hover:scale-110 transition-transform duration-300">
+            <RiMedalLine className="text-white text-4xl" />
           </div>
 
           {/* Main playbook card */}
           <div
             data-aos="fade-up-left"
-            className="relative w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 hover:shadow-blue-400/30 hover:-translate-y-1 transition-all duration-500 -rotate-5"
+            className="relative w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/20 hover:shadow-blue-400/30 hover:-translate-y-1 hover:rotate-0 transition-all duration-500 -rotate-5"
             style={{
               background:
-                "linear-linear(135deg, #00d4ff 0%, #0099ff 40%, #6c63ff 100%)",
+                "linear-gradient(135deg, #00BCFF 0%, #00B8DB 40%, #155DFC 100%)",
             }}
           >
             {/* FREE GUIDE badge */}
@@ -114,8 +114,8 @@ export default function GrowthGuideSection() {
           </div>
 
           {/* Bottom-left floating badge */}
-          <div className="absolute -bottom-7 left-14 z-20 w-16 h-16 bg-linear-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
-            <MdTrendingUp className="text-white text-3xl" />
+          <div className="absolute -bottom-7 left-14 animate-bounce z-20 w-16 h-16 bg-linear-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-300">
+            <MdTrendingUp className="text-white text-4xl" />
           </div>
         </div>
 
@@ -132,22 +132,34 @@ export default function GrowthGuideSection() {
 
           {/* Headline */}
           <div>
-            <h2 data-aos="fade-up-right" className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h2
+              data-aos="fade-up-right"
+              className="text-4xl lg:text-5xl font-bold text-white leading-tight"
+            >
               Download Your Free
             </h2>
-            <h2 data-aos="fade-up-left" className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight">
+            <h2
+              data-aos="fade-up-left"
+              className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight"
+            >
               Growth Guide
             </h2>
           </div>
 
           {/* Subtext */}
-          <p data-aos="fade-up" className="text-gray-400 text-base leading-relaxed max-w-md">
+          <p
+            data-aos="fade-up"
+            className="text-gray-400 text-base leading-relaxed max-w-md"
+          >
             Learn the exact strategies we use to scale apps from 0 to 1M+ users.
             No fluff, just proven tactics.
           </p>
 
           {/* Social proof row */}
-          <div data-aos="fade-down" className="flex items-center gap-4 bg-[#1a2a4a]/60 border border-[#2a3a5a] rounded-2xl px-5 py-4">
+          <div
+            data-aos="fade-down"
+            className="flex items-center gap-4 bg-[#1a2a4a]/60 border border-[#2a3a5a] rounded-2xl px-5 py-4"
+          >
             {/* Avatars */}
             <div className="flex -space-x-2 shrink-0">
               {avatarLabels.map((label, i) => (
@@ -200,13 +212,19 @@ export default function GrowthGuideSection() {
           </div>
 
           {/* Trust line */}
-          <div data-aos="fade-up" className="flex items-center gap-2 text-gray-500 text-xs">
+          <div
+            data-aos="fade-up"
+            className="flex items-center gap-2 text-gray-500 text-xs"
+          >
             <BsShieldCheck className="text-green-400 text-sm shrink-0" />
             Instant access. No credit card required. Unsubscribe anytime.
           </div>
 
           {/* What You'll Learn */}
-          <div data-aos="fade-down" className="bg-[#1a2a4a]/40 border border-[#2a3a5a] rounded-2xl p-5">
+          <div
+            data-aos="fade-down"
+            className="bg-[#1a2a4a]/40 border border-[#2a3a5a] rounded-2xl p-5"
+          >
             <p className="flex items-center gap-2 text-white font-bold text-sm mb-4">
               <TbSparkles className="text-yellow-400" />
               What You'll Learn:

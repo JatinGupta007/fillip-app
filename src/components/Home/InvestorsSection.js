@@ -3,13 +3,15 @@
 import { MdTrendingUp, MdGroups } from "react-icons/md";
 import { RiRocketLine } from "react-icons/ri";
 import { HiOutlineFire } from "react-icons/hi";
-import { BsGraphUp } from "react-icons/bs";
+import { BsCCircleFill, BsCheck2Circle, BsCheckCircle, BsCheckCircleFill, BsGraphUp } from "react-icons/bs";
 import { FiAward } from "react-icons/fi";
+import { useState } from "react";
 
 const stats = [
   {
     icon: <RiRocketLine className="text-white text-xl" />,
     iconBg: "from-cyan-400 to-blue-500",
+    hoverBg: "bg-gradient-to-r from-sky-200 to-sky-100 shadow-sky-200",
     value: "500+",
     valueColor: "text-blue-500",
     label: "Apps Scaled",
@@ -18,6 +20,8 @@ const stats = [
   {
     icon: <BsGraphUp className="text-white text-xl" />,
     iconBg: "from-green-400 to-emerald-500",
+    hoverBg:
+      "bg-gradient-to-r from-emerald-200 to-emerald-100 shadow-emerald-200",
     value: "$2.5B+",
     valueColor: "text-green-500",
     label: "Portfolio Value",
@@ -26,6 +30,7 @@ const stats = [
   {
     icon: <MdGroups className="text-white text-xl" />,
     iconBg: "from-purple-400 to-violet-600",
+    hoverBg: "bg-gradient-to-r from-purple-200 to-violet-100 shadow-purple-200",
     value: "50M+",
     valueColor: "text-purple-500",
     label: "Users Acquired",
@@ -34,6 +39,7 @@ const stats = [
   {
     icon: <HiOutlineFire className="text-white text-xl" />,
     iconBg: "from-orange-400 to-red-500",
+    hoverBg: "bg-gradient-to-r from-orange-200 to-orange-100 shadow-orange-200",
     value: "12x",
     valueColor: "text-orange-500",
     label: "Avg. Growth",
@@ -70,6 +76,7 @@ const avatarColors = [
 const avatarLabels = ["YC", "TS", "500", "PH"];
 
 export default function InvestorsSection() {
+  const [hovered, setHovered] = useState(null)
   return (
     <section className="w-full bg-white py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
@@ -83,29 +90,41 @@ export default function InvestorsSection() {
           TRUSTED BY INDUSTRY LEADERS
         </div>
 
-        <h2 data-aos="fade-left" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2
+          data-aos="fade-left"
+          className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
+        >
           Backed by the world's top
         </h2>
-        <h2 data-aos="fade-right" className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight">
+        <h2
+          data-aos="fade-right"
+          className="text-4xl lg:text-5xl font-bold bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-tight"
+        >
           investors &amp; accelerators
         </h2>
 
-        <p data-aos="fade-down" className="mt-5 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
+        <p
+          data-aos="fade-down"
+          className="mt-5 text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto"
+        >
           Powering growth for startups backed by Y Combinator, Techstars, 500
           Global, and leading venture firms
         </p>
       </div>
 
       {/* Stats */}
-      <div className="max-w-8xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
-        {stats.map((s) => (
+      <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-7 mb-16">
+        {stats.map((s, i) => (
           <div
+            onMouseEnter={() => setHovered(i)}
+            onMouseLeave={() => setHovered(null)}
             data-aos="zoom-in"
             key={s.label}
-            className="bg-white border border-gray-100 rounded-2xl p-5 shadow-md hover:shadow-lg transition-shadow duration-200"
+            className={`border-2 border-gray-100 rounded-2xl p-5 shadow-md hover:shadow-2xl hover:-translate-y-2  transition-all duration-200 group
+              ${hovered === i ? s.hoverBg : "bg-white"}`}
           >
             <div
-              className={`w-11 h-11 rounded-xl bg-linear-to-br ${s.iconBg} flex items-center justify-center mb-4 shadow-md`}
+              className={`w-11 h-11 rounded-xl bg-linear-to-br ${s.iconBg} flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-all`}
             >
               {s.icon}
             </div>
@@ -117,7 +136,7 @@ export default function InvestorsSection() {
       </div>
 
       {/* OUR PARTNERS label */}
-      <div className="flex items-center gap-4 max-w-6xl mx-auto mb-12">
+      <div className="flex items-center gap-4 max-w-5xl mx-auto mb-12">
         <div className="flex-1 h-px bg-gray-200" />
         <span className="text-xs font-semibold text-gray-400 tracking-widest">
           OUR PARTNERS
@@ -126,17 +145,17 @@ export default function InvestorsSection() {
       </div>
 
       {/* Marquee Row 1 — slides LEFT */}
-      <div className="relative mb-8 overflow-hidden">
+      <div className="relative mb-3 overflow-hidden">
         {/* Fade edges */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-linear-to-r from-white to-transparent z-10" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-linear-to-l from-white to-transparent z-10" />
 
         <div
-          className="flex gap-6 animate-marquee-left"
+          className="flex gap-6 animate-marquee-left p-3"
           style={{ width: "max-content" }}
         >
           {[...row1Partners, ...row1Partners, ...row1Partners].map((p, i) => (
-            <PartnerCard key={i} {...p} />
+            <PartnerCard bg="#ffffff" key={i} {...p} />
           ))}
         </div>
       </div>
@@ -147,32 +166,32 @@ export default function InvestorsSection() {
         <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-linear-to-l from-white to-transparent z-10" />
 
         <div
-          className="flex gap-6 animate-marquee-right"
+          className="flex gap-6 animate-marquee-right p-3"
           style={{ width: "max-content" }}
         >
           {[...row2Partners, ...row2Partners, ...row2Partners].map((p, i) => (
-            <PartnerCard key={i} {...p} />
+            <PartnerCard bg="#F9FAFB" key={i} {...p} />
           ))}
         </div>
       </div>
 
       {/* Bottom trust bar */}
-      <div className="max-w-7xl mx-auto" data-aos="zoom-out">
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl px-16 py-5 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-sm">
+      <div className="max-w-8xl mx-auto" data-aos="zoom-out">
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl px-16 py-7 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-sm">
           {/* Funded startups */}
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
               {avatarLabels.map((label, i) => (
                 <div
                   key={i}
-                  className={`w-8 h-8 rounded-full ${avatarColors[i]} flex items-center justify-center text-white text-[10px] font-bold border-2 border-white shadow`}
+                  className={`w-12 h-12 rounded-full ${avatarColors[i]} flex items-center justify-center text-white text-[10px] font-bold border-2 border-white shadow`}
                 >
                   {label}
                 </div>
               ))}
             </div>
             <div>
-              <p className="text-sm font-bold text-gray-900">
+              <p className="text-lg font-bold text-gray-900">
                 500+ Funded Startups
               </p>
               <p className="text-xs text-gray-400">
@@ -185,11 +204,11 @@ export default function InvestorsSection() {
 
           {/* Official Partner */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md">
+            <div className="w-13 h-13 rounded-xl bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-md">
               <FiAward className="text-white text-xl" />
             </div>
             <div>
-              <p className="text-sm font-bold text-gray-900">
+              <p className="text-lg font-bold text-gray-900">
                 Official Partner
               </p>
               <p className="text-xs text-gray-400">
@@ -202,11 +221,11 @@ export default function InvestorsSection() {
 
           {/* Success Rate */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-pink-400 to-purple-500 flex items-center justify-center shadow-md">
+            <div className="w-13 h-13 rounded-xl bg-linear-to-br from-pink-400 to-purple-500 flex items-center justify-center shadow-md">
               <MdTrendingUp className="text-white text-xl" />
             </div>
             <div>
-              <p className="text-sm font-bold text-gray-900">
+              <p className="text-lg font-bold text-gray-900">
                 97% Success Rate
               </p>
               <p className="text-xs text-gray-400">
@@ -246,10 +265,11 @@ export default function InvestorsSection() {
   );
 }
 
-function PartnerCard({ name, sub, color }) {
+function PartnerCard({ name, sub, color, bg }) {
   return (
-    <div className="bg-white border border-gray-100 rounded-2xl px-9 py-7 shadow-sm flex flex-col items-center justify-center min-w-42 hover:shadow-md transition-shadow duration-200">
-      <p className={`text-base font-bold tracking-wide ${color}`}>{name}</p>
+    <div className={`bg-[${bg}] relative w-60 h-30 border-2 border-gray-100 rounded-2xl px-9 py-7 shadow-sm flex flex-col items-center justify-center min-w-42 hover:shadow-xl hover:border-gray-200 hover:bg-cyan-50 transition-shadow duration-200 group`}>
+      <BsCheckCircleFill size={28} className="absolute -right-2 -top-2 font-bold text-emerald-400 hidden group-hover:block" />
+      <p className={`text-xl font-bold tracking-wide ${color}`}>{name}</p>
       <p className="text-xs text-gray-400 mt-0.5 font-medium">{sub}</p>
     </div>
   );

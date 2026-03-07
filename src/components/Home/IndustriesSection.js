@@ -20,7 +20,6 @@ import {
   RiFootballLine,
   RiLeafLine,
 } from "react-icons/ri";
-import { TbSparkles } from "react-icons/tb";
 import { FiArrowRight, FiTarget } from "react-icons/fi";
 
 const industries = [
@@ -32,6 +31,7 @@ const industries = [
     iconColor: "text-emerald-500",
     hoverlinear: "from-emerald-400 to-teal-500",
     cardHover: "hover:border-emerald-200 hover:shadow-emerald-100",
+    desc: "Banking investment and fintech apps",
   },
   {
     icon: <RiBriefcaseLine className="text-3xl" />,
@@ -176,13 +176,13 @@ export default function IndustriesSection() {
           <FiTarget className="text-purple-400 text-[14px]" />
           15 Specialized Industries
         </div>
-        <h2 data-aos="fade-up-right" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 data-aos="fade-up-right" className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
           Industries We{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Serve
           </span>
         </h2>
-        <p data-aos="fade-up-left" className="mt-4 text-gray-500 text-base leading-relaxed max-w-xl mx-auto">
+        <p data-aos="fade-up-left" className="mt-4 text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
           Expert marketing strategies tailored to your app's industry. We
           understand your audience, your competition, and what drives success.
         </p>
@@ -256,7 +256,7 @@ function IndustryCard({ industry }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`group relative bg-white border rounded-3xl px-5 py-9 flex flex-col items-center text-center gap-3 cursor-pointer shadow-sm transition-all duration-300
+      className={`group relative bg-white  border rounded-3xl px-5 py-9 flex flex-col items-center text-center gap-3 cursor-pointer shadow-sm transition-all duration-300
         ${
           hovered
             ? `shadow-xl -translate-y-1.5 ${industry.cardHover} border-transparent`
@@ -265,7 +265,7 @@ function IndustryCard({ industry }) {
     >
       {/* Icon box */}
       <div
-        className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm
+        className={`w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300 shadow-sm
           ${
             hovered
               ? `bg-linear-to-br ${industry.hoverlinear} shadow-lg`
@@ -273,7 +273,7 @@ function IndustryCard({ industry }) {
           }`}
       >
         <span
-          className={`transition-colors duration-300 ${hovered ? "text-white text-3xl" : industry.iconColor}`}
+          className={`transition-colors duration-300 ${hovered ? "text-white text-3xl" : "hidden"}`}
         >
           {industry.icon}
         </span>
@@ -281,7 +281,7 @@ function IndustryCard({ industry }) {
 
       {/* Name */}
       <p
-        className={`font-bold text-sm leading-tight transition-colors duration-300 ${
+        className={`font-bold text-base leading-tight transition-colors duration-300 ${
           hovered ? "text-gray-900" : "text-gray-800"
         }`}
       >
@@ -289,16 +289,24 @@ function IndustryCard({ industry }) {
       </p>
 
       {/* App count */}
-      <div className="flex items-center gap-1">
+      <div
+        className={`flex items-center gap-1   ${hovered ? "" : "bg-gray-100 px-4 py-1.5 rounded-2xl"}`}
+      >
         <MdTrendingUp
           className={`text-xs transition-colors duration-300 ${
             hovered ? "text-green-500" : "text-green-400"
           }`}
         />
-        <span className="text-green-500 text-[11px] font-bold">
+        <span
+          className={`text-[12px] font-bold   ${hovered ? "text-green-500" : "text-gray-400"}`}
+        >
           {industry.apps}
         </span>
       </div>
+
+      {hovered && (
+        <p className="text-xs tracking-wide text-gray-500 transition-all">{industry.desc}</p>
+      )}
 
       {/* Hover glow ring */}
       {hovered && (

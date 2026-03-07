@@ -27,6 +27,9 @@ import {
   HiShoppingCart,
 } from "react-icons/hi";
 import { BsCollection, BsFunnel, BsMegaphone, BsGraphUp } from "react-icons/bs";
+import { FiSmartphone, FiTarget, FiPenTool, FiBarChart2 } from "react-icons/fi";
+import { FaBlog } from "react-icons/fa";
+import { HiOutlineDocumentText } from "react-icons/hi";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 
@@ -38,12 +41,6 @@ const servicesMenu = [
     color: "#3b82f6",
     bg: "#eff6ff",
     icon: <BsMegaphone size={18} />,
-    links: [
-      { label: "Brand Awareness", icon: <MdOutlineCampaign size={15} /> },
-      { label: "Content Marketing", icon: <MdOutlineFolder size={15} /> },
-      { label: "Social Media Ads", icon: <MdOutlineTrendingUp size={15} /> },
-      { label: "SEO & Organic Reach", icon: <MdOutlineSearch size={15} /> },
-    ],
   },
   {
     tag: "MOFU Marketing",
@@ -52,12 +49,6 @@ const servicesMenu = [
     color: "#8b5cf6",
     bg: "#f5f3ff",
     icon: <BsGraphUp size={18} />,
-    links: [
-      { label: "Lead Nurturing", icon: <MdOutlinePeople size={15} /> },
-      { label: "Email Campaigns", icon: <MdOutlineEmail size={15} /> },
-      { label: "Retargeting Ads", icon: <MdOutlineBarChart size={15} /> },
-      { label: "Webinars & Events", icon: <MdOutlinePlayCircle size={15} /> },
-    ],
   },
   {
     tag: "BOFU Marketing",
@@ -66,36 +57,122 @@ const servicesMenu = [
     color: "#0ea5e9",
     bg: "#f0f9ff",
     icon: <BsFunnel size={18} />,
-    links: [
-      {
-        label: "Conversion Optimization",
-        icon: <MdOutlineCheckCircle size={15} />,
-      },
-      { label: "Demo & Free Trials", icon: <MdOutlineSettings size={15} /> },
-      {
-        label: "Pricing & Proposals",
-        icon: <MdOutlineAttachMoney size={15} />,
-      },
-      {
-        label: "Customer Onboarding",
-        icon: <MdOutlineSupportAgent size={15} />,
-      },
-    ],
   },
 ];
 
 const solutionsItems = [
-  "App Store Optimization",
-  "Paid User Acquisition",
-  "Creative Production",
-  "Analytics & Attribution",
-  "Get Quote",
+  {
+    tag: "App Store Optimization",
+    href: "/app-store-optimization",
+    title: "ASO",
+    color: "#10b981",
+    bg: "#ecfdf5",
+    icon: <FiSmartphone size={18} />,
+  },
+  {
+    tag: "Paid User Acquisition",
+    href: "/paid-user-acquisition",
+    title: "User Acquisition",
+    color: "#f59e0b",
+    bg: "#fffbeb",
+    icon: <FiTarget size={18} />,
+  },
+  {
+    tag: "Creative Production",
+    href: "/creative-production",
+    title: "Creative",
+    color: "#6366f1",
+    bg: "#eef2ff",
+    icon: <FiPenTool size={18} />,
+  },
+  {
+    tag: "Analytics & Attribution",
+    href: "/analytics-attribution",
+    title: "Analytics",
+    color: "#ef4444",
+    bg: "#fef2f2",
+    icon: <FiBarChart2 size={18} />,
+  },
+  {
+    tag: "Get Quote",
+    href: "/get-quote",
+    title: "Quote",
+    color: "#06b6d4",
+    bg: "#ecfeff",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
 ];
-const resourcesItems = ["About Us", "Blog", "Growth Guide", "Audit", "Case Studies", "Community", "Calculators", "Addons"];
+
+const resourcesItems = [
+  {
+    tag: "About Us",
+    href: "/about-us",
+    title: "About",
+    color: "#14b8a6",
+    bg: "#f0fdfa",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Blog",
+    href: "/blog",
+    title: "Blog",
+    color: "#3b82f6",
+    bg: "#eff6ff",
+    icon: <FaBlog size={18} />,
+  },
+  {
+    tag: "Growth Guide",
+    href: "/growth-guide",
+    title: "Guide",
+    color: "#8b5cf6",
+    bg: "#f5f3ff",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Audit",
+    href: "/audit",
+    title: "Audit",
+    color: "#f59e0b",
+    bg: "#fffbeb",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Case Studies",
+    href: "/case-studies",
+    title: "Case Studies",
+    color: "#0ea5e9",
+    bg: "#f0f9ff",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Community",
+    href: "/community",
+    title: "Community",
+    color: "#22c55e",
+    bg: "#f0fdf4",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Calculators",
+    href: "/calculators",
+    title: "Calculators",
+    color: "#e11d48",
+    bg: "#fff1f2",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+  {
+    tag: "Addons",
+    href: "/addons",
+    title: "Addons",
+    color: "#6366f1",
+    bg: "#eef2ff",
+    icon: <HiOutlineDocumentText size={18} />,
+  },
+];
 
 // ── Desktop hover dropdown ────────────────────────────────────────────────────
 
-function DesktopDropdown({ label, icon, children }) {
+function DesktopDropdown({ label, children }) {
   const [open, setOpen] = useState(false);
   return (
     <div
@@ -104,13 +181,12 @@ function DesktopDropdown({ label, icon, children }) {
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className={`flex items-center text-sm gap-1.5 px-3 py-2 rounded-md font-semibold transition-colors whitespace-nowrap ${
+        className={`flex items-center text-sm gap-1.5 px-3 py-2 rounded-md font-semibold transition-colors whitespace-nowrap tracking-wide ${
           open
             ? "text-gray-900 bg-gray-100"
             : "text-gray-600 hover:text-gray-900"
         }`}
       >
-        <span className="text-gray-400">{icon}</span>
         {label}
         <MdKeyboardArrowDown
           size={16}
@@ -127,21 +203,21 @@ function DesktopDropdown({ label, icon, children }) {
   );
 }
 
-// ── Desktop Services mega menu ────────────────────────────────────────────────
+// ── Desktop mega menu ────────────────────────────────────────────────
 
-function DesktopServicesDropdown() {
+function DesktopSimpleDropdown({items, label}) {
   return (
-    <DesktopDropdown label="Services" icon={<HiBriefcase size={20} />}>
+    <DesktopDropdown label={label} icon={<HiBriefcase size={20} />}>
       {/* 3-column grid — fixed width so it never overflows viewport on large screens */}
       <div
-        className="flex divide-x divide-gray-100 p-2"
-        style={{ width: "640px" }}
+        className="flex flex-col divide-x divide-gray-100 p-2"
+        style={{ width: "250px" }}
       >
-        {servicesMenu.map((group) => (
+        {items.map((group) => (
           <Link key={group.tag} href={group.href} className="flex-1 px-3 py-2">
             <div className="flex items-center gap-2 mb-3">
               <span
-                className="p-1.5 rounded-lg"
+                className="p-2 rounded-lg"
                 style={{ background: group.bg, color: group.color }}
               >
                 {group.icon}
@@ -153,60 +229,18 @@ function DesktopServicesDropdown() {
                 >
                   {group.tag}
                 </span>
-                <span className="block text-xs text-gray-500">
+                <span className="block text-[9px] text-gray-500">
                   {group.title}
                 </span>
               </div>
             </div>
-            <ul className="space-y-0.5">
-              {group.links.map((link) => (
-                <li
-                  key={link.label}
-                  className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
-                >
-                  <span style={{ color: group.color }}>{link.icon}</span>
-                  {link.label}
-                </li>
-              ))}
-            </ul>
           </Link>
         ))}
       </div>
-      <div className="border-t border-gray-100 px-5 py-2.5 bg-gray-50 flex justify-between items-center">
-        <span className="text-xs text-gray-400">
-          Full-funnel marketing solutions
-        </span>
-        <Link
-          href="#"
-          className="text-xs font-semibold text-blue-500 hover:text-blue-600"
-        >
-          View all →
-        </Link>
-      </div>
     </DesktopDropdown>
   );
 }
 
-// ── Desktop simple dropdown ───────────────────────────────────────────────────
-
-function DesktopSimpleDropdown({ label, icon, items }) {
-  return (
-    <DesktopDropdown label={label} icon={icon}>
-      <ul className="p-2 w-50">
-        {items.map((item) => (
-          <li key={item}>
-            <Link
-              href={`/${item.replace(/\s+/g, "-").toLowerCase()}`}
-              className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors"
-            >
-              {item}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </DesktopDropdown>
-  );
-}
 
 // ── Mobile accordion item ─────────────────────────────────────────────────────
 
@@ -242,31 +276,33 @@ export default function Header() {
       <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="mx-auto px-4 md:px-8 lg:px-12 h-14 sm:h-20 flex items-center justify-between gap-4">
           {/* Logo */}
-          <Link data-aos="fade-right" href="/" className="flex items-center gap-2 shrink-0">
+          <Link
+            data-aos="fade-right"
+            href="/"
+            className="flex items-center gap-2 shrink-0"
+          >
             <Image
               src="/web-logo.png"
               alt="AppFillip"
-              width={130}
+              width={150}
               height={32}
               priority
             />
           </Link>
 
           {/* Desktop nav — only visible on lg+ */}
-          <nav data-aos="fade-up" className="hidden lg:flex items-center gap-2 flex-1 justify-center relative">
-            <DesktopServicesDropdown />
+          <nav
+            data-aos="fade-up"
+            className="hidden lg:flex items-center gap-2 flex-1 justify-center relative"
+          >
+            <DesktopSimpleDropdown label="Services" items={servicesMenu} />
 
-            <DesktopSimpleDropdown
-              label="Solutions"
-              icon={<HiLightningBolt size={20} />}
-              items={solutionsItems}
-            />
+            <DesktopSimpleDropdown label="Solutions" items={solutionsItems} />
 
             <Link
               href="/careers"
               className="flex text-sm items-center gap-1.5 px-3 py-2 font-semibold text-gray-600 hover:text-gray-900 rounded-md transition-colors whitespace-nowrap"
             >
-              <BsCollection size={18} className="text-gray-400" />
               Careers
             </Link>
 
@@ -274,13 +310,11 @@ export default function Header() {
               href="/process"
               className="flex items-center text-sm gap-1.5 px-3 py-2  font-semibold text-gray-600 hover:text-gray-900 rounded-md transition-colors"
             >
-              <MdOutlineSettings size={20} className="text-gray-400" />
               Process
             </Link>
 
             <DesktopSimpleDropdown
               label="Resources"
-              icon={<HiBookOpen size={20} />}
               items={resourcesItems}
             />
           </nav>
@@ -288,7 +322,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <Link
             data-aos="fade-left"
-            href="#"
+            href="/get-quote"
             className="hidden lg:inline-flex items-center gap-2 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white text-sm font-semibold px-7 py-3 rounded-2xl transition-colors shrink-0 shadow-[0_6px_16px_rgba(0,166,244,0.3)] hover:shadow-[0_8px_24px_rgba(0,166,244,0.4)]"
           >
             <HiShoppingCart size={16} />
@@ -348,7 +382,11 @@ export default function Header() {
                 icon={<HiBriefcase size={15} />}
               >
                 {servicesMenu.map((group) => (
-                  <Link href={group.href} key={group.tag} className="px-4 pt-3 pb-1">
+                  <Link
+                    href={group.href}
+                    key={group.tag}
+                    className="px-4 pt-3 pb-1"
+                  >
                     {/* Sub-group header */}
                     <div className="flex items-center gap-2 mb-2">
                       <span

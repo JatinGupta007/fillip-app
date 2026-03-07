@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
-import { BsStarFill, BsCurrencyDollar } from "react-icons/bs";
+import { FiArrowRight } from "react-icons/fi";
+import { BsCurrencyDollar } from "react-icons/bs";
 import { MdTrendingUp } from "react-icons/md";
 import { TbSparkles } from "react-icons/tb";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
@@ -35,16 +35,16 @@ export function HeroSection({ hero, theme }) {
         {/* Badge */}
         <div
           data-aos="fade-down-left"
-          className="inline-flex items-center gap-2 text-xs font-bold px-7 py-3 rounded-full  backdrop-blur hover:scale-105 transition-transform duration-200"
+          className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full  backdrop-blur hover:scale-105 transition-transform duration-200"
           style={{
             background: theme.badgeBg,
             color: theme.badgeText,
           }}
         >
-          <MdTrendingUp
+          <TbSparkles
             style={{
               color: theme.accent,
-              fontSize: "14px",
+              fontSize: "20px",
               fontWeight: "bold",
             }}
           />
@@ -53,10 +53,13 @@ export function HeroSection({ hero, theme }) {
 
         {/* Headline */}
         <div>
-          <h1 data-aos="fade-down-right" className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight tracking-tight">
+          <h1
+            data-aos="fade-down-right"
+            className="text-3xl md:text-5xl lg:text-7xl font-bold text-[#0d1f3c] tracking-tight my-3"
+          >
             {hero.headlineBlack}{" "}
             <span
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
+              className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight"
               style={{
                 background: theme.accent,
                 backgroundClip: "text",
@@ -69,29 +72,38 @@ export function HeroSection({ hero, theme }) {
         </div>
 
         {/* Subtext */}
-        <p data-aos="fade-up-left" className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl">
+        <p
+          data-aos="fade-up-left"
+          className="text-gray-500 text-lg sm:text-2xl leading-relaxed max-w-3xl"
+        >
           {hero.subtext}
         </p>
 
         {/* CTA Buttons */}
-        <div data-aos="fade-up-right" className="flex flex-col sm:flex-row gap-8 mt-5 w-full sm:w-auto mb-7">
+        <div
+          data-aos="fade-up-right"
+          className="flex flex-col sm:flex-row gap-8 mt-7 w-full sm:w-auto mb-7"
+        >
           <button
-            className="group flex items-center justify-center gap-5 text-white font-bold text-base px-12 py-4 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+            className="group flex bg-white items-center justify-center gap-5 font-bold text-lg px-12 py-5 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{
-              background: theme.primaryBtn,
+              color: theme.badgeText,
               boxShadow: `0 10px 30px ${theme.btnShadow}`,
             }}
           >
             {hero.primaryBtn}
             <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
           </button>
-          <button className="flex items-center justify-center bg-white/80 hover:bg-white border border-gray-200 hover:border-gray-300 text-gray-900 font-bold text-base px-8 py-4 rounded-2xl hover:scale-[1.03] active:scale-[0.98] shadow-md transition-all duration-200">
+          <button className="flex items-center justify-center bg-transparent border border-white text-white font-bold text-lg px-10 py-5 rounded-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
             {hero.secondaryBtn}
           </button>
         </div>
 
         {/* Stats */}
-        <div data-aos="zoom-in" className="flex flex-wrap justify-center gap-10 mt-4">
+        <div
+          data-aos="zoom-in"
+          className="flex flex-wrap justify-center gap-10 mt-4"
+        >
           {hero.stats.map((stat, i) => (
             <div
               key={i}
@@ -122,11 +134,15 @@ export function HeroSection({ hero, theme }) {
    2. CAPABILITIES SECTION
 ═══════════════════════════════════ */
 export function CapabilitiesSection({ capabilities, theme }) {
+  const [hovered, setHovered] = useState(null);
   return (
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h2 data-aos="fade-up" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+          >
             {capabilities.title}{" "}
             <span
               style={{
@@ -138,7 +154,10 @@ export function CapabilitiesSection({ capabilities, theme }) {
               {capabilities.titleColored}
             </span>
           </h2>
-          <p data-aos="fade-down" className="mt-4 text-gray-500 text-base max-w-2xl mx-auto">
+          <p
+            data-aos="fade-down"
+            className="mt-4 text-gray-500 text-base max-w-2xl mx-auto"
+          >
             {capabilities.subtitle}
           </p>
         </div>
@@ -146,22 +165,23 @@ export function CapabilitiesSection({ capabilities, theme }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {capabilities.cards.map((card, i) => (
             <div
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
               data-aos="flip-up"
               key={i}
-              className="bg-white border border-gray-100 rounded-2xl p-7 shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 group"
+              className={`rounded-2xl p-9 shadow-md hover: hover:shadow-[0_0_40px] hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 group
+                  ${hovered === i ? card.hoverBg : "bg-white "}`}
             >
               <div
-                className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-200`}
+                className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-200`}
                 style={{ background: card.iconBg }}
               >
                 <span className="text-white text-2xl">{card.icon}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {card.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {card.desc}
-              </p>
+              <p className="text-gray-500 leading-relaxed">{card.desc}</p>
             </div>
           ))}
         </div>
@@ -176,7 +196,7 @@ export function CapabilitiesSection({ capabilities, theme }) {
 function IncludedSection({ included, theme }) {
   return (
     <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2
           data-aos="zoom-in"
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight"
@@ -199,7 +219,8 @@ function IncludedSection({ included, theme }) {
               data-aos="fade-right"
               data-aos-delay={i * 100}
               key={i}
-              className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl px-5 py-4 shadow-sm hover:shadow-md hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-200 group"
+              className={`flex items-center gap-4 bg-white hover:border rounded-2xl px-5 py-5 shadow-sm hover:shadow-md hover:scale-[1.02] hover:-translate-y-0.5 transition-all duration-200 group`}
+              style={{ borderColor: included.border }}
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform duration-200"
@@ -207,7 +228,7 @@ function IncludedSection({ included, theme }) {
               >
                 <IoMdCheckmarkCircleOutline className="text-white text-3xl" />
               </div>
-              <span className="text-gray-800 font-semibold text-sm">
+              <span className="text-gray-800 font-semibold text-lg">
                 {item}
               </span>
             </div>
@@ -224,7 +245,7 @@ function IncludedSection({ included, theme }) {
 function TacticsSection({ tactics, theme }) {
   return (
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <h2
             data-aos="fade-up-left"
@@ -242,7 +263,10 @@ function TacticsSection({ tactics, theme }) {
             </span>
           </h2>
           {tactics.subtitle && (
-            <p data-aos="fade-up-right" className="mt-4 text-gray-500 text-base max-w-xl mx-auto">
+            <p
+              data-aos="fade-up-right"
+              className="mt-4 text-gray-500 text-base max-w-xl mx-auto"
+            >
               {tactics.subtitle}
             </p>
           )}
@@ -253,7 +277,8 @@ function TacticsSection({ tactics, theme }) {
             <div
               data-aos="zoom-in"
               key={i}
-              className="bg-[#F9FAFB] border border-gray-100 rounded-2xl px-7 py-5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center gap-4 group"
+              className="bg-[#F9FAFB] hover:border rounded-2xl px-7 py-5 shadow-sm hover:shadow-lg hover:-translate-y-1.5 hover:scale-[1.03] transition-all duration-300 flex flex-col items-center text-center gap-4 group"
+              style={{ borderColor: tactics.border }}
             >
               <span className="text-4xl group-hover:scale-110 transition-transform duration-200">
                 {item.emoji}
@@ -281,9 +306,10 @@ function TacticsSection({ tactics, theme }) {
    5. SUCCESS STORIES SECTION
 ═══════════════════════════════════ */
 function SuccessSection({ success, theme }) {
+  const [hovered, setHovered] = useState(null);
   return (
     <section className="w-full bg-linear-to-b from-[#f6fafe] to-white py-20 px-5 md:px-10 xl:px-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2
           data-aos="zoom-out"
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] text-center mb-14 leading-tight"
@@ -303,15 +329,20 @@ function SuccessSection({ success, theme }) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-7">
           {success.cards.map((card, i) => (
             <div
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
               data-aos="fade-up-left"
               key={i}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-4"
+              className={`bg-white border border-gray-100 rounded-2xl p-8 shadow-md hover:shadow-[0_0_40px] hover:-translate-y-1.5 transition-all duration-300 flex flex-col gap-4
+                ${hovered === i ? card.hoverBg : "bg-white "}`}
             >
               {/* Header */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900">{card.name}</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {card.name}
+                </h3>
                 <span
-                  className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mt-1"
+                  className="inline-block text-white text-xs font-bold px-3 py-1 rounded-full mt-3"
                   style={{ background: card.tagColor }}
                 >
                   {card.tag}
@@ -321,22 +352,22 @@ function SuccessSection({ success, theme }) {
               {/* Metric row — TOFU style */}
               {card.reach && (
                 <div className="flex flex-col gap-2 text-sm">
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Reach</span>
-                    <span className="font-bold text-gray-900">
+                  <div className="flex justify-between items-center border-b border-gray-200 py-4">
+                    <span className="text-gray-700">Reach</span>
+                    <span className="font-bold text-gray-900 text-lg">
                       {card.reach}
                     </span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Engagement</span>
-                    <span className="font-bold text-gray-900">
+                  <div className="flex justify-between items-center border-b border-gray-200 py-4">
+                    <span className="text-gray-700">Engagement</span>
+                    <span className="font-bold text-gray-900 text-lg">
                       {card.engagement}
                     </span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-400">Result</span>
+                  <div className="flex justify-between items-center py-4">
+                    <span className="text-gray-700">Result</span>
                     <span
-                      className="font-bold"
+                      className="font-bold text-lg"
                       style={{ color: card.resultColor }}
                     >
                       {card.result}
@@ -424,7 +455,7 @@ function SuccessSection({ success, theme }) {
 function ROISection({ roi, theme }) {
   return (
     <section className="w-full py-14 px-5 md:px-10 xl:px-16 bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div
           className="relative overflow-hidden rounded-3xl px-8 py-14 text-center shadow-2xl"
           style={{ background: theme.roiBg }}
@@ -442,7 +473,7 @@ function ROISection({ roi, theme }) {
           {/* Badge */}
           <div
             data-aos="fade-down-right"
-            className="relative z-10 inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white mb-5"
+            className="relative z-10 inline-flex items-center gap-2 font-bold px-4 py-2 rounded-full border border-white/20 bg-white/10 text-white mb-5"
           >
             <BsCurrencyDollar />
             {roi.badge}
@@ -450,19 +481,19 @@ function ROISection({ roi, theme }) {
 
           <h3
             data-aos="fade-up-left"
-            className="relative z-10 text-2xl sm:text-3xl font-bold text-white mb-3"
+            className="relative z-10 text-2xl sm:text-5xl font-bold text-white mb-5"
           >
             {roi.title}
           </h3>
           <p
             data-aos="fade-up-right"
-            className="relative z-10 text-white/70 text-sm leading-relaxed max-w-xl mx-auto mb-8"
+            className="relative z-10 text-white/70 text-lg leading-relaxed max-w-3xl mx-auto mb-10"
           >
             {roi.subtitle}
           </p>
 
           {/* Stat cards */}
-          <div className="relative z-10 grid grid-cols-3 gap-4 mb-8">
+          <div className="relative z-10 grid grid-cols-3 gap-7 px-10 mb-8">
             {roi.stats.map((stat, i) => (
               <div
                 data-aos="zoom-in-down"
@@ -470,10 +501,10 @@ function ROISection({ roi, theme }) {
                 className="rounded-2xl px-4 py-5 hover:scale-105 transition-transform duration-200 cursor-default"
                 style={{ background: theme.roiCardBg }}
               >
-                <p className="text-white text-2xl sm:text-3xl font-bold">
+                <p className="text-white text-2xl sm:text-5xl font-bold">
                   {stat.value}
                 </p>
-                <p className="text-white/60 text-xs mt-1">{stat.label}</p>
+                <p className="text-white/60 text-lg mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -481,7 +512,7 @@ function ROISection({ roi, theme }) {
           {/* CTA */}
           <button
             data-aos="zoom-out-down"
-            className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+            className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-lg px-9 py-5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{ color: theme.roiBg }}
           >
             {roi.cta} <FiArrowRight />
