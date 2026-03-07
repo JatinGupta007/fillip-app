@@ -97,24 +97,32 @@ export const communityData = {
 
     cards: [
       {
+        hoverBg:
+          "bg-gradient-to-br from-sky-200  to-transparent shadow-sky-200",
         icon: <IoPeople className="text-white" />,
         iconBg: "linear-gradient(135deg, #06b6d4, #0891b2)", // teal
         title: "Network with Peers",
         desc: "Connect with 5,000+ app founders, marketers, and growth professionals building successful mobile apps.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-purple-200  to-transparent shadow-purple-200",
         icon: <ImPower className="text-white" />,
         iconBg: "linear-gradient(135deg, #a855f7, #ec4899)", // purple-pink
         title: "Real-Time Insights",
         desc: "Get instant feedback on campaigns, creative assets, and growth strategies from experienced performers.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-green-200  to-transparent shadow-green-200",
         icon: <RiLineChartLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #10b981, #059669)", // green
         title: "Exclusive Content",
         desc: "Access weekly AMAs, case study deep-dives, and live campaign breakdowns not available anywhere else.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-orange-200  to-transparent shadow-orange-200",
         icon: <RiMedalLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #f97316, #ef4444)", // orange-red
         title: "Early Access",
@@ -299,22 +307,22 @@ export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
               <div
                 data-aos="zoom-in-left"
                 key={i}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-start group"
+                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center group"
               >
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform duration-200"
+                  className="w-16 h-16 rounded-xl flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform duration-200"
                   style={{
                     background:
                       stat.iconBg ??
                       "linear-gradient(135deg, #38bdf8, #0ea5e9)",
                   }}
                 >
-                  <span className="text-white text-xl">{stat.icon}</span>
+                  <span className="text-white text-3xl">{stat.icon}</span>
                 </div>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900 leading-none mb-1">
+                <p className="text-2xl sm:text-4xl font-bold text-gray-900 leading-none mb-3">
                   {stat.value}
                 </p>
-                <p className="text-gray-500 text-sm font-medium">
+                <p className="text-gray-500 font-medium">
                   {stat.label}
                 </p>
               </div>
@@ -332,14 +340,14 @@ export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
           <div className="text-center mb-10">
             <h2
               data-aos="fade-down-right"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+              className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
             >
               {story?.title ?? "Our Story"}
             </h2>
             {story?.subtitle && (
               <p
                 data-aos="fade-down-left"
-                className="mt-3 text-gray-500 text-base"
+                className="mt-3 text-gray-600 text-lg"
               >
                 {story.subtitle}
               </p>
@@ -350,7 +358,7 @@ export function StatsAndStorySection({ stats, story, bg = "#f8fafc" }) {
               <p
                 data-aos="fade-up-right"
                 key={i}
-                className="text-gray-600 text-base leading-relaxed"
+                className="text-gray-600 text-lg leading-relaxed"
               >
                 {p}
               </p>
@@ -380,12 +388,12 @@ export function JourneyTimelineSection({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
-            <p data-aos="fade-left" className="mt-3 text-gray-500 text-base">
+            <p data-aos="fade-left" className="mt-3 text-gray-600 text-lg">
               {subtitle}
             </p>
           )}
@@ -396,10 +404,10 @@ export function JourneyTimelineSection({
           {/* Vertical line */}
           <div
             data-aos="fade-left"
-            className="absolute left-[52px] top-0 bottom-0 w-px bg-linear-to-b from-sky-300 via-violet-300 to-sky-300 opacity-60"
+            className="absolute left-[36px] top-0 bottom-0 w-[3px] bg-linear-to-b from-[#00A6F4] to-[#00B8DB] opacity-60"
           />
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-10">
             {milestones.map((m, i) => (
               <div
                 data-aos="zoom-out-down"
@@ -408,7 +416,7 @@ export function JourneyTimelineSection({
               >
                 {/* Year badge */}
                 <div
-                  className="shrink-0 w-[68px] h-[68px] rounded-2xl flex items-center justify-center font-bold text-white text-sm shadow-lg group-hover:scale-110 transition-transform duration-200 z-10"
+                  className="shrink-0 w-[68px] h-[68px] rounded-2xl flex items-center justify-center font-bold text-white text-base shadow-lg group-hover:scale-110 transition-transform duration-200 z-10"
                   style={{
                     background:
                       m.badgeBg ?? "linear-gradient(135deg, #38bdf8, #0ea5e9)",
@@ -420,12 +428,12 @@ export function JourneyTimelineSection({
                 {/* Card */}
                 <div
                   data-aos="zoom-out-down"
-                  className="flex-1 bg-white border border-gray-100 rounded-2xl px-6 py-5 shadow-sm hover:shadow-lg hover:border-sky-100 transition-all duration-300"
+                  className="flex-1 bg-white border border-gray-100 rounded-2xl px-8 py-5 shadow-sm hover:shadow-lg hover:border-sky-100 transition-all duration-300"
                 >
-                  <h3 className="text-base font-bold text-gray-900 mb-1">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {m.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-lg leading-relaxed">
                     {m.desc}
                   </p>
                 </div>
@@ -456,14 +464,14 @@ export function MeetTheTeamSection({
         <div className="text-center mb-14">
           <h2
             data-aos="zoom-in"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="zoom-out"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -506,7 +514,7 @@ export function MeetTheTeamSection({
 
               {/* Info */}
               <div className="p-5">
-                <h3 className="text-base font-bold text-gray-900 mb-0.5">
+                <h3 className="text-xl font-bold text-gray-900 mb-0.5">
                   {m.name}
                 </h3>
                 <p

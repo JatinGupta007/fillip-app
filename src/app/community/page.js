@@ -156,24 +156,32 @@ export const communityData = {
 
     cards: [
       {
+        hoverBg:
+          "bg-gradient-to-br from-sky-200  to-transparent shadow-sky-200",
         icon: <BiGroup className="text-white" />,
         iconBg: "linear-gradient(135deg, #06b6d4, #0891b2)", // teal
         title: "Network with Peers",
         desc: "Connect with 5,000+ app founders, marketers, and growth professionals building successful mobile apps.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-purple-200  to-transparent shadow-purple-200",
         icon: <ImPower className="text-white" />,
         iconBg: "linear-gradient(135deg, #a855f7, #ec4899)", // purple-pink
         title: "Real-Time Insights",
         desc: "Get instant feedback on campaigns, creative assets, and growth strategies from experienced performers.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-green-200  to-transparent shadow-green-200",
         icon: <RiFileChartLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #10b981, #059669)", // green
         title: "Exclusive Content",
         desc: "Access weekly AMAs, case study deep-dives, and live campaign breakdowns not available anywhere else.",
       },
       {
+        hoverBg:
+          "bg-gradient-to-br from-orange-200  to-transparent shadow-orange-200",
         icon: <RiMedalLine className="text-white" />,
         iconBg: "linear-gradient(135deg, #f97316, #ef4444)", // orange-red
         title: "Early Access",
@@ -415,7 +423,9 @@ export default function CommunityPage() {
       <WhyJoinSection {...whyJoinData} />
       <CommunityEventsAndTestimonials {...communityEventsTestimonialsData} />
       <FAQSection {...communityFAQData} />
-      <CTASection {...ctaData} />
+      <div className="max-w-5xl mx-auto py-16">
+        <CTASection {...ctaData} rounded="rounded-4xl" />
+      </div>
     </>
   );
 }
@@ -426,40 +436,6 @@ import { BsArrowUpRight } from "react-icons/bs";
    COMMUNITY EVENTS + TESTIMONIALS
    Two sections in one file.
 
-   Props:
-   events: {
-     title         — string (dark)
-     titleColored  — string (gradient)
-     titleGradient — CSS gradient
-     subtitle      — string
-     bg            — CSS background
-     items         — Array<{
-         icon        : ReactElement
-         iconBg      : string
-         badge       : string          ("Weekly", "Monthly" etc.)
-         badgeBg     : string          (CSS color/gradient for pill)
-         badgeColor  : string          (text color hex)
-         title       : string
-         desc        : string
-       }>
-   }
-   testimonials: {
-     title         — string (dark)
-     titleColored  — string (colored)
-     titleColor    — string (hex, solid color)
-     subtitle?     — string
-     bg            — CSS background
-     items         — Array<{
-         avatar      : ReactElement    (icon used as avatar)
-         avatarBg    : string
-         name        : string
-         role        : string
-         quote       : string
-         tag         : string          (e.g. "↗ -40% CPI")
-         tagBg       : string
-         tagColor    : string
-       }>
-   }
 ════════════════════════════════════════ */
 export function CommunityEventsAndTestimonials({ events, testimonials }) {
   return (
@@ -476,7 +452,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           <div className="text-center mb-12">
             <h2
               data-aos="fade-down-right"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+              className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
             >
               {events?.title}
               <span
@@ -493,7 +469,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
             {events?.subtitle && (
               <p
                 data-aos="fade-down-left"
-                className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+                className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
               >
                 {events.subtitle}
               </p>
@@ -501,23 +477,23 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           </div>
 
           {/* Event cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-9">
             {events?.items?.map((item, i) => (
               <div
                 data-aos="zoom-in"
                 key={i}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+                className="bg-white border flex flex-col items-center border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
               >
                 {/* Icon + badge row */}
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-end gap-1 mb-6">
                   <div
-                    className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
+                    className="w-16 h-16 rounded-xl flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
                     style={{ background: item.iconBg }}
                   >
                     <span className="text-white text-xl">{item.icon}</span>
                   </div>
                   <span
-                    className="text-xs font-bold px-3 py-1 rounded-full"
+                    className="text-sm font-bold px-3 py-1 rounded-full"
                     style={{
                       background: item.badgeBg ?? "#f0f9ff",
                       color: item.badgeColor ?? "#0ea5e9",
@@ -527,10 +503,10 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                   </span>
                 </div>
 
-                <h3 className="text-base font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-500 text-base leading-relaxed text-center">
                   {item.desc}
                 </p>
               </div>
@@ -551,7 +527,7 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
           <div className="text-center mb-12">
             <h2
               data-aos="fade-up-right"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+              className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
             >
               {testimonials?.title}{" "}
               <span style={{ color: testimonials?.titleColor ?? "#3b82f6" }}>
@@ -559,30 +535,30 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
               </span>
             </h2>
             {testimonials?.subtitle && (
-              <p className="mt-3 text-gray-500 text-base max-w-xl mx-auto">
+              <p className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto">
                 {testimonials.subtitle}
               </p>
             )}
           </div>
 
           {/* Testimonial cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
             {testimonials?.items?.map((t, i) => (
               <div
                 data-aos="zoom-out-left"
                 key={i}
-                className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
+                className="bg-[#F9FAFB] border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
               >
                 {/* Avatar + name row */}
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-6">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
+                    className="w-15 h-15 rounded-full flex items-center justify-center shadow-md shrink-0 group-hover:scale-110 transition-transform duration-200"
                     style={{ background: t.avatarBg }}
                   >
-                    <span className="text-white text-base">{t.avatar}</span>
+                    <span className="text-white text-3xl">{t.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-gray-900 leading-tight">
+                    <p className="text-lg font-bold text-gray-900 leading-tight">
                       {t.name}
                     </p>
                     <p className="text-xs text-gray-400 font-medium leading-tight">
@@ -592,15 +568,15 @@ export function CommunityEventsAndTestimonials({ events, testimonials }) {
                 </div>
 
                 {/* Quote */}
-                <p className="text-gray-600 text-sm leading-relaxed italic flex-1">
+                <p className="text-gray-600 text-base leading-relaxed italic flex-1">
                   "{t.quote}"
                 </p>
 
                 {/* Tag */}
                 {t.tag && (
-                  <div className="mt-4">
+                  <div className="mt-7">
                     <span
-                      className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold px-3 py-1.5 rounded-full"
                       style={{
                         background: t.tagBg,
                         color: t.tagColor ?? "#fff",

@@ -74,7 +74,7 @@ export default function CTASection({
         {/* Headline */}
         <h2
           data-aos="zoom-in-left"
-          className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
+          className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight max-w-xl"
         >
           {headline}
         </h2>
@@ -82,7 +82,7 @@ export default function CTASection({
         {/* Subtext */}
         <p
           data-aos="zoom-out-right"
-          className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-xl"
+          className="text-gray-100 text-base sm:text-xl leading-relaxed max-w-3xl"
         >
           {subtext}
         </p>

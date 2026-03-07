@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { FaBolt, FaArrowRight } from "react-icons/fa6";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
@@ -13,16 +14,16 @@ import { FaDollarSign } from "react-icons/fa";
 
 export default function HeroSection() {
   const [link, setLink] = useState("");
-
+  const router = useRouter()
   return (
     <section className="w-full bg-linear-to-br from-[#eaf4ff] via-[#f0f7ff] to-[#e8f0ff] flex items-center px-5 md:px-10 xl:px-16 py-20">
       {/* Background blobs */}
       {/* <div className="absolute top-[-80px] left-[-80px] w-[340px] h-[340px] rounded-full bg-blue-100 opacity-60 blur-3xl pointer-events-none" />
       <div className="absolute bottom-[-60px] right-[-60px] w-[300px] h-[300px] rounded-full bg-purple-100 opacity-50 blur-3xl pointer-events-none" /> */}
 
-      <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 xl:gap-24 items-center">
+      <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 xl:gap-24 gap-16 items-center">
         {/* LEFT CONTENT */}
-        <div className="flex flex-col gap-6 items-center xl:items-start">
+        <div className="flex flex-col gap-6  xl:items-start">
           {/* Badge */}
           <div
             data-aos="fade-up"
@@ -46,13 +47,15 @@ export default function HeroSection() {
               className="text-3xl md:text-5xl xl:text-6xl font-bold text-gray-900"
             >
               Grow Your App to
+              <br className="hidden xl:block" /> { " "}
+              <span
+                data-aos="fade-left"
+                className="text-3xl md:text-5xl xl:text-7xl font-bold leading-tight bg-linear-to-r from-[#00b4d8] via-[#6c63ff] to-[#a855f7] bg-clip-text text-transparent"
+              >
+                1M+ Users
+              </span>
             </h1>
-            <h1
-              data-aos="fade-left"
-              className="text-3xl md:text-5xl xl:text-7xl font-bold leading-tight bg-linear-to-r from-[#00b4d8] via-[#6c63ff] to-[#a855f7] bg-clip-text text-transparent"
-            >
-              1M+ Users
-            </h1>
+
             <div
               data-aos="zoom-in"
               className="mt-2 h-1 w-48 rounded-2xl bg-linear-to-r from-[#00b4d8] to-[#6c63ff]"
@@ -73,7 +76,7 @@ export default function HeroSection() {
           </p>
 
           {/* Features */}
-          <div className="grid grid-cols-2 md:gap-x-30 gap-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2  md:gap-x-30 gap-y-3">
             {[
               "Data-driven strategies",
               "Full-funnel campaigns",
@@ -98,7 +101,7 @@ export default function HeroSection() {
             data-aos="fade-right"
             className="flex flex-col sm:flex-row gap-3 mt-6"
           >
-            <div className="w-88 md:w-100 flex items-center bg-white border-2 border-gray-200 hover:border-sky-300 focus:border-sky-300 rounded-xl shadow-sm px-6 py-5 gap-2">
+            <div className="w-88 md:w-120 xl:w-100 flex items-center bg-white border-2 border-gray-200 hover:border-sky-300 focus:border-sky-300 rounded-xl shadow-sm px-6 py-5 gap-2">
               <input
                 type="text"
                 placeholder="Enter your App Store or Play Store link"
@@ -108,7 +111,7 @@ export default function HeroSection() {
               />
               <FaBolt className="text-gray-400 text-lg shrink-0" />
             </div>
-            <button className="flex items-center justify-center gap-2 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-300 transition-all duration-200 whitespace-nowrap">
+            <button onClick={() => router.push("/audit")} className="flex items-center justify-center gap-2 bg-linear-to-l from-[#00A6F4] via-[#00B8DB] to-[#155DFC] hover:bg-linear-to-l hover:from-[#017ab2] hover:via-[#018da9] hover:to-[#083cab] active:scale-95 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-300 transition-all duration-200 whitespace-nowrap">
               Get Free Audit <FaArrowRight />
             </button>
           </div>
@@ -175,10 +178,7 @@ export default function HeroSection() {
         </div>
 
         {/* RIGHT CONTENT — Phone mockup */}
-        <div
-          data-aos="zoom-in"
-          className="relative"
-        >
+        <div data-aos="zoom-in" className="relative">
           <div
             className="absolute right-5 -top-3 animate-bounce duration-1000 flex flex-col items-center bg-gradient-to-br from-[#AD46FF] to-[#F6339A]  px-4 py-3.5 rounded-2xl
               border-4 border-white shadow-[0_10px_30px_rgba(0,0,0,0.15)]"

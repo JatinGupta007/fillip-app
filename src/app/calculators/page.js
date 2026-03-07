@@ -83,7 +83,9 @@ export default function CalculatorPage() {
         ]}
       />
       <CalculatorFormPage />
-      <CTASection {...ctaData} />
+      <div className="max-w-5xl mx-auto py-16">
+        <CTASection {...ctaData} rounded="rounded-4xl" />
+      </div>
     </main>
   );
 }
@@ -554,13 +556,13 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
         {/* ── Tab bar ── */}
         <div
           data-aos="zoom-in-up"
-          className="flex gap-4 overflow-x-auto pb-7 xl:pb-2 mb-8 scrollbar-hide justify-around"
+          className="flex gap-3 overflow-x-auto pb-7 xl:pb-2 mb-12 scrollbar-hide justify-around"
         >
           {config.tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabChange(tab.id)}
-              className={`flex items-center gap-2 shrink-0 font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 relative
+              className={`flex items-center gap-2 shrink-0 font-bold text-lg px-6 py-2.5 rounded-full transition-all duration-200 relative
                 ${
                   activeTab === tab.id
                     ? "bg-cyan-400 text-white shadow-lg shadow-sky-200 scale-[1.04]"
@@ -592,16 +594,16 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             {/* Title row */}
             <div className="flex items-center gap-4 mb-7">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md"
                 style={{ background: calc.iconBg }}
               >
-                <span className="text-white text-2xl">{calc.icon}</span>
+                <span className="text-white text-4xl">{calc.icon}</span>
               </div>
               <div>
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-gray-900">
                   {calc.title}
                 </h2>
-                <p className="text-gray-400 text-sm font-medium">
+                <p className="text-gray-400 text-base font-medium">
                   {calc.subtitle}
                 </p>
               </div>
@@ -638,8 +640,8 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
             {/* Tip box */}
             {calc.tip && (
               <div className="mt-16 bg-sky-50 border border-sky-100 rounded-xl px-4 py-3.5 flex items-start gap-3">
-                <FiInfo className="text-sky-400 text-base shrink-0 mt-0.5" />
-                <p className="text-gray-600 text-xs leading-relaxed">
+                <FiInfo className="text-sky-400 text-xl shrink-0 mt-0.5" />
+                <p className="text-gray-600 leading-relaxed">
                   <span className="font-bold text-gray-700">Tip: </span>
                   {calc.tip}
                 </p>
@@ -655,14 +657,14 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
               className="rounded-3xl p-7 shadow-lg"
               style={{ background: calc.resultBg }}
             >
-              <p className="text-white/80 text-sm font-semibold mb-2">
+              <p className="text-white/80 text-lg font-semibold mb-2">
                 {calc.resultLabel}
               </p>
               <p className="text-white text-5xl font-bold tracking-tight mb-3">
                 {formatResult(result, activeTab)}
               </p>
               {result > 0 && (
-                <span className="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                <span className="inline-block bg-white/20 text-white text-sm font-bold px-3 py-1.5 rounded-full">
                   {calc.resultUnit}
                 </span>
               )}
@@ -673,10 +675,10 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
               data-aos="flip-up"
               className="bg-cyan-500  rounded-3xl p-6 shadow-md"
             >
-              <h3 className="text-white font-bold text-lg mb-1">
+              <h3 className="text-white font-bold text-xl mb-1">
                 {calc.ctaTitle}
               </h3>
-              <p className="text-white/60 text-sm mb-4 leading-relaxed">
+              <p className="text-white/60 text-base mb-4 leading-relaxed">
                 {calc.ctaDesc}
               </p>
               <a
@@ -694,7 +696,7 @@ export function CalculatorFormPage({ config = calculatorConfig }) {
                 data-aos="flip-up"
                 className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm"
               >
-                <h3 className="text-gray-900 font-bold text-lg mb-5">
+                <h3 className="text-gray-900 font-bold text-xl mb-5">
                   Performance Analysis
                 </h3>
 

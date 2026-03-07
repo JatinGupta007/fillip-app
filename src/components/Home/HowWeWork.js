@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { MdOutlineBarChart, MdTrendingUp } from "react-icons/md";
 import { HiOutlineLightBulb } from "react-icons/hi";
@@ -53,6 +55,7 @@ const steps = [
 ];
 
 export default function HowWeWork() {
+  const router = useRouter()
   return (
     <section className="w-full bg-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
@@ -74,7 +77,7 @@ export default function HowWeWork() {
 
       {/* Steps Grid */}
       <div className="mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 relative">
           {steps.map((step, idx) => (
             <div key={idx} className="relative flex items-start">
               {/* Card */}
@@ -145,7 +148,7 @@ export default function HowWeWork() {
           <p className="mt-3 text-gray-400 text-sm relative z-10">
             Get a free strategy session and see how we can transform your app
           </p>
-          <button className="relative z-10 mt-8 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-sm px-8 py-4 rounded-xl shadow-lg hover:shadow-white/20 hover:bg-gray-100 transition-all duration-200">
+          <button onClick={() => router.push("get-quote")} className="relative z-10 mt-8 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-white/20 active:scale-95 hover:bg-gray-100 transition-all duration-200">
             Book Free Consultation <FiArrowRight />
           </button>
         </div>

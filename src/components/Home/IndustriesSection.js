@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdTrendingUp, MdArrowForward } from "react-icons/md";
 import {
@@ -168,28 +168,41 @@ const stats = [
 ];
 
 export default function IndustriesSection() {
+  const router = useRouter();
   return (
     <section className="w-full bg-linear-to-b from-white via-[#f5f8ff] to-white py-20 px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-14">
-        <div data-aos="fade-down-left" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
+        <div
+          data-aos="fade-down-left"
+          className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-xs font-semibold px-4 py-2 rounded-full shadow-sm mb-6"
+        >
           <FiTarget className="text-purple-400 text-[14px]" />
           15 Specialized Industries
         </div>
-        <h2 data-aos="fade-up-right" className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+        <h2
+          data-aos="fade-up-right"
+          className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight"
+        >
           Industries We{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Serve
           </span>
         </h2>
-        <p data-aos="fade-up-left" className="mt-4 text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
+        <p
+          data-aos="fade-up-left"
+          className="mt-4 text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto"
+        >
           Expert marketing strategies tailored to your app's industry. We
           understand your audience, your competition, and what drives success.
         </p>
       </div>
 
       {/* Industry Cards Grid */}
-      <div data-aos="zoom-in" className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-7 mb-12">
+      <div
+        data-aos="zoom-in"
+        className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-7 mb-12"
+      >
         {industries.map((ind, i) => (
           <IndustryCard key={i} industry={ind} />
         ))}
@@ -236,10 +249,13 @@ export default function IndustriesSection() {
           </p>
 
           <div className="relative z-10 mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-cyan-400/30 transition-all duration-200">
+            <button
+              onClick={() => router.push("get-quote")}
+              className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-cyan-400/30 transition-all duration-200"
+            >
               Schedule a Consultation <FiArrowRight />
             </button>
-            <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200">
+            <button className="flex items-center gap-2 bg-white/10 active:scale-95 hover:bg-white/20 border border-white/20 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200">
               View All Case Studies
             </button>
           </div>

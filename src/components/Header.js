@@ -87,7 +87,7 @@ const solutionsItems = [
   },
   {
     tag: "Analytics & Attribution",
-    href: "/analytics-attribution",
+    href: "/analytics-&-attribution",
     title: "Analytics",
     color: "#ef4444",
     bg: "#fef2f2",
@@ -385,10 +385,10 @@ export default function Header() {
                   <Link
                     href={group.href}
                     key={group.tag}
-                    className="px-4 pt-3 pb-1"
+                    className="px-6 "
                   >
                     {/* Sub-group header */}
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 px-4">
                       <span
                         className="p-1 rounded-md"
                         style={{ background: group.bg, color: group.color }}
@@ -402,17 +402,7 @@ export default function Header() {
                         {group.tag}
                       </span>
                     </div>
-                    {/* Sub-links */}
-                    {group.links.map((link) => (
-                      <li
-                        key={link.label}
-                        className="flex items-center gap-2.5 pl-2 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        <span style={{ color: group.color }}>{link.icon}</span>
-                        {link.label}
-                      </li>
-                    ))}
+                    
                   </Link>
                 ))}
               </MobileAccordion>
@@ -424,13 +414,13 @@ export default function Header() {
               >
                 <ul className="px-4 py-2 space-y-0.5">
                   {solutionsItems.map((item) => (
-                    <li key={item}>
+                    <li key={item.title}>
                       <Link
-                        href={`/${item.replaceAll(" ", "-").toLowerCase()}`}
+                        href={item.href}
                         className="block py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {item}
+                        {item.tag}
                       </Link>
                     </li>
                   ))}
@@ -460,13 +450,13 @@ export default function Header() {
               >
                 <ul className="px-4 py-2 space-y-0.5">
                   {resourcesItems.map((item) => (
-                    <li key={item}>
+                    <li key={item.title}>
                       <Link
-                        href={`/${item.replaceAll(/\s+/g, "-").toLowerCase()}`}
+                        href={item.href}
                         className="block py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
                         onClick={() => setMobileOpen(false)}
                       >
-                        {item}
+                        {item.tag}
                       </Link>
                     </li>
                   ))}

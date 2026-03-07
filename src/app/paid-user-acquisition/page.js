@@ -28,7 +28,7 @@ import {
   RiTimerLine, // instead of RiTimeLine
 } from "react-icons/ri";
 
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import { RiDownloadLine, RiStarLine } from "react-icons/ri";
 import { RiCheckboxCircleLine } from "react-icons/ri";
 import { BsMegaphone } from "react-icons/bs";
@@ -706,14 +706,14 @@ export function PlatformMasterySection({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-down-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-down-left"
-              className="mt-3 text-gray-500 text-base max-w-2xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -730,28 +730,26 @@ export function PlatformMasterySection({
             >
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md mb-5 shrink-0 group-hover:scale-110 transition-transform duration-200"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md mb-5 shrink-0 group-hover:scale-110 transition-transform duration-200"
                 style={{ background: p.iconBg }}
               >
-                <span className="text-white text-2xl">{p.icon}</span>
+                <span className="text-white text-3xl">{p.icon}</span>
               </div>
 
               {/* Title + desc */}
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {p.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                {p.desc}
-              </p>
+              <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
 
               {/* Stats row */}
               <div className="flex items-start gap-6 pb-5 mb-5 border-b border-gray-100">
                 {p.stats?.map((s, j) => (
                   <div key={j}>
-                    <p className="text-lg font-bold text-gray-900 leading-tight">
+                    <p className="text-2xl font-bold text-gray-900 leading-tight">
                       {s.value}
                     </p>
-                    <p className="text-gray-400 text-xs font-semibold mt-0.5">
+                    <p className="text-gray-400 text-sm font-semibold mt-0.5">
                       {s.label}
                     </p>
                   </div>
@@ -759,10 +757,10 @@ export function PlatformMasterySection({
                 {/* Networks */}
                 {p.networks && (
                   <div className="ml-auto text-right">
-                    <p className="text-xs font-bold text-gray-700 leading-snug">
+                    <p className="text-xl font-bold text-gray-700 leading-snug">
                       {p.networks}
                     </p>
-                    <p className="text-gray-400 text-[10px] font-semibold mt-0.5">
+                    <p className="text-gray-400 text-[12px] font-semibold mt-0.5">
                       Networks
                     </p>
                   </div>
@@ -776,7 +774,7 @@ export function PlatformMasterySection({
                     key={j}
                     className="flex items-center gap-2.5 text-sm text-gray-600"
                   >
-                    <RiCheckboxCircleLine
+                    <FiCheckCircle
                       className="shrink-0 text-lg"
                       style={{ color: p.checkColor ?? "#0ea5e9" }}
                     />
@@ -800,7 +798,6 @@ export default function Page() {
       <CreativeServicesGrid {...data.services} />
       <CreativeProcessSection {...data.process} />
       <CreativeCaseStudies {...data.caseStudies} />
-      <PortfolioCategories {...data.portfolio} />
       <CreativePricingSection {...data.pricing} />
       <FAQSection {...data.faqData} />
       <CTASection {...data.ctaData} />

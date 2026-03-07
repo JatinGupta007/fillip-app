@@ -55,7 +55,7 @@ export default function CommunityHeroSection({
             className="inline-flex items-center gap-2 bg-linear-to-br from-[#DFF2FE] via-[#F3E8FF] to-[#FCE7F3] backdrop-blur border border-pink-100 text-gray-700 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:bg-white hover:scale-[1.02] transition-all duration-200"
           >
             {badge.icon && (
-              <span className="text-base text-blue-500">{badge.icon}</span>
+              <span className="text-lg text-blue-500">{badge.icon}</span>
             )}
             {badge.text}
           </div>
@@ -66,11 +66,11 @@ export default function CommunityHeroSection({
           {/* Line 1 — dark */}
           <h1
             data-aos="fade-up-right"
-            className="text-3xl sm:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#0d1f3c] leading-tight tracking-tight"
+            className="text-3xl sm:text-5xl lg:text-5xl xl:text-7xl font-bold text-[#0d1f3c] leading-14 tracking-tight mt-4"
           >
             {headlineBlack} {/* Inline colored word on same line */}
             <span
-              className="bg-clip-text text-transparent"
+              className="bg-clip-text text-transparent leading-0"
               style={{ backgroundImage: headlineLine2Gradient }}
             >
               {headlineLine2}
@@ -90,7 +90,7 @@ export default function CommunityHeroSection({
         {/* ── Subtext ── */}
         <p
           data-aos="fade-up-right"
-          className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-4xl"
+          className="text-gray-500 text-lg sm:text-xl leading-relaxed max-w-3xl mt-3"
         >
           {subtext}
         </p>
@@ -99,12 +99,12 @@ export default function CommunityHeroSection({
         {(primaryBtn || secondaryBtn) && (
           <div
             data-aos="fade-up"
-            className="flex flex-col sm:flex-row gap-4 mt-5 w-full sm:w-auto justify-center"
+            className="flex flex-col sm:flex-row gap-4 mt-7 w-full sm:w-auto justify-center"
           >
             {primaryBtn && (
               <a
                 href={primaryBtn.href ?? "#"}
-                className="group inline-flex items-center justify-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+                className="group inline-flex items-center justify-center gap-2.5 font-bold text-lg px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
                 style={{
                   background:
                     primaryBtn.bg ??
@@ -126,7 +126,7 @@ export default function CommunityHeroSection({
             {secondaryBtn && (
               <a
                 href={secondaryBtn.href ?? "#"}
-                className="group inline-flex items-center justify-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm hover:shadow-md"
+                className="group inline-flex items-center justify-center gap-2.5 font-bold text-lg px-8 py-4 rounded-2xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 shadow-sm hover:shadow-md"
                 style={{
                   background: secondaryBtn.bg ?? "#ffffff",
                   color: secondaryBtn.textColor ?? "#0d1f3c",
@@ -148,13 +148,13 @@ export default function CommunityHeroSection({
         {trustIcons && (
           <div
             data-aos="zoom-in"
-            className="flex items-center justify-center gap-8 text-gray-500 text-sm font-semibold mt-7"
+            className="flex items-center justify-center gap-8 text-gray-500 font-semibold mt-9"
           >
             {trustIcons.map((icon, idx) => (
               <li key={idx} className="flex items-center gap-1">
                 <span
                   style={{ color: icon.trustIconColor }}
-                  className="text-lg"
+                  className="text-xl"
                 >
                   {icon.trustIcon}
                 </span>
@@ -168,52 +168,4 @@ export default function CommunityHeroSection({
   );
 }
 
-/* ════════════════════════════════════════
-   USAGE — matching the image exactly
-   Copy-paste into your page file
-════════════════════════════════════════ */
 
-/*
-import CommunityHeroSection from '@/components/CommunityHeroSection';
-import { HiOutlineUserGroup } from 'react-icons/hi';
-import { BsChatDots, BsCheckCircleFill } from 'react-icons/bs';
-import { FiDownload } from 'react-icons/fi';
-
-<CommunityHeroSection
-  bg="linear-gradient(135deg, #dbeafe 0%, #ede9fe 35%, #fce7f3 70%, #f0f9ff 100%)"
-
-  badge={{
-    icon: <HiOutlineUserGroup />,
-    text: 'Join 5,200+ App Growth Professionals',
-  }}
-
-  headlineBlack="The Top"
-  headlineLine2="App"
-  headlineLine2Gradient="linear-gradient(to right, #a855f7, #ec4899)"
-  headlineLine3="Growth Community"
-  headlineLine3Gradient="linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899)"
-
-  subtext="Connect with app marketers, share strategies, get expert feedback, and stay ahead of industry trends—all on Telegram."
-
-  primaryBtn={{
-    label: 'Join on Telegram',
-    href: 'https://t.me/yourgroup',
-    icon: <BsChatDots />,
-    bg: 'linear-gradient(135deg, #0ea5e9, #3b82f6)',
-    textColor: '#ffffff',
-    shadowColor: 'rgba(14,165,233,0.35)',
-  }}
-
-  secondaryBtn={{
-    label: 'Download Community Guide',
-    href: '#',
-    bg: '#ffffff',
-    textColor: '#0d1f3c',
-    border: '#e5e7eb',
-  }}
-
-  trustText="100% Free • No spam • 5,200+ active members"
-  trustIcon={<BsCheckCircleFill />}
-  trustIconColor="#10b981"
-/>
-*/

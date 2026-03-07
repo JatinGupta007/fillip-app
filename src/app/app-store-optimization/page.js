@@ -735,7 +735,6 @@ export function WhyASOMatters({
             {cta && (
               <a
                 data-aos="fade-left"
-                href={cta.href ?? "#"}
                 className="group inline-flex items-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 w-fit"
                 style={{
                   background:
@@ -775,7 +774,7 @@ export function WhyASOMatters({
 
             {/* Floating stat card */}
             {floatingCard && (
-              <div className="absolute bottom-8 bg-white rounded-2xl px-5 py-4 shadow-xl border border-gray-100 flex items-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300">
+              <div className="animate-bounce absolute bottom-8 bg-white rounded-2xl px-5 py-4 shadow-xl border border-gray-100 flex items-center gap-3 hover:scale-105 hover:shadow-2xl transition-all duration-300">
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center shadow-md shrink-0"
                   style={{
@@ -813,7 +812,6 @@ export default function Page() {
       <CreativeServicesGrid {...data.services} />
       <CreativeProcessSection {...data.process} />
       <CreativeCaseStudies {...data.caseStudies} />
-      <PortfolioCategories {...data.portfolio} />
       <CreativePricingSection {...data.pricing} />
       <FAQSection {...data.faqData} />
       <CTASection {...data.ctaData} />

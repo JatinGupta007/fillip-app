@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FiDownload, FiArrowRight, FiCheck } from "react-icons/fi";
 import { BsStarFill, BsShieldCheck } from "react-icons/bs";
@@ -32,6 +32,7 @@ const avatarLabels = ["A", "B", "C", "D"];
 export default function GrowthGuideSection() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = () => {
     if (email.trim()) {

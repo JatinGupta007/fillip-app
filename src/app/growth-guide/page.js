@@ -98,7 +98,9 @@ export default function GuidePage() {
       <ResourceFeaturesStrip {...featuresData} />
       <GrowthGuidesGrid {...guidesData} />
       <TemplatesAndVideos {...templatesVideosData} />
-      <CTASection {...ctaData} />
+      <div className="max-w-5xl mx-auto py-16">
+        <CTASection {...ctaData} rounded="rounded-4xl" />
+      </div>
     </main>
   );
 }
@@ -356,15 +358,6 @@ export const templatesVideosData = {
 /* ════════════════════════════════════════
    RESOURCE FEATURES STRIP
    4-col icon + title + desc row
-
-   Props:
-     features — Array<{
-         icon    : ReactElement
-         iconBg  : string  (CSS gradient)
-         title   : string
-         desc    : string
-       }>
-     bg        — optional CSS background
 ════════════════════════════════════════ */
 export function ResourceFeaturesStrip({ features = [], bg = "#ffffff" }) {
   return (
@@ -388,10 +381,10 @@ export function ResourceFeaturesStrip({ features = [], bg = "#ffffff" }) {
                 <span className="text-white text-2xl">{f.icon}</span>
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {f.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-[200px]">
+              <p className="text-gray-500 text-base leading-relaxed max-w-[200px]">
                 {f.desc}
               </p>
             </div>
@@ -408,25 +401,6 @@ import { FiDownload } from "react-icons/fi";
    GROWTH GUIDES GRID
    Cards with icon, featured badge, tags, downloads count
 
-   Props:
-     title        — string (dark)
-     titleColored — string (gradient)
-     titleGradient — CSS gradient
-     subtitle     — string
-     guides       — Array<{
-         id          : string
-         icon        : ReactElement
-         iconBg      : string
-         featured?   : boolean
-         title       : string
-         type        : string   ("PDF Guide")
-         pages       : string   ("45 pages")
-         desc        : string
-         whatsInside : string[]
-         downloads   : string   ("12,500+")
-         ctaHref?    : string
-       }>
-     bg           — optional
 ════════════════════════════════════════ */
 export function GrowthGuidesGrid({
   title = "Comprehensive",
@@ -446,7 +420,7 @@ export function GrowthGuidesGrid({
         <div className="text-center mb-12">
           <h2
             data-aos="fade-down-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
           >
             {title}
             <span
@@ -459,7 +433,7 @@ export function GrowthGuidesGrid({
           {subtitle && (
             <p
               data-aos="fade-down-left"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -483,38 +457,38 @@ export function GrowthGuidesGrid({
 
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md mb-4 group-hover:scale-105 transition-transform duration-200"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md mb-4 group-hover:scale-105 transition-transform duration-200"
                 style={{ background: guide.iconBg }}
               >
                 <span className="text-white text-xl">{guide.icon}</span>
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-bold text-gray-900 leading-snug mb-1">
+              <h3 className="text-2xl font-bold text-gray-900 leading-snug mb-1">
                 {guide.title}
               </h3>
 
               {/* Meta */}
-              <p className="text-gray-400 text-xs font-semibold mb-3">
+              <p className="text-gray-400 text-base font-semibold mb-5">
                 {guide.type} <span className="mx-1">•</span> {guide.pages}
               </p>
 
               {/* Desc */}
-              <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">
+              <p className="text-gray-500 text-lg leading-relaxed mb-6 flex-1">
                 {guide.desc}
               </p>
 
               {/* What's inside */}
               {guide.whatsInside?.length > 0 && (
-                <div className="mb-4">
-                  <p className="text-[10px] font-bold text-gray-700 tracking-widest mb-2">
+                <div className="mb-8">
+                  <p className="text-base font-bold text-gray-700 tracking-wide mb-3">
                     WHAT'S INSIDE:
                   </p>
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-3">
                     {guide.whatsInside.map((tag, i) => (
                       <span
                         key={i}
-                        className="bg-gray-50 border border-gray-100 text-gray-600 text-xs font-semibold px-2.5 py-1 rounded-lg"
+                        className="bg-gray-50 border border-gray-100 text-gray-700 text-base font-semibold px-4 py-2 rounded-2xl"
                       >
                         {tag}
                       </span>
@@ -524,7 +498,7 @@ export function GrowthGuidesGrid({
               )}
 
               {/* Downloads */}
-              <p className="text-gray-400 text-xs font-semibold mb-3 flex items-center gap-1.5">
+              <p className="text-gray-600 text-base font-semibold mb-5 flex items-center gap-1.5">
                 <FiDownload className="text-sm" />
                 {guide.downloads} downloads
               </p>
@@ -532,7 +506,7 @@ export function GrowthGuidesGrid({
               {/* CTA */}
               <a
                 href={guide.ctaHref ?? "#"}
-                className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-gray-700 font-bold text-sm py-3 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group/btn"
+                className="w-full flex items-center justify-center gap-2 bg-gray-50 border border-gray-200 hover:bg-gray-100 text-gray-700 font-bold text-base py-3 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 group/btn"
               >
                 <FiDownload className="text-base" />
                 Download Free
@@ -568,7 +542,7 @@ function TemplatesSection({
         <div className="text-center mb-12">
           <h2
             data-aos="fade-left"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
           >
             {title}
             <span className="ml-2" style={{ color: titleColor ?? "#10b981" }}>
@@ -578,7 +552,7 @@ function TemplatesSection({
           {subtitle && (
             <p
               data-aos="fade-right"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -594,23 +568,23 @@ function TemplatesSection({
             >
               {/* Icon */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform duration-200"
+                className="w-16 h-16 rounded-xl flex items-center justify-center shadow-md mb-4 group-hover:scale-110 transition-transform duration-200"
                 style={{ background: t.iconBg }}
               >
-                <span className="text-white text-xl">{t.icon}</span>
+                <span className="text-white text-3xl">{t.icon}</span>
               </div>
 
-              <h3 className="text-sm font-bold text-gray-900 leading-snug mb-2 flex-1">
+              <h3 className="text-2xl font-bold text-gray-900 leading-snug mb-3">
                 {t.title}
               </h3>
-              <p className="text-gray-500 text-xs leading-relaxed mb-3">
+              <p className="text-gray-500 text-base leading-relaxed mb-4">
                 {t.desc}
               </p>
 
               {/* Type label */}
               {t.type && (
                 <p
-                  className="text-xs font-bold mb-3"
+                  className="text-sm font-bold mb-6"
                   style={{ color: t.typeColor ?? "#10b981" }}
                 >
                   {t.type}
@@ -620,7 +594,7 @@ function TemplatesSection({
               {/* CTA */}
               <a
                 href={t.ctaHref ?? "#"}
-                className="w-full flex items-center justify-center gap-2 bg-[#0d1f3c] hover:bg-[#1a3360] text-white font-bold text-xs py-2.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                className="w-full flex items-center justify-center gap-2 bg-[#0d1f3c] hover:bg-[#1a3360] text-white font-bold py-3 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
               >
                 <FiDownload className="text-sm" />
                 Get Template
@@ -655,7 +629,7 @@ function VideoTutorialsSection({
         <div className="text-center mb-12">
           <h2
             data-aos="fade-up-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
           >
             {title}
             <span className="ml-2" style={{ color: titleColor ?? "#a855f7" }}>
@@ -665,23 +639,22 @@ function VideoTutorialsSection({
           {subtitle && (
             <p
               data-aos="fade-down-right"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-7 mb-10">
           {videos?.map((v, i) => (
             <a
               data-aos="flip-left"
               key={i}
-              href={v.href ?? "#"}
-              className="group block"
+              className="group block border-2 rounded-3xl border-gray-200"
             >
               {/* Thumbnail */}
-              <div className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 mb-3 aspect-video bg-gray-200 group-hover:scale-[1.02]">
+              <div className="relative rounded-t-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 mb-3 aspect-video bg-gray-200 group-hover:scale-[1.02]">
                 {v.thumbnail ? (
                   <Image
                     src={v.thumbnail}
@@ -705,12 +678,12 @@ function VideoTutorialsSection({
                 </div>
               </div>
 
-              <h3 className="text-sm font-bold text-gray-900 leading-snug mb-1 group-hover:text-blue-600 transition-colors duration-200">
-                {v.title}
-              </h3>
-              <p className="text-gray-400 text-xs font-semibold">
-                {v.views} views
-              </p>
+              <div className="p-3">
+                <h3 className="text-xl font-bold text-gray-900 leading-snug mb-2 group-hover:text-blue-600 transition-colors duration-200">
+                  {v.title}
+                </h3>
+                <p className="text-gray-400 font-semibold">{v.views} views</p>
+              </div>
             </a>
           ))}
         </div>

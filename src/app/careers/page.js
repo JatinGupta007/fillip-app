@@ -301,14 +301,14 @@ export function OpenPositionsSection({
         <div className="text-center mb-10">
           <h2
             data-aos="fade-down-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-down-left"
-              className="mt-3 text-gray-500 text-base"
+              className="mt-3 text-gray-600 text-lg"
             >
               {subtitle}
             </p>
@@ -316,13 +316,13 @@ export function OpenPositionsSection({
         </div>
 
         {/* Filter tabs */}
-        <div className="flex flex-wrap gap-5 mb-8 justify-center">
+        <div className="flex flex-wrap gap-5 mb-10 justify-center">
           {tabs.map((tab, i) => (
             <button
               data-aos="zoom-out-left"
               key={i}
               onClick={() => setActive(tab)}
-              className={`px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 border
+              className={`px-5 py-2 rounded-full font-bold transition-all duration-200 border
                 ${
                   active === tab
                     ? "bg-cyan-500 text-white border-cyan-500 shadow-md shadow-cyan-200"
@@ -345,42 +345,42 @@ export function OpenPositionsSection({
               {/* Top row */}
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-2xl font-bold text-gray-900">
                     {job.title}
                   </h3>
                   <span
-                    className={`text-xs font-bold px-3 py-1 rounded-full ${job.tagColor} ${job.tagTextColor}`}
+                    className={`text-sm font-bold px-3 py-1 rounded-full ${job.tagColor} ${job.tagTextColor}`}
                   >
                     {job.department}
                   </span>
                 </div>
                 <a
                   href={job.applyHref || "#"}
-                  className="shrink-0 inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-blue-100 hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
+                  className="shrink-0 inline-flex items-center gap-2 bg-linear-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md shadow-blue-100 hover:shadow-lg hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
                 >
                   Apply Now <FiArrowRight />
                 </a>
               </div>
 
               {/* Meta row */}
-              <div className="flex flex-wrap gap-4 mt-3 text-gray-400 text-xs font-semibold">
+              <div className="flex flex-wrap gap-4 text-gray-400 font-semibold">
                 <span className="flex items-center gap-1.5">
-                  <FiMapPin className="text-sm" />
+                  <FiMapPin className="" />
                   {job.location}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <FiClock className="text-sm" />
+                  <FiClock className="" />
                   {job.type}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <FiDollarSign className="text-sm" />
+                  <FiDollarSign className="" />
                   {job.salary}
                 </span>
               </div>
 
               {/* Description */}
               {job.desc && (
-                <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                <p className="mt-4 text-gray-600 text-base leading-relaxed">
                   {job.desc}
                 </p>
               )}
@@ -388,14 +388,14 @@ export function OpenPositionsSection({
               {/* Requirements */}
               {job.requirements?.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs font-bold text-gray-700 mb-2">
+                  <p className="text-lg font-bold text-gray-700 mb-2">
                     Requirements:
                   </p>
                   <ul className="flex flex-col gap-1.5">
                     {job.requirements.map((req, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-2 text-sm text-gray-600"
+                        className="flex items-start gap-2 text- text-gray-600"
                       >
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                         {req}
@@ -432,7 +432,7 @@ export function WhyJoinSection({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-left"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight mb-2"
           >
             {title}
             {titleColored && (
@@ -445,7 +445,7 @@ export function WhyJoinSection({
           {subtitle && (
             <p
               data-aos="fade-right"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -453,7 +453,7 @@ export function WhyJoinSection({
         </div>
 
         {/* Benefits grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b, i) => (
             <div
               data-aos="flip-right"
@@ -462,16 +462,16 @@ export function WhyJoinSection({
             >
               {/* Icon */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-200"
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-transform duration-200"
                 style={{ background: b.iconBg }}
               >
                 <span className="text-white text-2xl">{b.icon}</span>
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {b.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
+              <p className="text-gray-500 text-lg leading-relaxed">{b.desc}</p>
             </div>
           ))}
         </div>

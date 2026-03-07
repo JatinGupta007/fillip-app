@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { FiArrowRight, FiCheck, FiCheckCircle } from "react-icons/fi";
 import {
   RiStackLine,
   RiTargetLine,
@@ -30,9 +30,7 @@ const ORANGE_GRAD = "linear-gradient(135deg, #f97316, #ea580c)";
 const CHECK_ORANGE = "#f97316";
 
 function OrangeCheck({ color = CHECK_ORANGE }) {
-  return (
-    <RiCheckboxCircleLine className="flex-shrink-0 text-lg" style={{ color }} />
-  );
+  return <FiCheckCircle className="flex-shrink-0 text-lg" style={{ color }} />;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -167,14 +165,14 @@ export function CreativeFormatsSection({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-down-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-down-left"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -190,16 +188,16 @@ export function CreativeFormatsSection({
             >
               <div className="flex items-start gap-5 mb-7">
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md flex-shrink-0 group-hover:scale-110 transition-transform duration-200"
                   style={{ background: f.iconBg ?? ORANGE_GRAD }}
                 >
-                  <span className="text-white text-2xl">{f.icon}</span>
+                  <span className="text-white text-4xl">{f.icon}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">
                     {f.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {f.desc}
                   </p>
                 </div>
@@ -208,14 +206,14 @@ export function CreativeFormatsSection({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Formats list */}
                 <div>
-                  <p className="text-xs font-bold text-gray-700 mb-3">
+                  <p className="text-lg font-bold text-gray-700 mb-3">
                     Formats We Produce:
                   </p>
-                  <ul className="flex flex-col gap-1.5">
+                  <ul className="flex flex-col gap-2">
                     {f.formats?.map((item, j) => (
                       <li
                         key={j}
-                        className="flex items-center gap-2 text-sm text-gray-600"
+                        className="flex items-center gap-2 text-base text-gray-700"
                       >
                         <OrangeCheck />
                         {item}
@@ -226,7 +224,7 @@ export function CreativeFormatsSection({
 
                 {/* Platform examples */}
                 <div>
-                  <p className="text-xs font-bold text-gray-700 mb-3">
+                  <p className="text-lg font-bold text-gray-700 mb-3">
                     Platform Examples:
                   </p>
                   <div className="flex flex-col gap-2">
@@ -235,12 +233,12 @@ export function CreativeFormatsSection({
                         key={k}
                         className="bg-[#fffbf5] border border-orange-50 rounded-xl px-4 py-3 hover:scale-[1.01] transition-transform duration-200"
                       >
-                        <p className="text-sm font-bold text-gray-900">
+                        <p className="text-base font-bold text-gray-900">
                           {p.name}
                         </p>
-                        <p className="text-xs text-gray-400 mt-0.5">{p.spec}</p>
+                        <p className="text-sm text-gray-400 mt-0.5">{p.spec}</p>
                         <p
-                          className="text-xs font-bold mt-0.5"
+                          className="text-sm font-bold mt-0.5"
                           style={{ color: "#f97316" }}
                         >
                           {p.duration}
@@ -280,14 +278,14 @@ export function CreativeServicesGrid({ title, subtitle, services, bg, iconGradie
         <div className="text-center mb-14">
           <h2
             data-aos="fade-up-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-up-left"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-4 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -299,7 +297,7 @@ export function CreativeServicesGrid({ title, subtitle, services, bg, iconGradie
             <div
               data-aos="zoom-in"
               key={i}
-              className="bg-white border border-gray-100 rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"
+              className="bg-white border-2 border-gray-100 rounded-3xl p-7 shadow-sm hover:border-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"
             >
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-md mb-5 group-hover:scale-110 transition-transform duration-200"
@@ -307,10 +305,10 @@ export function CreativeServicesGrid({ title, subtitle, services, bg, iconGradie
               >
                 <span className="text-white text-2xl">{s.icon}</span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
                 {s.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">
+              <p className="text-gray-500 text-base leading-relaxed mb-4">
                 {s.desc}
               </p>
               <ul className="flex flex-col gap-1.5 mt-auto">
@@ -352,26 +350,26 @@ export function CreativeProcessSection({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-right"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-left"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="relative max-w-5xl mx-auto flex flex-col">
+        <div className="relative max-w-6xl mx-auto flex flex-col">
           {/* vertical connector */}
           <div
             data-aos="fade-left"
             className="absolute left-[28px] top-16 bottom-16 w-0.5 z-0"
-            style={{ background: iconGradient }}
+            style={{ background: iconGradient ?? ORANGE_GRAD }}
           />
 
           {steps?.map((s, i) => (
@@ -382,7 +380,7 @@ export function CreativeProcessSection({
               {/* Number badge */}
               <div
                 data-aos="fade-up-right"
-                className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-white text-lg shadow-lg group-hover:scale-110 transition-transform duration-200"
+                className="flex-shrink-0 w-17 h-17 rounded-2xl flex items-center justify-center font-bold text-white text-xl shadow-lg group-hover:scale-110 transition-transform duration-200"
                 style={{ background: iconGradient ?? ORANGE_GRAD }}
               >
                 {String(i + 1).padStart(2, "0")}
@@ -394,11 +392,11 @@ export function CreativeProcessSection({
                 className="flex-1 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-lg hover:border-orange-100 transition-all duration-300"
               >
                 <div className="flex items-start justify-between gap-4 mb-2">
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {s.title}
                   </h3>
                   <span
-                    className="flex-shrink-0 text-xs font-bold px-3 py-1 rounded-full"
+                    className="flex-shrink-0 text-sm font-bold px-3 py-1 rounded-full"
                     style={{
                       background: color ? `${color}1A` : "#f973161A",
                       color: color ?? "#f97316",
@@ -407,19 +405,19 @@ export function CreativeProcessSection({
                     {s.week}
                   </span>
                 </div>
-                <p className="text-gray-500 text-sm mb-3 leading-relaxed">
+                <p className="text-gray-500 text-base mb-5 leading-relaxed">
                   {s.desc}
                 </p>
                 {s.deliverables?.length > 0 && (
                   <>
-                    <p className="text-[10px] font-bold text-gray-700 mb-2">
+                    <p className="text-[16px] font-bold text-gray-700 mb-4">
                       Deliverables:
                     </p>
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                       {s.deliverables.map((d, j) => (
                         <div
                           key={j}
-                          className="flex items-center gap-1.5 text-xs text-gray-600"
+                          className="flex items-center gap-1.5 text-sm text-gray-600"
                         >
                           <OrangeCheck color={color} />
                           {d}
@@ -450,21 +448,21 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
         <div className="text-center mb-14">
           <h2
             data-aos="zoom-in"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="zoom-out"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-7">
           {cases?.map((c, i) => (
             <div
               data-aos="zoom-out"
@@ -472,7 +470,7 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
               className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row group"
             >
               {/* Image */}
-              <div className="relative sm:w-56 sm:flex-shrink-0 h-52 sm:h-auto overflow-hidden bg-gray-200">
+              <div className="relative sm:w-72 sm:shrink-0 h-52 sm:h-auto overflow-hidden bg-gray-200">
                 {c.image ? (
                   <img
                     src={c.image}
@@ -486,21 +484,21 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
                   {c.category}
                 </span>
                 <div className="absolute bottom-3 left-3 right-3 bg-white/90 backdrop-blur rounded-xl px-3 py-2">
-                  <p className="text-[10px] font-bold text-gray-400 mb-0.5">
+                  <p className="text-[12px] font-bold text-gray-400 mb-0.5">
                     Creative Output
                   </p>
-                  <p className="text-xs font-bold text-gray-800">{c.output}</p>
+                  <p className="text-sm font-bold text-gray-800">{c.output}</p>
                 </div>
               </div>
 
               {/* Content */}
               <div className="flex-1 p-7">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   {c.title}
                 </h3>
 
                 <div className="mb-3">
-                  <p className="text-xs font-bold text-gray-700 mb-1">
+                  <p className="text-sm font-bold text-gray-700 mb-1">
                     Challenge:
                   </p>
                   <p className="text-sm text-gray-500 leading-relaxed">
@@ -508,7 +506,7 @@ export function CreativeCaseStudies({ title, subtitle, cases, bg, color }) {
                   </p>
                 </div>
                 <div className="mb-4">
-                  <p className="text-xs font-bold text-gray-700 mb-1">
+                  <p className="text-sm font-bold text-gray-700 mb-1">
                     Creative Solution:
                   </p>
                   <p className="text-sm text-gray-500 leading-relaxed">
@@ -575,14 +573,14 @@ export function PortfolioCategories({
         <div className="text-center mb-14">
           <h2
             data-aos="fade-left"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="fade-right"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
@@ -597,7 +595,7 @@ export function PortfolioCategories({
               className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
               {/* Image */}
-              <div className="relative h-44 overflow-hidden bg-gray-200">
+              <div className="relative h-52 overflow-hidden bg-gray-200">
                 {cat.image ? (
                   <img
                     src={cat.image}
@@ -608,20 +606,20 @@ export function PortfolioCategories({
                   <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-900" />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <span className="absolute bottom-3 left-4 text-white font-bold text-base">
+                <span className="absolute bottom-3 left-4 text-white font-bold text-lg">
                   {cat.name}
                 </span>
               </div>
               {/* Meta */}
               <div className="p-5">
-                <p className="text-gray-400 text-xs mb-3">{cat.apps}</p>
-                <div className="flex items-start gap-2">
+                <p className="text-gray-400 text-base mb-3">{cat.apps}</p>
+                <div className="flex items-center gap-2">
                   <RiMedalLine
-                    className="flex-shrink-0 mt-0.5 text-base"
+                    className="shrink-0 mt-0.5 text-xl"
                     style={{ color: color ?? "#f97316" }}
                   />
                   <p
-                    className="text-sm font-bold leading-snug"
+                    className="text-lg font-bold leading-snug"
                     style={{ color: color ?? "#f97316" }}
                   >
                     {cat.highlight}
@@ -671,21 +669,21 @@ export function CreativePricingSection({
         <div className="text-center mb-14">
           <h2
             data-aos="zoom-in"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c]"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c]"
           >
             {title}
           </h2>
           {subtitle && (
             <p
               data-aos="zoom-out"
-              className="mt-3 text-gray-500 text-base max-w-xl mx-auto"
+              className="mt-3 text-gray-600 text-lg max-w-3xl mx-auto"
             >
               {subtitle}
             </p>
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 ">
           {packages?.map((pkg, i) => (
             <div
               data-aos="fade-up-right"
@@ -699,7 +697,7 @@ export function CreativePricingSection({
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span
-                    className="text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg"
+                    className="text-white text-sm font-bold px-5 py-1.5 rounded-full shadow-lg"
                     style={{ background: iconGradient ?? ORANGE_GRAD }}
                   >
                     Most Popular
@@ -707,20 +705,20 @@ export function CreativePricingSection({
                 </div>
               )}
 
-              <h3 className="text-xl font-bold text-gray-900 mb-1">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {pkg.name}
               </h3>
-              <div className="flex items-baseline gap-1 mb-1">
+              <div className="flex items-baseline gap-1 mb-3">
                 <span className="text-4xl font-bold text-gray-900">
                   {pkg.price}
                 </span>
                 <span className="text-gray-400 text-sm">{pkg.period}</span>
               </div>
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+              <p className="text-gray-500 text-sm mb-9 leading-relaxed">
                 {pkg.desc}
               </p>
 
-              <ul className="flex flex-col gap-2 mb-8 flex-1">
+              <ul className="flex flex-col gap-4 mb-8 flex-1">
                 {pkg.features?.map((f, j) => (
                   <li
                     key={j}
@@ -753,6 +751,7 @@ export function CreativePricingSection({
 }
 
 import { FiChevronDown } from "react-icons/fi";
+import { FaCheckCircle } from "react-icons/fa";
 
 /* ════════════════════════════════════════
    FAQ SECTION — Accordion style
@@ -774,12 +773,12 @@ export function FAQSection({
       className="w-full py-20 px-5 md:px-10 xl:px-16 bg-[#F9FAFB]"
       style={{ background: bg }}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2
             data-aos="fade-up-left"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0d1f3c] leading-tight"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold text-[#0d1f3c] leading-tight"
           >
             {title}
             <span
@@ -793,7 +792,7 @@ export function FAQSection({
               {titleColored}
             </span>
           </h2>
-          <p data-aos="fade-up-right" className="text-xl mt-5 text-gray-500">
+          <p data-aos="fade-up-right" className="text-xl mt-5 text-gray-600">
             {subtitle}
           </p>
         </div>
@@ -814,7 +813,7 @@ export function FAQSection({
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group"
                 >
-                  <span className="text-gray-900 font-bold text-base sm:text-lg leading-snug group-hover:text-blue-600 transition-colors duration-200">
+                  <span className="text-gray-900 font-bold text-base sm:text-xl leading-snug group-hover:text-blue-600 transition-colors duration-200">
                     {faq.question}
                   </span>
                   <FiChevronDown

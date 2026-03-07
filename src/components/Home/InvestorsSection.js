@@ -177,7 +177,7 @@ export default function InvestorsSection() {
 
       {/* Bottom trust bar */}
       <div className="max-w-8xl mx-auto" data-aos="zoom-out">
-        <div className="bg-gray-50 border border-gray-100 rounded-2xl px-16 py-7 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-sm">
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl md:px-16 px-7 py-7 flex flex-col sm:flex-row items-center justify-around gap-6 shadow-sm">
           {/* Funded startups */}
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
@@ -191,7 +191,7 @@ export default function InvestorsSection() {
               ))}
             </div>
             <div>
-              <p className="text-lg font-bold text-gray-900">
+              <p className="md:text-lg font-bold text-gray-900">
                 500+ Funded Startups
               </p>
               <p className="text-xs text-gray-400">

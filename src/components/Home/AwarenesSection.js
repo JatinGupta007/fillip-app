@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
@@ -117,6 +118,7 @@ const funnelGroups = [
 
 export default function AwarenessSection() {
   const [activeStage, setActiveStage] = useState(0);
+  const router = useRouter();
 
   return (
     <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f5f0ff] py-20 overflow-hidden px-5 md:px-10 xl:px-16">
@@ -275,7 +277,10 @@ export default function AwarenessSection() {
               Let's discuss your app's unique needs and goals
             </p>
           </div>
-          <button className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-200 transition-all duration-200 whitespace-nowrap">
+          <button
+            onClick={() => router.push("get-quote")}
+            className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 active:scale-95 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-200 transition-all duration-200 whitespace-nowrap"
+          >
             Schedule Consultation <FiArrowRight />
           </button>
         </div>

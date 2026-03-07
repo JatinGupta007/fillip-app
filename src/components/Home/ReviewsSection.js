@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { BsStarFill, BsQuote } from "react-icons/bs";
@@ -125,7 +125,6 @@ const reviews = [
   },
 ];
 
-const VISIBLE = 3;
 const AUTO_INTERVAL = 3500;
 
 export default function ReviewsCarousel() {
@@ -133,8 +132,11 @@ export default function ReviewsCarousel() {
   const [isHovered, setIsHovered] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const timerRef = useRef(null);
+  const [visible, setVisible] = useState(3);
 
-  const maxIndex = reviews.length - VISIBLE;
+  const router = useRouter();
+
+  const maxIndex = reviews.length - visible;
 
   const goTo = useCallback(
     (index) => {
@@ -161,15 +163,34 @@ export default function ReviewsCarousel() {
     return () => clearInterval(timerRef.current);
   }, [isHovered, maxIndex]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) setVisible(1);
+      else if (window.innerWidth < 1024) setVisible(2);
+      else setVisible(3);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section className="w-full bg-linear-to-br from-[#f0f5ff] via-white to-[#f8f0ff] py-20 overflow-x-hidden px-5 md:px-10 xl:px-16">
       {/* Header */}
       <div className="max-w-2xl mx-auto text-center mb-14">
-        <div data-aos="fade-down" className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-sm font-semibold px-4 py-2 rounded-full shadow-sm mb-6">
+        <div
+          data-aos="fade-down"
+          className="inline-flex items-center gap-2 bg-linear-to-l from-[#DFF2FE] to-[#F3E8FF] text-gray-500 text-sm font-semibold px-4 py-2 rounded-full shadow-sm mb-6"
+        >
           <LuQuote className="text-purple-400 text-[14px]" />
           Client Reviews
         </div>
-        <h2 data-aos="fade-left" className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <h2
+          data-aos="fade-left"
+          className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
+        >
           What Our{" "}
           <span className="bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Clients Say
@@ -193,7 +214,7 @@ export default function ReviewsCarousel() {
           <div
             className="flex gap-5 transition-transform duration-500 ease-in-out p-4"
             style={{
-              transform: `translateX(calc(-${current} * (100% / ${VISIBLE} + 8px)))`,
+              transform: `translateX(calc(-${current} * (100% / ${visible})))`,
             }}
           >
             {reviews.map((review, i) => (
@@ -250,7 +271,10 @@ export default function ReviewsCarousel() {
               journey
             </p>
           </div>
-          <button className="flex items-center gap-2 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-200 transition-all duration-200 whitespace-nowrap">
+          <button
+            onClick={() => router.push("audit")}
+            className="flex items-center gap-2 active:scale-95 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg hover:shadow-blue-200 transition-all duration-200 whitespace-nowrap"
+          >
             <TbSparkles />
             Get Free Audit
           </button>
@@ -267,7 +291,7 @@ function ReviewCard({ review }) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`shrink-0 w-[calc((100%-32px)/3)] min-w-[280px] rounded-3xl border-2 p-8 flex flex-col gap-4 shadow-md transition-all duration-300 cursor-default
+      className={`shrink-0 w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-32px)/3)] min-w-[300px] rounded-3xl border-2 p-8 flex flex-col gap-4 shadow-md transition-all duration-300 cursor-default
         ${
           hovered
             ? "-translate-y-2 shadow-[0_0_40px] bg-linear-to-br " +
