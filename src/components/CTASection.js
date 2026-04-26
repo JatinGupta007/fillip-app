@@ -16,7 +16,7 @@ export default function CTASection({
   buttons = [
     {
       label: "Get Your Free Strategy Call",
-      href: "#",
+      href: "/get-quote",
       arrow: true,
       background:
         "bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-400 hover:to-cyan-400",
@@ -94,7 +94,7 @@ export default function CTASection({
               data-aos="zoom-out-down"
               key={idx}
               href={btn.href}
-              className={`group flex items-center justify-center gap-2 ${btn.background} font-bold text-lg px-11 py-5 rounded-2xl shadow-xl shadow-white/20 hover:shadow-white/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
+              className={`group text-black flex items-center justify-center gap-2 ${btn.background} font-bold text-lg px-11 py-5 rounded-2xl shadow-xl shadow-white/20 hover:shadow-white/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200`}
             >
               {btn.label}
               {btn.arrow && (

@@ -191,7 +191,7 @@ export const ServicesData = {
       buttons: [
         {
           label: "Get Started Now",
-          href: "https://t.me/yourgroup",
+          href: "/get-quote",
           arrow: true,
           background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
         },
@@ -393,7 +393,7 @@ export const ServicesData = {
       buttons: [
         {
           label: "Get Started Now",
-          href: "https://t.me/yourgroup",
+          href: "/get-quote",
           arrow: true,
           background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
         },
@@ -605,7 +605,7 @@ export const ServicesData = {
       buttons: [
         {
           label: "Get Started Now",
-          href: "https://t.me/yourgroup",
+          href: "/get-quote",
           arrow: true,
           background: "bg-white text-[#0d1f3c] hover:bg-gray-100 shadow-lg",
         },

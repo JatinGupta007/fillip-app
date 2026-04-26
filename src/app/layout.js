@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import AOSProvider from "@/components/AOS";
 
 import "./globals.css";
 
@@ -12,22 +13,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="">
-        <Header />
-        {children}
-        <Footer />
-        {/* Talk to Us button */}
-        <Link href="/get-quote" className="fixed bottom-3 md:bottom-7 xl:bottom-10 right-3 md:right-7 xl:right-10 z-20">
-          <button className="flex items-center gap-4 bg-linear-to-r from-cyan-400 to-blue-500 text-white font-semibold  px-9 py-4 rounded-full shadow-lg hover:shadow-cyan-300 hover:scale-105 active:scale-95 transition-all duration-200">
-            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center animate-bounce">
-              <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
-                <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
-              </svg>
-            </span>
-            Talk to Us
-          </button>
-        </Link>
-      </body>
+      <AOSProvider>
+        <body className="">
+          <Header />
+          {children}
+          <Footer />
+          {/* Talk to Us button */}
+          <Link
+            href="/get-quote"
+            className="fixed bottom-3 md:bottom-7 xl:bottom-10 right-3 md:right-7 xl:right-10 z-20"
+          >
+            <button className="flex items-center gap-4 bg-linear-to-r from-cyan-400 to-blue-500 text-white font-semibold  px-9 py-4 rounded-full shadow-lg hover:shadow-cyan-300 hover:scale-105 active:scale-95 transition-all duration-200">
+              <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center animate-bounce">
+                <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                  <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
+                </svg>
+              </span>
+              Talk to Us
+            </button>
+          </Link>
+        </body>
+      </AOSProvider>
     </html>
   );
 }

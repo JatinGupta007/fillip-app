@@ -41,9 +41,21 @@ export const customPlanConfig = {
   bg: "linear-gradient( #F0F9FF 0%, #ECFEFF 45%, #ffffff 75%)",
 
   steps: [
-    { id: "app", label: "App Details", icon: <RiSmartphoneLine /> },
-    { id: "marketing", label: "Marketing Needs", icon: <RiMegaphoneLine /> },
-    { id: "quote", label: "Request Quote", icon: <RiShoppingCartLine /> },
+    {
+      id: "app",
+      label: "App Details",
+      icon: <RiSmartphoneLine className="text-2xl" />,
+    },
+    {
+      id: "marketing",
+      label: "Marketing Needs",
+      icon: <RiMegaphoneLine className="text-2xl" />,
+    },
+    {
+      id: "quote",
+      label: "Request Quote",
+      icon: <RiShoppingCartLine className="text-2xl" />,
+    },
   ],
 
   stepFields: {
@@ -283,16 +295,22 @@ export const customPlanConfig = {
 /* ════════════════════════════════════════
    FIELD COMPONENT
 ════════════════════════════════════════ */
-function Field({ field, value, onChange }) {
+function Field({ field, value, onChange, error }) {
   const base =
     "w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-800 text-sm font-medium placeholder:text-gray-300 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 hover:border-gray-300 transition-all duration-200 bg-white";
+
+  const inputBase =
+    "w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-800 text-sm font-medium placeholder:text-gray-300 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 hover:border-gray-300 transition-all duration-200 bg-white";
+
+  const errorBase =
+    "w-full pl-10 pr-4 py-3.5 border border-red-300 rounded-xl text-gray-800 text-sm font-medium placeholder:text-gray-300 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 hover:border-red-300 transition-all duration-200 bg-white";
 
   return (
     <div className="flex flex-col gap-1.5">
       <label className="text-sm font-bold text-gray-700 flex items-center gap-1.5">
         <span className="text-sky-400 text-sm">{field.icon}</span>
         {field.label}
-        {field.required && <span className="text-sky-400">*</span>}
+        {field.required && <span className="text-red-500 font-bold">*</span>}
       </label>
       <div className="relative">
         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300 text-base pointer-events-none">
@@ -302,7 +320,11 @@ function Field({ field, value, onChange }) {
           <select
             value={value ?? ""}
             onChange={(e) => onChange(field.id, e.target.value)}
-            className={base + " appearance-none cursor-pointer text-gray-400"}
+            className={
+              error
+                ? errorBase + " appearance-none cursor-pointer text-gray-400"
+                : base + " appearance-none cursor-pointer text-gray-400"
+            }
           >
             <option value="" disabled>
               {field.placeholder || `Select ${field.label}`}
@@ -319,8 +341,11 @@ function Field({ field, value, onChange }) {
             placeholder={field.placeholder}
             value={value ?? ""}
             onChange={(e) => onChange(field.id, e.target.value)}
-            className={base}
+            className={error ? errorBase : inputBase}
           />
+        )}
+        {error && (
+          <p className="text-red-500 text-xs font-bold mt-1">{error}</p>
         )}
       </div>
     </div>
@@ -332,17 +357,71 @@ function Field({ field, value, onChange }) {
 ════════════════════════════════════════ */
 export default function CustomPlanSection({ config = customPlanConfig }) {
   const [step, setStep] = useState(0);
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState({}); // stores all field values
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({}); // stores errors for required fields
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
 
   const totalSteps = config.steps.length;
   const currentStep = config.steps[step];
   const stepData = config.stepFields[currentStep.id];
   const isLast = step === totalSteps - 1;
 
-  const handleChange = (id, val) => setValues((v) => ({ ...v, [id]: val }));
-  const handleNext = () =>
-    isLast ? setSubmitted(true) : setStep((s) => s + 1);
+  const handleChange = (id, val) => {
+    setValues((v) => ({ ...v, [id]: val }));
+    setErrors((e) => ({ ...e, [id]: undefined }));
+  };
+
+  // Validate only required (star) fields for the current step
+  const validateStep = () => {
+    const stepFields = stepData.rows.flat();
+    const newErrors = {};
+    stepFields.forEach((field) => {
+      if (
+        field.required &&
+        (!values[field.id] || values[field.id].toString().trim() === "")
+      ) {
+        newErrors[field.id] = `${field.label} is required`;
+      }
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleNext = async () => {
+    if (!validateStep()) return;
+
+    if (isLast) {
+      setLoading(true);
+      setApiError(null);
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/submissions/custom-plan`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(values),
+          },
+        );
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(
+            Array.isArray(data.errors)
+              ? data.errors.join(", ")
+              : data.message || "Submission failed. Please try again.",
+          );
+        }
+        setSubmitted(true);
+      } catch (err) {
+        setApiError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      setStep((s) => s + 1);
+    }
+  };
 
   /* column count per row → Tailwind grid class */
   const gridCols = (len) => {
@@ -387,7 +466,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
         {/* Headline */}
         <h1
           data-aos="fade-down-right"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center leading-tight mb-4"
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#0d1f3c] text-center leading-tight mb-4"
         >
           {config.headlineBlack}{" "}
           <span
@@ -419,7 +498,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
                 <div className="flex flex-col items-center gap-2">
                   <button
                     onClick={() => isDone && setStep(i)}
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl shadow-md transition-all duration-200
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center text-xl shadow-md transition-all duration-200
                       ${isActive ? "scale-105 shadow-sky-200" : isDone ? "cursor-pointer hover:scale-105" : "cursor-default opacity-50"}`}
                     style={{
                       background:
@@ -432,7 +511,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
                     {isDone ? <FiCheck className="text-xl" /> : s.icon}
                   </button>
                   <span
-                    className={`text-xs font-bold text-center whitespace-nowrap ${isActive ? "text-sky-500" : "text-gray-400"}`}
+                    className={`font-bold text-center whitespace-nowrap ${isActive ? "text-sky-500" : "text-gray-400"}`}
                   >
                     {s.label}
                   </span>
@@ -486,13 +565,11 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
             <>
               {/* Step title */}
               <div className="text-center mb-7">
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+                <h2 className="text-lg sm:text-3xl font-bold text-gray-900">
                   {stepData.title}
                 </h2>
                 {stepData.subtitle && (
-                  <p className="text-gray-400 text-sm mt-1">
-                    {stepData.subtitle}
-                  </p>
+                  <p className="text-gray-400 mt-2">{stepData.subtitle}</p>
                 )}
               </div>
 
@@ -507,6 +584,7 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
                       <Field
                         key={field.id}
                         field={field}
+                        error={errors[field.id]}
                         value={values[field.id]}
                         onChange={handleChange}
                       />
@@ -516,16 +594,50 @@ export default function CustomPlanSection({ config = customPlanConfig }) {
               </div>
 
               {/* Continue / Submit */}
-              <div className="flex justify-end">
+              <div className="flex flex-col items-end gap-2">
+                {apiError && (
+                  <p className="text-red-500 text-sm font-semibold">
+                    {apiError}
+                  </p>
+                )}
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2.5 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group"
+                  disabled={loading}
+                  className="inline-flex items-center gap-2.5 text-white font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 group disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{
                     background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
                   }}
                 >
-                  {isLast ? config.submitLabel : config.ctaLabel}
-                  <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                  {loading ? (
+                    <>
+                      <svg
+                        className="animate-spin h-4 w-4 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8z"
+                        />
+                      </svg>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      {isLast ? config.submitLabel : config.ctaLabel}
+                      <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                    </>
+                  )}
                 </button>
               </div>
             </>

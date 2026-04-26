@@ -38,9 +38,21 @@ export const auditFormConfig = {
   bg: "linear-gradient( #F0F9FF 0%, #ECFEFF 45%, #ffffff 75%)",
 
   steps: [
-    { id: "app", label: "App Info", icon: <RiSmartphoneLine /> },
-    { id: "goals", label: "Goals & Budget", icon: <RiFocus3Line /> },
-    { id: "contact", label: "Contact Details", icon: <RiUserLine /> },
+    {
+      id: "app",
+      label: "App Info",
+      icon: <RiSmartphoneLine className="text-2xl" />,
+    },
+    {
+      id: "goals",
+      label: "Goals & Budget",
+      icon: <RiFocus3Line className="text-2xl" />,
+    },
+    {
+      id: "contact",
+      label: "Contact Details",
+      icon: <RiUserLine className="text-2xl" />,
+    },
   ],
 
   stepFields: {
@@ -207,16 +219,19 @@ export const auditFormConfig = {
 /* ════════════════════════════════════════
    FIELD RENDERER
 ════════════════════════════════════════ */
-function Field({ field, value, onChange }) {
+function Field({ field, value, onChange, error }) {
   const base =
     "w-full pl-10 pr-4 py-3.5 border border-gray-200 rounded-xl text-gray-800 text-sm font-medium placeholder:text-gray-300 focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-100 hover:border-gray-300 transition-all duration-200 bg-white";
+
+  const errorBase =
+    "w-full pl-10 pr-4 py-3.5 border border-red-300 rounded-xl text-gray-800 text-sm font-medium placeholder:text-gray-300 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 hover:border-red-300 transition-all duration-200 bg-white";
 
   return (
     <div className="flex flex-col gap-1.5">
       <label className="text-sm font-bold text-gray-700 flex items-center gap-1.5">
         <span className="text-sky-400 text-base">{field.icon}</span>
         {field.label}
-        {field.required && <span className="text-sky-500">*</span>}
+        {field.required && <span className="text-red-500 font-bold">*</span>}
       </label>
       <div className="relative">
         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-300 text-base pointer-events-none">
@@ -226,7 +241,11 @@ function Field({ field, value, onChange }) {
           <select
             value={value ?? ""}
             onChange={(e) => onChange(field.id, e.target.value)}
-            className={base + " appearance-none cursor-pointer"}
+            className={
+              error
+                ? errorBase + " appearance-none cursor-pointer"
+                : base + " appearance-none cursor-pointer"
+            }
           >
             <option value="" disabled>
               {field.placeholder}
@@ -243,8 +262,11 @@ function Field({ field, value, onChange }) {
             placeholder={field.placeholder}
             value={value ?? ""}
             onChange={(e) => onChange(field.id, e.target.value)}
-            className={base}
+            className={error ? errorBase : base}
           />
+        )}
+        {error && (
+          <p className="text-red-500 text-xs font-bold mt-1">{error}</p>
         )}
       </div>
     </div>
@@ -258,17 +280,83 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
   const [step, setStep] = useState(0);
   const [values, setValues] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
 
   const totalSteps = config.steps.length;
   const currentStep = config.steps[step];
   const fields = config.stepFields[currentStep.id];
   const isLast = step === totalSteps - 1;
 
-  const handleChange = (id, val) => setValues((v) => ({ ...v, [id]: val }));
+  const handleChange = (id, val) => {
+    setValues((v) => ({ ...v, [id]: val }));
+    setErrors((e) => ({ ...e, [id]: undefined }));
+  };
 
-  const handleNext = () => {
+  // Validate only required (star) fields for the current step
+  const validateStep = () => {
+    if (!fields) {
+      return true;
+    }
+
+    // Combine fullWidthFields and halfWidthFields
+    const allFields = [
+      ...(fields.fullWidthFields || []),
+      ...(fields.halfWidthFields || []),
+    ];
+
+    const newErrors = {};
+    let hasErrors = false;
+
+    allFields.forEach((field) => {
+      if (!field) return;
+
+      const value = values[field.id];
+      const isEmpty =
+        value === undefined ||
+        value === null ||
+        (typeof value === "string" && value.trim() === "");
+
+      if (field.required && isEmpty) {
+        newErrors[field.id] = `${field.label} is required`;
+        hasErrors = true;
+      }
+    });
+
+    setErrors(newErrors);
+    return !hasErrors;
+  };
+
+  const handleNext = async () => {
+    if (!validateStep()) return;
+
     if (isLast) {
-      setSubmitted(true);
+      setLoading(true);
+      setApiError(null);
+      try {
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/submissions/audit`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(values),
+          },
+        );
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(
+            Array.isArray(data.errors)
+              ? data.errors.join(", ")
+              : data.message || "Submission failed. Please try again.",
+          );
+        }
+        setSubmitted(true);
+      } catch (err) {
+        setApiError(err.message);
+      } finally {
+        setLoading(false);
+      }
     } else {
       setStep((s) => Math.min(s + 1, totalSteps - 1));
     }
@@ -310,7 +398,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
         {/* ── Headline ── */}
         <h1
           data-aos="fade-up-left"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0d1f3c] text-center mb-4 leading-tight"
+          className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#0d1f3c] text-center mb-4 leading-tight"
         >
           {config.headlineBlack}
           <span
@@ -344,7 +432,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                 <div className="flex flex-col items-center gap-2">
                   <button
                     onClick={() => isDone && setStep(i)}
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-bold shadow-md transition-all duration-200
+                    className={`w-16 h-16 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-md transition-all duration-200
                       ${isActive ? "scale-105 shadow-sky-200" : isDone ? "cursor-pointer hover:scale-105" : "cursor-default opacity-60"}
                     `}
                     style={{
@@ -356,10 +444,10 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                       color: isActive || isDone ? "#fff" : "#94a3b8",
                     }}
                   >
-                    {isDone ? <FiCheck className="text-xl" /> : s.icon}
+                    {isDone ? <FiCheck className="text-2xl" /> : s.icon}
                   </button>
                   <span
-                    className={`text-xs font-bold text-center whitespace-nowrap transition-colors duration-200 ${isActive ? "text-sky-500" : "text-gray-400"}`}
+                    className={`font-bold text-center whitespace-nowrap transition-colors duration-200 ${isActive ? "text-sky-500" : "text-gray-400"}`}
                   >
                     {s.label}
                   </span>
@@ -420,6 +508,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                     <Field
                       key={f.id}
                       field={f}
+                      error={errors[f.id]}
                       value={values[f.id]}
                       onChange={handleChange}
                     />
@@ -434,6 +523,7 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
                     <Field
                       key={f.id}
                       field={f}
+                      error={errors[f.id]}
                       value={values[f.id]}
                       onChange={handleChange}
                     />
@@ -442,16 +532,50 @@ export default function FreeAuditSection({ config = auditFormConfig }) {
               )}
 
               {/* Continue / Submit button */}
-              <div className="flex justify-end">
+              <div className="flex flex-col items-end gap-2">
+                {apiError && (
+                  <p className="text-red-500 text-sm font-semibold">
+                    {apiError}
+                  </p>
+                )}
                 <button
                   onClick={handleNext}
-                  className="inline-flex items-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 text-white group"
+                  disabled={loading}
+                  className="inline-flex items-center gap-2.5 font-bold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 text-white group disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{
                     background: "linear-gradient(135deg, #38bdf8, #0ea5e9)",
                   }}
                 >
-                  {isLast ? config.submitLabel : config.ctaLabel}
-                  <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                  {loading ? (
+                    <>
+                      <svg
+                        className="animate-spin h-4 w-4 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8z"
+                        />
+                      </svg>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      {isLast ? config.submitLabel : config.ctaLabel}
+                      <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                    </>
+                  )}
                 </button>
               </div>
             </>

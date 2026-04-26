@@ -35,6 +35,7 @@ export default function GrowthGuideSection() {
   const router = useRouter();
 
   const handleSubmit = () => {
+    router.push("/get-quote");
     if (email.trim()) {
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 3000);
