@@ -238,7 +238,7 @@ const ctaData = {
   buttons: [
     {
       label: "Email Us Your Resume",
-      href: "mailto:careers@appfillip.com", // you can change email if needed
+      href: "/get-quote", // you can change email if needed
       arrow: true,
       background: "bg-white text-gray-900 hover:bg-gray-100",
     },

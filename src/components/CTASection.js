@@ -23,7 +23,7 @@ export default function CTASection({
     },
     {
       label: "Explore Solutions",
-      href: "#",
+      href: "/get-quote",
       arrow: false,
       background:
         "[#1a2a4a]/80 backdrop-blur border border-[#2a3a5a] hover:border-gray-400  text-white",

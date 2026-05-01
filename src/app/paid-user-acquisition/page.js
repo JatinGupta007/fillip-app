@@ -54,7 +54,7 @@ export const data = {
     subtext:
       "High-converting ad creative that captures attention, communicates value, and drives installs. From UGC videos to motion graphics, we produce creative that performs.",
     primaryBtn: { label: "See Our Portfolio", href: "#portfolio" },
-    secondaryBtn: { label: "Discuss Your Project", href: "#contact" },
+    secondaryBtn: { label: "Discuss Your Project", href: "/get-quote" },
     btnGradient: "linear-gradient(135deg, #0084D1, #155DFC)",
     iconGradient: "linear-gradient(135deg, #00A6F4, #2B7FFF)",
     stats: [
@@ -573,13 +573,13 @@ export const data = {
     buttons: [
       {
         label: "See Our Portfolio",
-        href: "#",
+        href: "/get-quote",
         arrow: true,
         background: "bg-white",
       },
       {
         label: "Start a Project",
-        href: "#",
+        href: "/get-quote",
         arrow: false,
         background:
           "[#1C398E]/20 backdrop-blur border border-[#FFFFFF4D] hover:border-gray-400  text-white",

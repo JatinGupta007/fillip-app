@@ -32,7 +32,7 @@ export const heroData = {
     hoverBgClass: "hover:from-[#0c87b8] hover:to-[#1e40af]", // darker blue on hover
     icon: true,
     label: "Book Consultation",
-    href: "#",
+    href: "/audit",
     bg: "linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899)",
   },
   secondaryBtn: {
@@ -40,7 +40,7 @@ export const heroData = {
     hoverBgClass:
       "hover:from-[#e5e7eb] hover:to-[#d1d5db] border border-gray-300",
     label: "Get Custom Quote",
-    href: "#",
+    href: "/get-quote",
   },
 
   /* Trust badges — icon + caption */

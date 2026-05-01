@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { MdTrendingUp } from "react-icons/md";
@@ -12,6 +13,7 @@ import CTASection from "./CTASection";
    1. HERO SECTION
 ═══════════════════════════════════ */
 export function HeroSection({ hero, theme }) {
+  const router = useRouter();
   return (
     <section
       className="relative w-full xl:min-h-[88vh] overflow-hidden flex flex-col items-center justify-center px-6 py-24 text-center"
@@ -85,6 +87,7 @@ export function HeroSection({ hero, theme }) {
           className="flex flex-col sm:flex-row gap-8 mt-7 w-full sm:w-auto mb-7"
         >
           <button
+            onClick={() => router.push("/get-quote")}
             className="group flex bg-white items-center justify-center gap-5 font-bold text-lg px-12 py-5 rounded-2xl shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{
               color: theme.badgeText,
@@ -162,12 +165,11 @@ export function CapabilitiesSection({ capabilities, theme }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div data-aos="zoom-in" className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {capabilities.cards.map((card, i) => (
             <div
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
-              data-aos="flip-up"
               key={i}
               className={`rounded-2xl p-9 shadow-md hover: hover:shadow-[0_0_40px] hover:-translate-y-1.5 hover:scale-[1.01] transition-all duration-300 group
                   ${hovered === i ? card.hoverBg : "bg-white "}`}
@@ -453,6 +455,7 @@ function SuccessSection({ success, theme }) {
    6. ROI / CTA DARK SECTION
 ═══════════════════════════════════ */
 function ROISection({ roi, theme }) {
+  const router = useRouter();
   return (
     <section className="w-full py-14 px-5 md:px-10 xl:px-16 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -511,6 +514,7 @@ function ROISection({ roi, theme }) {
 
           {/* CTA */}
           <button
+            onClick={() => router.push("/get-quote")}
             data-aos="zoom-out-down"
             className="relative z-10 inline-flex items-center gap-2 bg-white text-gray-900 font-bold text-lg px-9 py-5 rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-200"
             style={{ color: theme.roiBg }}

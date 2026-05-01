@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <AOSProvider>
-        <body className="">
+        <body className="overflow-x-hidden">
           <Header />
           {children}
           <Footer />

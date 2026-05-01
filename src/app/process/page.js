@@ -40,7 +40,7 @@ export const heroData = {
     hoverBgClass: "hover:from-[#0c87b8] hover:to-[#1e40af]", // darker blue on hover
     icon: true,
     label: "Start Your Journey",
-    href: "#",
+    href: "/get-quote",
     bg: "linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%)", // blue gradient button
     textColor: "#ffffff",
   },
@@ -50,7 +50,7 @@ export const heroData = {
     hoverBgClass:
       "hover:from-[#e5e7eb] hover:to-[#d1d5db] border border-gray-300", // darker gray on hover
     label: "Get Free App Audit",
-    href: "#",
+    href: "/audit",
     bg: "#f3f4f6",
     textColor: "#111827",
     border: "1px solid #e5e7eb",
@@ -257,13 +257,13 @@ const ctaData = {
   buttons: [
     {
       label: "Schedule Strategy Call",
-      href: "#",
+      href: "/get-quote",
       arrow: true,
       background: "bg-white text-[#0f3b57] hover:bg-gray-100 shadow-lg",
     },
     {
       label: "Get Free App Audit",
-      href: "#",
+      href: "/audit",
       arrow: false,
       background:
         "bg-transparent border border-white/30 text-white hover:bg-white/10 backdrop-blur",

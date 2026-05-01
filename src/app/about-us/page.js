@@ -39,7 +39,7 @@ export const heroData = {
   },
   secondaryBtn: {
     label: "Talk to an Expert",
-    href: "#",
+    href: "/get-quote",
     bgClass: "bg-white border border-gray-300", // ← button bg from props
     hoverBgClass: "bg-[#e0e0e0]", // ← button bg on hover
   },

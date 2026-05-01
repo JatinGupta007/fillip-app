@@ -113,12 +113,11 @@ export default function InvestorsSection() {
       </div>
 
       {/* Stats */}
-      <div className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-7 mb-16">
+      <div data-aos="zoom-in" className="max-w-7xl mx-auto md:px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-7 mb-16">
         {stats.map((s, i) => (
           <div
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
-            data-aos="zoom-in"
             key={s.label}
             className={`border-2 border-gray-100 rounded-2xl p-5 shadow-md hover:shadow-2xl hover:-translate-y-2  transition-all duration-200 group
               ${hovered === i ? s.hoverBg : "bg-white"}`}

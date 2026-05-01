@@ -561,13 +561,13 @@ export const data = {
     buttons: [
       {
         label: "See Our Portfolio",
-        href: "#",
+        href: "/get-quote",
         arrow: true,
         background: "bg-white",
       },
       {
         label: "Start a Project",
-        href: "#",
+        href: "/get-quote",
         arrow: false,
         background:
           "[#004F3B]/20 backdrop-blur border border-[#FFFFFF4D] hover:border-gray-400  text-white",
